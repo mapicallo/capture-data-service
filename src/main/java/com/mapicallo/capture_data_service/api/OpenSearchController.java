@@ -81,8 +81,20 @@ public class OpenSearchController {
     }
 
 
-
-
+    @Operation(summary = "Delete an index", description = "Deletes a specific index from OpenSearch.")
+    @DeleteMapping("/delete-index")
+    public ResponseEntity<String> deleteIndex(@RequestParam String indexName) {
+        try {
+            boolean isDeleted = openSearchService.deleteIndex(indexName);
+            if (isDeleted) {
+                return ResponseEntity.ok("Index '" + indexName + "' deleted successfully.");
+            } else {
+                return ResponseEntity.status(404).body("Index '" + indexName + "' not found.");
+            }
+        } catch (IOException e) {
+            return ResponseEntity.status(500).body("Error deleting index: " + e.getMessage());
+        }
+    }
 
 
 }

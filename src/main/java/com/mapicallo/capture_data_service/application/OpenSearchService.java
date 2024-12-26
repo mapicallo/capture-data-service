@@ -2,6 +2,7 @@ package com.mapicallo.capture_data_service.application;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
+import org.opensearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.opensearch.action.index.IndexRequest;
 import org.opensearch.action.index.IndexResponse;
 import org.opensearch.client.RequestOptions;
@@ -17,7 +18,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
+
 
 @Service
 public class OpenSearchService {
@@ -89,6 +90,24 @@ public class OpenSearchService {
         }
 
         return indexDocumentCount;
+    }
+
+
+    public boolean deleteIndex(String indexName) throws IOException {
+        // Verificar si el índice existe
+        boolean exists = restHighLevelClient.indices()
+                .exists(new GetIndexRequest(indexName), RequestOptions.DEFAULT);
+
+        if (!exists) {
+            return false; // Índice no existe
+        }
+
+        // Intentar eliminar el índice
+        restHighLevelClient.indices().delete(new DeleteIndexRequest(indexName), RequestOptions.DEFAULT);
+
+        // Verificar nuevamente para confirmar que fue eliminado
+        return !restHighLevelClient.indices()
+                .exists(new GetIndexRequest(indexName), RequestOptions.DEFAULT);
     }
 
 
