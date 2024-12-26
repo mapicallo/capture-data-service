@@ -1,5 +1,7 @@
 package com.mapicallo.capture_data_service.application;
 
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
 import org.opensearch.action.index.IndexRequest;
 import org.opensearch.action.index.IndexResponse;
 import org.opensearch.client.RequestOptions;
@@ -8,7 +10,10 @@ import org.opensearch.common.xcontent.XContentFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 @Service
@@ -34,4 +39,34 @@ public class OpenSearchService {
         IndexResponse response = restHighLevelClient.index(request, RequestOptions.DEFAULT);
         return response.getResult().name(); // Resultado de la operación: CREATED, UPDATED, etc.
     }
+
+    // Leer archivo JSON
+    public Map<String, Object> readJsonFile(File file) throws IOException {
+        // Simulación: En un caso real, deberías usar una biblioteca como Jackson para leer el archivo JSON
+        Map<String, Object> document = new HashMap<>();
+        document.put("name", "Sample Name");
+        document.put("description", "Sample Description");
+        document.put("timestamp", "2024-12-25T20:00:00Z");
+        return document;
+    }
+
+    // Procesar archivo CSV
+    public void processCsvFile(File file, String indexName) throws IOException {
+        try (CSVReader reader = new CSVReader(new FileReader(file))) {
+            String[] headers = reader.readNext();
+            String[] line;
+            int count = 0;
+
+            while ((line = reader.readNext()) != null) {
+                Map<String, Object> document = new HashMap<>();
+                for (int i = 0; i < headers.length; i++) {
+                    document.put(headers[i], line[i]);
+                }
+                indexDocument(indexName, String.valueOf(count++), document);
+            }
+        } catch (CsvValidationException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
