@@ -69,5 +69,20 @@ public class OpenSearchController {
         }
     }
 
+    @Operation(summary = "List all indices with document counts", description = "Lists all indices in OpenSearch along with the number of documents in each index.")
+    @GetMapping("/list-indices")
+    public ResponseEntity<Map<String, Long>> listIndicesWithDocumentCount() {
+        try {
+            Map<String, Long> indices = openSearchService.listIndicesWithDocumentCount();
+            return ResponseEntity.ok(indices);
+        } catch (IOException e) {
+            return ResponseEntity.status(500).body(null);
+        }
+    }
+
+
+
+
+
 
 }

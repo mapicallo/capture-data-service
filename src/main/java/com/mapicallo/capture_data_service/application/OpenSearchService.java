@@ -6,6 +6,8 @@ import org.opensearch.action.index.IndexRequest;
 import org.opensearch.action.index.IndexResponse;
 import org.opensearch.client.RequestOptions;
 import org.opensearch.client.RestHighLevelClient;
+import org.opensearch.client.core.CountRequest;
+import org.opensearch.client.indices.GetIndexRequest;
 import org.opensearch.common.xcontent.XContentFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 @Service
 public class OpenSearchService {
@@ -68,5 +71,28 @@ public class OpenSearchService {
             throw new RuntimeException(e);
         }
     }
+
+
+    public Map<String, Long> listIndicesWithDocumentCount() throws IOException {
+        // Obtener el listado de índices
+        String[] indices = restHighLevelClient.indices()
+                .get(new GetIndexRequest("*"), RequestOptions.DEFAULT)
+                .getIndices();
+
+        Map<String, Long> indexDocumentCount = new HashMap<>();
+
+        // Para cada índice, obtener la cantidad de documentos
+        for (String index : indices) {
+            CountRequest countRequest = new CountRequest(index);
+            long documentCount = restHighLevelClient.count(countRequest, RequestOptions.DEFAULT).getCount();
+            indexDocumentCount.put(index, documentCount);
+        }
+
+        return indexDocumentCount;
+    }
+
+
+
+
 
 }
