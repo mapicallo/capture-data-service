@@ -1,4 +1,5 @@
 server.host: "0.0.0.0"
-opensearch.hosts: ["http://opensearch:9200"]
 opensearch.username: "admin"
 opensearch.password: "admin"
+opensearch.hosts: ["http://opensearch-node1:9200", "http://opensearch-node2:9200"]
+opensearch.ssl.verificationMode: none

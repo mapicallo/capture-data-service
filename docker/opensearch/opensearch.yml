@@ -3,3 +3,4 @@ network.host: 0.0.0.0
 plugins.security.ssl.transport.enabled: false
 plugins.security.ssl.http.enabled: false
 plugins.security.allow_default_init_securityindex: true
+plugins.security.disabled: true
