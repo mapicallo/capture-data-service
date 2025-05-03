@@ -13,7 +13,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/opensearch")
-@Tag(name = "OpenSearch Operations", description = "Endpoints to interact with OpenSearch")
 public class OpenSearchController {
 
     @Autowired
@@ -21,6 +20,8 @@ public class OpenSearchController {
 
     private static final String UPLOAD_DIR = "C:/uploaded_files/";
 
+    // ----------- INDEX OPERATIONS ------------------
+    @Tag(name = "Index Operations", description = "Endpoints to interact with Index")
     @Operation(summary = "Index a document in OpenSearch", description = "Indexes a JSON document in a specified OpenSearch index.")
     @PostMapping("/index")
     public ResponseEntity<String> indexDocument(
@@ -35,40 +36,7 @@ public class OpenSearchController {
         }
     }
 
-    @Operation(summary = "Process and index a file", description = "Reads a file uploaded previously and indexes its content into OpenSearch.")
-    @PostMapping("/process-file")
-    public ResponseEntity<String> processFile(
-            @RequestParam String indexName) {
-        try {
-            // Verificar si hay archivos en el directorio
-            File uploadDir = new File(UPLOAD_DIR);
-            File[] files = uploadDir.listFiles();
-            if (files == null || files.length == 0) {
-                return ResponseEntity.status(400).body("No file found in upload directory.");
-            }
-
-            // Tomar el primer archivo encontrado para procesar (mejorar según necesidad)
-            File file = files[0];
-
-            // Procesar el archivo y enviar a OpenSearch
-            if (file.getName().endsWith(".json")) {
-                // Procesar archivo JSON
-                Map<String, Object> jsonDocument = openSearchService.readJsonFile(file);
-                openSearchService.indexDocument(indexName, null, jsonDocument);
-            } else if (file.getName().endsWith(".csv")) {
-                // Procesar archivo CSV
-                openSearchService.processCsvFile(file, indexName);
-            } else {
-                return ResponseEntity.status(400).body("Unsupported file format. Only JSON and CSV are allowed.");
-            }
-
-            return ResponseEntity.ok("File processed and indexed successfully.");
-
-        } catch (IOException e) {
-            return ResponseEntity.status(500).body("Error processing file: " + e.getMessage());
-        }
-    }
-
+    @Tag(name = "Index Operations")
     @Operation(summary = "List all indices with document counts", description = "Lists all indices in OpenSearch along with the number of documents in each index.")
     @GetMapping("/list-indices")
     public ResponseEntity<Map<String, Long>> listIndicesWithDocumentCount() {
@@ -80,7 +48,7 @@ public class OpenSearchController {
         }
     }
 
-
+    @Tag(name = "Index Operations")
     @Operation(summary = "Delete an index", description = "Deletes a specific index from OpenSearch.")
     @DeleteMapping("/delete-index")
     public ResponseEntity<String> deleteIndex(@RequestParam String indexName) {
@@ -96,5 +64,57 @@ public class OpenSearchController {
         }
     }
 
+    // ----------- DATA PROCESSING ------------------
+    @Tag(name = "Data Processing", description = "Possible processing with the file")
+    @Operation(summary = "Generic processing file", description = "The output corresponds to the mapping chosen for input data.")
+    @PostMapping("/process-file")
+    public ResponseEntity<String> processFile(@RequestParam String indexName) {
+        try {
+            File uploadDir = new File(UPLOAD_DIR);
+            File[] files = uploadDir.listFiles();
+            if (files == null || files.length == 0) {
+                return ResponseEntity.status(400).body("No file found in upload directory.");
+            }
+
+            File file = files[0];
+
+            if (file.getName().endsWith(".json")) {
+                Map<String, Object> jsonDocument = openSearchService.readJsonFile(file);
+                openSearchService.indexDocument(indexName, null, jsonDocument);
+            } else if (file.getName().endsWith(".csv")) {
+                openSearchService.processCsvFile(file, indexName);
+            } else {
+                return ResponseEntity.status(400).body("Unsupported file format. Only JSON and CSV are allowed.");
+            }
+
+            return ResponseEntity.ok("File processed and indexed successfully.");
+        } catch (IOException e) {
+            return ResponseEntity.status(500).body("Error processing file: " + e.getMessage());
+        }
+    }
+
+    @Tag(name = "Data Processing")
+    @Operation(summary = "PLN processing", description = "The output is the result of NLP processing semantic extraction of triples.")
+    @PostMapping("/extract-triples")
+    public ResponseEntity<String> extractTriples(@RequestParam String indexName) {
+        // TODO: Implementar procesamiento NLP con tripletas
+        return ResponseEntity.ok("Triples extracted and indexed (stub).");
+    }
+
+    @Tag(name = "Data Processing")
+    @Operation(summary = "Big Data processing", description = "The output is the result of Big-Data processing, obtaining statistical information..")
+    @PostMapping("/bigdata/summary")
+    public ResponseEntity<String> summarizeBigData(@RequestParam String indexName) {
+        // TODO: Implementar procesamiento Big Data
+        return ResponseEntity.ok("Big Data summary computed and indexed (stub).");
+    }
+
+    @Tag(name = "Data Processing")
+    @Operation(summary = "AI Data processing", description = "The output is the result of AI processing, obtaining a detailed summary of the indicated text.")
+    @PostMapping("/ai/summarize")
+    public ResponseEntity<String> summarizeAI(@RequestParam String indexName) {
+        // TODO: Implementar procesamiento Big Data
+        return ResponseEntity.ok("AI Data summary computed and indexed (stub).");
+    }
 
 }
