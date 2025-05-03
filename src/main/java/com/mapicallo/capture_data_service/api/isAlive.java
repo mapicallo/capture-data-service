@@ -1,4 +1,4 @@
-package com.example.capture_data_service.api;
+package com.mapicallo.capture_data_service.api;
 
 
 import io.swagger.v3.oas.annotations.Operation;
