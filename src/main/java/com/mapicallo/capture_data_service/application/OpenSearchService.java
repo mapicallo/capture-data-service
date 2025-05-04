@@ -1,117 +1,98 @@
 package com.mapicallo.capture_data_service.application;
 
-import com.opencsv.CSVReader;
-import com.opencsv.exceptions.CsvValidationException;
-import org.opensearch.action.admin.indices.delete.DeleteIndexRequest;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.opensearch.action.index.IndexRequest;
 import org.opensearch.action.index.IndexResponse;
+import org.opensearch.client.indices.GetIndexRequest;
+import org.opensearch.action.admin.indices.delete.DeleteIndexRequest;
+import org.opensearch.action.support.master.AcknowledgedResponse;
 import org.opensearch.client.RequestOptions;
 import org.opensearch.client.RestHighLevelClient;
+import org.opensearch.client.indices.GetIndexResponse;
 import org.opensearch.client.core.CountRequest;
-import org.opensearch.client.indices.GetIndexRequest;
-import org.opensearch.common.xcontent.XContentFactory;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class OpenSearchService {
 
     @Autowired
-    private RestHighLevelClient restHighLevelClient;
+    private RestHighLevelClient client;
 
-    public String indexDocument(String indexName, String documentId, Map<String, Object> document) throws IOException {
-        // Construir el documento usando XContentFactory.jsonBuilder()
-        IndexRequest request = new IndexRequest(indexName)
-                .id(documentId)
-                .source(
-                        XContentFactory.jsonBuilder()
-                                .startObject()
-                                .field("name", document.get("name"))
-                                .field("description", document.get("description"))
-                                .field("timestamp", document.get("timestamp"))
-                                .endObject()
-                );
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
-        // Indexar el documento
-        IndexResponse response = restHighLevelClient.index(request, RequestOptions.DEFAULT);
-        return response.getResult().name(); // Resultado de la operación: CREATED, UPDATED, etc.
-    }
+    public String indexDocument(String index, String documentId, Map<String, Object> documentMap) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(documentMap); // Convert Map to JSON
 
-    // Leer archivo JSON
-    public Map<String, Object> readJsonFile(File file) throws IOException {
-        // Simulación: En un caso real, deberías usar una biblioteca como Jackson para leer el archivo JSON
-        Map<String, Object> document = new HashMap<>();
-        document.put("name", "Sample Name");
-        document.put("description", "Sample Description");
-        document.put("timestamp", "2024-12-25T20:00:00Z");
-        return document;
-    }
+        IndexRequest request = new IndexRequest(index);
 
-    // Procesar archivo CSV
-    public void processCsvFile(File file, String indexName) throws IOException {
-        try (CSVReader reader = new CSVReader(new FileReader(file))) {
-            String[] headers = reader.readNext();
-            String[] line;
-            int count = 0;
-
-            while ((line = reader.readNext()) != null) {
-                Map<String, Object> document = new HashMap<>();
-                for (int i = 0; i < headers.length; i++) {
-                    document.put(headers[i], line[i]);
-                }
-                indexDocument(indexName, String.valueOf(count++), document);
-            }
-        } catch (CsvValidationException e) {
-            throw new RuntimeException(e);
+        if (documentId != null && !documentId.isEmpty()) {
+            request.id(documentId);
         }
+
+        // Usamos directamente la fuente JSON como bytes
+        request.source(json, "application/json");
+
+        IndexResponse response = client.index(request, RequestOptions.DEFAULT);
+        return response.getResult().name();
     }
+
 
 
     public Map<String, Long> listIndicesWithDocumentCount() throws IOException {
-        // Obtener el listado de índices
-        String[] indices = restHighLevelClient.indices()
-                .get(new GetIndexRequest("*"), RequestOptions.DEFAULT)
-                .getIndices();
+        GetIndexRequest request = new GetIndexRequest("*");
+        GetIndexResponse response = client.indices().get(request, RequestOptions.DEFAULT);
 
-        Map<String, Long> indexDocumentCount = new HashMap<>();
-
-        // Para cada índice, obtener la cantidad de documentos
-        for (String index : indices) {
-            CountRequest countRequest = new CountRequest(index);
-            long documentCount = restHighLevelClient.count(countRequest, RequestOptions.DEFAULT).getCount();
-            indexDocumentCount.put(index, documentCount);
-        }
-
-        return indexDocumentCount;
+        return Arrays.stream(response.getIndices())
+                .collect(Collectors.toMap(
+                        index -> index,
+                        index -> {
+                            try {
+                                CountRequest countRequest = new CountRequest(index);
+                                return client.count(countRequest, RequestOptions.DEFAULT).getCount();
+                            } catch (IOException e) {
+                                return 0L;
+                            }
+                        }
+                ));
     }
-
 
     public boolean deleteIndex(String indexName) throws IOException {
-        // Verificar si el índice existe
-        boolean exists = restHighLevelClient.indices()
-                .exists(new GetIndexRequest(indexName), RequestOptions.DEFAULT);
-
-        if (!exists) {
-            return false; // Índice no existe
-        }
-
-        // Intentar eliminar el índice
-        restHighLevelClient.indices().delete(new DeleteIndexRequest(indexName), RequestOptions.DEFAULT);
-
-        // Verificar nuevamente para confirmar que fue eliminado
-        return !restHighLevelClient.indices()
-                .exists(new GetIndexRequest(indexName), RequestOptions.DEFAULT);
+        DeleteIndexRequest request = new DeleteIndexRequest(indexName);
+        AcknowledgedResponse response = client.indices().delete(request, RequestOptions.DEFAULT);
+        return response.isAcknowledged();
     }
 
+    public Map<String, Object> readJsonFile(File file) throws IOException {
+        return objectMapper.readValue(file, Map.class);
+    }
 
+    public String readFileContentAsString(File file) throws IOException {
+        //return new String(java.nio.file.Files.readAllBytes(file.toPath()));
+        // Asegura lectura en UTF-8
+        return new String(java.nio.file.Files.readAllBytes(file.toPath()), StandardCharsets.UTF_8);
+    }
 
-
-
+    public void processCsvFile(File file, String indexName) throws IOException {
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String[] headers = br.readLine().split(",");
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                Map<String, Object> doc = new LinkedHashMap<>();
+                for (int i = 0; i < headers.length && i < values.length; i++) {
+                    doc.put(headers[i], values[i]);
+                }
+                indexDocument(indexName, null, doc);
+            }
+        }
+    }
 }

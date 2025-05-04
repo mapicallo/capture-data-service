@@ -39,3 +39,6 @@ build/
 .idea/
 *.iml
 
+# Ignore sensitive config
+src/main/resources/application.properties
+.env
