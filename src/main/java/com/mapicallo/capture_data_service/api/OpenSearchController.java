@@ -2,6 +2,7 @@ package com.mapicallo.capture_data_service.api;
 
 import com.mapicallo.capture_data_service.application.OpenSearchService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -94,12 +95,13 @@ public class OpenSearchController {
     }
 
     @Tag(name = "Data Processing")
-    @Operation(summary = "PLN processing", description = "The output is the result of NLP processing semantic extraction of triples.")
     @PostMapping("/extract-triples")
-    public ResponseEntity<String> extractTriples(@RequestParam String indexName) {
-        // TODO: Implementar procesamiento NLP con tripletas
-        return ResponseEntity.ok("Triples extracted and indexed (stub).");
+    @Operation(summary = "Extracción de relaciones semánticas", description = "Extrae triples (sujeto, relación, objeto) de una biografía previamente cargada en el sistema. Utiliza CoreNLP KBP.")
+    public ResponseEntity<String> extractTriples(@RequestParam String fileName) {
+        String resultJson = openSearchService.extractTriplesFromFile(fileName);
+        return ResponseEntity.ok(resultJson);
     }
+
 
     @Tag(name = "Data Processing")
     @Operation(summary = "Big Data processing", description = "The output is the result of Big-Data processing, obtaining statistical information..")
@@ -109,6 +111,7 @@ public class OpenSearchController {
         return ResponseEntity.ok("Big Data summary computed and indexed (stub).");
     }
 
+
     @Tag(name = "Data Processing")
     @Operation(summary = "AI Data processing", description = "The output is the result of AI processing, obtaining a detailed summary of the indicated text.")
     @PostMapping("/ai/summarize")
@@ -116,5 +119,91 @@ public class OpenSearchController {
         // TODO: Implementar procesamiento Big Data
         return ResponseEntity.ok("AI Data summary computed and indexed (stub).");
     }
+
+
+    @Tag(name = "Data Processing")
+    @Operation(summary = "Predict next value", description = "Calcula una predicción simple usando los datos del último fichero subido.")
+    @PostMapping("/predict-trend")
+    public ResponseEntity<Map<String, Double>> predictTrend(
+            @Parameter(description = "Index name (debe ser todo en minúsculas y sin caracteres especiales)")
+            @RequestParam String indexName) {
+
+        try {
+            File uploadDir = new File(UPLOAD_DIR);
+            File[] files = uploadDir.listFiles();
+            if (files == null || files.length == 0) {
+                return ResponseEntity.status(400).body(Map.of("error", -1.0));
+            }
+
+            File file = files[0];  // Tomamos el fichero más reciente
+            double predictedValue = openSearchService.predictNextValue(file);
+
+            // Opcionalmente indexamos el resultado
+            Map<String, Object> document = Map.of(
+                    "prediction", predictedValue,
+                    "source_file", file.getName(),
+                    "timestamp", java.time.Instant.now().toString()
+            );
+            openSearchService.indexDocument(indexName.toLowerCase(), null, document);
+
+            return ResponseEntity.ok(Map.of("prediction", predictedValue));
+        } catch (IOException e) {
+            return ResponseEntity.status(500).body(Map.of("error", -1.0));
+        }
+    }
+
+    @Tag(name = "Data Processing")
+    @Operation(summary = "Keyword extraction", description = "Extracts key terms from the input document to facilitate search and categorization.")
+    @PostMapping("/keyword-extract")
+    public ResponseEntity<String> extractKeywords(@RequestParam String fileName) {
+        // TODO: Implementar extracción de keywords
+        return ResponseEntity.ok("Keywords extracted (stub)");
+    }
+
+    @Tag(name = "Data Processing")
+    @Operation(summary = "Text anonymization", description = "Removes or masks personal or sensitive information from the input text file.")
+    @PostMapping("/anonymize-text")
+    public ResponseEntity<String> anonymizeText(@RequestParam String fileName) {
+        // TODO: Implementar anonimización de texto
+        return ResponseEntity.ok("Text anonymized (stub)");
+    }
+
+
+    @Tag(name = "Data Processing")
+    @Operation(summary = "Thematic clustering", description = "Groups similar entries or documents based on semantic similarity or shared features.")
+    @PostMapping("/clustering")
+    public ResponseEntity<String> clusterData(@RequestParam String fileName) {
+        // TODO: Implementar clustering
+        return ResponseEntity.ok("Data clustered (stub)");
+    }
+
+
+    @Tag(name = "Data Processing")
+    @Operation(summary = "Sentiment analysis", description = "Performs a sentiment analysis (positive, neutral, negative) on the content of the uploaded file.")
+    @PostMapping("/sentiment-analysis")
+    public ResponseEntity<String> sentimentAnalysis(@RequestParam String fileName) {
+        // TODO: Implementar análisis de sentimiento
+        return ResponseEntity.ok("Sentiment analyzed (stub)");
+    }
+
+
+    @Tag(name = "Data Processing")
+    @Operation(summary = "Entity recognition", description = "Identifies and classifies named entities (persons, organizations, locations, etc.) in the text.")
+    @PostMapping("/entity-recognition")
+    public ResponseEntity<String> recognizeEntities(@RequestParam String fileName) {
+        // TODO: Implementar reconocimiento de entidades
+        return ResponseEntity.ok("Entities recognized (stub)");
+    }
+
+
+    @Tag(name = "Data Processing")
+    @Operation(summary = "Timeline builder", description = "Extracts and organizes chronological events from a text to build a timeline.")
+    @PostMapping("/timeline-builder")
+    public ResponseEntity<String> buildTimeline(@RequestParam String fileName) {
+        // TODO: Implementar construcción de línea temporal
+        return ResponseEntity.ok("Timeline built (stub)");
+    }
+
+
 
 }

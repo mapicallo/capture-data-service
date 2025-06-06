@@ -1,7 +1,15 @@
 package com.mapicallo.capture_data_service.application;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
+import edu.stanford.nlp.ie.util.RelationTriple;
+import edu.stanford.nlp.ling.CoreAnnotations;
+import edu.stanford.nlp.pipeline.Annotation;
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import edu.stanford.nlp.util.CoreMap;
+import org.apache.commons.math3.stat.regression.SimpleRegression;
 import org.opensearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.opensearch.action.index.IndexRequest;
 import org.opensearch.action.index.IndexResponse;
@@ -13,15 +21,14 @@ import org.opensearch.common.xcontent.XContentFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.*;
+import java.util.*;
 
 
 @Service
 public class OpenSearchService {
+
+    private static final String UPLOAD_DIR = "C:/uploaded_files/";
 
     @Autowired
     private RestHighLevelClient restHighLevelClient;
@@ -44,7 +51,10 @@ public class OpenSearchService {
         return response.getResult().name(); // Resultado de la operación: CREATED, UPDATED, etc.
     }
 
-    // Leer archivo JSON
+
+    /**
+     * Leer archivo JSON.
+     */
     public Map<String, Object> readJsonFile(File file) throws IOException {
         // Simulación: En un caso real, deberías usar una biblioteca como Jackson para leer el archivo JSON
         Map<String, Object> document = new HashMap<>();
@@ -54,7 +64,10 @@ public class OpenSearchService {
         return document;
     }
 
-    // Procesar archivo CSV
+
+    /**
+     * Procesar archivo CSV.
+     */
     public void processCsvFile(File file, String indexName) throws IOException {
         try (CSVReader reader = new CSVReader(new FileReader(file))) {
             String[] headers = reader.readNext();
@@ -72,6 +85,70 @@ public class OpenSearchService {
             throw new RuntimeException(e);
         }
     }
+
+
+    public double predictNextValue(File file) throws IOException {
+        List<Double> values = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            br.readLine(); // cabecera
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] fields = line.split(",");
+                values.add(Double.parseDouble(fields[1])); // columna numérica
+            }
+        }
+
+        SimpleRegression regression = new SimpleRegression();
+        for (int i = 0; i < values.size(); i++) {
+            regression.addData(i + 1, values.get(i));
+        }
+        double nextX = values.size() + 1;
+        return regression.predict(nextX);
+    }
+
+
+
+    public String extractTriplesFromFile(String fileName) {
+        String filePath = UPLOAD_DIR + fileName;
+        String text = readFile(filePath);
+        if (text == null || text.isBlank()) {
+            return "{\"error\": \"El archivo está vacío o no se pudo leer correctamente.\"}";
+        }
+
+        // Configurar el pipeline de CoreNLP
+        Properties props = new Properties();
+        props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref,kbp");
+        props.setProperty("kbp.language", "es"); // Si el texto está en español, cambiar a "es"
+        StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+
+        // Crear anotación del texto
+        Annotation document = new Annotation(text);
+        pipeline.annotate(document);
+
+        // Extraer relaciones semánticas
+        List<Map<String, Object>> triples = new ArrayList<>();
+        for (CoreMap sentence : document.get(CoreAnnotations.SentencesAnnotation.class)) {
+            Collection<RelationTriple> relations = sentence.get(CoreAnnotations.KBPTriplesAnnotation.class);
+            if (relations != null) {
+                for (RelationTriple triple : relations) {
+                    Map<String, Object> tripleMap = new LinkedHashMap<>();
+                    tripleMap.put("subject", triple.subjectGloss());
+                    tripleMap.put("relation", triple.relationGloss());
+                    tripleMap.put("object", triple.objectGloss());
+                    tripleMap.put("confidence", triple.confidence);
+                    triples.add(tripleMap);
+                }
+            }
+        }
+
+        // Ordenar por nivel de confianza descendente
+        triples.sort((a, b) -> Double.compare((Double) b.get("confidence"), (Double) a.get("confidence")));
+
+        // Convertir a JSON legible
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(triples);
+    }
+
 
 
     public Map<String, Long> listIndicesWithDocumentCount() throws IOException {
@@ -109,6 +186,67 @@ public class OpenSearchService {
         return !restHighLevelClient.indices()
                 .exists(new GetIndexRequest(indexName), RequestOptions.DEFAULT);
     }
+
+
+    /**
+     * Extrae palabras clave de un archivo de texto o JSON.
+     */
+    public String extractKeywordsFromFile(String fileName) {
+        return "Keywords extracted (stub)";
+    }
+
+    /**
+     * Anonimiza texto médico o sensible en un archivo.
+     */
+    public String anonymizeTextFromFile(String fileName) {
+        return "Text anonymized (stub)";
+    }
+
+    /**
+     * Agrupa entradas de texto en clústeres temáticos.
+     */
+    public String clusterDataFromFile(String fileName) {
+        return "Data clustered (stub)";
+    }
+
+    /**
+     * Realiza análisis de sentimiento sobre el contenido del archivo.
+     */
+    public String analyzeSentimentFromFile(String fileName) {
+        return "Sentiment analyzed (stub)";
+    }
+
+    /**
+     * Reconoce entidades nombradas como personas, lugares, instituciones, etc.
+     */
+    public String recognizeEntitiesFromFile(String fileName) {
+        return "Entities recognized (stub)";
+    }
+
+    /**
+     * Construye una línea de tiempo a partir de eventos encontrados en el texto.
+     */
+    public String buildTimelineFromFile(String fileName) {
+        return "Timeline built (stub)";
+    }
+
+
+
+
+    private String readFile(String filePath) {
+        StringBuilder content = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), "UTF-8"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                content.append(line).append(" ");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return content.toString().trim();
+    }
+
 
 
 
