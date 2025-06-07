@@ -27,6 +27,9 @@ public class OpenSearchController {
     @Autowired
     private OpenSearchService.TextAnonymizerService textAnonymizerService;
 
+    @Autowired
+    private OpenSearchService.SentimentAnalysisService sentimentAnalysisService;
+
     private static final String UPLOAD_DIR = "C:/uploaded_files/";
 
     // ----------- INDEX OPERATIONS ------------------
@@ -222,14 +225,14 @@ public class OpenSearchController {
     }
 
 
-
     @Tag(name = "Data Processing")
-    @Operation(summary = "Sentiment analysis", description = "Performs a sentiment analysis (positive, neutral, negative) on the content of the uploaded file.")
     @PostMapping("/sentiment-analysis")
-    public ResponseEntity<String> sentimentAnalysis(@RequestParam String fileName) {
-        // TODO: Implementar análisis de sentimiento
-        return ResponseEntity.ok("Sentiment analyzed (stub)");
+    public ResponseEntity<Map<String, Object>> sentimentAnalysis(@RequestParam String fileName) {
+        String path = UPLOAD_DIR + fileName;
+        Map<String, Object> result = sentimentAnalysisService.analyzeText(path);
+        return ResponseEntity.ok(result);
     }
+
 
 
     @Tag(name = "Data Processing")

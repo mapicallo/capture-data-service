@@ -7,29 +7,25 @@ import com.opencsv.exceptions.CsvValidationException;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
+import edu.stanford.nlp.pipeline.CoreDocument;
+import edu.stanford.nlp.pipeline.CoreSentence;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import edu.stanford.nlp.sentiment.SentimentCoreAnnotations;
 import edu.stanford.nlp.util.CoreMap;
 import org.apache.commons.math3.ml.clustering.CentroidCluster;
 import org.apache.commons.math3.ml.clustering.Clusterable;
 import org.apache.commons.math3.ml.clustering.KMeansPlusPlusClusterer;
-import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 import org.opensearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.opensearch.action.index.IndexRequest;
 import org.opensearch.action.index.IndexResponse;
-import org.opensearch.action.search.SearchRequest;
-import org.opensearch.action.search.SearchResponse;
 import org.opensearch.client.RequestOptions;
 import org.opensearch.client.RestHighLevelClient;
 import org.opensearch.client.core.CountRequest;
 import org.opensearch.client.indices.GetIndexRequest;
 import org.opensearch.common.xcontent.XContentFactory;
-import org.opensearch.index.query.QueryBuilders;
-import org.opensearch.search.SearchHit;
-import org.opensearch.search.builder.SearchSourceBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.apache.commons.math3.ml.clustering.Clusterable;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -117,6 +113,72 @@ public class OpenSearchService {
         }
         double nextX = values.size() + 1;
         return regression.predict(nextX);
+    }
+
+    @Service
+    public class SentimentAnalysisService {
+
+        private final StanfordCoreNLP sentimentPipeline;
+
+        public SentimentAnalysisService() {
+            Properties props = new Properties();
+            props.setProperty("annotators", "tokenize,ssplit,parse,sentiment");
+            this.sentimentPipeline = new StanfordCoreNLP(props);
+        }
+
+        public Map<String, Object> analyzeText(String text) {
+            Map<String, Object> result = new HashMap<>();
+            Map<String, Integer> sentimentCount = new HashMap<>();
+            sentimentCount.put("Very Negative", 0);
+            sentimentCount.put("Negative", 0);
+            sentimentCount.put("Neutral", 0);
+            sentimentCount.put("Positive", 0);
+            sentimentCount.put("Very Positive", 0);
+
+            List<Integer> scores = new ArrayList<>();
+
+            CoreDocument document = new CoreDocument(text);
+            sentimentPipeline.annotate(document);
+
+            for (CoreSentence sentence : document.sentences()) {
+                String sentiment = sentence.sentiment();
+                int score = sentimentToScore(sentiment);
+                sentimentCount.put(sentiment, sentimentCount.getOrDefault(sentiment, 0) + 1);
+                scores.add(score);
+            }
+
+            double average = scores.stream().mapToInt(Integer::intValue).average().orElse(2.0);
+            String finalSentiment = scoreToLabel((int) Math.round(average));
+
+            result.put("summary_sentiment", finalSentiment);
+            result.put("sentences_analyzed", scores.size());
+            result.put("distribution", sentimentCount);
+            result.put("average_score", average);
+
+            return result;
+        }
+
+        private int sentimentToScore(String sentiment) {
+            return switch (sentiment) {
+                case "Very Negative" -> 0;
+                case "Negative" -> 1;
+                case "Neutral" -> 2;
+                case "Positive" -> 3;
+                case "Very Positive" -> 4;
+                default -> 2;
+            };
+        }
+
+        private String scoreToLabel(int score) {
+            return switch (score) {
+                case 0 -> "Very Negative";
+                case 1 -> "Negative";
+                case 2 -> "Neutral";
+                case 3 -> "Positive";
+                case 4 -> "Very Positive";
+                default -> "Neutral";
+            };
+        }
     }
 
 
@@ -443,6 +505,11 @@ public class OpenSearchService {
 
         return clusters;
     }
+
+
+
+
+
 
 
 

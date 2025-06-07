@@ -194,6 +194,30 @@ class OpenSearchControllerTest {
                 .andExpect(content().string(containsString("software hospitalario")));
     }
 
+    @Test
+    void shouldAnalyzeSentimentFromFile() throws Exception {
+        String fileName = "sentimiento_extremo.txt";
+        File dir = new File("C:/uploaded_files/");
+        if (!dir.exists()) dir.mkdirs();
+        File file = new File(dir, fileName);
+        try (FileWriter writer = new FileWriter(file)) {
+            writer.write("Estoy absolutamente feliz con el tratamiento. Me siento mucho mejor.\n");
+            writer.write("La atención médica fue excelente, muy profesional y humana.\n");
+            writer.write("El paciente está devastado, la evolución ha sido negativa y rápida.\n");
+            writer.write("Fue una experiencia horrible, la sala estaba sucia y el trato fue pésimo.\n");
+            writer.write("No tengo quejas. Todo ha sido correcto, sin problemas ni complicaciones.\n");
+        }
+
+        mockMvc.perform(post("/api/v1/opensearch/sentiment-analysis")
+                        .param("fileName", fileName))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("average_score")))
+                .andExpect(content().string(containsString("sentences_analyzed")))
+                .andExpect(content().string(containsString("summary_sentiment")))
+                .andExpect(content().string(containsString("distribution")));
+    }
+
+
 
 
 
