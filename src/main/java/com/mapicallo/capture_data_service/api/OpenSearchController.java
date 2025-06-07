@@ -1,5 +1,7 @@
 package com.mapicallo.capture_data_service.api;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.mapicallo.capture_data_service.application.OpenSearchService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -209,9 +211,16 @@ public class OpenSearchController {
     @Operation(summary = "Thematic clustering", description = "Groups similar entries or documents based on semantic similarity or shared features.")
     @PostMapping("/clustering")
     public ResponseEntity<String> clusterData(@RequestParam String fileName) {
-        // TODO: Implementar clustering
-        return ResponseEntity.ok("Data clustered (stub)");
+        try {
+            Map<Integer, List<String>> clusters = openSearchService.clusterDocumentsFromFile(fileName);
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            return ResponseEntity.ok(gson.toJson(clusters));
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error reading file: " + e.getMessage());
+        }
     }
+
 
 
     @Tag(name = "Data Processing")

@@ -9,6 +9,9 @@ import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
+import org.apache.commons.math3.ml.clustering.CentroidCluster;
+import org.apache.commons.math3.ml.clustering.Clusterable;
+import org.apache.commons.math3.ml.clustering.KMeansPlusPlusClusterer;
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 import org.opensearch.action.admin.indices.delete.DeleteIndexRequest;
@@ -26,9 +29,11 @@ import org.opensearch.search.SearchHit;
 import org.opensearch.search.builder.SearchSourceBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.apache.commons.math3.ml.clustering.Clusterable;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -383,6 +388,92 @@ public class OpenSearchService {
             return anonymized;
         }
     }
+
+
+
+    public Map<Integer, List<String>> clusterDocumentsFromFile(String fileName) throws IOException {
+        String path = "C:/uploaded_files/" + fileName;
+        List<String> lines = Files.readAllLines(Path.of(path)).stream()
+                .map(String::trim)
+                .filter(s -> !s.isEmpty())
+                .collect(Collectors.toList());
+
+        if (lines.size() < 2)
+            throw new IllegalArgumentException("Se necesitan al menos 2 documentos para clustering");
+
+        // 1. Tokenización y vocabulario
+        Set<String> vocabulary = new HashSet<>();
+        List<List<String>> tokenized = new ArrayList<>();
+        for (String doc : lines) {
+            List<String> tokens = Arrays.stream(doc.toLowerCase().split("\\W+"))
+                    .filter(w -> w.length() > 2)
+                    .collect(Collectors.toList());
+            tokenized.add(tokens);
+            vocabulary.addAll(tokens);
+        }
+
+        List<String> vocabList = new ArrayList<>(vocabulary);
+
+        // 2. Vector TF para cada documento
+        List<ClusterableDocument> vectorDocs = new ArrayList<>();
+        for (List<String> tokens : tokenized) {
+            double[] vector = new double[vocabList.size()];
+            for (int j = 0; j < vocabList.size(); j++) {
+                vector[j] = Collections.frequency(tokens, vocabList.get(j));
+            }
+            vectorDocs.add(new ClusterableDocument(vector));
+        }
+
+        // 3. Aplicar KMeans (con K=2 por defecto)
+        KMeansPlusPlusClusterer<ClusterableDocument> clusterer = new KMeansPlusPlusClusterer<>(2);
+        List<CentroidCluster<ClusterableDocument>> result = clusterer.cluster(vectorDocs);
+
+        // 4. Construir clusters usando la posición en la lista original
+        Map<Integer, List<String>> clusters = new HashMap<>();
+        for (int i = 0; i < result.size(); i++) {
+            List<String> clusterTexts = new ArrayList<>();
+            for (ClusterableDocument doc : result.get(i).getPoints()) {
+                int originalIndex = vectorDocs.indexOf(doc);
+                if (originalIndex != -1) {
+                    clusterTexts.add(lines.get(originalIndex));
+                }
+            }
+            clusters.put(i, clusterTexts);
+        }
+
+        return clusters;
+    }
+
+
+
+
+    public static class ClusterableDocument implements Clusterable {
+        private final double[] point;
+
+        public ClusterableDocument(double[] point) {
+            this.point = point;
+        }
+
+        @Override
+        public double[] getPoint() {
+            return point;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) return true;
+            if (!(obj instanceof ClusterableDocument other)) return false;
+            return Arrays.equals(point, other.point);
+        }
+
+        @Override
+        public int hashCode() {
+            return Arrays.hashCode(point);
+        }
+    }
+
+
+
 
 
 

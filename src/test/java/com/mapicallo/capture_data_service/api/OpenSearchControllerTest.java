@@ -181,6 +181,21 @@ class OpenSearchControllerTest {
     }
 
 
+    @Test
+    void shouldClusterTextDataFromFile() throws Exception {
+        String testFileName = "clustering_test_input.txt";
+
+        mockMvc.perform(post("/api/v1/opensearch/clustering")
+                        .param("fileName", testFileName))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Cluster 0")))
+                .andExpect(content().string(containsString("Cluster 1")))
+                .andExpect(content().string(containsString("bronquitis")))
+                .andExpect(content().string(containsString("software hospitalario")));
+    }
+
+
+
 
 
 }
