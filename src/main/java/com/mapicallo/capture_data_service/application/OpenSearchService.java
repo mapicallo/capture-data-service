@@ -245,22 +245,50 @@ public class OpenSearchService {
 
 
 
+    public Map<String, Double> predictNextValueFromFile(String fileName) throws IOException {
+        File file = new File(UPLOAD_DIR + fileName);
+        if (!file.exists()) throw new FileNotFoundException("Archivo no encontrado: " + fileName);
 
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String headerLine = br.readLine();
+            if (headerLine == null) throw new IOException("El archivo está vacío.");
+            String[] headers = headerLine.split(",");
 
+            // Mapa para cada columna numérica
+            Map<String, List<Double>> numericColumns = new HashMap<>();
+            for (String header : headers) numericColumns.put(header, new ArrayList<>());
 
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                for (int i = 0; i < values.length; i++) {
+                    try {
+                        double val = Double.parseDouble(values[i]);
+                        numericColumns.get(headers[i]).add(val);
+                    } catch (NumberFormatException ignored) {
+                    }
+                }
+            }
 
+            // Seleccionamos la primera columna numérica válida
+            for (Map.Entry<String, List<Double>> entry : numericColumns.entrySet()) {
+                List<Double> values = entry.getValue();
+                if (values.size() < 2) continue;
 
+                SimpleRegression regression = new SimpleRegression();
+                for (int i = 0; i < values.size(); i++) {
+                    regression.addData(i + 1, values.get(i));
+                }
 
-    private int scoreSentence(String sentence, Map<String, Integer> freqMap) {
-        int score = 0;
-        for (String word : sentence.split("\\W+")) {
-            score += freqMap.getOrDefault(word.toLowerCase(), 0);
+                double nextX = values.size() + 1;
+                double prediction = regression.predict(nextX);
+
+                return Map.of("predicted_value", prediction, "last_value", values.get(values.size() - 1));
+            }
+
+            throw new IllegalArgumentException("No se encontraron columnas numéricas válidas.");
         }
-        return score;
     }
-
-
-
 
 
 

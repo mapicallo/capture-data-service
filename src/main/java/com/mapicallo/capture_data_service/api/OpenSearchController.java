@@ -136,38 +136,22 @@ public class OpenSearchController {
 
 
 
-
-
     @Tag(name = "Data Processing")
-    @Operation(summary = "Predict next value", description = "Calcula una predicción simple usando los datos del último fichero subido.")
+    @Operation(summary = "Predict next value", description = "Calcula una predicción simple sobre una columna numérica del fichero CSV.")
     @PostMapping("/predict-trend")
-    public ResponseEntity<Map<String, Double>> predictTrend(
-            @Parameter(description = "Index name (debe ser todo en minúsculas y sin caracteres especiales)")
-            @RequestParam String indexName) {
-
+    public ResponseEntity<Map<String, Double>> predictTrend(@RequestParam String fileName) {
         try {
-            File uploadDir = new File(UPLOAD_DIR);
-            File[] files = uploadDir.listFiles();
-            if (files == null || files.length == 0) {
-                return ResponseEntity.status(400).body(Map.of("error", -1.0));
-            }
-
-            File file = files[0];  // Tomamos el fichero más reciente
-            double predictedValue = openSearchService.predictNextValue(file);
-
-            // Opcionalmente indexamos el resultado
-            Map<String, Object> document = Map.of(
-                    "prediction", predictedValue,
-                    "source_file", file.getName(),
-                    "timestamp", java.time.Instant.now().toString()
-            );
-            openSearchService.indexDocument(indexName.toLowerCase(), null, document);
-
-            return ResponseEntity.ok(Map.of("prediction", predictedValue));
+            Map<String, Double> prediction = openSearchService.predictNextValueFromFile(fileName);
+            return ResponseEntity.ok(prediction);
         } catch (IOException e) {
-            return ResponseEntity.status(500).body(Map.of("error", -1.0));
+            return ResponseEntity.internalServerError().body(Map.of("error", -1.0));
         }
     }
+
+
+
+
+
 
     @Tag(name = "Data Processing")
     @Operation(summary = "Keyword extraction", description = "Extracts key terms from the input document to facilitate search and categorization.")

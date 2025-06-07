@@ -27,6 +27,8 @@ class OpenSearchControllerTest {
     private final String testFileName1 = "test_extract_triples.txt";
     private final String testFileName2 = "neumologia_datos_pacientes.csv";
 
+    private final String testFileName3 = "tendencia_consultas.csv";
+
     @BeforeEach
     void setupTestFile() throws Exception {
         File dir = new File(uploadDir);
@@ -51,9 +53,27 @@ class OpenSearchControllerTest {
         }
 
 
-
-
+        File file3 = new File(uploadDir + testFileName3);
+        try (FileWriter writer = new FileWriter(file3)) {
+            writer.write("mes,consultas_realizadas\n");
+            writer.write("1,80\n");
+            writer.write("2,100\n");
+            writer.write("3,120\n");
+            writer.write("4,140\n");
+            writer.write("5,160\n");
+        }
     }
+
+
+    @Test
+    void shouldPredictTrendFromCsvFile() throws Exception {
+        mockMvc.perform(post("/api/v1/opensearch/predict-trend")
+                        .param("fileName", testFileName3))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.last_value").value(160.0))
+                .andExpect(jsonPath("$.predicted_value").value(180.0));
+    }
+
 
     @Test
     void shouldExtractTriplesFromTextFile() throws Exception {
