@@ -28,6 +28,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -328,6 +329,40 @@ public class OpenSearchService {
         return !restHighLevelClient.indices()
                 .exists(new GetIndexRequest(indexName), RequestOptions.DEFAULT);
     }
+
+
+    public String readTextFromFile(File file) throws IOException {
+        if (file.getName().endsWith(".json")) {
+            // Leer campo "description" o concatenar textos
+            String content = Files.readString(file.toPath());
+            return content.replaceAll("[^\\p{L}\\p{N}\\s]", " "); // limpiar símbolos
+        } else if (file.getName().endsWith(".txt")) {
+            return Files.readString(file.toPath());
+        } else {
+            throw new IOException("Unsupported file type for keyword extraction.");
+        }
+    }
+
+    public List<String> extractKeywords(String text) {
+        Map<String, Integer> tf = new HashMap<>();
+        String[] tokens = text.toLowerCase().split("\\s+");
+
+        for (String token : tokens) {
+            if (token.length() > 3 && !List.of("para", "como", "este", "esta", "con", "los", "las").contains(token)) {
+                tf.put(token, tf.getOrDefault(token, 0) + 1);
+            }
+        }
+
+        return tf.entrySet().stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                .limit(10)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
+    }
+
+
+
+
 
 
     /**

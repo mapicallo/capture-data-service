@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -149,17 +150,38 @@ public class OpenSearchController {
     }
 
 
-
-
-
-
     @Tag(name = "Data Processing")
-    @Operation(summary = "Keyword extraction", description = "Extracts key terms from the input document to facilitate search and categorization.")
     @PostMapping("/keyword-extract")
-    public ResponseEntity<String> extractKeywords(@RequestParam String fileName) {
-        // TODO: Implementar extracción de keywords
-        return ResponseEntity.ok("Keywords extracted (stub)");
+    @Operation(summary = "Keyword extraction", description = "Extracts key terms from the input document to facilitate search and categorization.")
+    public ResponseEntity<Map<String, Object>> extractKeywords(@RequestParam String fileName) {
+        try {
+            File file = new File(UPLOAD_DIR + fileName);
+            if (!file.exists()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error", "File not found: " + fileName));
+            }
+
+            // Leer el texto del fichero
+            String textContent = openSearchService.readTextFromFile(file);
+            if (textContent == null || textContent.isBlank()) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", "Empty or invalid file."));
+            }
+
+            // Extraer keywords
+            List<String> keywords = openSearchService.extractKeywords(textContent);
+
+            return ResponseEntity.ok(Map.of(
+                    "keywords", keywords,
+                    "file", fileName,
+                    "total_keywords", keywords.size()
+            ));
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Map.of("error", e.getMessage()));
+        }
     }
+
+
+
+
 
     @Tag(name = "Data Processing")
     @Operation(summary = "Text anonymization", description = "Removes or masks personal or sensitive information from the input text file.")

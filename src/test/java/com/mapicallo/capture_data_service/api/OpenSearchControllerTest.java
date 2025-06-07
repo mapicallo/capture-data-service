@@ -134,4 +134,26 @@ class OpenSearchControllerTest {
     }
 
 
+    @Test
+    void shouldExtractKeywordsFromMedicalText() throws Exception {
+        String fileName = "informe_respiratorio.txt";
+        File testFile = new File(uploadDir + fileName);
+        try (FileWriter writer = new FileWriter(testFile)) {
+            writer.write("El paciente presenta síntomas respiratorios como disnea, tos seca y fatiga crónica. ");
+            writer.write("Durante el examen clínico, se detectaron ruidos respiratorios anormales. ");
+            writer.write("Se recomienda realizar pruebas espirométricas y continuar con tratamiento broncodilatador. ");
+            writer.write("No se observaron signos de infección activa.");
+        }
+
+        mockMvc.perform(post("/api/v1/opensearch/keyword-extract")
+                        .param("fileName", fileName))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("respiratorios")))
+                .andExpect(content().string(containsString("espirométricas")))
+                .andExpect(content().string(containsString("paciente")));
+    }
+
+
+
+
 }
