@@ -6,10 +6,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
-import edu.stanford.nlp.pipeline.Annotation;
-import edu.stanford.nlp.pipeline.CoreDocument;
-import edu.stanford.nlp.pipeline.CoreSentence;
-import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import edu.stanford.nlp.pipeline.*;
 import edu.stanford.nlp.sentiment.SentimentCoreAnnotations;
 import edu.stanford.nlp.util.CoreMap;
 import org.apache.commons.math3.ml.clustering.CentroidCluster;
@@ -224,6 +221,31 @@ public class OpenSearchService {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return gson.toJson(triples);
     }
+
+
+    /**
+     * Reconoce entidades nombradas como personas, lugares, instituciones, etc.
+     */
+    public Map<String, List<String>> recognizeEntitiesFromFile(String filePath) throws IOException {
+        String content = Files.readString(Path.of(filePath));
+        Properties props = new Properties();
+        props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
+        StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+
+        CoreDocument document = new CoreDocument(content);
+        pipeline.annotate(document);
+
+        Map<String, List<String>> entityMap = new HashMap<>();
+        for (CoreEntityMention em : document.entityMentions()) {
+            entityMap.computeIfAbsent(em.entityType(), k -> new ArrayList<>()).add(em.text());
+        }
+
+        // Quitar duplicados
+        entityMap.replaceAll((k, v) -> v.stream().distinct().toList());
+
+        return entityMap;
+    }
+
 
 
     public String summarizeBigDataFromFile(String fileName) throws IOException {
@@ -578,9 +600,7 @@ public class OpenSearchService {
     /**
      * Reconoce entidades nombradas como personas, lugares, instituciones, etc.
      */
-    public String recognizeEntitiesFromFile(String fileName) {
-        return "Entities recognized (stub)";
-    }
+
 
     /**
      * Construye una línea de tiempo a partir de eventos encontrados en el texto.

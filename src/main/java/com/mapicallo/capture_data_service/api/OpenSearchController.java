@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -233,15 +234,21 @@ public class OpenSearchController {
         return ResponseEntity.ok(result);
     }
 
-
-
     @Tag(name = "Data Processing")
-    @Operation(summary = "Entity recognition", description = "Identifies and classifies named entities (persons, organizations, locations, etc.) in the text.")
     @PostMapping("/entity-recognition")
-    public ResponseEntity<String> recognizeEntities(@RequestParam String fileName) {
-        // TODO: Implementar reconocimiento de entidades
-        return ResponseEntity.ok("Entities recognized (stub)");
+    public ResponseEntity<Map<String, List<String>>> recognizeEntities(@RequestParam String fileName) {
+        String filePath = UPLOAD_DIR + fileName;
+        try {
+            Map<String, List<String>> entities = openSearchService.recognizeEntitiesFromFile(filePath);
+            return ResponseEntity.ok(entities);
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Collections.singletonMap("error", List.of("Error processing file: " + e.getMessage())));
+        }
     }
+
+
+
 
 
     @Tag(name = "Data Processing")

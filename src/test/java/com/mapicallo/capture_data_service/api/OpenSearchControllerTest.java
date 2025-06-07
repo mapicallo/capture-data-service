@@ -32,6 +32,8 @@ class OpenSearchControllerTest {
 
     private final String testFileName4 = "registro_clinico_anon.txt";
 
+    private final String testFileName5 = "entidades_clinicas.txt";
+
     @BeforeEach
     void setupTestFile() throws Exception {
         File dir = new File(uploadDir);
@@ -73,6 +75,29 @@ class OpenSearchControllerTest {
             writer.write("Se diagnosticó asma bronquial leve y se recomendó seguimiento en la Clínica San Miguel.");
         }
 
+
+        File file5 = new File(uploadDir + testFileName5);
+        try (FileWriter writer = new FileWriter(file5)) {
+            writer.write("El Dr. Pedro Sánchez trabaja en el Hospital General de Sevilla.\n");
+            writer.write("La paciente María González acudió a consulta el 5 de mayo de 2025.\n");
+            writer.write("Fue diagnosticada con hipertensión arterial y recomendada a visitar el Centro de Cardiología de Andalucía.\n");
+            writer.write("Juan Pérez, otro paciente, fue derivado desde el Hospital Virgen del Rocío a la Clínica Santa Isabel.\n");
+            writer.write("La cita de seguimiento fue programada para el 10 de junio de 2025.");
+        }
+
+
+    }
+
+
+    @Test
+    void shouldRecognizeEntitiesInTextFile() throws Exception {
+        mockMvc.perform(post("/api/v1/opensearch/entity-recognition")
+                        .param("fileName", testFileName5))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("PERSON")))
+                .andExpect(content().string(containsString("Pedro Sánchez")))
+                .andExpect(content().string(containsString("Hospital General")))
+                .andExpect(content().string(containsString("2025")));
     }
 
 
@@ -218,6 +243,42 @@ class OpenSearchControllerTest {
     }
 
 
+    @SpringBootTest
+    @AutoConfigureMockMvc
+    class EntityRecognitionControllerTest {
+
+        @Autowired
+        private MockMvc mockMvc;
+
+        private final String uploadDir = "C:/uploaded_files/";
+        private final String testFileName = "entidades_clinicas.txt";
+
+        @BeforeEach
+        void setup() throws Exception {
+            File dir = new File(uploadDir);
+            if (!dir.exists()) dir.mkdirs();
+
+            File file = new File(uploadDir + testFileName);
+            try (FileWriter writer = new FileWriter(file)) {
+                writer.write("El Dr. Pedro Sánchez trabaja en el Hospital General de Sevilla.\n");
+                writer.write("La paciente María González acudió a consulta el 5 de mayo de 2025.\n");
+                writer.write("Fue diagnosticada con hipertensión arterial y recomendada a visitar el Centro de Cardiología de Andalucía.\n");
+                writer.write("Juan Pérez, otro paciente, fue derivado desde el Hospital Virgen del Rocío a la Clínica Santa Isabel.\n");
+                writer.write("La cita de seguimiento fue programada para el 10 de junio de 2025.");
+            }
+        }
+
+        @Test
+        void shouldRecognizeEntitiesInTextFile() throws Exception {
+            mockMvc.perform(post("/api/v1/opensearch/entity-recognition")
+                            .param("fileName", testFileName))
+                    .andExpect(status().isOk())
+                    .andExpect(content().string(containsString("PERSON")))
+                    .andExpect(content().string(containsString("Pedro Sánchez")))
+                    .andExpect(content().string(containsString("Hospital General")))
+                    .andExpect(content().string(containsString("2025")));
+        }
+    }
 
 
 
