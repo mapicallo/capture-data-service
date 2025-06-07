@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +21,9 @@ public class OpenSearchController {
 
     @Autowired
     private OpenSearchService openSearchService;
+
+    @Autowired
+    private OpenSearchService.TextAnonymizerService textAnonymizerService;
 
     private static final String UPLOAD_DIR = "C:/uploaded_files/";
 
@@ -181,14 +185,23 @@ public class OpenSearchController {
 
 
 
-
-
     @Tag(name = "Data Processing")
     @Operation(summary = "Text anonymization", description = "Removes or masks personal or sensitive information from the input text file.")
     @PostMapping("/anonymize-text")
     public ResponseEntity<String> anonymizeText(@RequestParam String fileName) {
-        // TODO: Implementar anonimización de texto
-        return ResponseEntity.ok("Text anonymized (stub)");
+        try {
+            File file = new File("C:/uploaded_files/" + fileName);
+            if (!file.exists()) {
+                return ResponseEntity.status(404).body("El fichero no existe.");
+            }
+
+            String content = Files.readString(file.toPath());
+            String anonymized = textAnonymizerService.anonymizeTextFromFileContent(content);
+            return ResponseEntity.ok(anonymized);
+
+        } catch (IOException e) {
+            return ResponseEntity.status(500).body("Error leyendo o procesando el fichero: " + e.getMessage());
+        }
     }
 
 

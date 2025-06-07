@@ -361,6 +361,30 @@ public class OpenSearchService {
     }
 
 
+    @Service
+    public class TextAnonymizerService {
+
+        public String anonymizeTextFromFileContent(String input) {
+            String anonymized = input;
+
+            // Reemplazar profesionales médicos
+            anonymized = anonymized.replaceAll("\\b(Dra?\\.?\\s+\\p{Lu}\\p{L}+)", "[PROFESIONAL]");
+
+            // Reemplazar nombres tipo "Juan Pérez"
+            anonymized = anonymized.replaceAll("\\b(\\p{Lu}\\p{L}+\\s+\\p{Lu}\\p{L}+)\\b", "[NOMBRE]");
+
+            // Reemplazar nombres de hospitales
+            anonymized = anonymized.replaceAll("\\b(Hospital|Clínica)\\s+[\\p{L}\\s]+", "[CENTRO_MEDICO]");
+
+            // Reemplazar fechas comunes
+            anonymized = anonymized.replaceAll("\\b\\d{2}/\\d{2}/\\d{4}\\b", "[FECHA]");
+            anonymized = anonymized.replaceAll("\\b\\d{4}-\\d{2}-\\d{2}\\b", "[FECHA]");
+
+            return anonymized;
+        }
+    }
+
+
 
 
 

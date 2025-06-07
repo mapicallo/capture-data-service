@@ -15,6 +15,7 @@ import java.nio.file.Path;
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.hamcrest.Matchers.not;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -28,6 +29,8 @@ class OpenSearchControllerTest {
     private final String testFileName2 = "neumologia_datos_pacientes.csv";
 
     private final String testFileName3 = "tendencia_consultas.csv";
+
+    private final String testFileName4 = "registro_clinico_anon.txt";
 
     @BeforeEach
     void setupTestFile() throws Exception {
@@ -62,7 +65,31 @@ class OpenSearchControllerTest {
             writer.write("4,140\n");
             writer.write("5,160\n");
         }
+
+
+        File file4 = new File(uploadDir + testFileName4);
+        try (FileWriter writer = new FileWriter(file4)) {
+            writer.write("El paciente Juan Pérez fue atendido el 12/04/2025 por la Dra. García en el Hospital Central.\n");
+            writer.write("Se diagnosticó asma bronquial leve y se recomendó seguimiento en la Clínica San Miguel.");
+        }
+
     }
+
+
+    @Test
+    void shouldAnonymizeSensitiveData() throws Exception {
+        mockMvc.perform(post("/api/v1/opensearch/anonymize-text")
+                        .param("fileName", testFileName4))
+                .andExpect(status().isOk())
+                .andExpect(content().string(not(containsString("Juan Pérez"))))
+                .andExpect(content().string(not(containsString("12/04/2025"))))
+                .andExpect(content().string(not(containsString("Dra. García"))))
+                .andExpect(content().string(not(containsString("Hospital Central"))))
+                .andExpect(content().string(containsString("[NOMBRE]")))
+                .andExpect(content().string(containsString("[FECHA]")))
+                .andExpect(content().string(containsString("[CENTRO_MEDICO]")));
+    }
+
 
 
     @Test
