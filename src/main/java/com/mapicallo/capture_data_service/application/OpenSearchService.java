@@ -9,20 +9,27 @@ import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
+import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 import org.opensearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.opensearch.action.index.IndexRequest;
 import org.opensearch.action.index.IndexResponse;
+import org.opensearch.action.search.SearchRequest;
+import org.opensearch.action.search.SearchResponse;
 import org.opensearch.client.RequestOptions;
 import org.opensearch.client.RestHighLevelClient;
 import org.opensearch.client.core.CountRequest;
 import org.opensearch.client.indices.GetIndexRequest;
 import org.opensearch.common.xcontent.XContentFactory;
+import org.opensearch.index.query.QueryBuilders;
+import org.opensearch.search.SearchHit;
+import org.opensearch.search.builder.SearchSourceBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -144,10 +151,117 @@ public class OpenSearchService {
         // Ordenar por nivel de confianza descendente
         triples.sort((a, b) -> Double.compare((Double) b.get("confidence"), (Double) a.get("confidence")));
 
+
         // Convertir a JSON legible
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return gson.toJson(triples);
     }
+
+
+    public String summarizeBigDataFromFile(String fileName) throws IOException {
+        File file = new File(UPLOAD_DIR + fileName);
+        if (!file.exists()) {
+            return "Archivo no encontrado: " + fileName;
+        }
+
+        Map<String, List<Double>> numericFields = new HashMap<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String headerLine = br.readLine();
+            if (headerLine == null) return "Archivo vacío";
+            String[] headers = headerLine.split(",");
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                for (int i = 0; i < values.length; i++) {
+                    try {
+                        double val = Double.parseDouble(values[i]);
+                        numericFields.computeIfAbsent(headers[i], k -> new ArrayList<>()).add(val);
+                    } catch (NumberFormatException ignored) {
+                        // Ignorar campos no numéricos
+                    }
+                }
+            }
+        }
+
+        Map<String, Map<String, Double>> stats = new HashMap<>();
+        for (Map.Entry<String, List<Double>> entry : numericFields.entrySet()) {
+            List<Double> vals = entry.getValue();
+            double sum = vals.stream().mapToDouble(Double::doubleValue).sum();
+            double mean = sum / vals.size();
+            double variance = vals.stream().mapToDouble(v -> Math.pow(v - mean, 2)).sum() / vals.size();
+            double stdDev = Math.sqrt(variance);
+
+            stats.put(entry.getKey(), Map.of(
+                    "count", (double) vals.size(),
+                    "mean", mean,
+                    "std_dev", stdDev,
+                    "min", vals.stream().mapToDouble(Double::doubleValue).min().orElse(0),
+                    "max", vals.stream().mapToDouble(Double::doubleValue).max().orElse(0)
+            ));
+        }
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(stats);
+    }
+
+
+    public String summarizeTextFromFile(String fileName) throws IOException {
+        File file = new File(UPLOAD_DIR + fileName);
+        if (!file.exists()) {
+            return "{\"error\": \"Archivo no encontrado: " + fileName + "\"}";
+        }
+
+        // Leer como lista de objetos JSON
+        Gson gson = new Gson();
+        List<Map<String, Object>> documents;
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            documents = gson.fromJson(reader, List.class);
+        }
+
+        if (documents == null || documents.isEmpty()) {
+            return "{\"error\": \"Archivo JSON vacío o malformado\"}";
+        }
+
+        List<String> sentences = new ArrayList<>();
+        for (Map<String, Object> doc : documents) {
+            Object descObj = doc.get("description");
+            if (descObj instanceof String) {
+                String[] parts = ((String) descObj).split("\\.\\s*");
+                sentences.addAll(Arrays.asList(parts));
+            }
+        }
+
+        int maxSentences = Math.min(3, sentences.size());
+        List<String> summary = sentences.subList(0, maxSentences);
+
+        Map<String, Object> response = Map.of(
+                "original_length", sentences.size(),
+                "summary", summary
+        );
+        Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
+        return prettyGson.toJson(response);
+    }
+
+
+
+
+
+
+
+
+
+    private int scoreSentence(String sentence, Map<String, Integer> freqMap) {
+        int score = 0;
+        for (String word : sentence.split("\\W+")) {
+            score += freqMap.getOrDefault(word.toLowerCase(), 0);
+        }
+        return score;
+    }
+
+
+
+
 
 
 
@@ -246,6 +360,14 @@ public class OpenSearchService {
         }
         return content.toString().trim();
     }
+
+    private List<Map<String, Object>> readJsonArrayFromFile(File file) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            Gson gson = new Gson();
+            return gson.fromJson(reader, List.class);
+        }
+    }
+
 
 
 

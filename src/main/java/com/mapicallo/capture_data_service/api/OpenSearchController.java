@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -104,21 +105,37 @@ public class OpenSearchController {
 
 
     @Tag(name = "Data Processing")
-    @Operation(summary = "Big Data processing", description = "The output is the result of Big-Data processing, obtaining statistical information..")
+    @Operation(
+            summary = "Big Data processing",
+            description = "Realiza un análisis estadístico básico del archivo especificado (JSON o CSV) previamente cargado. Devuelve estadísticas como media, desviación estándar y conteo de registros numéricos por campo."
+    )
     @PostMapping("/bigdata/summary")
-    public ResponseEntity<String> summarizeBigData(@RequestParam String indexName) {
-        // TODO: Implementar procesamiento Big Data
-        return ResponseEntity.ok("Big Data summary computed and indexed (stub).");
+    public ResponseEntity<String> summarizeBigData(@RequestParam String fileName) {
+        try {
+            String resultJson = openSearchService.summarizeBigDataFromFile(fileName);
+            return ResponseEntity.ok(resultJson);
+        } catch (IOException e) {
+            return ResponseEntity.status(500).body("Error procesando archivo: " + e.getMessage());
+        }
     }
+
 
 
     @Tag(name = "Data Processing")
-    @Operation(summary = "AI Data processing", description = "The output is the result of AI processing, obtaining a detailed summary of the indicated text.")
+    @Operation(summary = "AI Data processing", description = "Summarizes a text file using basic AI techniques.")
     @PostMapping("/ai/summarize")
-    public ResponseEntity<String> summarizeAI(@RequestParam String indexName) {
-        // TODO: Implementar procesamiento Big Data
-        return ResponseEntity.ok("AI Data summary computed and indexed (stub).");
+    public ResponseEntity<String> summarizeAI(@RequestParam String fileName) {
+        try {
+            String summary = openSearchService.summarizeTextFromFile(fileName);
+            return ResponseEntity.ok(summary);
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\": \"Error procesando archivo: " + e.getMessage() + "\"}");
+        }
     }
+
+
+
 
 
     @Tag(name = "Data Processing")
