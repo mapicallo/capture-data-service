@@ -33,6 +33,7 @@ class OpenSearchControllerTest {
     private final String testFileName4 = "registro_clinico_anon.txt";
 
     private final String testFileName5 = "entidades_clinicas.txt";
+    private final String testFileName6 = "historial_clinico.txt";
 
     @BeforeEach
     void setupTestFile() throws Exception {
@@ -85,8 +86,29 @@ class OpenSearchControllerTest {
             writer.write("La cita de seguimiento fue programada para el 10 de junio de 2025.");
         }
 
+        File file6 = new File(uploadDir + testFileName6);
+        try (FileWriter writer = new FileWriter(file6)) {
+            writer.write("El 15 de enero de 2023, el paciente fue ingresado en el Hospital Virgen del Rocío por una insuficiencia respiratoria aguda.\n");
+            writer.write("Durante la semana del 20 al 27 de febrero de 2023, se le realizaron pruebas espirométricas.\n");
+            writer.write("El 10 de marzo de 2023, se inició tratamiento con broncodilatadores.\n");
+            writer.write("El 5 de abril de 2023, el paciente mostró mejoría.\n");
+            writer.write("El 30 de mayo de 2024, acudió a urgencias con síntomas de fatiga.\n");
+        }
+
 
     }
+
+    @Test
+    void shouldBuildTimelineFromTextFile() throws Exception {
+        mockMvc.perform(post("/api/v1/opensearch/timeline-builder")
+                        .param("fileName", testFileName6))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("2023")))
+                .andExpect(content().string(containsString("2024")))
+                .andExpect(content().string(containsString("ingresado")))
+                .andExpect(content().string(containsString("urgencias")));
+    }
+
 
 
     @Test

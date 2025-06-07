@@ -248,6 +248,46 @@ public class OpenSearchService {
 
 
 
+    @Service
+    public class TimelineBuilderService {
+
+        private final StanfordCoreNLP pipeline;
+
+        public TimelineBuilderService() {
+            Properties props = new Properties();
+            props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
+            props.setProperty("ner.applyFineGrained", "false");
+            props.setProperty("ner.useSUTime", "true");
+            this.pipeline = new StanfordCoreNLP(props);
+        }
+
+        public Map<String, List<String>> buildTimeline(String filePath) throws Exception {
+            String text = Files.readString(new File(filePath).toPath());
+            Annotation document = new Annotation(text);
+            pipeline.annotate(document);
+
+            Map<String, List<String>> timeline = new TreeMap<>();
+
+            List<CoreMap> sentences = document.get(CoreAnnotations.SentencesAnnotation.class);
+            for (CoreMap sentence : sentences) {
+                String sentenceText = sentence.toString();
+                List<String> dates = sentence.get(CoreAnnotations.TokensAnnotation.class).stream()
+                        .filter(token -> "DATE".equals(token.get(CoreAnnotations.NamedEntityTagAnnotation.class)))
+                        .map(token -> token.word())
+                        .collect(Collectors.toList());
+
+                if (!dates.isEmpty()) {
+                    String date = String.join(" ", dates); // simplificación básica
+                    timeline.computeIfAbsent(date, k -> new ArrayList<>()).add(sentenceText);
+                }
+            }
+
+            return timeline;
+        }
+    }
+
+
+
     public String summarizeBigDataFromFile(String fileName) throws IOException {
         File file = new File(UPLOAD_DIR + fileName);
         if (!file.exists()) {

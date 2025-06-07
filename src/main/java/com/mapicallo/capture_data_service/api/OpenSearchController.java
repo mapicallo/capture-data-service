@@ -31,6 +31,10 @@ public class OpenSearchController {
     @Autowired
     private OpenSearchService.SentimentAnalysisService sentimentAnalysisService;
 
+
+    @Autowired
+    private OpenSearchService.TimelineBuilderService timelineBuilderService;
+
     private static final String UPLOAD_DIR = "C:/uploaded_files/";
 
     // ----------- INDEX OPERATIONS ------------------
@@ -249,14 +253,16 @@ public class OpenSearchController {
 
 
 
-
-
     @Tag(name = "Data Processing")
-    @Operation(summary = "Timeline builder", description = "Extracts and organizes chronological events from a text to build a timeline.")
     @PostMapping("/timeline-builder")
-    public ResponseEntity<String> buildTimeline(@RequestParam String fileName) {
-        // TODO: Implementar construcción de línea temporal
-        return ResponseEntity.ok("Timeline built (stub)");
+    public ResponseEntity<Map<String, List<String>>> buildTimeline(@RequestParam String fileName) {
+        try {
+            String fullPath = UPLOAD_DIR + fileName;
+            Map<String, List<String>> timeline = timelineBuilderService.buildTimeline(fullPath);
+            return ResponseEntity.ok(timeline);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body(Map.of("error", List.of("Failed to process file: " + e.getMessage())));
+        }
     }
 
 
