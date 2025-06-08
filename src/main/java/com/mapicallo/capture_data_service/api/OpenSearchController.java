@@ -10,13 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.nio.file.Files;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.nio.file.Path;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api/v1/opensearch")
@@ -114,8 +115,28 @@ public class OpenSearchController {
     @PostMapping("/extract-triples")
     @Operation(summary = "Extracción de relaciones semánticas", description = "Extrae triples (sujeto, relación, objeto) de una biografía previamente cargada en el sistema. Utiliza CoreNLP KBP.")
     public ResponseEntity<String> extractTriples(@RequestParam String fileName) {
-        String resultJson = openSearchService.extractTriplesFromFile(fileName);
-        return ResponseEntity.ok(resultJson);
+        try {
+            String json = openSearchService.extractTriplesFromFile(fileName);
+
+            // Intentamos indexar, pero sin afectar al resultado del Swagger
+            try {
+                Gson gson = new Gson();
+                Type type = new TypeToken<List<Map<String, Object>>>() {}.getType();
+                List<Map<String, Object>> triples = gson.fromJson(json, type);
+
+                String indexName = "result-extract-triples-" + fileName.replaceAll("\\W+", "-").toLowerCase();
+                for (Map<String, Object> triple : triples) {
+                    openSearchService.indexGeneric(indexName, triple);
+                }
+            } catch (Exception indexException) {
+                System.err.println("❌ [OpenSearch] No se pudo indexar: " + indexException.getMessage());
+                // Aquí también podrías loguear con SLF4J o guardar en un log interno
+            }
+
+            return ResponseEntity.ok(json);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("{\"error\": \"" + e.getMessage() + "\"}");
+        }
     }
 
 
@@ -127,10 +148,27 @@ public class OpenSearchController {
     @PostMapping("/bigdata/summary")
     public ResponseEntity<String> summarizeBigData(@RequestParam String fileName) {
         try {
-            String resultJson = openSearchService.summarizeBigDataFromFile(fileName);
-            return ResponseEntity.ok(resultJson);
-        } catch (IOException e) {
-            return ResponseEntity.status(500).body("Error procesando archivo: " + e.getMessage());
+            String summaryJson = openSearchService.summarizeBigDataFromFile(fileName);
+
+            // Indexación resiliente
+            try {
+                Gson gson = new Gson();
+                Type mapType = new TypeToken<Map<String, Map<String, Double>>>() {}.getType();
+                Map<String, Map<String, Double>> summaryMap = gson.fromJson(summaryJson, mapType);
+
+                String indexName = "result-bigdata-summary-" + fileName.replaceAll("\\W+", "-").toLowerCase();
+                for (Map.Entry<String, Map<String, Double>> field : summaryMap.entrySet()) {
+                    Map<String, Object> doc = new HashMap<>(field.getValue());
+                    doc.put("field", field.getKey());
+                    openSearchService.indexGeneric(indexName, doc);
+                }
+            } catch (Exception ex) {
+                System.err.println("❌ [OpenSearch] No se pudo indexar el resumen de Big Data: " + ex.getMessage());
+            }
+
+            return ResponseEntity.ok(summaryJson);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("{\"error\": \"" + e.getMessage() + "\"}");
         }
     }
 
@@ -141,11 +179,28 @@ public class OpenSearchController {
     @PostMapping("/ai/summarize")
     public ResponseEntity<String> summarizeAI(@RequestParam String fileName) {
         try {
-            String summary = openSearchService.summarizeTextFromFile(fileName);
-            return ResponseEntity.ok(summary);
-        } catch (IOException e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("{\"error\": \"Error procesando archivo: " + e.getMessage() + "\"}");
+            String summaryJson = openSearchService.summarizeTextFromFile(fileName);
+
+            // Intentar indexar en OpenSearch
+            try {
+                Gson gson = new Gson();
+                Map<String, Object> parsed = gson.fromJson(summaryJson, Map.class);
+                List<String> summaryList = (List<String>) parsed.get("summary");
+
+                String indexName = "result-ai-summarize-" + fileName.replaceAll("\\W+", "-").toLowerCase();
+                for (int i = 0; i < summaryList.size(); i++) {
+                    Map<String, Object> doc = new HashMap<>();
+                    doc.put("sentence", summaryList.get(i));
+                    doc.put("position", i);
+                    openSearchService.indexGeneric(indexName, doc);
+                }
+            } catch (Exception e) {
+                System.err.println("⚠️ [OpenSearch] Fallo al indexar resumen AI: " + e.getMessage());
+            }
+
+            return ResponseEntity.ok(summaryJson);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("{\"error\": \"" + e.getMessage() + "\"}");
         }
     }
 
@@ -157,9 +212,21 @@ public class OpenSearchController {
     public ResponseEntity<Map<String, Double>> predictTrend(@RequestParam String fileName) {
         try {
             Map<String, Double> prediction = openSearchService.predictNextValueFromFile(fileName);
+
+            // Intentar indexar en OpenSearch
+            try {
+                String indexName = "result-predict-trend-" + fileName.replaceAll("\\W+", "-").toLowerCase();
+                Map<String, Object> document = new HashMap<>();
+                document.put("last_value", prediction.get("last_value"));
+                document.put("predicted_value", prediction.get("predicted_value"));
+                openSearchService.indexGeneric(indexName, document);
+            } catch (Exception e) {
+                System.err.println("⚠️ [OpenSearch] Error indexando predicción: " + e.getMessage());
+            }
+
             return ResponseEntity.ok(prediction);
-        } catch (IOException e) {
-            return ResponseEntity.internalServerError().body(Map.of("error", -1.0));
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body(Map.of("error", -1.0));
         }
     }
 
@@ -169,27 +236,26 @@ public class OpenSearchController {
     @Operation(summary = "Keyword extraction", description = "Extracts key terms from the input document to facilitate search and categorization.")
     public ResponseEntity<Map<String, Object>> extractKeywords(@RequestParam String fileName) {
         try {
-            File file = new File(UPLOAD_DIR + fileName);
-            if (!file.exists()) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error", "File not found: " + fileName));
-            }
+            String path = UPLOAD_DIR + fileName;
+            String text = openSearchService.readTextFromFile(new File(path));
+            List<String> keywords = openSearchService.extractKeywords(text);
 
-            // Leer el texto del fichero
-            String textContent = openSearchService.readTextFromFile(file);
-            if (textContent == null || textContent.isBlank()) {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", "Empty or invalid file."));
-            }
-
-            // Extraer keywords
-            List<String> keywords = openSearchService.extractKeywords(textContent);
-
-            return ResponseEntity.ok(Map.of(
-                    "keywords", keywords,
+            Map<String, Object> result = Map.of(
                     "file", fileName,
-                    "total_keywords", keywords.size()
-            ));
-        } catch (IOException e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Map.of("error", e.getMessage()));
+                    "keywords", keywords
+            );
+
+            // Intentar indexar en OpenSearch
+            try {
+                String indexName = "result-keyword-extract-" + fileName.replaceAll("\\W+", "-").toLowerCase();
+                openSearchService.indexGeneric(indexName, result);
+            } catch (Exception e) {
+                System.err.println("⚠️ [OpenSearch] Error indexando keywords: " + e.getMessage());
+            }
+
+            return ResponseEntity.ok(result);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body(Map.of("error", "No se pudo procesar el archivo"));
         }
     }
 
@@ -198,19 +264,28 @@ public class OpenSearchController {
     @Tag(name = "Data Processing")
     @Operation(summary = "Text anonymization", description = "Removes or masks personal or sensitive information from the input text file.")
     @PostMapping("/anonymize-text")
-    public ResponseEntity<String> anonymizeText(@RequestParam String fileName) {
+    public ResponseEntity<Map<String, Object>> anonymizeText(@RequestParam String fileName) {
         try {
-            File file = new File("C:/uploaded_files/" + fileName);
-            if (!file.exists()) {
-                return ResponseEntity.status(404).body("El fichero no existe.");
+            String path = UPLOAD_DIR + fileName;
+            String originalText = Files.readString(Path.of(path));
+            String anonymized = openSearchService.new TextAnonymizerService().anonymizeTextFromFileContent(originalText);
+
+            Map<String, Object> result = Map.of(
+                    "file", fileName,
+                    "anonymized_text", anonymized
+            );
+
+            // Intentar indexar el resultado
+            try {
+                String indexName = "result-anonymize-text-" + fileName.replaceAll("\\W+", "-").toLowerCase();
+                openSearchService.indexGeneric(indexName, result);
+            } catch (Exception e) {
+                System.err.println("⚠️ [OpenSearch] Error indexando resultado anonimizado: " + e.getMessage());
             }
 
-            String content = Files.readString(file.toPath());
-            String anonymized = textAnonymizerService.anonymizeTextFromFileContent(content);
-            return ResponseEntity.ok(anonymized);
-
+            return ResponseEntity.ok(result);
         } catch (IOException e) {
-            return ResponseEntity.status(500).body("Error leyendo o procesando el fichero: " + e.getMessage());
+            return ResponseEntity.status(500).body(Map.of("error", "No se pudo leer o procesar el archivo"));
         }
     }
 
@@ -218,50 +293,131 @@ public class OpenSearchController {
     @Tag(name = "Data Processing")
     @Operation(summary = "Thematic clustering", description = "Groups similar entries or documents based on semantic similarity or shared features.")
     @PostMapping("/clustering")
-    public ResponseEntity<String> clusterData(@RequestParam String fileName) {
+    public ResponseEntity<Map<String, Object>> clusterData(@RequestParam String fileName) {
         try {
             Map<Integer, List<String>> clusters = openSearchService.clusterDocumentsFromFile(fileName);
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            return ResponseEntity.ok(gson.toJson(clusters));
-        } catch (IOException e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error reading file: " + e.getMessage());
+
+            Map<String, Object> result = new LinkedHashMap<>();
+            result.put("file", fileName);
+            result.put("clusters", clusters);
+
+            // Intentar indexar cada cluster como documento separado
+            try {
+                String indexName = "result-clustering-" + fileName.replaceAll("\\W+", "-").toLowerCase();
+                for (Map.Entry<Integer, List<String>> entry : clusters.entrySet()) {
+                    Map<String, Object> doc = Map.of(
+                            "cluster_id", entry.getKey(),
+                            "documents", entry.getValue()
+                    );
+                    openSearchService.indexGeneric(indexName, doc);
+                }
+            } catch (Exception e) {
+                System.err.println("⚠️ [OpenSearch] Error al indexar clusters: " + e.getMessage());
+            }
+
+            return ResponseEntity.ok(result);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body(Map.of("error", e.getMessage()));
         }
     }
 
 
     @Tag(name = "Data Processing")
+    @Operation(summary = "Sentiment analysis",description = "Analiza el sentimiento general del texto (positivo, negativo, neutral) y lo indexa si es posible.")
     @PostMapping("/sentiment-analysis")
     public ResponseEntity<Map<String, Object>> sentimentAnalysis(@RequestParam String fileName) {
-        String path = UPLOAD_DIR + fileName;
-        Map<String, Object> result = sentimentAnalysisService.analyzeText(path);
-        return ResponseEntity.ok(result);
+        try {
+            String filePath = "C:/uploaded_files/" + fileName;
+            File file = new File(filePath);
+
+            if (!file.exists()) {
+                return ResponseEntity.status(404).body(Map.of("error", "Archivo no encontrado"));
+            }
+
+            String content = Files.readString(file.toPath());
+            Map<String, Object> analysis = openSearchService
+                    .new SentimentAnalysisService()
+                    .analyzeText(content);
+
+            // Intentar indexar el resultado en OpenSearch
+            try {
+                String indexName = "result-sentiment-" + fileName.replaceAll("\\W+", "-").toLowerCase();
+                openSearchService.indexGeneric(indexName, analysis);
+            } catch (Exception e) {
+                System.err.println("⚠️ [OpenSearch] Error al indexar resultado de análisis de sentimiento: " + e.getMessage());
+            }
+
+            return ResponseEntity.ok(analysis);
+
+        } catch (IOException e) {
+            return ResponseEntity.status(500).body(Map.of("error", "Error leyendo el archivo: " + e.getMessage()));
+        }
     }
 
     @Tag(name = "Data Processing")
+    @Operation(summary = "Entity recognition",description = "Detecta entidades nombradas (personas, lugares, fechas, etc.) en el texto e intenta indexarlas.")
     @PostMapping("/entity-recognition")
     public ResponseEntity<Map<String, List<String>>> recognizeEntities(@RequestParam String fileName) {
-        String filePath = UPLOAD_DIR + fileName;
         try {
-            Map<String, List<String>> entities = openSearchService.recognizeEntitiesFromFile(filePath);
-            return ResponseEntity.ok(entities);
+            String filePath = "C:/uploaded_files/" + fileName;
+            File file = new File(filePath);
+
+            if (!file.exists()) {
+                return ResponseEntity.status(404).body(Map.of("error", List.of("Archivo no encontrado")));
+            }
+
+            Map<String, List<String>> entityMap = openSearchService.recognizeEntitiesFromFile(filePath);
+
+            // Intentar indexar en OpenSearch con adaptación del tipo
+            try {
+                String indexName = "result-entities-" + fileName.replaceAll("\\W+", "-").toLowerCase();
+                Map<String, Object> wrapped = new HashMap<>();
+                wrapped.put("entities", entityMap);
+                openSearchService.indexGeneric(indexName, wrapped);
+            } catch (Exception e) {
+                System.err.println("⚠️ [OpenSearch] No se pudo indexar en OpenSearch: " + e.getMessage());
+            }
+
+            return ResponseEntity.ok(entityMap);
+
         } catch (IOException e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(Collections.singletonMap("error", List.of("Error processing file: " + e.getMessage())));
+            return ResponseEntity.status(500).body(Map.of("error", List.of("Error procesando archivo: " + e.getMessage())));
         }
     }
 
 
 
     @Tag(name = "Data Processing")
+    @Operation(summary = "Timeline builder",description = "Extrae eventos con fechas del texto para construir una línea temporal estructurada.")
     @PostMapping("/timeline-builder")
     public ResponseEntity<Map<String, List<String>>> buildTimeline(@RequestParam String fileName) {
         try {
-            String fullPath = UPLOAD_DIR + fileName;
-            Map<String, List<String>> timeline = timelineBuilderService.buildTimeline(fullPath);
+            String filePath = "C:/uploaded_files/" + fileName;
+            File file = new File(filePath);
+
+            if (!file.exists()) {
+                return ResponseEntity.status(404).body(Map.of("error", List.of("Archivo no encontrado")));
+            }
+
+            Map<String, List<String>> timeline = openSearchService
+                    .new TimelineBuilderService()
+                    .buildTimeline(filePath);
+
+            // Indexación en OpenSearch (envolver estructura)
+            try {
+                String indexName = "result-timeline-" + fileName.replaceAll("\\W+", "-").toLowerCase();
+                Map<String, Object> document = new HashMap<>();
+                document.put("timeline", timeline);
+                openSearchService.indexGeneric(indexName, document);
+            } catch (Exception e) {
+                System.err.println("⚠️ [OpenSearch] No se pudo indexar timeline: " + e.getMessage());
+            }
+
             return ResponseEntity.ok(timeline);
+
         } catch (Exception e) {
-            return ResponseEntity.status(500).body(Map.of("error", List.of("Failed to process file: " + e.getMessage())));
+            return ResponseEntity.status(500)
+                    .body(Map.of("error", List.of("Error al construir timeline: " + e.getMessage())));
         }
     }
 

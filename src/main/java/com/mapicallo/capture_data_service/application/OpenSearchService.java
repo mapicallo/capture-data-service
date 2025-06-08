@@ -93,7 +93,7 @@ public class OpenSearchService {
     }
 
 
-    public double predictNextValue(File file) throws IOException {
+    /*public double predictNextValue(File file) throws IOException {
         List<Double> values = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             br.readLine(); // cabecera
@@ -110,8 +110,11 @@ public class OpenSearchService {
         }
         double nextX = values.size() + 1;
         return regression.predict(nextX);
-    }
+    }*/
 
+    /**
+     * Realiza análisis de sentimiento sobre el contenido del archivo.
+     */
     @Service
     public class SentimentAnalysisService {
 
@@ -246,8 +249,9 @@ public class OpenSearchService {
         return entityMap;
     }
 
-
-
+    /**
+     * Construye una línea de tiempo a partir de eventos encontrados en el texto.
+     */
     @Service
     public class TimelineBuilderService {
 
@@ -472,6 +476,10 @@ public class OpenSearchService {
         }
     }
 
+
+    /**
+     * Extrae palabras clave de un archivo de texto o JSON.
+     */
     public List<String> extractKeywords(String text) {
         Map<String, Integer> tf = new HashMap<>();
         String[] tokens = text.toLowerCase().split("\\s+");
@@ -490,6 +498,9 @@ public class OpenSearchService {
     }
 
 
+    /**
+     * Anonimiza texto médico o sensible en un archivo.
+     */
     @Service
     public class TextAnonymizerService {
 
@@ -514,7 +525,9 @@ public class OpenSearchService {
     }
 
 
-
+    /**
+     * Agrupa entradas de texto en clústeres temáticos.
+     */
     public Map<Integer, List<String>> clusterDocumentsFromFile(String fileName) throws IOException {
         String path = "C:/uploaded_files/" + fileName;
         List<String> lines = Files.readAllLines(Path.of(path)).stream()
@@ -569,13 +582,6 @@ public class OpenSearchService {
     }
 
 
-
-
-
-
-
-
-
     public static class ClusterableDocument implements Clusterable {
         private final double[] point;
 
@@ -601,52 +607,12 @@ public class OpenSearchService {
         }
     }
 
-
-
-
-
-
-
-
-
-    /**
-     * Extrae palabras clave de un archivo de texto o JSON.
-     */
-    public String extractKeywordsFromFile(String fileName) {
-        return "Keywords extracted (stub)";
-    }
-
-    /**
-     * Anonimiza texto médico o sensible en un archivo.
-     */
-    public String anonymizeTextFromFile(String fileName) {
-        return "Text anonymized (stub)";
-    }
-
-    /**
-     * Agrupa entradas de texto en clústeres temáticos.
-     */
-    public String clusterDataFromFile(String fileName) {
-        return "Data clustered (stub)";
-    }
-
-    /**
-     * Realiza análisis de sentimiento sobre el contenido del archivo.
-     */
-    public String analyzeSentimentFromFile(String fileName) {
-        return "Sentiment analyzed (stub)";
-    }
-
-    /**
-     * Reconoce entidades nombradas como personas, lugares, instituciones, etc.
-     */
-
-
-    /**
-     * Construye una línea de tiempo a partir de eventos encontrados en el texto.
-     */
-    public String buildTimelineFromFile(String fileName) {
-        return "Timeline built (stub)";
+    public String indexGeneric(String indexName, Map<String, Object> payload) throws IOException {
+        IndexRequest request = new IndexRequest(indexName)
+                .id(UUID.randomUUID().toString())
+                .source(payload);
+        IndexResponse response = restHighLevelClient.index(request, RequestOptions.DEFAULT);
+        return response.getResult().name();
     }
 
 
