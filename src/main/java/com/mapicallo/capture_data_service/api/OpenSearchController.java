@@ -1,13 +1,10 @@
 package com.mapicallo.capture_data_service.api;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.mapicallo.capture_data_service.application.OpenSearchService;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.google.gson.reflect.TypeToken;
@@ -84,7 +81,7 @@ public class OpenSearchController {
 
     // ----------- DATA PROCESSING ------------------
     @Tag(name = "Data Processing", description = "Possible processing with the file")
-    @Operation(summary = "Generic processing file", description = "The output corresponds to the mapping chosen for input data.")
+    @Operation(summary = "Generic file processing service", description = "Performs default processing on the uploaded file (placeholder endpoint for extensibility).")
     @PostMapping("/process-file")
     public ResponseEntity<String> processFile(@RequestParam String indexName) {
         try {
@@ -113,7 +110,7 @@ public class OpenSearchController {
 
     @Tag(name = "Data Processing")
     @PostMapping("/extract-triples")
-    @Operation(summary = "Extracción de relaciones semánticas", description = "Extrae triples (sujeto, relación, objeto) de una biografía previamente cargada en el sistema. Utiliza CoreNLP KBP.")
+    @Operation(summary = "ESemantic triple extraction service (subject–relation–object)", description = "Extracts structured knowledge in the form of triples (subject, relation, object) from natural language text.")
     public ResponseEntity<String> extractTriples(@RequestParam String fileName) {
         try {
             String json = openSearchService.extractTriplesFromFile(fileName);
@@ -142,8 +139,8 @@ public class OpenSearchController {
 
     @Tag(name = "Data Processing")
     @Operation(
-            summary = "Big Data processing",
-            description = "Realiza un análisis estadístico básico del archivo especificado (JSON o CSV) previamente cargado. Devuelve estadísticas como media, desviación estándar y conteo de registros numéricos por campo."
+            summary = "Big data statistical summary service",
+            description = "Computes basic statistical metrics (mean, std. deviation, min, max) for numerical fields in CSV datasets."
     )
     @PostMapping("/bigdata/summary")
     public ResponseEntity<String> summarizeBigData(@RequestParam String fileName) {
@@ -175,7 +172,7 @@ public class OpenSearchController {
 
 
     @Tag(name = "Data Processing")
-    @Operation(summary = "AI Data processing", description = "Summarizes a text file using basic AI techniques.")
+    @Operation(summary = "Text summarization service", description = "Generates a concise summary from a JSON file containing medical or clinical descriptions.")
     @PostMapping("/ai/summarize")
     public ResponseEntity<String> summarizeAI(@RequestParam String fileName) {
         try {
@@ -207,7 +204,7 @@ public class OpenSearchController {
 
 
     @Tag(name = "Data Processing")
-    @Operation(summary = "Predict next value", description = "Calcula una predicción simple sobre una columna numérica del fichero CSV.")
+    @Operation(summary = "Numerical trend prediction service", description = "Predicts the next value of a numerical series using linear regression from CSV files.")
     @PostMapping("/predict-trend")
     public ResponseEntity<Map<String, Double>> predictTrend(@RequestParam String fileName) {
         try {
@@ -233,7 +230,7 @@ public class OpenSearchController {
 
     @Tag(name = "Data Processing")
     @PostMapping("/keyword-extract")
-    @Operation(summary = "Keyword extraction", description = "Extracts key terms from the input document to facilitate search and categorization.")
+    @Operation(summary = "Keyword extraction service from text", description = "Extracts the most relevant keywords from input text based on term frequency filtering.")
     public ResponseEntity<Map<String, Object>> extractKeywords(@RequestParam String fileName) {
         try {
             String path = UPLOAD_DIR + fileName;
@@ -262,7 +259,7 @@ public class OpenSearchController {
 
 
     @Tag(name = "Data Processing")
-    @Operation(summary = "Text anonymization", description = "Removes or masks personal or sensitive information from the input text file.")
+    @Operation(summary = "Text anonymization service", description = "Automatically removes or masks personal, clinical, or institutional identifiers from free-text documents.")
     @PostMapping("/anonymize-text")
     public ResponseEntity<Map<String, Object>> anonymizeText(@RequestParam String fileName) {
         try {
@@ -291,7 +288,7 @@ public class OpenSearchController {
 
 
     @Tag(name = "Data Processing")
-    @Operation(summary = "Thematic clustering", description = "Groups similar entries or documents based on semantic similarity or shared features.")
+    @Operation(summary = "Thematic text clustering service", description = "Groups similar text entries into clusters based on shared vocabulary and term frequency (TF).")
     @PostMapping("/clustering")
     public ResponseEntity<Map<String, Object>> clusterData(@RequestParam String fileName) {
         try {
@@ -323,7 +320,7 @@ public class OpenSearchController {
 
 
     @Tag(name = "Data Processing")
-    @Operation(summary = "Sentiment analysis",description = "Analiza el sentimiento general del texto (positivo, negativo, neutral) y lo indexa si es posible.")
+    @Operation(summary = "Sentiment analysis service for clinical text",description = "Evaluates the sentiment of each sentence in a clinical report and computes an overall emotional tone.")
     @PostMapping("/sentiment-analysis")
     public ResponseEntity<Map<String, Object>> sentimentAnalysis(@RequestParam String fileName) {
         try {
@@ -355,7 +352,7 @@ public class OpenSearchController {
     }
 
     @Tag(name = "Data Processing")
-    @Operation(summary = "Entity recognition",description = "Detecta entidades nombradas (personas, lugares, fechas, etc.) en el texto e intenta indexarlas.")
+    @Operation(summary = "Named entity recognition (NER) service",description = "Identifies and classifies named entities such as people, organizations, dates, or places in clinical text.")
     @PostMapping("/entity-recognition")
     public ResponseEntity<Map<String, List<String>>> recognizeEntities(@RequestParam String fileName) {
         try {
@@ -388,7 +385,7 @@ public class OpenSearchController {
 
 
     @Tag(name = "Data Processing")
-    @Operation(summary = "Timeline builder",description = "Extrae eventos con fechas del texto para construir una línea temporal estructurada.")
+    @Operation(summary = "Chronological event extraction and timeline builder service",description = "Identifies and organizes events mentioned in the text by date to build a clinical timeline.")
     @PostMapping("/timeline-builder")
     public ResponseEntity<Map<String, List<String>>> buildTimeline(@RequestParam String fileName) {
         try {
