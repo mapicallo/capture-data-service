@@ -1,0 +1,1261 @@
+[
+  {
+    "id": "1",
+    "timestamp": "2025-05-19T07:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El tratamiento oncológico está dando resultados extraordinarios, el paciente muestra signos de mejoría."
+  },
+  {
+    "id": "2",
+    "timestamp": "2025-05-19T07:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Persistencia del dolor neuropático a pesar del ajuste farmacológico reciente."
+  },
+  {
+    "id": "3",
+    "timestamp": "2025-05-19T08:20:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los parámetros vitales se mantienen dentro de los rangos normales."
+  },
+  {
+    "id": "4",
+    "timestamp": "2025-05-19T09:10:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La familia expresa gran satisfacción con el cuidado recibido en la unidad."
+  },
+  {
+    "id": "5",
+    "timestamp": "2025-05-19T09:55:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Se observa un episodio de confusión mental y agitación nocturna."
+  },
+  {
+    "id": "6",
+    "timestamp": "2025-05-19T10:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La analítica sanguínea no presenta alteraciones significativas."
+  },
+  {
+    "id": "7",
+    "timestamp": "2025-05-19T11:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Recuperación postoperatoria excepcional, sin signos de infección."
+  },
+  {
+    "id": "8",
+    "timestamp": "2025-05-19T12:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente manifiesta un estado de ánimo muy decaído y sin esperanza."
+  },
+  {
+    "id": "9",
+    "timestamp": "2025-05-19T12:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La ecografía abdominal muestra estructuras normales sin hallazgos patológicos."
+  },
+  {
+    "id": "10",
+    "timestamp": "2025-05-19T13:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Ausencia de respuesta terapéutica tras tres semanas de tratamiento."
+  },
+  {
+    "id": "11",
+    "timestamp": "2025-05-19T14:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Estado general estable, sin cambios relevantes en el cuadro clínico."
+  },
+  {
+    "id": "12",
+    "timestamp": "2025-05-19T15:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Excelente tolerancia al nuevo protocolo de quimioterapia personalizada."
+  },
+  {
+    "id": "13",
+    "timestamp": "2025-05-19T15:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Episodios recurrentes de náuseas intensas y pérdida de apetito."
+  },
+  {
+    "id": "14",
+    "timestamp": "2025-05-19T16:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La rehabilitación cardiaca está proporcionando beneficios notables."
+  },
+  {
+    "id": "15",
+    "timestamp": "2025-05-19T17:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los resultados de la biopsia no muestran cambios desde el último control."
+  },
+  {
+    "id": "16",
+    "timestamp": "2025-05-19T18:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Paciente ansioso y con dificultades para conciliar el sueño."
+  },
+  {
+    "id": "17",
+    "timestamp": "2025-05-19T18:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La función renal presenta una mejora espectacular tras el tratamiento."
+  },
+  {
+    "id": "18",
+    "timestamp": "2025-05-19T19:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Deterioro progresivo de la capacidad respiratoria en los últimos días."
+  },
+  {
+    "id": "19",
+    "timestamp": "2025-05-19T20:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "No se detectan complicaciones en el postoperatorio inmediato."
+  },
+  {
+    "id": "20",
+    "timestamp": "2025-05-19T21:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente se muestra colaborador pero con cierta inquietud."
+  },
+  {
+    "id": "21",
+    "timestamp": "2025-05-19T21:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Respuesta inmunológica favorable al trasplante de médula ósea."
+  },
+  {
+    "id": "22",
+    "timestamp": "2025-05-19T22:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Síntomas neurológicos de nueva aparición que requieren evaluación urgente."
+  },
+  {
+    "id": "23",
+    "timestamp": "2025-05-19T23:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El seguimiento ambulatorio transcurre sin incidencias destacables."
+  },
+  {
+    "id": "24",
+    "timestamp": "2025-05-19T08:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La tomografía computarizada revela una reducción significativa del tumor."
+  },
+  {
+    "id": "25",
+    "timestamp": "2025-05-19T11:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Persistencia de síntomas gastrointestinales severos tras la cirugía."
+  },
+  {
+    "id": "26",
+    "timestamp": "2025-05-19T14:20:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente se encuentra animado y con ganas de iniciar la fisioterapia."
+  },
+  {
+    "id": "27",
+    "timestamp": "2025-05-19T16:50:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los marcadores tumorales permanecen estables en los rangos previos."
+  },
+  {
+    "id": "28",
+    "timestamp": "2025-05-19T19:25:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Cuadro de depresión reactiva que interfiere en la adherencia terapéutica."
+  },
+  {
+    "id": "29",
+    "timestamp": "2025-05-19T22:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La evolución clínica supera todas las expectativas iniciales del equipo médico."
+  },
+  {
+    "id": "30",
+    "timestamp": "2025-05-19T23:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Complicaciones vasculares inesperadas durante el procedimiento intervencionista."
+  },
+  {
+    "id": "31",
+    "timestamp": "2025-05-20T07:10:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El nuevo tratamiento inmunosupresor está funcionando de manera excepcional."
+  },
+  {
+    "id": "32",
+    "timestamp": "2025-05-20T07:50:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El dolor torácico persiste a pesar de las medidas analgésicas implementadas."
+  },
+  {
+    "id": "33",
+    "timestamp": "2025-05-20T08:35:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los controles de rutina muestran parámetros dentro de la normalidad."
+  },
+  {
+    "id": "34",
+    "timestamp": "2025-05-20T09:20:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La paciente expresa gran alivio tras conocer los resultados negativos de la biopsia."
+  },
+  {
+    "id": "35",
+    "timestamp": "2025-05-20T10:05:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Se documenta un episodio de crisis convulsiva tónico-clónica generalizada."
+  },
+  {
+    "id": "36",
+    "timestamp": "2025-05-20T10:50:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La radiografía de tórax no presenta cambios respecto al estudio previo."
+  },
+  {
+    "id": "37",
+    "timestamp": "2025-05-20T11:35:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Recuperación postquirúrgica magnífica con cicatrización óptima de la herida."
+  },
+  {
+    "id": "38",
+    "timestamp": "2025-05-20T12:20:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente manifiesta sentimientos de desesperanza y aislamiento social."
+  },
+  {
+    "id": "39",
+    "timestamp": "2025-05-20T13:05:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La resonancia magnética cerebral no revela lesiones estructurales."
+  },
+  {
+    "id": "40",
+    "timestamp": "2025-05-20T13:50:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Falta de mejoría clínica tras el cambio de medicación antihipertensiva."
+  },
+  {
+    "id": "41",
+    "timestamp": "2025-05-20T14:35:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Evolución clínica estable sin eventos adversos registrados."
+  },
+  {
+    "id": "42",
+    "timestamp": "2025-05-20T15:20:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La terapia génica experimental muestra resultados prometedores y alentadores."
+  },
+  {
+    "id": "43",
+    "timestamp": "2025-05-20T16:05:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Aparición de efectos secundarios severos relacionados con la medicación."
+  },
+  {
+    "id": "44",
+    "timestamp": "2025-05-20T16:50:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La fisioterapia respiratoria está proporcionando grandes beneficios al paciente."
+  },
+  {
+    "id": "45",
+    "timestamp": "2025-05-20T17:35:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los valores de laboratorio se mantienen constantes sin variaciones significativas."
+  },
+  {
+    "id": "46",
+    "timestamp": "2025-05-20T18:20:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Estado de agitación psicomotriz que requiere sedación farmacológica."
+  },
+  {
+    "id": "47",
+    "timestamp": "2025-05-20T19:05:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los resultados del trasplante renal son absolutamente extraordinarios."
+  },
+  {
+    "id": "48",
+    "timestamp": "2025-05-20T19:50:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Desarrollo de una infección nosocomial resistente a antibióticos."
+  },
+  {
+    "id": "49",
+    "timestamp": "2025-05-20T20:35:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El electrocardiograma no muestra alteraciones del ritmo cardiaco."
+  },
+  {
+    "id": "50",
+    "timestamp": "2025-05-20T21:20:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente se muestra tranquilo pero con ligeras preocupaciones."
+  },
+  {
+    "id": "51",
+    "timestamp": "2025-05-20T22:05:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La respuesta al tratamiento hormonal está siendo muy satisfactoria."
+  },
+  {
+    "id": "52",
+    "timestamp": "2025-05-20T22:50:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Empeoramiento súbito del estado general con múltiples complicaciones."
+  },
+  {
+    "id": "53",
+    "timestamp": "2025-05-20T23:35:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La consulta de seguimiento transcurre sin novedades relevantes."
+  },
+  {
+    "id": "54",
+    "timestamp": "2025-05-20T08:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La biopsia hepática confirma una regeneración tisular perfecta."
+  },
+  {
+    "id": "55",
+    "timestamp": "2025-05-20T12:40:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Persistencia de síntomas neurológicos incapacitantes tras el ictus."
+  },
+  {
+    "id": "56",
+    "timestamp": "2025-05-20T15:25:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente se encuentra muy optimista sobre su proceso de recuperación."
+  },
+  {
+    "id": "57",
+    "timestamp": "2025-05-20T18:10:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los indicadores de función hepática permanecen estables."
+  },
+  {
+    "id": "58",
+    "timestamp": "2025-05-20T21:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Episodio de pánico y ansiedad extrema durante el procedimiento diagnóstico."
+  },
+  {
+    "id": "59",
+    "timestamp": "2025-05-20T23:20:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La intervención mínimamente invasiva ha sido un completo éxito."
+  },
+  {
+    "id": "60",
+    "timestamp": "2025-05-20T09:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Deterioro cognitivo progresivo que afecta las actividades de la vida diaria."
+  },
+  {
+    "id": "61",
+    "timestamp": "2025-05-21T07:25:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El protocolo de inmunoterapia está dando resultados increíbles en el paciente."
+  },
+  {
+    "id": "62",
+    "timestamp": "2025-05-21T08:10:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El dolor abdominal intenso no cede con los analgésicos habituales."
+  },
+  {
+    "id": "63",
+    "timestamp": "2025-05-21T08:55:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los signos vitales se encuentran dentro de los parámetros esperados."
+  },
+  {
+    "id": "64",
+    "timestamp": "2025-05-21T09:40:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La familia manifiesta enorme gratitud por la atención médica recibida."
+  },
+  {
+    "id": "65",
+    "timestamp": "2025-05-21T10:25:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Se presenta un cuadro de delirium con desorientación temporal y espacial."
+  },
+  {
+    "id": "66",
+    "timestamp": "2025-05-21T11:10:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La gasometría arterial muestra valores normales de pH y gases."
+  },
+  {
+    "id": "67",
+    "timestamp": "2025-05-21T11:55:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Evolución postoperatoria excelente con alta médica programada para mañana."
+  },
+  {
+    "id": "68",
+    "timestamp": "2025-05-21T12:40:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente experimenta un profundo estado depresivo y pérdida de interés."
+  },
+  {
+    "id": "69",
+    "timestamp": "2025-05-21T13:25:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La ecografía doppler no detecta alteraciones del flujo vascular."
+  },
+  {
+    "id": "70",
+    "timestamp": "2025-05-21T14:10:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Ausencia de respuesta al tratamiento antibiótico de amplio espectro."
+  },
+  {
+    "id": "71",
+    "timestamp": "2025-05-21T14:55:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Condición clínica estable sin modificaciones en el plan terapéutico."
+  },
+  {
+    "id": "72",
+    "timestamp": "2025-05-21T15:40:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La nueva técnica quirúrgica ha proporcionado resultados sobresalientes."
+  },
+  {
+    "id": "73",
+    "timestamp": "2025-05-21T16:25:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Complicaciones graves durante la anestesia que requirieron intervención urgente."
+  },
+  {
+    "id": "74",
+    "timestamp": "2025-05-21T17:10:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La terapia ocupacional está brindando beneficios considerables al paciente."
+  },
+  {
+    "id": "75",
+    "timestamp": "2025-05-21T17:55:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los resultados de la punción lumbar no presentan hallazgos patológicos."
+  },
+  {
+    "id": "76",
+    "timestamp": "2025-05-21T18:40:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Episodio de agitación nocturna con ideas paranoides persistentes."
+  },
+  {
+    "id": "77",
+    "timestamp": "2025-05-21T19:25:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La cirugía reconstructiva ha superado todas nuestras expectativas."
+  },
+  {
+    "id": "78",
+    "timestamp": "2025-05-21T20:10:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Progresión de la enfermedad oncológica a pesar del tratamiento agresivo."
+  },
+  {
+    "id": "79",
+    "timestamp": "2025-05-21T20:55:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El hemograma completo no muestra alteraciones significativas."
+  },
+  {
+    "id": "80",
+    "timestamp": "2025-05-21T21:40:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente se encuentra relativamente calmado aunque algo preocupado."
+  },
+  {
+    "id": "81",
+    "timestamp": "2025-05-21T22:25:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La respuesta inmune al trasplante de órgano es extraordinariamente positiva."
+  },
+  {
+    "id": "82",
+    "timestamp": "2025-05-21T23:10:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Aparición de síntomas neurológicos focales de carácter preocupante."
+  },
+  {
+    "id": "83",
+    "timestamp": "2025-05-21T23:55:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La revisión médica rutinaria transcurre sin eventualidades."
+  },
+  {
+    "id": "84",
+    "timestamp": "2025-05-21T08:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La artroscopia revela una reparación articular perfecta."
+  },
+  {
+    "id": "85",
+    "timestamp": "2025-05-21T12:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Dolor crónico intratable que no responde a ningún tratamiento convencional."
+  },
+  {
+    "id": "86",
+    "timestamp": "2025-05-21T15:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente se muestra esperanzado y motivado para continuar el tratamiento."
+  },
+  {
+    "id": "87",
+    "timestamp": "2025-05-21T17:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los parámetros bioquímicos se mantienen en rangos normales."
+  },
+  {
+    "id": "88",
+    "timestamp": "2025-05-21T20:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Crisis de ansiedad severa con síntomas somáticos asociados."
+  },
+  {
+    "id": "89",
+    "timestamp": "2025-05-21T22:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El procedimiento laparoscópico ha sido tremendamente exitoso."
+  },
+  {
+    "id": "90",
+    "timestamp": "2025-05-21T09:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Deterioro funcional significativo en las capacidades motoras básicas."
+  },
+  {
+    "id": "91",
+    "timestamp": "2025-05-22T07:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La terapia celular regenerativa está mostrando efectos maravillosos."
+  },
+  {
+    "id": "92",
+    "timestamp": "2025-05-22T08:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Las migrañas refractarias continúan limitando la calidad de vida del paciente."
+  },
+  {
+    "id": "93",
+    "timestamp": "2025-05-22T09:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La evaluación cardiológica muestra función ventricular preservada."
+  },
+  {
+    "id": "94",
+    "timestamp": "2025-05-22T09:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente expresa profundo agradecimiento por el cuidado compasivo recibido."
+  },
+  {
+    "id": "95",
+    "timestamp": "2025-05-22T10:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Se registra un episodio de hipotensión severa durante la diálisis."
+  },
+  {
+    "id": "96",
+    "timestamp": "2025-05-22T11:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La colonoscopia no evidencia lesiones mucosas ni pólipos."
+  },
+  {
+    "id": "97",
+    "timestamp": "2025-05-22T12:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Recuperación quirúrgica espectacular con reintegración temprana a actividades."
+  },
+  {
+    "id": "98",
+    "timestamp": "2025-05-22T12:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente presenta un cuadro de tristeza profunda y apatía generalizada."
+  },
+  {
+    "id": "99",
+    "timestamp": "2025-05-22T13:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los estudios de imagen no revelan cambios estructurales significativos."
+  },
+  {
+    "id": "100",
+    "timestamp": "2025-05-22T14:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Falla terapéutica completa con progresión acelerada de la enfermedad."
+  },
+  {
+    "id": "101",
+    "timestamp": "2025-05-22T15:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Estado clínico estable con parámetros dentro de los valores esperados."
+  },
+  {
+    "id": "102",
+    "timestamp": "2025-05-22T15:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los resultados del ensayo clínico superan las mejores predicciones."
+  },
+  {
+    "id": "103",
+    "timestamp": "2025-05-22T16:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Reacción adversa grave al medicamento que requiere suspensión inmediata."
+  },
+  {
+    "id": "104",
+    "timestamp": "2025-05-22T17:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La rehabilitación neurológica está proporcionando avances notables."
+  },
+  {
+    "id": "105",
+    "timestamp": "2025-05-22T18:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El perfil lipídico se mantiene sin variaciones respecto al control previo."
+  },
+  {
+    "id": "106",
+    "timestamp": "2025-05-22T18:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Estado de confusión mental con períodos de agitación psicomotriz."
+  },
+  {
+    "id": "107",
+    "timestamp": "2025-05-22T19:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La técnica de microcirugía ha logrado resultados absolutamente perfectos."
+  },
+  {
+    "id": "108",
+    "timestamp": "2025-05-22T20:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Complicaciones postoperatorias múltiples que comprometen el pronóstico."
+  },
+  {
+    "id": "109",
+    "timestamp": "2025-05-22T21:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La ecocardiografía no muestra alteraciones de la contractilidad."
+  },
+  {
+    "id": "110",
+    "timestamp": "2025-05-22T21:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente mantiene una actitud serena aunque levemente inquieta."
+  },
+  {
+    "id": "111",
+    "timestamp": "2025-05-22T22:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La inmunoterapia combinada está demostrando eficacia extraordinaria."
+  },
+  {
+    "id": "112",
+    "timestamp": "2025-05-22T23:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Aparición de síntomas sistémicos severos de origen desconocido."
+  },
+  {
+    "id": "113",
+    "timestamp": "2025-05-22T08:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El control médico ambulatorio transcurre sin novedades clínicas."
+  },
+  {
+    "id": "114",
+    "timestamp": "2025-05-22T11:20:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La biopsia muscular confirma una regeneración tisular excepcional."
+  },
+  {
+    "id": "115",
+    "timestamp": "2025-05-22T14:35:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Persistencia de síntomas respiratorios incapacitantes tras la neumonía."
+  },
+  {
+    "id": "116",
+    "timestamp": "2025-05-22T17:50:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente se siente muy esperanzado con los nuevos avances terapéuticos."
+  },
+  {
+    "id": "117",
+    "timestamp": "2025-05-22T20:25:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los biomarcadores inflamatorios permanecen estables."
+  },
+  {
+    "id": "118",
+    "timestamp": "2025-05-22T22:40:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Episodio de pánico nocturno con síntomas cardiovasculares asociados."
+  },
+  {
+    "id": "119",
+    "timestamp": "2025-05-22T10:10:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La cirugía robótica ha conseguido resultados impresionantes."
+  },
+  {
+    "id": "120",
+    "timestamp": "2025-05-22T13:55:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Deterioro cognitivo acelerado que afecta gravemente la autonomía."
+  },
+  {
+    "id": "121",
+    "timestamp": "2025-05-23T07:40:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El tratamiento experimental está proporcionando beneficios extraordinarios."
+  },
+  {
+    "id": "122",
+    "timestamp": "2025-05-23T08:25:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El dolor lumbar crónico no mejora con las infiltraciones epidurales."
+  },
+  {
+    "id": "123",
+    "timestamp": "2025-05-23T09:10:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La función tiroidea se encuentra dentro de los parámetros normales."
+  },
+  {
+    "id": "124",
+    "timestamp": "2025-05-23T09:55:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La familia se muestra enormemente satisfecha con los cuidados paliativos."
+  },
+  {
+    "id": "125",
+    "timestamp": "2025-05-23T10:40:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Se documenta un episodio de arritmia ventricular sostenida."
+  },
+  {
+    "id": "126",
+    "timestamp": "2025-05-23T11:25:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La endoscopia digestiva alta no muestra lesiones mucosas."
+  },
+  {
+    "id": "127",
+    "timestamp": "2025-05-23T12:10:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Evolución postrasplante magnífica con excelente integración del injerto."
+  },
+  {
+    "id": "128",
+    "timestamp": "2025-05-23T12:55:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente manifiesta sentimientos de desesperanza y fatiga emocional."
+  },
+  {
+    "id": "129",
+    "timestamp": "2025-05-23T13:40:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La tomografía por emisión de positrones no detecta actividad metabólica anormal."
+  },
+  {
+    "id": "130",
+    "timestamp": "2025-05-23T14:25:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Resistencia completa al tratamiento antimicrobiano de primera línea."
+  },
+  {
+    "id": "131",
+    "timestamp": "2025-05-23T15:10:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Situación clínica estable sin cambios en el estado general."
+  },
+  {
+    "id": "132",
+    "timestamp": "2025-05-23T15:55:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La nueva prótesis articular está funcionando de manera excepcional."
+  },
+  {
+    "id": "133",
+    "timestamp": "2025-05-23T16:40:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Complicaciones hemorrágicas graves durante el procedimiento invasivo."
+  },
+  {
+    "id": "134",
+    "timestamp": "2025-05-23T17:25:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La logopedia está proporcionando mejoras significativas en la comunicación."
+  },
+  {
+    "id": "135",
+    "timestamp": "2025-05-23T18:10:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los valores de creatinina sérica se mantienen estables."
+  },
+  {
+    "id": "136",
+    "timestamp": "2025-05-23T18:55:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Episodio de desorientación espacial con comportamiento errático."
+  },
+  {
+    "id": "137",
+    "timestamp": "2025-05-23T19:40:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los resultados de la cirugía estética superan todas las expectativas."
+  },
+  {
+    "id": "138",
+    "timestamp": "2025-05-23T20:25:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Progresión tumoral rápida a pesar del protocolo de quimioterapia intensiva."
+  },
+  {
+    "id": "139",
+    "timestamp": "2025-05-23T21:10:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La espirometría no revela alteraciones de la función pulmonar."
+  },
+  {
+    "id": "140",
+    "timestamp": "2025-05-23T21:55:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente se encuentra tranquilo pero con cierta aprensión."
+  },
+  {
+    "id": "141",
+    "timestamp": "2025-05-23T22:40:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La terapia de rehabilitación cardiaca está dando frutos extraordinarios."
+  },
+  {
+    "id": "142",
+    "timestamp": "2025-05-23T23:25:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Aparición de efectos adversos neurológicos severos relacionados con el fármaco."
+  },
+  {
+    "id": "143",
+    "timestamp": "2025-05-23T08:05:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La consulta de seguimiento oncológico transcurre sin eventualidades."
+  },
+  {
+    "id": "144",
+    "timestamp": "2025-05-23T11:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La angiografía cerebral muestra una revascularización perfecta."
+  },
+  {
+    "id": "145",
+    "timestamp": "2025-05-23T14:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Dolor neuropático severo que limita considerablemente las actividades diarias."
+  },
+  {
+    "id": "146",
+    "timestamp": "2025-05-23T17:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente expresa gran optimismo sobre su futuro proceso de curación."
+  },
+  {
+    "id": "147",
+    "timestamp": "2025-05-23T19:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los marcadores de función renal permanecen constantes."
+  },
+  {
+    "id": "148",
+    "timestamp": "2025-05-23T22:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Crisis de ansiedad generalizada con síntomas físicos intensos."
+  },
+  {
+    "id": "149",
+    "timestamp": "2025-05-23T09:20:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El implante coclear ha revolucionado la calidad de vida del paciente."
+  },
+  {
+    "id": "150",
+    "timestamp": "2025-05-23T16:35:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Complicaciones renales agudas que requieren intervención dialítica urgente."
+  },
+  {
+    "id": "151",
+    "timestamp": "2025-05-24T07:50:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La medicina personalizada está mostrando resultados absolutamente increíbles."
+  },
+  {
+    "id": "152",
+    "timestamp": "2025-05-24T08:35:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Las cefaleas tensionales persisten a pesar del tratamiento profiláctico."
+  },
+  {
+    "id": "153",
+    "timestamp": "2025-05-24T09:20:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El electroencefalograma muestra actividad cerebral normal."
+  },
+  {
+    "id": "154",
+    "timestamp": "2025-05-24T10:05:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente y su familia expresan profunda gratitud por la atención humanizada."
+  },
+  {
+    "id": "155",
+    "timestamp": "2025-05-24T10:50:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Se registra un episodio de insuficiencia respiratoria aguda."
+  },
+  {
+    "id": "156",
+    "timestamp": "2025-05-24T11:35:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La cistoscopia no evidencia lesiones vesicales significativas."
+  },
+  {
+    "id": "157",
+    "timestamp": "2025-05-24T12:20:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Recuperación neurológica espectacular tras la rehabilitación intensiva."
+  },
+  {
+    "id": "158",
+    "timestamp": "2025-05-24T13:05:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente presenta un estado de melancolía profunda y aislamiento."
+  },
+  {
+    "id": "159",
+    "timestamp": "2025-05-24T13:50:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La densitometría ósea no muestra cambios respecto al estudio basal."
+  },
+  {
+    "id": "160",
+    "timestamp": "2025-05-24T14:35:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Fracaso terapéutico evidente con empeoramiento progresivo del cuadro."
+  },
+  {
+    "id": "161",
+    "timestamp": "2025-05-24T15:20:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Evolución clínica estable con adherencia adecuada al tratamiento."
+  },
+  {
+    "id": "162",
+    "timestamp": "2025-05-24T16:05:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La cirugía oncológica ha logrado una resección completa extraordinaria."
+  },
+  {
+    "id": "163",
+    "timestamp": "2025-05-24T16:50:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Desarrollo de una sepsis nosocomial con compromiso multiorgánico."
+  },
+  {
+    "id": "164",
+    "timestamp": "2025-05-24T17:35:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La psicoterapia está proporcionando herramientas valiosas de afrontamiento."
+  },
+  {
+    "id": "165",
+    "timestamp": "2025-05-24T18:20:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los parámetros metabólicos se encuentran dentro de la normalidad."
+  },
+  {
+    "id": "166",
+    "timestamp": "2025-05-24T19:05:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Estado confusional agudo con alteraciones del comportamiento."
+  },
+  {
+    "id": "167",
+    "timestamp": "2025-05-24T19:50:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los resultados del trasplante de córnea son absolutamente perfectos."
+  },
+  {
+    "id": "168",
+    "timestamp": "2025-05-24T20:35:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Deterioro funcional acelerado con pérdida de capacidades básicas."
+  },
+  {
+    "id": "169",
+    "timestamp": "2025-05-24T21:20:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La audiometría no detecta pérdida auditiva significativa."
+  },
+  {
+    "id": "170",
+    "timestamp": "2025-05-24T22:05:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente mantiene una disposición serena aunque algo melancólica."
+  },
+  {
+    "id": "171",
+    "timestamp": "2025-05-24T22:50:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La terapia génica dirigida está demostrando eficacia sorprendente."
+  },
+  {
+    "id": "172",
+    "timestamp": "2025-05-24T23:35:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Complicaciones cardiovasculares graves durante el postoperatorio."
+  },
+  {
+    "id": "173",
+    "timestamp": "2025-05-24T08:10:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El seguimiento ambulatorio no presenta incidencias destacables."
+  },
+  {
+    "id": "174",
+    "timestamp": "2025-05-24T11:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La artrodesis vertebral ha conseguido una fusión ósea excepcional."
+  },
+  {
+    "id": "175",
+    "timestamp": "2025-05-24T15:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Síntomas gastrointestinales persistentes que afectan la nutrición."
+  },
+  {
+    "id": "176",
+    "timestamp": "2025-05-24T18:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente se siente muy animado y confiado en su recuperación."
+  },
+  {
+    "id": "177",
+    "timestamp": "2025-05-24T21:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los indicadores de coagulación permanecen estables."
+  },
+  {
+    "id": "178",
+    "timestamp": "2025-05-24T23:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Episodio de agitación psicomotriz con necesidad de contención farmacológica."
+  },
+  {
+    "id": "179",
+    "timestamp": "2025-05-24T12:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La técnica de cirugía láser ha proporcionado resultados magníficos."
+  },
+  {
+    "id": "180",
+    "timestamp": "2025-05-24T09:40:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Progresión inexorable de la enfermedad degenerativa articular."
+  },
+  {
+    "id": "181",
+    "timestamp": "2025-05-25T08:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El protocolo de inmunoterapia combinada está dando resultados fantásticos."
+  },
+  {
+    "id": "182",
+    "timestamp": "2025-05-25T08:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El síndrome de dolor regional complejo no responde al tratamiento multimodal."
+  },
+  {
+    "id": "183",
+    "timestamp": "2025-05-25T09:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La evaluación neuropsicológica muestra funciones cognitivas preservadas."
+  },
+  {
+    "id": "184",
+    "timestamp": "2025-05-25T10:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La familia manifiesta enorme alivio y satisfacción con los resultados obtenidos."
+  },
+  {
+    "id": "185",
+    "timestamp": "2025-05-25T11:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Se documenta un episodio de fibrilación auricular paroxística."
+  },
+  {
+    "id": "186",
+    "timestamp": "2025-05-25T11:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La broncoscopia no revela alteraciones endobronquiales."
+  },
+  {
+    "id": "187",
+    "timestamp": "2025-05-25T12:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Evolución postquirúrgica excelente con alta hospitalaria anticipada."
+  },
+  {
+    "id": "188",
+    "timestamp": "2025-05-25T13:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente experimenta un profundo desaliento y pérdida de motivación."
+  },
+  {
+    "id": "189",
+    "timestamp": "2025-05-25T14:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La gammagrafía ósea no detecta captación patológica del trazador."
+  },
+  {
+    "id": "190",
+    "timestamp": "2025-05-25T14:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Ausencia total de respuesta al tratamiento hormonal sustitutivo."
+  },
+  {
+    "id": "191",
+    "timestamp": "2025-05-25T15:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Condición médica estable sin modificaciones en el esquema terapéutico."
+  },
+  {
+    "id": "192",
+    "timestamp": "2025-05-25T16:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La cirugía de mínima invasión ha superado todas nuestras expectativas."
+  },
+  {
+    "id": "193",
+    "timestamp": "2025-05-25T17:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Complicaciones infecciosas severas que requieren aislamiento estricto."
+  },
+  {
+    "id": "194",
+    "timestamp": "2025-05-25T17:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La terapia nutricional especializada está brindando beneficios considerables."
+  },
+  {
+    "id": "195",
+    "timestamp": "2025-05-25T18:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los valores de glucemia se mantienen controlados."
+  },
+  {
+    "id": "196",
+    "timestamp": "2025-05-25T19:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Episodio de desorientación temporal con comportamiento inadecuado."
+  },
+  {
+    "id": "197",
+    "timestamp": "2025-05-25T20:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los resultados de la neurocirugía son absolutamente extraordinarios."
+  },
+  {
+    "id": "198",
+    "timestamp": "2025-05-25T20:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Deterioro respiratorio progresivo con necesidad de soporte ventilatorio."
+  },
+  {
+    "id": "199",
+    "timestamp": "2025-05-25T21:30:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La tomografía computarizada no muestra cambios estructurales."
+  },
+  {
+    "id": "200",
+    "timestamp": "2025-05-25T22:15:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente se encuentra relativamente calmado pero con ligera preocupación."
+  },
+  {
+    "id": "201",
+    "timestamp": "2025-05-25T23:00:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La medicina regenerativa está proporcionando resultados revolucionarios."
+  },
+  {
+    "id": "202",
+    "timestamp": "2025-05-25T23:45:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Aparición de síntomas neurológicos focales de evolución rápida."
+  },
+  {
+    "id": "203",
+    "timestamp": "2025-05-25T08:20:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La revisión médica periódica transcurre sin hallazgos relevantes."
+  },
+  {
+    "id": "204",
+    "timestamp": "2025-05-25T12:05:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "La reconstrucción plástica ha logrado una apariencia estética perfecta."
+  },
+  {
+    "id": "205",
+    "timestamp": "2025-05-25T15:40:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Dolor oncológico refractario que requiere rotación de opioides."
+  },
+  {
+    "id": "206",
+    "timestamp": "2025-05-25T19:25:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El paciente expresa gran confianza y entusiasmo por los avances logrados."
+  },
+  {
+    "id": "207",
+    "timestamp": "2025-05-25T22:10:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Los parámetros hematológicos se encuentran dentro de rangos normales."
+  },
+  {
+    "id": "208",
+    "timestamp": "2025-05-25T10:35:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Crisis de pánico severa con síntomas autonómicos intensos."
+  },
+  {
+    "id": "209",
+    "timestamp": "2025-05-25T13:50:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "El trasplante de células madre ha sido un éxito rotundo."
+  },
+  {
+    "id": "210",
+    "timestamp": "2025-05-25T17:25:00Z",
+    "source_endpoint": "sentiment-analysis",
+    "text": "Complicaciones metabólicas graves que comprometen el equilibrio homeostático."
+  }

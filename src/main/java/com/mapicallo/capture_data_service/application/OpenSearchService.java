@@ -2,13 +2,15 @@ package com.mapicallo.capture_data_service.application;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.pipeline.*;
-import edu.stanford.nlp.sentiment.SentimentCoreAnnotations;
 import edu.stanford.nlp.util.CoreMap;
+import jakarta.annotation.PostConstruct;
 import org.apache.commons.math3.ml.clustering.CentroidCluster;
 import org.apache.commons.math3.ml.clustering.Clusterable;
 import org.apache.commons.math3.ml.clustering.KMeansPlusPlusClusterer;
@@ -19,6 +21,7 @@ import org.opensearch.action.index.IndexResponse;
 import org.opensearch.client.RequestOptions;
 import org.opensearch.client.RestHighLevelClient;
 import org.opensearch.client.core.CountRequest;
+import org.opensearch.client.indices.CreateIndexRequest;
 import org.opensearch.client.indices.GetIndexRequest;
 import org.opensearch.common.xcontent.XContentFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +29,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Path;
+import java.time.Instant;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -35,6 +38,8 @@ import java.util.stream.Collectors;
 public class OpenSearchService {
 
     private static final String UPLOAD_DIR = "C:/uploaded_files/";
+
+    private StanfordCoreNLP sentimentPipeline;
 
     @Autowired
     private RestHighLevelClient restHighLevelClient;
@@ -92,203 +97,302 @@ public class OpenSearchService {
         }
     }
 
-
-    /*public double predictNextValue(File file) throws IOException {
-        List<Double> values = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-            br.readLine(); // cabecera
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] fields = line.split(",");
-                values.add(Double.parseDouble(fields[1])); // columna numérica
-            }
-        }
-
-        SimpleRegression regression = new SimpleRegression();
-        for (int i = 0; i < values.size(); i++) {
-            regression.addData(i + 1, values.get(i));
-        }
-        double nextX = values.size() + 1;
-        return regression.predict(nextX);
-    }*/
-
     /**
      * Realiza análisis de sentimiento sobre el contenido del archivo.
      */
-    @Service
-    public class SentimentAnalysisService {
+    @PostConstruct
+    public void initSentimentPipeline() {
+        Properties props = new Properties();
+        props.setProperty("annotators", "tokenize,ssplit,parse,sentiment");
+        this.sentimentPipeline = new StanfordCoreNLP(props);
+    }
 
-        private final StanfordCoreNLP sentimentPipeline;
+    public List<Map<String, Object>> analyzeSentimentFromFile(String fileName) throws IOException {
+        File file = new File(UPLOAD_DIR + fileName);
+        if (!file.exists()) throw new FileNotFoundException("Archivo no encontrado: " + fileName);
 
-        public SentimentAnalysisService() {
-            Properties props = new Properties();
-            props.setProperty("annotators", "tokenize,ssplit,parse,sentiment");
-            this.sentimentPipeline = new StanfordCoreNLP(props);
+        Gson gson = new Gson();
+        List<Map<String, Object>> documents;
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            documents = gson.fromJson(reader, new TypeToken<List<Map<String, Object>>>() {}.getType());
         }
 
-        public Map<String, Object> analyzeText(String text) {
-            Map<String, Object> result = new HashMap<>();
-            Map<String, Integer> sentimentCount = new HashMap<>();
-            sentimentCount.put("Very Negative", 0);
-            sentimentCount.put("Negative", 0);
-            sentimentCount.put("Neutral", 0);
-            sentimentCount.put("Positive", 0);
-            sentimentCount.put("Very Positive", 0);
+        List<Map<String, Object>> results = new ArrayList<>();
 
-            List<Integer> scores = new ArrayList<>();
+        for (Map<String, Object> doc : documents) {
+            String text = (String) doc.get("text");
+            if (text == null || text.isBlank()) continue;
 
-            CoreDocument document = new CoreDocument(text);
-            sentimentPipeline.annotate(document);
-
-            for (CoreSentence sentence : document.sentences()) {
-                String sentiment = sentence.sentiment();
-                int score = sentimentToScore(sentiment);
-                sentimentCount.put(sentiment, sentimentCount.getOrDefault(sentiment, 0) + 1);
-                scores.add(score);
-            }
-
-            double average = scores.stream().mapToInt(Integer::intValue).average().orElse(2.0);
-            String finalSentiment = scoreToLabel((int) Math.round(average));
-
-            result.put("summary_sentiment", finalSentiment);
-            result.put("sentences_analyzed", scores.size());
-            result.put("distribution", sentimentCount);
-            result.put("average_score", average);
-
-            return result;
+            Map<String, Object> sentiment = analyzeTextSentiment(text);
+            sentiment.put("id", doc.get("id"));
+            sentiment.put("timestamp", doc.get("timestamp"));
+            sentiment.put("source_endpoint", doc.get("source_endpoint"));
+            sentiment.put("original_text", text);
+            results.add(sentiment);
         }
 
-        private int sentimentToScore(String sentiment) {
-            return switch (sentiment) {
-                case "Very Negative" -> 0;
-                case "Negative" -> 1;
-                case "Neutral" -> 2;
-                case "Positive" -> 3;
-                case "Very Positive" -> 4;
-                default -> 2;
-            };
+        return results;
+    }
+
+    private Map<String, Object> analyzeTextSentiment(String text) {
+        Map<String, Object> result = new HashMap<>();
+        Map<String, Integer> sentimentCount = new HashMap<>(Map.of(
+                "Very Negative", 0,
+                "Negative", 0,
+                "Neutral", 0,
+                "Positive", 0,
+                "Very Positive", 0
+        ));
+
+        List<Integer> scores = new ArrayList<>();
+        CoreDocument document = new CoreDocument(text);
+        sentimentPipeline.annotate(document);
+
+        for (CoreSentence sentence : document.sentences()) {
+            String sentiment = sentence.sentiment();
+            int score = sentimentToScore(sentiment);
+            sentimentCount.put(sentiment, sentimentCount.getOrDefault(sentiment, 0) + 1);
+            scores.add(score);
         }
 
-        private String scoreToLabel(int score) {
-            return switch (score) {
-                case 0 -> "Very Negative";
-                case 1 -> "Negative";
-                case 2 -> "Neutral";
-                case 3 -> "Positive";
-                case 4 -> "Very Positive";
-                default -> "Neutral";
-            };
-        }
+        double avg = scores.stream().mapToInt(Integer::intValue).average().orElse(2.0);
+        String label = scoreToLabel((int) Math.round(avg));
+
+        result.put("summary_sentiment", label);
+        result.put("sentences_analyzed", scores.size());
+        result.put("distribution", sentimentCount);
+        result.put("average_score", avg);
+
+        return result;
+    }
+
+    private int sentimentToScore(String sentiment) {
+        return switch (sentiment) {
+            case "Very Negative" -> 0;
+            case "Negative"      -> 1;
+            case "Neutral"       -> 2;
+            case "Positive"      -> 3;
+            case "Very Positive" -> 4;
+            default              -> 2;
+        };
+    }
+
+    private String scoreToLabel(int score) {
+        return switch (score) {
+            case 0 -> "Very Negative";
+            case 1 -> "Negative";
+            case 2 -> "Neutral";
+            case 3 -> "Positive";
+            case 4 -> "Very Positive";
+            default -> "Neutral";
+        };
     }
 
 
 
+
+
+
     public String extractTriplesFromFile(String fileName) {
-        String filePath = UPLOAD_DIR + fileName;
-        String text = readFile(filePath);
-        if (text == null || text.isBlank()) {
-            return "{\"error\": \"El archivo está vacío o no se pudo leer correctamente.\"}";
+        File file = new File(UPLOAD_DIR + fileName);
+        if (!file.exists()) {
+            return "{\"error\": \"Archivo no encontrado: " + fileName + "\"}";
         }
 
-        // Configurar el pipeline de CoreNLP
+        Gson gson = new Gson();
+        List<Map<String, Object>> entries;
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            entries = gson.fromJson(reader, List.class);
+        } catch (Exception e) {
+            return "{\"error\": \"No se pudo leer el archivo como lista JSON: " + e.getMessage() + "\"}";
+        }
+
+        if (entries == null || entries.isEmpty()) {
+            return "{\"error\": \"Archivo JSON vacío o malformado\"}";
+        }
+
+        // Configurar pipeline CoreNLP una vez
         Properties props = new Properties();
         props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref,kbp");
-        props.setProperty("kbp.language", "es"); // Si el texto está en español, cambiar a "es"
+        props.setProperty("kbp.language", "es");
         StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 
-        // Crear anotación del texto
-        Annotation document = new Annotation(text);
-        pipeline.annotate(document);
+        List<Map<String, Object>> allTriples = new ArrayList<>();
 
-        // Extraer relaciones semánticas
-        List<Map<String, Object>> triples = new ArrayList<>();
-        for (CoreMap sentence : document.get(CoreAnnotations.SentencesAnnotation.class)) {
-            Collection<RelationTriple> relations = sentence.get(CoreAnnotations.KBPTriplesAnnotation.class);
-            if (relations != null) {
-                for (RelationTriple triple : relations) {
-                    Map<String, Object> tripleMap = new LinkedHashMap<>();
-                    tripleMap.put("subject", triple.subjectGloss());
-                    tripleMap.put("relation", triple.relationGloss());
-                    tripleMap.put("object", triple.objectGloss());
-                    tripleMap.put("confidence", triple.confidence);
-                    triples.add(tripleMap);
+        for (Map<String, Object> entry : entries) {
+            String text = (String) entry.get("text");
+            if (text == null || text.isBlank()) continue;
+
+            Annotation doc = new Annotation(text);
+            pipeline.annotate(doc);
+
+            List<CoreMap> sentences = doc.get(CoreAnnotations.SentencesAnnotation.class);
+            if (sentences == null) continue;
+
+            for (CoreMap sentence : sentences) {
+                Collection<RelationTriple> relations = sentence.get(CoreAnnotations.KBPTriplesAnnotation.class);
+                if (relations != null) {
+                    for (RelationTriple triple : relations) {
+                        Map<String, Object> tripleMap = new LinkedHashMap<>();
+                        tripleMap.put("subject", triple.subjectGloss());
+                        tripleMap.put("relation", triple.relationGloss());
+                        tripleMap.put("object", triple.objectGloss());
+                        tripleMap.put("confidence", triple.confidence);
+
+                        // ➕ Adjuntar metadatos del registro original
+                        tripleMap.put("id", entry.get("id"));
+                        tripleMap.put("timestamp", entry.get("timestamp"));
+                        tripleMap.put("source_endpoint", entry.get("source_endpoint"));
+
+                        allTriples.add(tripleMap);
+                    }
                 }
             }
         }
 
-        // Ordenar por nivel de confianza descendente
-        triples.sort((a, b) -> Double.compare((Double) b.get("confidence"), (Double) a.get("confidence")));
-
-
-        // Convertir a JSON legible
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        return gson.toJson(triples);
+        allTriples.sort((a, b) -> Double.compare((Double) b.get("confidence"), (Double) a.get("confidence")));
+        Gson pretty = new GsonBuilder().setPrettyPrinting().create();
+        return pretty.toJson(allTriples);
     }
 
 
     /**
      * Reconoce entidades nombradas como personas, lugares, instituciones, etc.
      */
-    public Map<String, List<String>> recognizeEntitiesFromFile(String filePath) throws IOException {
-        String content = Files.readString(Path.of(filePath));
+    public List<Map<String, Object>> recognizeEntitiesFromJsonFile(String fileName) throws IOException {
+        File file = new File(UPLOAD_DIR + fileName);
+        if (!file.exists()) throw new FileNotFoundException("Archivo no encontrado: " + fileName);
+
+        Gson gson = new Gson();
+        List<Map<String, Object>> documents;
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            documents = gson.fromJson(reader, new TypeToken<List<Map<String, Object>>>() {}.getType());
+        }
+
         Properties props = new Properties();
         props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
         StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 
-        CoreDocument document = new CoreDocument(content);
-        pipeline.annotate(document);
+        List<Map<String, Object>> results = new ArrayList<>();
 
-        Map<String, List<String>> entityMap = new HashMap<>();
-        for (CoreEntityMention em : document.entityMentions()) {
-            entityMap.computeIfAbsent(em.entityType(), k -> new ArrayList<>()).add(em.text());
-        }
+        for (Map<String, Object> doc : documents) {
+            String text = (String) doc.get("text");
+            if (text == null || text.isBlank()) continue;
 
-        // Quitar duplicados
-        entityMap.replaceAll((k, v) -> v.stream().distinct().toList());
-
-        return entityMap;
-    }
-
-    /**
-     * Construye una línea de tiempo a partir de eventos encontrados en el texto.
-     */
-    @Service
-    public class TimelineBuilderService {
-
-        private final StanfordCoreNLP pipeline;
-
-        public TimelineBuilderService() {
-            Properties props = new Properties();
-            props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
-            props.setProperty("ner.applyFineGrained", "false");
-            props.setProperty("ner.useSUTime", "true");
-            this.pipeline = new StanfordCoreNLP(props);
-        }
-
-        public Map<String, List<String>> buildTimeline(String filePath) throws Exception {
-            String text = Files.readString(new File(filePath).toPath());
-            Annotation document = new Annotation(text);
+            CoreDocument document = new CoreDocument(text);
             pipeline.annotate(document);
 
-            Map<String, List<String>> timeline = new TreeMap<>();
+            Map<String, List<String>> entityMap = new HashMap<>();
+            for (CoreEntityMention em : document.entityMentions()) {
+                entityMap.computeIfAbsent(em.entityType(), k -> new ArrayList<>()).add(em.text());
+            }
+            entityMap.replaceAll((k, v) -> v.stream().distinct().toList());
 
-            List<CoreMap> sentences = document.get(CoreAnnotations.SentencesAnnotation.class);
-            for (CoreMap sentence : sentences) {
-                String sentenceText = sentence.toString();
-                List<String> dates = sentence.get(CoreAnnotations.TokensAnnotation.class).stream()
-                        .filter(token -> "DATE".equals(token.get(CoreAnnotations.NamedEntityTagAnnotation.class)))
-                        .map(token -> token.word())
-                        .collect(Collectors.toList());
+            Map<String, Object> enriched = new LinkedHashMap<>();
+            enriched.put("id", doc.get("id"));
+            enriched.put("timestamp", doc.get("timestamp"));
+            enriched.put("source_endpoint", doc.get("source_endpoint"));
+            enriched.put("entities", entityMap);
+            enriched.put("original_text", text);
 
-                if (!dates.isEmpty()) {
-                    String date = String.join(" ", dates); // simplificación básica
-                    timeline.computeIfAbsent(date, k -> new ArrayList<>()).add(sentenceText);
+            results.add(enriched);
+        }
+
+        return results;
+    }
+
+
+    public List<Map<String, Object>> segmentTextFromFile(String fileName) throws IOException {
+        File file = new File(UPLOAD_DIR + fileName);
+        if (!file.exists()) {
+            throw new FileNotFoundException("Archivo no encontrado: " + fileName);
+        }
+
+        Gson gson = new Gson();
+        List<Map<String, Object>> documents;
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            documents = gson.fromJson(reader, new TypeToken<List<Map<String, Object>>>() {}.getType());
+        }
+
+        String indexName = "result-text-segmentation-" + fileName.replaceAll("\\W+", "-").toLowerCase();
+        List<Map<String, Object>> results = new ArrayList<>();
+
+        for (Map<String, Object> doc : documents) {
+            String text = (String) doc.get("text");
+            String timestamp = (String) doc.get("timestamp");
+            String id = (String) doc.get("id");
+            String source = (String) doc.get("source_endpoint");
+
+            if (text == null || text.isBlank()) continue;
+
+            // Dividir en frases por heurística
+            String[] sentences = text.split("(?<=[.!?])\\s+");
+
+            // Clasificación simple por reglas keyword-based
+            Map<String, String> segments = new LinkedHashMap<>();
+            for (String sentence : sentences) {
+                String s = sentence.trim().toLowerCase();
+
+                if (s.contains("síntoma") || s.contains("refiere") || s.contains("dolor") || s.contains("fiebre")) {
+                    segments.put("síntomas", sentence.trim());
+                } else if (s.contains("antecedente") || s.contains("historia clínica")) {
+                    segments.put("antecedentes", sentence.trim());
+                } else if (s.contains("recomienda") || s.contains("sugiere") || s.contains("aconseja")) {
+                    segments.put("recomendaciones", sentence.trim());
+                } else if (s.contains("prescribe") || s.contains("administra") || s.contains("tratamiento")) {
+                    segments.put("tratamiento", sentence.trim());
                 }
             }
 
-            return timeline;
+            Map<String, Object> enriched = new LinkedHashMap<>();
+            enriched.put("id", id);
+            enriched.put("timestamp", timestamp);
+            enriched.put("source_endpoint", source);
+            enriched.put("original_text", text);
+            enriched.put("segments", segments);
+
+            // Indexar documento
+            indexGeneric(indexName, enriched);
+            results.add(enriched);
+        }
+
+        return results;
+    }
+
+
+
+
+
+
+
+
+
+    public void ensureIndexWithDateMapping(String indexName) {
+        try {
+            boolean exists = restHighLevelClient.indices().exists(new GetIndexRequest(indexName), RequestOptions.DEFAULT);
+            if (!exists) {
+                CreateIndexRequest createIndexRequest = new CreateIndexRequest(indexName);
+                createIndexRequest.mapping(
+                        Map.of(
+                                "properties", Map.of(
+                                        "timestamp", Map.of("type", "date"),
+                                        "event", Map.of("type", "text"),
+                                        "id", Map.of("type", "keyword"),
+                                        "source_endpoint", Map.of("type", "keyword")
+                                )
+                        )
+                );
+                System.out.println("Mapping to create index: " + createIndexRequest.mappings());
+                restHighLevelClient.indices().create(createIndexRequest, RequestOptions.DEFAULT);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Error creando el índice '" + indexName + "': " + e.getMessage(), e);
         }
     }
+
+
+
+
 
 
 
@@ -340,46 +444,34 @@ public class OpenSearchService {
     }
 
 
-    public String summarizeTextFromFile(String fileName) throws IOException {
-        File file = new File(UPLOAD_DIR + fileName);
-        if (!file.exists()) {
-            return "{\"error\": \"Archivo no encontrado: " + fileName + "\"}";
+    public Map<String, Object> summarizeText(String description) {
+        if (description == null || description.isEmpty()) {
+            return Map.of(
+                    "original_length", 0,
+                    "summary", List.of()
+            );
         }
 
-        // Leer como lista de objetos JSON
-        Gson gson = new Gson();
-        List<Map<String, Object>> documents;
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            documents = gson.fromJson(reader, List.class);
-        }
+        // Dividir en frases básicas (simulado como MVP)
+        String[] sentences = description.split("\\.\\s*");
+        List<String> trimmed = Arrays.stream(sentences)
+                .map(String::trim)
+                .filter(s -> !s.isEmpty())
+                .toList();
 
-        if (documents == null || documents.isEmpty()) {
-            return "{\"error\": \"Archivo JSON vacío o malformado\"}";
-        }
+        int maxSentences = Math.min(3, trimmed.size());
+        List<String> summary = trimmed.subList(0, maxSentences);
 
-        List<String> sentences = new ArrayList<>();
-        for (Map<String, Object> doc : documents) {
-            Object descObj = doc.get("description");
-            if (descObj instanceof String) {
-                String[] parts = ((String) descObj).split("\\.\\s*");
-                sentences.addAll(Arrays.asList(parts));
-            }
-        }
-
-        int maxSentences = Math.min(3, sentences.size());
-        List<String> summary = sentences.subList(0, maxSentences);
-
-        Map<String, Object> response = Map.of(
-                "original_length", sentences.size(),
+        return Map.of(
+                "original_length", trimmed.size(),
                 "summary", summary
         );
-        Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
-        return prettyGson.toJson(response);
     }
 
 
 
-    public Map<String, Double> predictNextValueFromFile(String fileName) throws IOException {
+
+    public Map<String, Object> predictNextValueFromFile(String fileName) throws IOException {
         File file = new File(UPLOAD_DIR + fileName);
         if (!file.exists()) throw new FileNotFoundException("Archivo no encontrado: " + fileName);
 
@@ -388,7 +480,7 @@ public class OpenSearchService {
             if (headerLine == null) throw new IOException("El archivo está vacío.");
             String[] headers = headerLine.split(",");
 
-            // Mapa para cada columna numérica
+            // Identificar campos numéricos válidos
             Map<String, List<Double>> numericColumns = new HashMap<>();
             for (String header : headers) numericColumns.put(header, new ArrayList<>());
 
@@ -404,8 +496,8 @@ public class OpenSearchService {
                 }
             }
 
-            // Seleccionamos la primera columna numérica válida
             for (Map.Entry<String, List<Double>> entry : numericColumns.entrySet()) {
+                String columnName = entry.getKey();
                 List<Double> values = entry.getValue();
                 if (values.size() < 2) continue;
 
@@ -417,12 +509,20 @@ public class OpenSearchService {
                 double nextX = values.size() + 1;
                 double prediction = regression.predict(nextX);
 
-                return Map.of("predicted_value", prediction, "last_value", values.get(values.size() - 1));
+                Map<String, Object> result = new HashMap<>();
+                result.put("series", columnName);
+                result.put("predicted_value", prediction);
+                result.put("last_value", values.get(values.size() - 1));
+                result.put("timestamp", Instant.now().toString());
+                result.put("fileName", fileName);
+                result.put("source_endpoint", "predict-trend");
+                return result;
             }
 
             throw new IllegalArgumentException("No se encontraron columnas numéricas válidas.");
         }
     }
+
 
 
 
@@ -502,7 +602,7 @@ public class OpenSearchService {
      * Anonimiza texto médico o sensible en un archivo.
      */
     @Service
-    public class TextAnonymizerService {
+    public static class TextAnonymizerService {
 
         public String anonymizeTextFromFileContent(String input) {
             String anonymized = input;
@@ -528,32 +628,40 @@ public class OpenSearchService {
     /**
      * Agrupa entradas de texto en clústeres temáticos.
      */
-    public Map<Integer, List<String>> clusterDocumentsFromFile(String fileName) throws IOException {
+    public Map<Integer, List<Map<String, Object>>> clusterDocumentsFromFile(String fileName) throws IOException {
         String path = "C:/uploaded_files/" + fileName;
-        List<String> lines = Files.readAllLines(Path.of(path)).stream()
-                .map(String::trim)
-                .filter(s -> !s.isEmpty())
-                .collect(Collectors.toList());
 
-        if (lines.size() < 2)
-            throw new IllegalArgumentException("Se necesitan al menos 2 documentos para clustering");
+        // Leer JSON con JsonReader en modo lenient
+        Gson gson = new Gson();
+        JsonReader jsonReader = new JsonReader(new FileReader(path));
+        jsonReader.setLenient(true);
 
-        // 1. Tokenización y vocabulario
+        List<Map<String, Object>> documents = gson.fromJson(
+                jsonReader,
+                new TypeToken<List<Map<String, Object>>>() {}.getType()
+        );
+
+        if (documents == null || documents.size() < 2) {
+            throw new IllegalArgumentException("Se requieren al menos 2 documentos para clustering.");
+        }
+
+        // Tokenizar y construir vocabulario
         Set<String> vocabulary = new HashSet<>();
-        List<List<String>> tokenized = new ArrayList<>();
-        for (String doc : lines) {
-            List<String> tokens = Arrays.stream(doc.toLowerCase().split("\\W+"))
-                    .filter(w -> w.length() > 2)
+        List<List<String>> tokenizedDocs = new ArrayList<>();
+        for (Map<String, Object> doc : documents) {
+            String text = (String) doc.get("text");
+            List<String> tokens = Arrays.stream(text.toLowerCase().split("\\W+"))
+                    .filter(t -> t.length() > 2)
                     .collect(Collectors.toList());
-            tokenized.add(tokens);
+            tokenizedDocs.add(tokens);
             vocabulary.addAll(tokens);
         }
 
         List<String> vocabList = new ArrayList<>(vocabulary);
 
-        // 2. Vector TF para cada documento
+        // Construir vectores TF
         List<ClusterableDocument> vectorDocs = new ArrayList<>();
-        for (List<String> tokens : tokenized) {
+        for (List<String> tokens : tokenizedDocs) {
             double[] vector = new double[vocabList.size()];
             for (int j = 0; j < vocabList.size(); j++) {
                 vector[j] = Collections.frequency(tokens, vocabList.get(j));
@@ -561,21 +669,23 @@ public class OpenSearchService {
             vectorDocs.add(new ClusterableDocument(vector));
         }
 
-        // 3. Aplicar KMeans (con K=2 por defecto)
+        // Clustering con K=2
         KMeansPlusPlusClusterer<ClusterableDocument> clusterer = new KMeansPlusPlusClusterer<>(2);
         List<CentroidCluster<ClusterableDocument>> result = clusterer.cluster(vectorDocs);
 
-        // 4. Construir clusters usando la posición en la lista original
-        Map<Integer, List<String>> clusters = new HashMap<>();
+        // Asignar documentos a clusters
+        Map<Integer, List<Map<String, Object>>> clusters = new HashMap<>();
         for (int i = 0; i < result.size(); i++) {
-            List<String> clusterTexts = new ArrayList<>();
-            for (ClusterableDocument doc : result.get(i).getPoints()) {
-                int originalIndex = vectorDocs.indexOf(doc);
-                if (originalIndex != -1) {
-                    clusterTexts.add(lines.get(originalIndex));
+            List<Map<String, Object>> clusterGroup = new ArrayList<>();
+            for (ClusterableDocument docVec : result.get(i).getPoints()) {
+                int originalIdx = vectorDocs.indexOf(docVec);
+                if (originalIdx != -1) {
+                    Map<String, Object> original = new LinkedHashMap<>(documents.get(originalIdx));
+                    original.put("cluster_id", i);
+                    clusterGroup.add(original);
                 }
             }
-            clusters.put(i, clusterTexts);
+            clusters.put(i, clusterGroup);
         }
 
         return clusters;
@@ -638,10 +748,6 @@ public class OpenSearchService {
             return gson.fromJson(reader, List.class);
         }
     }
-
-
-
-
 
 
 

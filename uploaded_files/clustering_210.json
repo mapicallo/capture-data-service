@@ -1,0 +1,210 @@
+{"id": "c1", "timestamp": "2025-05-19T09:15:00Z", "source_endpoint": "clustering", "text": "Paciente con antecedentes de tabaquismo crónico y episodios repetidos de bronquitis aguda."}
+{"id": "c2", "timestamp": "2025-05-19T09:16:00Z", "source_endpoint": "clustering", "text": "Revisión periódica para paciente asmático leve que responde bien a salbutamol."}
+{"id": "c3", "timestamp": "2025-05-19T09:17:00Z", "source_endpoint": "clustering", "text": "Paciente con historial de EPOC y oxigenoterapia domiciliaria desde hace un año."}
+{"id": "c4", "timestamp": "2025-05-19T09:18:00Z", "source_endpoint": "clustering", "text": "Seguimiento de rutina para síntomas leves de rinitis alérgica y tratamiento con antihistamínicos."}
+{"id": "c5", "timestamp": "2025-05-19T09:19:00Z", "source_endpoint": "clustering", "text": "Control postoperatorio tras lobectomía por carcinoma pulmonar en estadio temprano."}
+{"id": "c6", "timestamp": "2025-05-19T09:20:00Z", "source_endpoint": "clustering", "text": "Nuevo ingreso con neumonía bilateral, se inicia tratamiento antibiótico de amplio espectro."}
+{"id": "c7", "timestamp": "2025-05-19T09:21:00Z", "source_endpoint": "clustering", "text": "Consulta por tos persistente y disnea en paciente de edad avanzada."}
+{"id": "c8", "timestamp": "2025-05-19T09:22:00Z", "source_endpoint": "clustering", "text": "Diagnóstico de fibrosis pulmonar idiopática, se evalúan opciones de tratamiento."}
+{"id": "c9", "timestamp": "2025-05-19T09:23:00Z", "source_endpoint": "clustering", "text": "Paciente pediátrico con crisis asmática, se administra medicación de rescate."}
+{"id": "c10", "timestamp": "2025-05-19T09:24:00Z", "source_endpoint": "clustering", "text": "Revisión de espirometría en paciente con sospecha de asma ocupacional."}
+{"id": "c11", "timestamp": "2025-05-19T11:30:00Z", "source_endpoint": "clustering", "text": "Consulta de seguimiento para paciente con apnea del sueño y uso de CPAP."}
+{"id": "c12", "timestamp": "2025-05-19T11:31:00Z", "source_endpoint": "clustering", "text": "Dolor torácico atípico, se descarta origen cardíaco y se valora causa pulmonar."}
+{"id": "c13", "timestamp": "2025-05-19T11:32:00Z", "source_endpoint": "clustering", "text": "Vacunación antigripal y antineumocócica en pacientes con enfermedades respiratorias crónicas."}
+{"id": "c14", "timestamp": "2025-05-19T11:33:00Z", "source_endpoint": "clustering", "text": "Educación a paciente sobre el uso correcto de inhaladores para el asma."}
+{"id": "c15", "timestamp": "2025-05-19T11:34:00Z", "source_endpoint": "clustering", "text": "Primer episodio de sibilancias en lactante, se monitoriza y se dan pautas a los padres."}
+{"id": "c16", "timestamp": "2025-05-19T14:45:00Z", "source_endpoint": "clustering", "text": "Exacerbación aguda de EPOC, se requiere hospitalización para manejo."}
+{"id": "c17", "timestamp": "2025-05-19T14:46:00Z", "source_endpoint": "clustering", "text": "Paciente con hemoptisis, se solicita TAC torácico para investigación."}
+{"id": "c18", "timestamp": "2025-05-19T14:47:00Z", "source_endpoint": "clustering", "text": "Revisión de medicación en paciente con hipertensión pulmonar."}
+{"id": "c19", "timestamp": "2025-05-19T14:48:00Z", "source_endpoint": "clustering", "text": "Consulta por síntomas de bronquiolitis en niño menor de dos años."}
+{"id": "c20", "timestamp": "2025-05-19T14:49:00Z", "source_endpoint": "clustering", "text": "Evaluación preoperatoria pulmonar en paciente con cirugía mayor programada."}
+{"id": "c21", "timestamp": "2025-05-19T17:00:00Z", "source_endpoint": "clustering", "text": "Paciente con antecedentes de tuberculosis pulmonar, seguimiento de control."}
+{"id": "c22", "timestamp": "2025-05-19T17:01:00Z", "source_endpoint": "clustering", "text": "Valoración de candidato para trasplante pulmonar por enfermedad avanzada."}
+{"id": "c23", "timestamp": "2025-05-19T17:02:00Z", "source_endpoint": "clustering", "text": "Control de función pulmonar en paciente con enfermedad neuromuscular."}
+{"id": "c24", "timestamp": "2025-05-19T17:03:00Z", "source_endpoint": "clustering", "text": "Derivación a alergología por sospecha de asma alérgica no controlada."}
+{"id": "c25", "timestamp": "2025-05-19T17:04:00Z", "source_endpoint": "clustering", "text": "Consulta urgente por dificultad respiratoria aguda en paciente joven."}
+{"id": "c26", "timestamp": "2025-05-19T19:30:00Z", "source_endpoint": "clustering", "text": "Revisión tras alta hospitalaria por reagudización de asma severa."}
+{"id": "c27", "timestamp": "2025-05-19T19:31:00Z", "source_endpoint": "clustering", "text": "Paciente con tos crónica y reflujo gastroesofágico, se evalúa conexión."}
+{"id": "c28", "timestamp": "2025-05-19T19:32:00Z", "source_endpoint": "clustering", "text": "Seguimiento de nódulo pulmonar solitario detectado en radiografía."}
+{"id": "c29", "timestamp": "2025-05-19T19:33:00Z", "source_endpoint": "clustering", "text": "Ajuste de dosis de corticoesteroides inhalados en paciente con asma persistente."}
+{"id": "c30", "timestamp": "2025-05-19T19:34:00Z", "source_endpoint": "clustering", "text": "Control de presión arterial pulmonar en paciente con hipertensión arterial."}
+{"id": "c31", "timestamp": "2025-05-20T09:00:00Z", "source_endpoint": "clustering", "text": "Paciente con antecedentes de tabaquismo crónico y episodios repetidos de bronquitis aguda. Se reporta mejora."}
+{"id": "c32", "timestamp": "2025-05-20T09:01:00Z", "source_endpoint": "clustering", "text": "Revisión periódica para paciente asmático leve que responde bien a salbutamol. Se ajusta medicación."}
+{"id": "c33", "timestamp": "2025-05-20T09:02:00Z", "source_endpoint": "clustering", "text": "Paciente con historial de EPOC y oxigenoterapia domiciliaria desde hace un año. Nueva evaluación."}
+{"id": "c34", "timestamp": "2025-05-20T09:03:00Z", "source_endpoint": "clustering", "text": "Seguimiento de rutina para síntomas leves de rinitis alérgica y tratamiento con antihistamínicos. Se mantiene tratamiento."}
+{"id": "c35", "timestamp": "2025-05-20T09:04:00Z", "source_endpoint": "clustering", "text": "Control postoperatorio tras lobectomía por carcinoma pulmonar en estadio temprano. Suturas limpias."}
+{"id": "c36", "timestamp": "2025-05-20T09:05:00Z", "source_endpoint": "clustering", "text": "Nuevo ingreso con neumonía bilateral, se inicia tratamiento antibiótico de amplio espectro. Pronóstico favorable."}
+{"id": "c37", "timestamp": "2025-05-20T09:06:00Z", "source_endpoint": "clustering", "text": "Consulta por tos persistente y disnea en paciente de edad avanzada. Se solicitan pruebas adicionales."}
+{"id": "c38", "timestamp": "2025-05-20T09:07:00Z", "source_endpoint": "clustering", "text": "Diagnóstico de fibrosis pulmonar idiopática, se evalúan opciones de tratamiento. Se considera un ensayo clínico."}
+{"id": "c39", "timestamp": "2025-05-20T09:08:00Z", "source_endpoint": "clustering", "text": "Paciente pediátrico con crisis asmática, se administra medicación de rescate. Recuperación rápida."}
+{"id": "c40", "timestamp": "2025-05-20T09:09:00Z", "source_endpoint": "clustering", "text": "Revisión de espirometría en paciente con sospecha de asma ocupacional. Resultados pendientes."}
+{"id": "c41", "timestamp": "2025-05-20T11:00:00Z", "source_endpoint": "clustering", "text": "Consulta de seguimiento para paciente con apnea del sueño y uso de CPAP. Se ajusta presión."}
+{"id": "c42", "timestamp": "2025-05-20T11:01:00Z", "source_endpoint": "clustering", "text": "Dolor torácico atípico, se descarta origen cardíaco y se valora causa pulmonar. Probable mialgia."}
+{"id": "c43", "timestamp": "2025-05-20T11:02:00Z", "source_endpoint": "clustering", "text": "Vacunación antigripal y antineumocócica en pacientes con enfermedades respiratorias crónicas. Sin reacciones adversas."}
+{"id": "c44", "timestamp": "2025-05-20T11:03:00Z", "source_endpoint": "clustering", "text": "Educación a paciente sobre el uso correcto de inhaladores para el asma. Demostración práctica."}
+{"id": "c45", "timestamp": "2025-05-20T11:04:00Z", "source_endpoint": "clustering", "text": "Primer episodio de sibilancias en lactante, se monitoriza y se dan pautas a los padres. Se recomienda seguimiento."}
+{"id": "c46", "timestamp": "2025-05-20T14:00:00Z", "source_endpoint": "clustering", "text": "Exacerbación aguda de EPOC, se requiere hospitalización para manejo. Condición estable."}
+{"id": "c47", "timestamp": "2025-05-20T14:01:00Z", "source_endpoint": "clustering", "text": "Paciente con hemoptisis, se solicita TAC torácico para investigación. Causa indeterminada aún."}
+{"id": "c48", "timestamp": "2025-05-20T14:02:00Z", "source_endpoint": "clustering", "text": "Revisión de medicación en paciente con hipertensión pulmonar. Se ajusta dosis."}
+{"id": "c49", "timestamp": "2025-05-20T14:03:00Z", "source_endpoint": "clustering", "text": "Consulta por síntomas de bronquiolitis en niño menor de dos años. Tratamiento de soporte."}
+{"id": "c50", "timestamp": "2025-05-20T14:04:00Z", "source_endpoint": "clustering", "text": "Evaluación preoperatoria pulmonar en paciente con cirugía mayor programada. Apto para cirugía."}
+{"id": "c51", "timestamp": "2025-05-20T16:30:00Z", "source_endpoint": "clustering", "text": "Paciente con antecedentes de tuberculosis pulmonar, seguimiento de control. Sin actividad de la enfermedad."}
+{"id": "c52", "timestamp": "2025-05-20T16:31:00Z", "source_endpoint": "clustering", "text": "Valoración de candidato para trasplante pulmonar por enfermedad avanzada. Lista de espera."}
+{"id": "c53", "timestamp": "2025-05-20T16:32:00Z", "source_endpoint": "clustering", "text": "Control de función pulmonar en paciente con enfermedad neuromuscular. Deterioro leve."}
+{"id": "c54", "timestamp": "2025-05-20T16:33:00Z", "source_endpoint": "clustering", "text": "Derivación a alergología por sospecha de asma alérgica no controlada. Cita programada."}
+{"id": "c55", "timestamp": "2025-05-20T16:34:00Z", "source_endpoint": "clustering", "text": "Consulta urgente por dificultad respiratoria aguda en paciente joven. Se estabiliza."}
+{"id": "c56", "timestamp": "2025-05-20T18:45:00Z", "source_endpoint": "clustering", "text": "Revisión tras alta hospitalaria por reagudización de asma severa. Buena evolución."}
+{"id": "c57", "timestamp": "2025-05-20T18:46:00Z", "source_endpoint": "clustering", "text": "Paciente con tos crónica y reflujo gastroesofágico, se evalúa conexión. Se recomienda endoscopia."}
+{"id": "c58", "timestamp": "2025-05-20T18:47:00Z", "source_endpoint": "clustering", "text": "Seguimiento de nódulo pulmonar solitario detectado en radiografía. Estable en el tiempo."}
+{"id": "c59", "timestamp": "2025-05-20T18:48:00Z", "source_endpoint": "clustering", "text": "Ajuste de dosis de corticoesteroides inhalados en paciente con asma persistente. Buena respuesta."}
+{"id": "c60", "timestamp": "2025-05-20T18:49:00Z", "source_endpoint": "clustering", "text": "Control de presión arterial pulmonar en paciente con hipertensión arterial. Parámetros estables."}
+{"id": "c61", "timestamp": "2025-05-21T10:00:00Z", "source_endpoint": "clustering", "text": "Paciente con antecedentes de tabaquismo crónico y episodios repetidos de bronquitis aguda. Plan de cesación tabáquica."}
+{"id": "c62", "timestamp": "2025-05-21T10:01:00Z", "source_endpoint": "clustering", "text": "Revisión periódica para paciente asmático leve que responde bien a salbutamol. Se valora añadir otro broncodilatador."}
+{"id": "c63", "timestamp": "2025-05-21T10:02:00Z", "source_endpoint": "clustering", "text": "Paciente con historial de EPOC y oxigenoterapia domiciliaria desde hace un año. Se evalúa necesidad de mayor flujo."}
+{"id": "c64", "timestamp": "2025-05-21T10:03:00Z", "source_endpoint": "clustering", "text": "Seguimiento de rutina para síntomas leves de rinitis alérgica y tratamiento con antihistamínicos. Se considera inmunoterapia."}
+{"id": "c65", "timestamp": "2025-05-21T10:04:00Z", "source_endpoint": "clustering", "text": "Control postoperatorio tras lobectomía por carcinoma pulmonar en estadio temprano. Se retiran puntos."}
+{"id": "c66", "timestamp": "2025-05-21T10:05:00Z", "source_endpoint": "clustering", "text": "Nuevo ingreso con neumonía bilateral, se inicia tratamiento antibiótico de amplio espectro. Control de fiebre."}
+{"id": "c67", "timestamp": "2025-05-21T10:06:00Z", "source_endpoint": "clustering", "text": "Consulta por tos persistente y disnea en paciente de edad avanzada. Se recomienda broncoscopia."}
+{"id": "c68", "timestamp": "2025-05-21T10:07:00Z", "source_endpoint": "clustering", "text": "Diagnóstico de fibrosis pulmonar idiopática, se evalúan opciones de tratamiento. Se informa al paciente de pronóstico."}
+{"id": "c69", "timestamp": "2025-05-21T10:08:00Z", "source_endpoint": "clustering", "text": "Paciente pediátrico con crisis asmática, se administra medicación de rescate. Se da de alta a casa."}
+{"id": "c70", "timestamp": "2025-05-21T10:09:00Z", "source_endpoint": "clustering", "text": "Revisión de espirometría en paciente con sospecha de asma ocupacional. Se confirma diagnóstico."}
+{"id": "c71", "timestamp": "2025-05-21T12:15:00Z", "source_endpoint": "clustering", "text": "Consulta de seguimiento para paciente con apnea del sueño y uso de CPAP. Nivel de cumplimiento."}
+{"id": "c72", "timestamp": "2025-05-21T12:16:00Z", "source_endpoint": "clustering", "text": "Dolor torácico atípico, se descarta origen cardíaco y se valora causa pulmonar. Se prescribe analgésico."}
+{"id": "c73", "timestamp": "2025-05-21T12:17:00Z", "source_endpoint": "clustering", "text": "Vacunación antigripal y antineumocócica en pacientes con enfermedades respiratorias crónicas. Se explica importancia."}
+{"id": "c74", "timestamp": "2025-05-21T12:18:00Z", "source_endpoint": "clustering", "text": "Educación a paciente sobre el uso correcto de inhaladores para el asma. Se aclaran dudas."}
+{"id": "c75", "timestamp": "2025-05-21T12:19:00Z", "source_endpoint": "clustering", "text": "Primer episodio de sibilancias en lactante, se monitoriza y se dan pautas a los padres. Se recomienda evitar alérgenos."}
+{"id": "c76", "timestamp": "2025-05-21T15:00:00Z", "source_endpoint": "clustering", "text": "Exacerbación aguda de EPOC, se requiere hospitalización para manejo. Inicio de fisioterapia respiratoria."}
+{"id": "c77", "timestamp": "2025-05-21T15:01:00Z", "source_endpoint": "clustering", "text": "Paciente con hemoptisis, se solicita TAC torácico para investigación. Se descarta malignidad."}
+{"id": "c78", "timestamp": "2025-05-21T15:02:00Z", "source_endpoint": "clustering", "text": "Revisión de medicación en paciente con hipertensión pulmonar. Se modifica tratamiento."}
+{"id": "c79", "timestamp": "2025-05-21T15:03:00Z", "source_endpoint": "clustering", "text": "Consulta por síntomas de bronquiolitis en niño menor de dos años. Se valora ingreso si empeora."}
+{"id": "c80", "timestamp": "2025-05-21T15:04:00Z", "source_endpoint": "clustering", "text": "Evaluación preoperatoria pulmonar en paciente con cirugía mayor programada. Se dan recomendaciones."}
+{"id": "c81", "timestamp": "2025-05-21T17:30:00Z", "source_endpoint": "clustering", "text": "Paciente con antecedentes de tuberculosis pulmonar, seguimiento de control. Se realizan pruebas cutáneas."}
+{"id": "c82", "timestamp": "2025-05-21T17:31:00Z", "source_endpoint": "clustering", "text": "Valoración de candidato para trasplante pulmonar por enfermedad avanzada. Se inicia protocolo pre-trasplante."}
+{"id": "c83", "timestamp": "2025-05-21T17:32:00Z", "source_endpoint": "clustering", "text": "Control de función pulmonar en paciente con enfermedad neuromuscular. Se ajusta ventilación."}
+{"id": "c84", "timestamp": "2025-05-21T17:33:00Z", "source_endpoint": "clustering", "text": "Derivación a alergología por sospecha de asma alérgica no controlada. Se solicita panel de alérgenos."}
+{"id": "c85", "timestamp": "2025-05-21T17:34:00Z", "source_endpoint": "clustering", "text": "Consulta urgente por dificultad respiratoria aguda en paciente joven. Se descarta cuerpo extraño."}
+{"id": "c86", "timestamp": "2025-05-21T20:00:00Z", "source_endpoint": "clustering", "text": "Revisión tras alta hospitalaria por reagudización de asma severa. Se recomienda control semanal."}
+{"id": "c87", "timestamp": "2025-05-21T20:01:00Z", "source_endpoint": "clustering", "text": "Paciente con tos crónica y reflujo gastroesofágico, se evalúa conexión. Se prescribe protector gástrico."}
+{"id": "c88", "timestamp": "2025-05-21T20:02:00Z", "source_endpoint": "clustering", "text": "Seguimiento de nódulo pulmonar solitario detectado en radiografía. Se sugiere TAC de control en 6 meses."}
+{"id": "c89", "timestamp": "2025-05-21T20:03:00Z", "source_endpoint": "clustering", "text": "Ajuste de dosis de corticoesteroides inhalados en paciente con asma persistente. Se reduce dosis gradualmente."}
+{"id": "c90", "timestamp": "2025-05-21T20:04:00Z", "source_endpoint": "clustering", "text": "Control de presión arterial pulmonar en paciente con hipertensión arterial. Se valora añadir diurético."}
+{"id": "c91", "timestamp": "2025-05-22T08:30:00Z", "source_endpoint": "clustering", "text": "Paciente con antecedentes de tabaquismo crónico y episodios repetidos de bronquitis aguda. Se inscribe en programa antitabaco."}
+{"id": "c92", "timestamp": "2025-05-22T08:31:00Z", "source_endpoint": "clustering", "text": "Revisión periódica para paciente asmático leve que responde bien a salbutamol. Se refuerza educación sobre auto-manejo."}
+{"id": "c93", "timestamp": "2025-05-22T08:32:00Z", "source_endpoint": "clustering", "text": "Paciente con historial de EPOC y oxigenoterapia domiciliaria desde hace un año. Se solicita gasometría arterial."}
+{"id": "c94", "timestamp": "2025-05-22T08:33:00Z", "source_endpoint": "clustering", "text": "Seguimiento de rutina para síntomas leves de rinitis alérgica y tratamiento con antihistamínicos. Se ajusta horario de toma."}
+{"id": "c95", "timestamp": "2025-05-22T08:34:00Z", "source_endpoint": "clustering", "text": "Control postoperatorio tras lobectomía por carcinoma pulmonar en estadio temprano. Movilización precoz."}
+{"id": "c96", "timestamp": "2025-05-22T08:35:00Z", "source_endpoint": "clustering", "text": "Nuevo ingreso con neumonía bilateral, se inicia tratamiento antibiótico de amplio espectro. Cultivos negativos."}
+{"id": "c97", "timestamp": "2025-05-22T08:36:00Z", "source_endpoint": "clustering", "text": "Consulta por tos persistente y disnea en paciente de edad avanzada. Se descarta origen infeccioso."}
+{"id": "c98", "timestamp": "2025-05-22T08:37:00Z", "source_endpoint": "clustering", "text": "Diagnóstico de fibrosis pulmonar idiopática, se evalúan opciones de tratamiento. Se inicia terapia antifibrótica."}
+{"id": "c99", "timestamp": "2025-05-22T08:38:00Z", "source_endpoint": "clustering", "text": "Paciente pediátrico con crisis asmática, se administra medicación de rescate. Se programa cita con alergólogo."}
+{"id": "c100", "timestamp": "2025-05-22T08:39:00Z", "source_endpoint": "clustering", "text": "Revisión de espirometría en paciente con sospecha de asma ocupacional. Se recomienda cambio de puesto de trabajo."}
+{"id": "c101", "timestamp": "2025-05-22T10:45:00Z", "source_endpoint": "clustering", "text": "Consulta de seguimiento para paciente con apnea del sueño y uso de CPAP. Se valora cirugía de vía aérea superior."}
+{"id": "c102", "timestamp": "2025-05-22T10:46:00Z", "source_endpoint": "clustering", "text": "Dolor torácico atípico, se descarta origen cardíaco y se valora causa pulmonar. Ansiedad como factor contribuyente."}
+{"id": "c103", "timestamp": "2025-05-22T10:47:00Z", "source_endpoint": "clustering", "text": "Vacunación antigripal y antineumocócica en pacientes con enfermedades respiratorias crónicas. Se registran dosis."}
+{"id": "c104", "timestamp": "2025-05-22T10:48:00Z", "source_endpoint": "clustering", "text": "Educación a paciente sobre el uso correcto de inhaladores para el asma. Se entrega material didáctico."}
+{"id": "c105", "timestamp": "2025-05-22T10:49:00Z", "source_endpoint": "clustering", "text": "Primer episodio de sibilancias en lactante, se monitoriza y se dan pautas a los padres. Se descarta reflujo."}
+{"id": "c106", "timestamp": "2025-05-22T13:30:00Z", "source_endpoint": "clustering", "text": "Exacerbación aguda de EPOC, se requiere hospitalización para manejo. Evolución favorable, se plantea alta."}
+{"id": "c107", "timestamp": "2025-05-22T13:31:00Z", "source_endpoint": "clustering", "text": "Paciente con hemoptisis, se solicita TAC torácico para investigación. Se detecta pequeña bronquiectasia."}
+{"id": "c108", "timestamp": "2025-05-22T13:32:00Z", "source_endpoint": "clustering", "text": "Revisión de medicación en paciente con hipertensión pulmonar. Se considera añadir vasodilatador."}
+{"id": "c109", "timestamp": "2025-05-22T13:33:00Z", "source_endpoint": "clustering", "text": "Consulta por síntomas de bronquiolitis en niño menor de dos años. Se indica suero salino y aspiraciones."}
+{"id": "c110", "timestamp": "2025-05-22T13:34:00Z", "source_endpoint": "clustering", "text": "Evaluación preoperatoria pulmonar en paciente con cirugía mayor programada. Se optimiza función pulmonar."}
+{"id": "c111", "timestamp": "2025-05-22T16:00:00Z", "source_endpoint": "clustering", "text": "Paciente con antecedentes de tuberculosis pulmonar, seguimiento de control. Se realiza radiografía de tórax."}
+{"id": "c112", "timestamp": "2025-05-22T16:01:00Z", "source_endpoint": "clustering", "text": "Valoración de candidato para trasplante pulmonar por enfermedad avanzada. Pruebas de compatibilidad."}
+{"id": "c113", "timestamp": "2025-05-22T16:02:00Z", "source_endpoint": "clustering", "text": "Control de función pulmonar en paciente con enfermedad neuromuscular. Se evalúa capacidad vital forzada."}
+{"id": "c114", "timestamp": "2025-05-22T16:03:00Z", "source_endpoint": "clustering", "text": "Derivación a alergología por sospecha de asma alérgica no controlada. Se recomienda prueba de provocación."}
+{"id": "c115", "timestamp": "2025-05-22T16:04:00Z", "source_endpoint": "clustering", "text": "Consulta urgente por dificultad respiratoria aguda en paciente joven. Se administra oxígeno suplementario."}
+{"id": "c116", "timestamp": "2025-05-22T18:15:00Z", "source_endpoint": "clustering", "text": "Revisión tras alta hospitalaria por reagudización de asma severa. Se pautan pautas de alarma."}
+{"id": "c117", "timestamp": "2025-05-22T18:16:00Z", "source_endpoint": "clustering", "text": "Paciente con tos crónica y reflujo gastroesofágico, se evalúa conexión. Se recomienda dieta blanda."}
+{"id": "c118", "timestamp": "2025-05-22T18:17:00Z", "source_endpoint": "clustering", "text": "Seguimiento de nódulo pulmonar solitario detectado en radiografía. Se descarta crecimiento."}
+{"id": "c119", "timestamp": "2025-05-22T18:18:00Z", "source_endpoint": "clustering", "text": "Ajuste de dosis de corticoesteroides inhalados en paciente con asma persistente. Se reevalúa en un mes."}
+{"id": "c120", "timestamp": "2025-05-22T18:19:00Z", "source_endpoint": "clustering", "text": "Control de presión arterial pulmonar en paciente con hipertensión arterial. Se valora derivar a cardiología."}
+{"id": "c121", "timestamp": "2025-05-23T09:45:00Z", "source_endpoint": "clustering", "text": "Paciente con antecedentes de tabaquismo crónico y episodios repetidos de bronquitis aguda. Se inicia terapia de reemplazo de nicotina."}
+{"id": "c122", "timestamp": "2025-05-23T09:46:00Z", "source_endpoint": "clustering", "text": "Revisión periódica para paciente asmático leve que responde bien a salbutamol. Se ajusta pauta de rescate."}
+{"id": "c123", "timestamp": "2025-05-23T09:47:00Z", "source_endpoint": "clustering", "text": "Paciente con historial de EPOC y oxigenoterapia domiciliaria desde hace un año. Se evalúa función respiratoria."}
+{"id": "c124", "timestamp": "2025-05-23T09:48:00Z", "source_endpoint": "clustering", "text": "Seguimiento de rutina para síntomas leves de rinitis alérgica y tratamiento con antihistamínicos. Se educa sobre evitación de alérgenos."}
+{"id": "c125", "timestamp": "2025-05-23T09:49:00Z", "source_endpoint": "clustering", "text": "Control postoperatorio tras lobectomía por carcinoma pulmonar en estadio temprano. Se indica rehabilitación pulmonar."}
+{"id": "c126", "timestamp": "2025-05-23T09:50:00Z", "source_endpoint": "clustering", "text": "Nuevo ingreso con neumonía bilateral, se inicia tratamiento antibiótico de amplio espectro. Mejora clínica."}
+{"id": "c127", "timestamp": "2025-05-23T09:51:00Z", "source_endpoint": "clustering", "text": "Consulta por tos persistente y disnea en paciente de edad avanzada. Se descarta origen cardíaco."}
+{"id": "c128", "timestamp": "2025-05-23T09:52:00Z", "source_endpoint": "clustering", "text": "Diagnóstico de fibrosis pulmonar idiopática, se evalúan opciones de tratamiento. Se informa sobre efectos secundarios de medicación."}
+{"id": "c129", "timestamp": "2025-05-23T09:53:00Z", "source_endpoint": "clustering", "text": "Paciente pediátrico con crisis asmática, se administra medicación de rescate. Se valora alta hospitalaria."}
+{"id": "c130", "timestamp": "2025-05-23T09:54:00Z", "source_endpoint": "clustering", "text": "Revisión de espirometría en paciente con sospecha de asma ocupacional. Se programa seguimiento."}
+{"id": "c131", "timestamp": "2025-05-23T11:55:00Z", "source_endpoint": "clustering", "text": "Consulta de seguimiento para paciente con apnea del sueño y uso de CPAP. Se revisa confort de la mascarilla."}
+{"id": "c132", "timestamp": "2025-05-23T11:56:00Z", "source_endpoint": "clustering", "text": "Dolor torácico atípico, se descarta origen cardíaco y se valora causa pulmonar. Se recomienda ejercicio."}
+{"id": "c133", "timestamp": "2025-05-23T11:57:00Z", "source_endpoint": "clustering", "text": "Vacunación antigripal y antineumocócica en pacientes con enfermedades respiratorias crónicas. Se explica protocolo."}
+{"id": "c134", "timestamp": "2025-05-23T11:58:00Z", "source_endpoint": "clustering", "text": "Educación a paciente sobre el uso correcto de inhaladores para el asma. Se enfatiza la técnica."}
+{"id": "c135", "timestamp": "2025-05-23T11:59:00Z", "source_endpoint": "clustering", "text": "Primer episodio de sibilancias en lactante, se monitoriza y se dan pautas a los padres. Se descartan infecciones virales."}
+{"id": "c136", "timestamp": "2025-05-23T14:10:00Z", "source_endpoint": "clustering", "text": "Exacerbación aguda de EPOC, se requiere hospitalización para manejo. Se retira oxigenoterapia."}
+{"id": "c137", "timestamp": "2025-05-23T14:11:00Z", "source_endpoint": "clustering", "text": "Paciente con hemoptisis, se solicita TAC torácico para investigación. Se descarta tromboembolismo."}
+{"id": "c138", "timestamp": "2025-05-23T14:12:00Z", "source_endpoint": "clustering", "text": "Revisión de medicación en paciente con hipertensión pulmonar. Se ajusta diurético."}
+{"id": "c139", "timestamp": "2025-05-23T14:13:00Z", "source_endpoint": "clustering", "text": "Consulta por síntomas de bronquiolitis en niño menor de dos años. Padres educados sobre signos de alarma."}
+{"id": "c140", "timestamp": "2025-05-23T14:14:00Z", "source_endpoint": "clustering", "text": "Evaluación preoperatoria pulmonar en paciente con cirugía mayor programada. Se realizan pruebas de imagen."}
+{"id": "c141", "timestamp": "2025-05-23T16:40:00Z", "source_endpoint": "clustering", "text": "Paciente con antecedentes de tuberculosis pulmonar, seguimiento de control. Se comprueba adherencia al tratamiento."}
+{"id": "c142", "timestamp": "2025-05-23T16:41:00Z", "source_endpoint": "clustering", "text": "Valoración de candidato para trasplante pulmonar por enfermedad avanzada. Se completa evaluación psicológica."}
+{"id": "c143", "timestamp": "2025-05-23T16:42:00Z", "source_endpoint": "clustering", "text": "Control de función pulmonar en paciente con enfermedad neuromuscular. Se evalúa debilidad muscular respiratoria."}
+{"id": "c144", "timestamp": "2025-05-23T16:43:00Z", "source_endpoint": "clustering", "text": "Derivación a alergología por sospecha de asma alérgica no controlada. Se valora tratamiento biológico."}
+{"id": "c145", "timestamp": "2025-05-23T16:44:00Z", "source_endpoint": "clustering", "text": "Consulta urgente por dificultad respiratoria aguda en paciente joven. Se realiza radiografía de tórax."}
+{"id": "c146", "timestamp": "2025-05-23T19:00:00Z", "source_endpoint": "clustering", "text": "Revisión tras alta hospitalaria por reagudización de asma severa. Se revisa plan de acción personal."}
+{"id": "c147", "timestamp": "2025-05-23T19:01:00Z", "source_endpoint": "clustering", "text": "Paciente con tos crónica y reflujo gastroesofágico, se evalúa conexión. Se programa seguimiento con gastroenterología."}
+{"id": "c148", "timestamp": "2025-05-23T19:02:00Z", "source_endpoint": "clustering", "text": "Seguimiento de nódulo pulmonar solitario detectado en radiografía. Se descarta malignidad."}
+{"id": "c149", "timestamp": "2025-05-23T19:03:00Z", "source_endpoint": "clustering", "text": "Ajuste de dosis de corticoesteroides inhalados en paciente con asma persistente. Se incrementa dosis si necesario."}
+{"id": "c150", "timestamp": "2025-05-23T19:04:00Z", "source_endpoint": "clustering", "text": "Control de presión arterial pulmonar en paciente con hipertensión arterial. Se evalúa respuesta a tratamiento."}
+{"id": "c151", "timestamp": "2025-05-24T09:00:00Z", "source_endpoint": "clustering", "text": "Paciente con antecedentes de tabaquismo crónico y episodios repetidos de bronquitis aguda. Se remite a grupo de apoyo."}
+{"id": "c152", "timestamp": "2025-05-24T09:01:00Z", "source_endpoint": "clustering", "text": "Revisión periódica para paciente asmático leve que responde bien a salbutamol. Se valora reducción de medicación."}
+{"id": "c153", "timestamp": "2025-05-24T09:02:00Z", "source_endpoint": "clustering", "text": "Paciente con historial de EPOC y oxigenoterapia domiciliaria desde hace un año. Se valora pulsioximetría nocturna."}
+{"id": "c154", "timestamp": "2025-05-24T09:03:00Z", "source_endpoint": "clustering", "text": "Seguimiento de rutina para síntomas leves de rinitis alérgica y tratamiento con antihistamínicos. Se recomienda control ambiental."}
+{"id": "c155", "timestamp": "2025-05-24T09:04:00Z", "source_endpoint": "clustering", "text": "Control postoperatorio tras lobectomía por carcinoma pulmonar en estadio temprano. Se controlan drenajes."}
+{"id": "c156", "timestamp": "2025-05-24T09:05:00Z", "source_endpoint": "clustering", "text": "Nuevo ingreso con neumonía bilateral, se inicia tratamiento antibiótico de amplio espectro. Inicio de deambulación."}
+{"id": "c157", "timestamp": "2025-05-24T09:06:00Z", "source_endpoint": "clustering", "text": "Consulta por tos persistente y disnea en paciente de edad avanzada. Se valora necesidad de oxígeno."}
+{"id": "c158", "timestamp": "2025-05-24T09:07:00Z", "source_endpoint": "clustering", "text": "Diagnóstico de fibrosis pulmonar idiopática, se evalúan opciones de tratamiento. Se informa sobre investigación."}
+{"id": "c159", "timestamp": "2025-05-24T09:08:00Z", "source_endpoint": "clustering", "text": "Paciente pediátrico con crisis asmática, se administra medicación de rescate. Padres instruidos en uso de espaciador."}
+{"id": "c160", "timestamp": "2025-05-24T09:09:00Z", "source_endpoint": "clustering", "text": "Revisión de espirometría en paciente con sospecha de asma ocupacional. Se solicita test de metacolina."}
+{"id": "c161", "timestamp": "2025-05-24T11:15:00Z", "source_endpoint": "clustering", "text": "Consulta de seguimiento para paciente con apnea del sueño y uso de CPAP. Se revisa eficacia del tratamiento."}
+{"id": "c162", "timestamp": "2025-05-24T11:16:00Z", "source_endpoint": "clustering", "text": "Dolor torácico atípico, se descarta origen cardíaco y se valora causa pulmonar. Estrés como factor desencadenante."}
+{"id": "c163", "timestamp": "2025-05-24T11:17:00Z", "source_endpoint": "clustering", "text": "Vacunación antigripal y antineumocócica en pacientes con enfermedades respiratorias crónicas. Se informa sobre efectos secundarios."}
+{"id": "c164", "timestamp": "2025-05-24T11:18:00Z", "source_endpoint": "clustering", "text": "Educación a paciente sobre el uso correcto de inhaladores para el asma. Se ofrece demostración."}
+{"id": "c165", "timestamp": "2025-05-24T11:19:00Z", "source_endpoint": "clustering", "text": "Primer episodio de sibilancias en lactante, se monitoriza y se dan pautas a los padres. Se descarta aspiración."}
+{"id": "c166", "timestamp": "2025-05-24T14:00:00Z", "source_endpoint": "clustering", "text": "Exacerbación aguda de EPOC, se requiere hospitalización para manejo. Se inicia tratamiento con broncodilatadores."}
+{"id": "c167", "timestamp": "2025-05-24T14:01:00Z", "source_endpoint": "clustering", "text": "Paciente con hemoptisis, se solicita TAC torácico para investigación. Se descarta enfermedad pulmonar."}
+{"id": "c168", "timestamp": "2025-05-24T14:02:00Z", "source_endpoint": "clustering", "text": "Revisión de medicación en paciente con hipertensión pulmonar. Se ajusta medicación oral."}
+{"id": "c169", "timestamp": "2025-05-24T14:03:00Z", "source_endpoint": "clustering", "text": "Consulta por síntomas de bronquiolitis en niño menor de dos años. Se valora necesidad de nebulizaciones."}
+{"id": "c170", "timestamp": "2025-05-24T14:04:00Z", "source_endpoint": "clustering", "text": "Evaluación preoperatoria pulmonar en paciente con cirugía mayor programada. Se indica fisioterapia preoperatoria."}
+{"id": "c171", "timestamp": "2025-05-24T16:30:00Z", "source_endpoint": "clustering", "text": "Paciente con antecedentes de tuberculosis pulmonar, seguimiento de control. Se realiza PPD."}
+{"id": "c172", "timestamp": "2025-05-24T16:31:00Z", "source_endpoint": "clustering", "text": "Valoración de candidato para trasplante pulmonar por enfermedad avanzada. Se realiza evaluación nutricional."}
+{"id": "c173", "timestamp": "2025-05-24T16:32:00Z", "source_endpoint": "clustering", "text": "Control de función pulmonar en paciente con enfermedad neuromuscular. Se evalúa fuerza de músculos respiratorios."}
+{"id": "c174", "timestamp": "2025-05-24T16:33:00Z", "source_endpoint": "clustering", "text": "Derivación a alergología por sospecha de asma alérgica no controlada. Se programa seguimiento."}
+{"id": "c175", "timestamp": "2025-05-24T16:34:00Z", "source_endpoint": "clustering", "text": "Consulta urgente por dificultad respiratoria aguda en paciente joven. Se valora ingreso en UCI."}
+{"id": "c176", "timestamp": "2025-05-24T18:45:00Z", "source_endpoint": "clustering", "text": "Revisión tras alta hospitalaria por reagudización de asma severa. Se ajusta plan de tratamiento."}
+{"id": "c177", "timestamp": "2025-05-24T18:46:00Z", "source_endpoint": "clustering", "text": "Paciente con tos crónica y reflujo gastroesofágico, se evalúa conexión. Se valora cirugía antirreflujo."}
+{"id": "c178", "timestamp": "2025-05-24T18:47:00Z", "source_endpoint": "clustering", "text": "Seguimiento de nódulo pulmonar solitario detectado en radiografía. Se mantiene observación."}
+{"id": "c179", "timestamp": "2025-05-24T18:48:00Z", "source_endpoint": "clustering", "text": "Ajuste de dosis de corticoesteroides inhalados en paciente con asma persistente. Se valora cambio de fármaco."}
+{"id": "c180", "timestamp": "2025-05-24T18:49:00Z", "source_endpoint": "clustering", "text": "Control de presión arterial pulmonar en paciente con hipertensión arterial. Se valora tratamiento combinado."}
+{"id": "c181", "timestamp": "2025-05-25T10:30:00Z", "source_endpoint": "clustering", "text": "Paciente con antecedentes de tabaquismo crónico y episodios repetidos de bronquitis aguda. Se evalúa progreso."}
+{"id": "c182", "timestamp": "2025-05-25T10:31:00Z", "source_endpoint": "clustering", "text": "Revisión periódica para paciente asmático leve que responde bien a salbutamol. Se valora desescalada de tratamiento."}
+{"id": "c183", "timestamp": "2025-05-25T10:32:00Z", "source_endpoint": "clustering", "text": "Paciente con historial de EPOC y oxigenoterapia domiciliaria desde hace un año. Se valora rehabilitación pulmonar."}
+{"id": "c184", "timestamp": "2025-05-25T10:33:00Z", "source_endpoint": "clustering", "text": "Seguimiento de rutina para síntomas leves de rinitis alérgica y tratamiento con antihistamínicos. Se recomienda control estaciónal."}
+{"id": "c185", "timestamp": "2025-05-25T10:34:00Z", "source_endpoint": "clustering", "text": "Control postoperatorio tras lobectomía por carcinoma pulmonar en estadio temprano. Se retira drenaje torácico."}
+{"id": "c186", "timestamp": "2025-05-25T10:35:00Z", "source_endpoint": "clustering", "text": "Nuevo ingreso con neumonía bilateral, se inicia tratamiento antibiótico de amplio espectro. Buen pronóstico."}
+{"id": "c187", "timestamp": "2025-05-25T10:36:00Z", "source_endpoint": "clustering", "text": "Consulta por tos persistente y disnea en paciente de edad avanzada. Se valora derivación a neumología."}
+{"id": "c188", "timestamp": "2025-05-25T10:37:00Z", "source_endpoint": "clustering", "text": "Diagnóstico de fibrosis pulmonar idiopática, se evalúan opciones de tratamiento. Se informa sobre ensayos clínicos."}
+{"id": "c189", "timestamp": "2025-05-25T10:38:00Z", "source_endpoint": "clustering", "text": "Paciente pediátrico con crisis asmática, se administra medicación de rescate. Se da de alta a domicilio con pautas."}
+{"id": "c190", "timestamp": "2025-05-25T10:39:00Z", "source_endpoint": "clustering", "text": "Revisión de espirometría en paciente con sospecha de asma ocupacional. Se recomienda cambiar de entorno."}
+{"id": "c191", "timestamp": "2025-05-25T12:45:00Z", "source_endpoint": "clustering", "text": "Consulta de seguimiento para paciente con apnea del sueño y uso de CPAP. Se educa sobre limpieza de equipo."}
+{"id": "c192", "timestamp": "2025-05-25T12:46:00Z", "source_endpoint": "clustering", "text": "Dolor torácico atípico, se descarta origen cardíaco y se valora causa pulmonar. Se prescribe antiinflamatorio."}
+{"id": "c193", "timestamp": "2025-05-25T12:47:00Z", "source_endpoint": "clustering", "text": "Vacunación antigripal y antineumocócica en pacientes con enfermedades respiratorias crónicas. Se programa recordatorio."}
+{"id": "c194", "timestamp": "2025-05-25T12:48:00Z", "source_endpoint": "clustering", "text": "Educación a paciente sobre el uso correcto de inhaladores para el asma. Se ofrece soporte continuo."}
+{"id": "c195", "timestamp": "2025-05-25T12:49:00Z", "source_endpoint": "clustering", "text": "Primer episodio de sibilancias en lactante, se monitoriza y se dan pautas a los padres. Se valora alergia alimentaria."}
+{"id": "c196", "timestamp": "2025-05-25T15:00:00Z", "source_endpoint": "clustering", "text": "Exacerbación aguda de EPOC, se requiere hospitalización para manejo. Se inicia weaning de ventilación."}
+{"id": "c197", "timestamp": "2025-05-25T15:01:00Z", "source_endpoint": "clustering", "text": "Paciente con hemoptisis, se solicita TAC torácico para investigación. Se detecta pequeña lesión vascular."}
+{"id": "c198", "timestamp": "2025-05-25T15:02:00Z", "source_endpoint": "clustering", "text": "Revisión de medicación en paciente con hipertensión pulmonar. Se ajusta dosis de vasodilatador."}
+{"id": "c199", "timestamp": "2025-05-25T15:03:00Z", "source_endpoint": "clustering", "text": "Consulta por síntomas de bronquiolitis en niño menor de dos años. Padres informados sobre curso de la enfermedad."}
+{"id": "c200", "timestamp": "2025-05-25T15:04:00Z", "source_endpoint": "clustering", "text": "Evaluación preoperatoria pulmonar en paciente con cirugía mayor programada. Se realizan pruebas funcionales."}
+{"id": "c201", "timestamp": "2025-05-25T17:30:00Z", "source_endpoint": "clustering", "text": "Paciente con antecedentes de tuberculosis pulmonar, seguimiento de control. Se realiza cultivo de esputo."}
+{"id": "c202", "timestamp": "2025-05-25T17:31:00Z", "source_endpoint": "clustering", "text": "Valoración de candidato para trasplante pulmonar por enfermedad avanzada. Se planifica reunión multidisciplinar."}
+{"id": "c203", "timestamp": "2025-05-25T17:32:00Z", "source_endpoint": "clustering", "text": "Control de función pulmonar en paciente con enfermedad neuromuscular. Se evalúa capacidad para toser."}
+{"id": "c204", "timestamp": "2025-05-25T17:33:00Z", "source_endpoint": "clustering", "text": "Derivación a alergología por sospecha de asma alérgica no controlada. Se inicia desensibilización."}
+{"id": "c205", "timestamp": "2025-05-25T17:34:00Z", "source_endpoint": "clustering", "text": "Consulta urgente por dificultad respiratoria aguda en paciente joven. Se descarta neumotórax."}
+{"id": "c206", "timestamp": "2025-05-25T19:45:00Z", "source_endpoint": "clustering", "text": "Revisión tras alta hospitalaria por reagudización de asma severa. Se refuerza adherencia a tratamiento."}
+{"id": "c207", "timestamp": "2025-05-25T19:46:00Z", "source_endpoint": "clustering", "text": "Paciente con tos crónica y reflujo gastroesofágico, se evalúa conexión. Se recomienda modificación de estilo de vida."}
+{"id": "c208", "timestamp": "2025-05-25T19:47:00Z", "source_endpoint": "clustering", "text": "Seguimiento de nódulo pulmonar solitario detectado en radiografía. Se valora biopsia si hay cambios."}
+{"id": "c209", "timestamp": "2025-05-25T19:48:00Z", "source_endpoint": "clustering", "text": "Ajuste de dosis de corticoesteroides inhalados en paciente con asma persistente. Se reevalúa control de síntomas."}
+{"id": "c210", "timestamp": "2025-05-25T19:49:00Z", "source_endpoint": "clustering", "text": "Control de presión arterial pulmonar en paciente con hipertensión arterial. Se valora remisión a unidad especializada."}
