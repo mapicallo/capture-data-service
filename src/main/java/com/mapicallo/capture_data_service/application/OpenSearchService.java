@@ -314,7 +314,6 @@ public class OpenSearchService {
             documents = gson.fromJson(reader, new TypeToken<List<Map<String, Object>>>() {}.getType());
         }
 
-        String indexName = "result-text-segmentation-" + fileName.replaceAll("\\W+", "-").toLowerCase();
         List<Map<String, Object>> results = new ArrayList<>();
 
         for (Map<String, Object> doc : documents) {
@@ -325,11 +324,10 @@ public class OpenSearchService {
 
             if (text == null || text.isBlank()) continue;
 
-            // Dividir en frases por heurística
+            // Heurística para segmentar
             String[] sentences = text.split("(?<=[.!?])\\s+");
-
-            // Clasificación simple por reglas keyword-based
             Map<String, String> segments = new LinkedHashMap<>();
+
             for (String sentence : sentences) {
                 String s = sentence.trim().toLowerCase();
 
@@ -351,13 +349,12 @@ public class OpenSearchService {
             enriched.put("original_text", text);
             enriched.put("segments", segments);
 
-            // Indexar documento
-            indexGeneric(indexName, enriched);
             results.add(enriched);
         }
 
         return results;
     }
+
 
 
 

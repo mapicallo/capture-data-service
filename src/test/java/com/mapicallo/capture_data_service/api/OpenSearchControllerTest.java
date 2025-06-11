@@ -129,6 +129,32 @@ class OpenSearchControllerTest {
                 .andExpect(content().string(containsString("urgencias")));
     }*/
 
+    @Test
+    public void testTextSegmentationEndpoint() throws Exception {
+        // Crear archivo de prueba con contenido mínimo válido
+        String content = """
+            [
+              {
+                "id": "seg-001",
+                "timestamp": "2025-05-20T10:00:00Z",
+                "source_endpoint": "text-segmentation",
+                "text": "Paciente con fiebre persistente. Se recomienda reposo absoluto. Se prescribe paracetamol."
+              }
+            ]
+            """;
+
+        Files.writeString(Path.of(uploadDir), content);
+
+        mockMvc.perform(post("/api/v1/opensearch/text-segmentation")
+                        .param("fileName", "text-segmentation_test.json")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.file").value("text-segmentation_test.json"))
+                .andExpect(jsonPath("$.segments_indexed").value(3))
+                .andExpect(jsonPath("$.segments").isArray())
+                .andExpect(jsonPath("$.segments[0].event").exists());
+    }
+
 
 
     @Test
