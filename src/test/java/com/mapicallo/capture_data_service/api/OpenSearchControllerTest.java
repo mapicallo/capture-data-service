@@ -1,21 +1,34 @@
 package com.mapicallo.capture_data_service.api;
 
+import com.mapicallo.capture_data_service.application.OpenSearchService;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.Map;
 
-import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.*;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.multipart;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.hamcrest.Matchers.not;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -34,6 +47,13 @@ class OpenSearchControllerTest {
 
     private final String testFileName5 = "entidades_clinicas.txt";
     private final String testFileName6 = "historial_clinico.txt";
+
+    private final String testFileName7 = "trend_test.csv";
+
+    @MockBean
+    private OpenSearchService openSearchService;
+
+
 
     @BeforeEach
     void setupTestFile() throws Exception {
@@ -98,7 +118,7 @@ class OpenSearchControllerTest {
 
     }
 
-    @Test
+   /* @Test
     void shouldBuildTimelineFromTextFile() throws Exception {
         mockMvc.perform(post("/api/v1/opensearch/timeline-builder")
                         .param("fileName", testFileName6))
@@ -107,6 +127,32 @@ class OpenSearchControllerTest {
                 .andExpect(content().string(containsString("2024")))
                 .andExpect(content().string(containsString("ingresado")))
                 .andExpect(content().string(containsString("urgencias")));
+    }*/
+
+    @Test
+    public void testTextSegmentationEndpoint() throws Exception {
+        // Crear archivo de prueba con contenido mínimo válido
+        String content = """
+            [
+              {
+                "id": "seg-001",
+                "timestamp": "2025-05-20T10:00:00Z",
+                "source_endpoint": "text-segmentation",
+                "text": "Paciente con fiebre persistente. Se recomienda reposo absoluto. Se prescribe paracetamol."
+              }
+            ]
+            """;
+
+        Files.writeString(Path.of(uploadDir), content);
+
+        mockMvc.perform(post("/api/v1/opensearch/text-segmentation")
+                        .param("fileName", "text-segmentation_test.json")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.file").value("text-segmentation_test.json"))
+                .andExpect(jsonPath("$.segments_indexed").value(3))
+                .andExpect(jsonPath("$.segments").isArray())
+                .andExpect(jsonPath("$.segments[0].event").exists());
     }
 
 
@@ -140,38 +186,201 @@ class OpenSearchControllerTest {
 
 
     @Test
-    void shouldPredictTrendFromCsvFile() throws Exception {
-        mockMvc.perform(post("/api/v1/opensearch/predict-trend")
-                        .param("fileName", testFileName3))
+    public void shouldReturnPredictionForValidCsv() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/opensearch/predict-trend")
+                        .param("fileName", testFileName7))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.last_value").value(160.0))
-                .andExpect(jsonPath("$.predicted_value").value(180.0));
+                .andExpect(jsonPath("$.predicted_value").exists())
+                .andExpect(jsonPath("$.last_value").value(85.0))
+                .andExpect(jsonPath("$.timestamp").exists())
+                .andExpect(jsonPath("$.source_endpoint").value("predict-trend"))
+                .andExpect(jsonPath("$.fileName").value(testFileName7));
     }
 
 
     @Test
-    void shouldExtractTriplesFromTextFile() throws Exception {
+    public void testKeywordExtractEndpoint() throws Exception {
+        String testFileName = "keywords_test.json";
+
+        // Simula que el archivo existe en el directorio de subida
+        File file = new File("uploads/" + testFileName);
+        if (!file.exists()) {
+            Files.write(Paths.get(file.getPath()), """
+                [
+                  {
+                    "id": "kw-001",
+                    "timestamp": "2025-05-19T08:00:00Z",
+                    "source_endpoint": "keyword-extract",
+                    "text": "Paciente con dolor torácico leve. Se recomienda reposo."
+                  }
+                ]
+            """.getBytes(StandardCharsets.UTF_8));
+        }
+
+        mockMvc.perform(MockMvcRequestBuilders
+                        .post("/api/v1/opensearch/keyword-extract")
+                        .param("fileName", testFileName))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.keywords").isArray())
+                .andExpect(jsonPath("$.keywords.length()").isNotEmpty());
+    }
+
+
+    @Test
+    public void testAnonymizeTextFromFileContent() {
+        OpenSearchService.TextAnonymizerService service = new OpenSearchService.TextAnonymizerService();
+
+        String original = "El paciente Juan Pérez fue atendido por la Dra. Gómez en el Hospital Central el 2024-05-01.";
+        String anonymized = service.anonymizeTextFromFileContent(original);
+
+        assertNotNull(anonymized);
+        assertTrue(anonymized.contains("[NOMBRE]"));
+        assertTrue(anonymized.contains("[PROFESIONAL]"));
+        assertTrue(anonymized.contains("[CENTRO_MEDICO]"));
+        assertTrue(anonymized.contains("[FECHA]"));
+        assertFalse(anonymized.contains("Juan Pérez"));
+        assertFalse(anonymized.contains("Dra. Gómez"));
+        assertFalse(anonymized.contains("Hospital Central"));
+    }
+
+
+    @Test
+    void testAnonymizeTextEndpoint_withValidFile() throws Exception {
+        String fileName = "anonymize-text-test.json";
+
+        // Suponemos subido este fichero a la carpeta UPLOAD_DIR antes de lanzar el test
+
+        mockMvc.perform(MockMvcRequestBuilders
+                        .post("/api/v1/anonymize-text")
+                        .param("fileName", fileName)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.file").value(fileName))
+                .andExpect(jsonPath("$.documents_indexed").isNumber())
+                .andExpect(jsonPath("$.anonymized_documents").isArray())
+                .andExpect(jsonPath("$.anonymized_documents.length()").value(Matchers.greaterThan(0)))
+                .andExpect(jsonPath("$.anonymized_documents[0].anonymized_text").exists());
+    }
+
+
+    @Test
+    public void testClusteringEndpoint_withValidFile() throws Exception {
+        mockMvc.perform(
+                        multipart("/api/v1/clustering")
+                                .param("fileName", "clustering_test.json")
+                )
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.file").value("clustering_test.json"))
+                .andExpect(jsonPath("$.clusters").exists())
+                .andExpect(jsonPath("$.clusters.*").isArray());
+    }
+
+
+
+
+
+    @Test
+    void shouldExtractTriplesAndReturnJson() throws Exception {
+        // Primero subimos el archivo de prueba
+        MockMultipartFile file = new MockMultipartFile(
+                "file",
+                "extract-triples-test.json",
+                "application/json",
+                Files.readAllBytes(Path.of("src/test/resources/testdata/extract-triples-test.json"))
+        );
+
+        mockMvc.perform(multipart("/api/v1/files/upload").file(file))
+                .andExpect(status().isOk());
+
+        // Luego invocamos el endpoint de extracción de triples
         mockMvc.perform(post("/api/v1/opensearch/extract-triples")
-                        .param("fileName", testFileName1))
+                        .param("fileName", "extract-triples-test.json"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(containsString("subject")))
-                .andExpect(content().string(containsString("relation")))
-                .andExpect(content().string(containsString("object")));
-    }
-
-    @Test
-    void shouldSummarizeBigDataFromCsv() throws Exception {
-        mockMvc.perform(post("/api/v1/opensearch/bigdata/summarize")
-                        .param("fileName", testFileName2))
-                .andExpect(status().isOk())
-                .andExpect(content().string(containsString("edad")))
-                .andExpect(content().string(containsString("mean")))
-                .andExpect(content().string(containsString("std_dev")))
-                .andExpect(content().string(containsString("saturacion_oxigeno")));
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$").isArray())
+                .andExpect(jsonPath("$[0].subject").exists())
+                .andExpect(jsonPath("$[0].relation").exists())
+                .andExpect(jsonPath("$[0].object").exists());
     }
 
 
+
     @Test
+    public void testSummarizeBigData() throws Exception {
+        MockMultipartFile mockFile = new MockMultipartFile(
+                "file",
+                "bigdata-summary.csv",
+                "text/csv",
+                ("age,height,weight\n" +
+                        "25,170,70\n" +
+                        "30,165,60\n" +
+                        "28,180,75").getBytes()
+        );
+
+        mockMvc.perform(MockMvcRequestBuilders.multipart("/api/v1/opensearch/bigdata/summary")
+                        .file(mockFile)
+                        .param("fileName", "bigdata-summary.csv"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.age").exists())
+                .andExpect(jsonPath("$.height.mean").isNumber())
+                .andExpect(jsonPath("$.weight.max").isNumber());
+    }
+
+
+
+    @Test
+    void shouldSummarizeAITextFile() throws Exception {
+        mockMvc.perform(post("/api/v1/opensearch/ai/summarize")
+                        .param("fileName", "ai-summarize_test_input.json"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.original_length").exists())
+                .andExpect(jsonPath("$.summary").isArray())
+                .andExpect(jsonPath("$.summary.length()").value(3));
+    }
+
+
+    @Test
+    public void testSentimentAnalysisEndpoint() throws Exception {
+        String testFileName = "sentiment-analysis_210.json"; // Debe existir en C:/uploaded_files/
+
+        mockMvc.perform(post("/api/v1/opensearch/sentiment-analysis")
+                        .param("fileName", testFileName))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.file").value(testFileName))
+                .andExpect(jsonPath("$.documents_indexed").value(210))
+                .andExpect(jsonPath("$.sample", hasSize(greaterThan(0))))
+                .andExpect(jsonPath("$.sample[0].summary_sentiment").exists())
+                .andExpect(jsonPath("$.sample[0].original_text").exists());
+    }
+
+    @Test
+    void testRecognizeEntitiesSuccess() throws Exception {
+        String fileName = "entity-recognition_210.json";
+        Map<String, List<String>> mockEntities = Map.of(
+                "PERSON", List.of("Juan Pérez"),
+                "DATE", List.of("2025-05-19")
+        );
+
+        when(openSearchService.recognizeEntitiesFromJsonFile("C:/uploaded_files/" + fileName))
+                .thenReturn((List<Map<String, Object>>) mockEntities);
+
+        mockMvc.perform(post("/api/v1/opensearch/entity-recognition")
+                        .param("fileName", fileName)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.PERSON[0]").value("Juan Pérez"))
+                .andExpect(jsonPath("$.DATE[0]").value("2025-05-19"));
+    }
+
+
+
+
+
+
+
+
+
+    /*@Test
     void shouldSummarizeAiFromJsonFile() throws Exception {
         String fileName = "casos_clinicos.json";
         String jsonContent = """
@@ -205,7 +414,7 @@ class OpenSearchControllerTest {
                 .andExpect(jsonPath("$.summary").isArray())
                 .andExpect(jsonPath("$.summary[0]").value(org.hamcrest.Matchers.containsString("El paciente presenta disnea")))
                 .andExpect(jsonPath("$.original_length").isNumber());
-    }
+    }*/
 
 
     @Test

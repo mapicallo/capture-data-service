@@ -1,0 +1,1262 @@
+[
+  {
+    "id": "kw-006",
+    "timestamp": "2025-05-19T09:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con fuerte dolor de cabeza y visión borrosa. Se sospecha de migraña con aura. Se le administra analgésicos y se recomienda reposo absoluto."
+  },
+  {
+    "id": "kw-007",
+    "timestamp": "2025-05-19T09:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño de 5 años con fiebre alta y erupción cutánea. Diagnóstico preliminar de sarampión. Se aísla al paciente y se notifica a epidemiología."
+  },
+  {
+    "id": "kw-008",
+    "timestamp": "2025-05-19T10:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Anciana con fractura de cadera tras una caída. Se prepara para cirugía de reemplazo de cadera. Se monitoriza su estado cardiológico."
+  },
+  {
+    "id": "kw-009",
+    "timestamp": "2025-05-19T10:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Joven con ansiedad generalizada. Se inicia terapia cognitivo-conductual y se prescribe medicación ansiolítica de baja dosis."
+  },
+  {
+    "id": "kw-010",
+    "timestamp": "2025-05-19T11:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente diabético con niveles de glucosa inestables. Se ajusta la dosis de insulina y se refuerza la educación dietética."
+  },
+  {
+    "id": "kw-011",
+    "timestamp": "2025-05-19T11:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con síntomas de alergia estacional: estornudos, picor de ojos. Se recomienda antihistamínicos y evitar exposición a alérgenos."
+  },
+  {
+    "id": "kw-012",
+    "timestamp": "2025-05-19T12:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Deportista con esguince de tobillo. Se inmoviliza la articulación y se aplica hielo. Se programa sesión de fisioterapia."
+  },
+  {
+    "id": "kw-013",
+    "timestamp": "2025-05-19T12:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con infección de orina recurrente. Se realiza urocultivo y se prescribe antibiótico de amplio espectro."
+  },
+  {
+    "id": "kw-014",
+    "timestamp": "2025-05-19T13:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Recién nacido con ictericia neonatal. Se inicia fototerapia y se monitorizan los niveles de bilirrubina."
+  },
+  {
+    "id": "kw-015",
+    "timestamp": "2025-05-19T13:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer embarazada con náuseas y vómitos intensos. Se le administra antieméticos y se recomienda comidas pequeñas y frecuentes."
+  },
+  {
+    "id": "kw-016",
+    "timestamp": "2025-05-19T14:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor de muelas severo. Se diagnostica caries profunda y se programa extracción dental urgente."
+  },
+  {
+    "id": "kw-017",
+    "timestamp": "2025-05-19T14:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de sueño crónicos. Se recomienda higiene del sueño y se explora la posibilidad de apnea del sueño."
+  },
+  {
+    "id": "kw-018",
+    "timestamp": "2025-05-19T15:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con síntomas de gripe: fiebre, tos, congestión. Se prescribe antivirales y se recomienda reposo e hidratación."
+  },
+  {
+    "id": "kw-019",
+    "timestamp": "2025-05-19T15:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con visión borrosa y fatiga ocular. Se sospecha de astigmatismo. Se programa revisión oftalmológica."
+  },
+  {
+    "id": "kw-020",
+    "timestamp": "2025-05-19T16:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor abdominal agudo. Se realiza ecografía abdominal y se sospecha de apendicitis. Se prepara para cirugía."
+  },
+  {
+    "id": "kw-021",
+    "timestamp": "2025-05-19T16:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con cambios de humor y sofocos. Se diagnostica menopausia. Se considera terapia de reemplazo hormonal."
+  },
+  {
+    "id": "kw-022",
+    "timestamp": "2025-05-19T17:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con dificultad para respirar y sibilancias. Historial de asma. Se le administra broncodilatador de rescate."
+  },
+  {
+    "id": "kw-023",
+    "timestamp": "2025-05-19T17:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con mareos y desequilibrio. Se realiza prueba de vértigo. Se recomienda ejercicios de rehabilitación vestibular."
+  },
+  {
+    "id": "kw-024",
+    "timestamp": "2025-05-19T18:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con otitis media aguda. Se prescribe antibiótico oral y analgésicos. Se recomienda seguimiento en 48 horas."
+  },
+  {
+    "id": "kw-025",
+    "timestamp": "2025-05-19T18:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con quemadura de primer grado en la mano. Se limpia la zona y se aplica pomada. Se recomienda no cubrir con vendaje."
+  },
+  {
+    "id": "kw-026",
+    "timestamp": "2025-05-19T19:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dolor de espalda crónico. Se recomienda fisioterapia y ejercicios de fortalecimiento muscular."
+  },
+  {
+    "id": "kw-027",
+    "timestamp": "2025-05-19T19:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor de garganta y dificultad para tragar. Se diagnostica faringitis. Se prescribe antiinflamatorios."
+  },
+  {
+    "id": "kw-028",
+    "timestamp": "2025-05-19T20:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con presión arterial elevada en chequeo rutinario. Se recomienda cambios en el estilo de vida y seguimiento."
+  },
+  {
+    "id": "kw-029",
+    "timestamp": "2025-05-19T20:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con insomnio severo. Se refiere a especialista en sueño. Se evalúa la posibilidad de trastornos del sueño."
+  },
+  {
+    "id": "kw-030",
+    "timestamp": "2025-05-19T21:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con erupción cutánea en el brazo. Se sospecha de dermatitis por contacto. Se prescribe crema con corticoides."
+  },
+  {
+    "id": "kw-031",
+    "timestamp": "2025-05-19T21:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con tos persistente y dificultad para respirar. Se diagnostica bronquiolitis. Se prescribe nebulizaciones."
+  },
+  {
+    "id": "kw-032",
+    "timestamp": "2025-05-19T22:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor de pecho inespecífico. Se realiza electrocardiograma. Se descarta infarto agudo de miocardio."
+  },
+  {
+    "id": "kw-033",
+    "timestamp": "2025-05-19T22:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con síntomas de depresión postparto. Se refiere a apoyo psicológico y se evalúa necesidad de medicación."
+  },
+  {
+    "id": "kw-034",
+    "timestamp": "2025-05-19T23:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con úlcera en la pierna. Se realiza curación y se prescribe antibiótico tópico. Se programa seguimiento."
+  },
+  {
+    "id": "kw-035",
+    "timestamp": "2025-05-19T23:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con pérdida de peso inexplicada. Se solicitan análisis de sangre completos y se refiere a endocrinología."
+  },
+  {
+    "id": "kw-036",
+    "timestamp": "2025-05-20T09:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Revisión ginecológica anual. Se realiza citología y mamografía. Resultados pendientes."
+  },
+  {
+    "id": "kw-037",
+    "timestamp": "2025-05-20T09:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Seguimiento de paciente con enfermedad de Crohn. Se ajusta la dosis de medicación y se monitorea la inflamación intestinal."
+  },
+  {
+    "id": "kw-038",
+    "timestamp": "2025-05-20T10:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con hipotiroidismo. Se realiza control de hormonas tiroideas y se ajusta la medicación."
+  },
+  {
+    "id": "kw-039",
+    "timestamp": "2025-05-20T10:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con sospecha de TDAH. Se inicia evaluación neuropsicológica para confirmación diagnóstica."
+  },
+  {
+    "id": "kw-040",
+    "timestamp": "2025-05-20T11:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de próstata. Se realiza tacto rectal y análisis de PSA. Se considera biopsia."
+  },
+  {
+    "id": "kw-041",
+    "timestamp": "2025-05-20T11:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor de rodilla crónico. Se recomienda resonancia magnética para evaluar menisco y ligamentos."
+  },
+  {
+    "id": "kw-042",
+    "timestamp": "2025-05-20T12:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con osteoporosis. Se prescribe suplementos de calcio y vitamina D. Se recomienda densitometría ósea anual."
+  },
+  {
+    "id": "kw-043",
+    "timestamp": "2025-05-20T12:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con úlcera gástrica. Se prescribe protectores gástricos y se busca presencia de Helicobacter pylori."
+  },
+  {
+    "id": "kw-044",
+    "timestamp": "2025-05-20T13:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con fatiga y debilidad muscular. Se sospecha de anemia. Se solicitan análisis de hierro y ferritina."
+  },
+  {
+    "id": "kw-045",
+    "timestamp": "2025-05-20T13:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Anciano con demencia senil. Se evalúa el grado de deterioro cognitivo y se ajusta el plan de cuidados."
+  },
+  {
+    "id": "kw-046",
+    "timestamp": "2025-05-20T14:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con problemas de tiroides. Se controla la función tiroidea y se ajusta la medicación según los resultados."
+  },
+  {
+    "id": "kw-047",
+    "timestamp": "2025-05-20T14:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor menstrual intenso. Se prescribe analgésicos y se explora la posibilidad de endometriosis."
+  },
+  {
+    "id": "kw-048",
+    "timestamp": "2025-05-20T15:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con antecedentes de infarto. Se realiza control cardiológico anual y se ajusta la medicación preventiva."
+  },
+  {
+    "id": "kw-049",
+    "timestamp": "2025-05-20T15:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con candidiasis oral. Se prescribe antifúngico tópico y se recomienda higiene bucal adecuada."
+  },
+  {
+    "id": "kw-050",
+    "timestamp": "2025-05-20T16:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niña con infección de oído recurrente. Se considera la colocación de tubos de timpanostomía."
+  },
+  {
+    "id": "kw-051",
+    "timestamp": "2025-05-20T16:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con síntomas de cistitis. Se realiza análisis de orina y se prescribe antibiótico específico."
+  },
+  {
+    "id": "kw-052",
+    "timestamp": "2025-05-20T17:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con fibromialgia. Se ajusta la medicación para el dolor y se recomienda terapia física y ejercicios suaves."
+  },
+  {
+    "id": "kw-053",
+    "timestamp": "2025-05-20T17:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de visión nocturna. Se refiere a oftalmología para estudio de la retina."
+  },
+  {
+    "id": "kw-054",
+    "timestamp": "2025-05-20T18:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con pie de atleta. Se prescribe antifúngico tópico y se recomienda higiene de los pies y calzado adecuado."
+  },
+  {
+    "id": "kw-055",
+    "timestamp": "2025-05-20T18:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con picaduras de insectos. Se prescribe antihistamínicos y crema con corticoides para aliviar el picor."
+  },
+  {
+    "id": "kw-056",
+    "timestamp": "2025-05-20T19:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con paperas. Se aísla al paciente y se recomienda reposo y analgésicos para el dolor."
+  },
+  {
+    "id": "kw-057",
+    "timestamp": "2025-05-20T19:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con tos crónica y dificultad para respirar. Se sospecha de EPOC. Se solicita espirometría."
+  },
+  {
+    "id": "kw-058",
+    "timestamp": "2025-05-20T20:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor en el pecho al respirar. Se realiza radiografía de tórax. Se descarta neumonía."
+  },
+  {
+    "id": "kw-059",
+    "timestamp": "2025-05-20T20:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con síntomas de gota. Se prescribe antiinflamatorios y se recomienda dieta baja en purinas."
+  },
+  {
+    "id": "kw-060",
+    "timestamp": "2025-05-20T21:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con problemas de audición. Se refiere a audiología para pruebas de audición y posible audífono."
+  },
+  {
+    "id": "kw-061",
+    "timestamp": "2025-05-20T21:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con sangrado de encías. Se recomienda visita al odontólogo para evaluar gingivitis o periodontitis."
+  },
+  {
+    "id": "kw-062",
+    "timestamp": "2025-05-20T22:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con dificultad para hablar. Se refiere a logopedia para evaluación y terapia del lenguaje."
+  },
+  {
+    "id": "kw-063",
+    "timestamp": "2025-05-20T22:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor de cuello y rigidez. Se recomienda fisioterapia y ejercicios de estiramiento."
+  },
+  {
+    "id": "kw-064",
+    "timestamp": "2025-05-20T23:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con retención de líquidos. Se prescribe diuréticos y se recomienda dieta baja en sodio."
+  },
+  {
+    "id": "kw-065",
+    "timestamp": "2025-05-20T23:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de digestión. Se recomienda dieta blanda y se descarta intolerancias alimentarias."
+  },
+  {
+    "id": "kw-066",
+    "timestamp": "2025-05-21T09:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Revisión pediátrica de rutina. Vacunación al día. Se evalúa crecimiento y desarrollo del niño."
+  },
+  {
+    "id": "kw-067",
+    "timestamp": "2025-05-21T09:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor de cabeza persistente. Se recomienda resonancia magnética cerebral para descartar anomalías."
+  },
+  {
+    "id": "kw-068",
+    "timestamp": "2025-05-21T10:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor en las articulaciones. Se solicitan análisis de sangre para artritis reumatoide."
+  },
+  {
+    "id": "kw-069",
+    "timestamp": "2025-05-21T10:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con pérdida de audición gradual. Se refiere a especialista en otorrinolaringología."
+  },
+  {
+    "id": "kw-070",
+    "timestamp": "2025-05-21T11:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con tos con flema. Se diagnostica bronquitis aguda. Se prescribe expectorantes y reposo."
+  },
+  {
+    "id": "kw-071",
+    "timestamp": "2025-05-21T11:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dolor de muelas e hinchazón. Se sospecha de absceso dental. Se prescribe antibióticos."
+  },
+  {
+    "id": "kw-072",
+    "timestamp": "2025-05-21T12:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con enuresis nocturna. Se recomiendan medidas conductuales y se descartan causas médicas."
+  },
+  {
+    "id": "kw-073",
+    "timestamp": "2025-05-21T12:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor de cabeza tipo tensional. Se recomienda relajación y analgésicos de venta libre."
+  },
+  {
+    "id": "kw-074",
+    "timestamp": "2025-05-21T13:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de memoria a corto plazo. Se refiere a neurología para evaluación de deterioro cognitivo."
+  },
+  {
+    "id": "kw-075",
+    "timestamp": "2025-05-21T13:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con erupción cutánea pruriginosa. Se diagnostica urticaria. Se prescribe antihistamínicos."
+  },
+  {
+    "id": "kw-076",
+    "timestamp": "2025-05-21T14:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con calambres musculares frecuentes. Se recomienda suplementos de potasio y magnesio."
+  },
+  {
+    "id": "kw-077",
+    "timestamp": "2025-05-21T14:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con dificultad para comer y reflujo. Se ajusta la dieta y se prescribe medicación antireflujo."
+  },
+  {
+    "id": "kw-078",
+    "timestamp": "2025-05-21T15:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor en el hombro. Se sospecha de tendinitis. Se recomienda reposo y fisioterapia."
+  },
+  {
+    "id": "kw-079",
+    "timestamp": "2025-05-21T15:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con sangrado nasal recurrente. Se recomienda cauterización de vasos sanguíneos."
+  },
+  {
+    "id": "kw-080",
+    "timestamp": "2025-05-21T16:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con síntomas de gastroenteritis. Se recomienda hidratación y dieta blanda."
+  },
+  {
+    "id": "kw-081",
+    "timestamp": "2025-05-21T16:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dolor en el talón. Se diagnostica fascitis plantar. Se recomienda plantillas y ejercicios de estiramiento."
+  },
+  {
+    "id": "kw-082",
+    "timestamp": "2025-05-21T17:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con dificultad para dormir. Se recomienda rutinas de sueño y se descartan problemas respiratorios."
+  },
+  {
+    "id": "kw-083",
+    "timestamp": "2025-05-21T17:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con sequedad ocular. Se prescribe lágrimas artificiales y se recomienda evitar irritantes."
+  },
+  {
+    "id": "kw-084",
+    "timestamp": "2025-05-21T18:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con dolor de espalda baja. Se recomienda fisioterapia y ejercicios de fortalecimiento."
+  },
+  {
+    "id": "kw-085",
+    "timestamp": "2025-05-21T18:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con ardor al orinar. Se sospecha de infección urinaria. Se solicita urocultivo."
+  },
+  {
+    "id": "kw-086",
+    "timestamp": "2025-05-21T19:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dolor en la mano. Se diagnostica síndrome del túnel carpiano. Se considera cirugía."
+  },
+  {
+    "id": "kw-087",
+    "timestamp": "2025-05-21T19:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con dolor de garganta y fiebre. Se diagnostica amigdalitis. Se prescribe antibiótico."
+  },
+  {
+    "id": "kw-088",
+    "timestamp": "2025-05-21T20:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor de cabeza y visión doble. Se refiere a neurología para descartar problemas neurológicos."
+  },
+  {
+    "id": "kw-089",
+    "timestamp": "2025-05-21T20:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de equilibrio. Se refiere a otorrino para descartar vértigo."
+  },
+  {
+    "id": "kw-090",
+    "timestamp": "2025-05-21T21:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con sangrado rectal. Se refiere a gastroenterología para colonoscopia."
+  },
+  {
+    "id": "kw-091",
+    "timestamp": "2025-05-21T21:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dolor en la muñeca. Se sospecha de esguince. Se inmoviliza y se aplica frío."
+  },
+  {
+    "id": "kw-092",
+    "timestamp": "2025-05-21T22:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con ronchas en la piel. Se diagnostica alergia alimentaria. Se identifica el alérgeno."
+  },
+  {
+    "id": "kw-093",
+    "timestamp": "2025-05-21T22:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor de estómago y náuseas. Se sospecha de gastritis. Se prescribe protectores gástricos."
+  },
+  {
+    "id": "kw-094",
+    "timestamp": "2025-05-21T23:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con dificultad para tragar. Se refiere a gastroenterología para endoscopia."
+  },
+  {
+    "id": "kw-095",
+    "timestamp": "2025-05-21T23:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor de pecho al hacer ejercicio. Se refiere a cardiología para prueba de esfuerzo."
+  },
+  {
+    "id": "kw-096",
+    "timestamp": "2025-05-22T09:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Consulta de control de presión arterial. Se mantiene estable con la medicación actual. Se recomienda seguir monitorizando."
+  },
+  {
+    "id": "kw-097",
+    "timestamp": "2025-05-22T09:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor de cuello y mareos. Se descartan problemas cervicales graves. Se recomienda fisioterapia."
+  },
+  {
+    "id": "kw-098",
+    "timestamp": "2025-05-22T10:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con fatiga extrema. Se solicitan análisis de sangre para descartar anemia o hipotiroidismo."
+  },
+  {
+    "id": "kw-099",
+    "timestamp": "2025-05-22T10:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con dificultad para respirar en la noche. Se sospecha de apnea del sueño. Se refiere a especialista del sueño."
+  },
+  {
+    "id": "kw-100",
+    "timestamp": "2025-05-22T11:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con problemas de piel seca y picazón. Se recomienda cremas hidratantes y evitar duchas calientes."
+  },
+  {
+    "id": "kw-101",
+    "timestamp": "2025-05-22T11:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dolor de espalda que se irradia a la pierna. Se sospecha de ciática. Se recomienda reposo y analgésicos."
+  },
+  {
+    "id": "kw-102",
+    "timestamp": "2025-05-22T12:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con otitis externa. Se prescribe gotas óticas con antibiótico y se recomienda no mojar el oído."
+  },
+  {
+    "id": "kw-103",
+    "timestamp": "2025-05-22T12:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con sangrado vaginal anormal. Se refiere a ginecología para estudio y diagnóstico."
+  },
+  {
+    "id": "kw-104",
+    "timestamp": "2025-05-22T13:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con dolor en el pie al caminar. Se diagnostica espolón calcáneo. Se recomienda plantillas y ejercicios."
+  },
+  {
+    "id": "kw-105",
+    "timestamp": "2025-05-22T13:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con ansiedad y ataques de pánico. Se recomienda terapia psicológica y medicación ansiolítica."
+  },
+  {
+    "id": "kw-106",
+    "timestamp": "2025-05-22T14:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con problemas de visión borrosa en un ojo. Se refiere a oftalmología para estudio de la retina."
+  },
+  {
+    "id": "kw-107",
+    "timestamp": "2025-05-22T14:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con dolor de estómago recurrente. Se solicitan pruebas para descartar intolerancias alimentarias."
+  },
+  {
+    "id": "kw-108",
+    "timestamp": "2025-05-22T15:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor en el codo. Se diagnostica epicondilitis (codo de tenista). Se recomienda reposo y fisioterapia."
+  },
+  {
+    "id": "kw-109",
+    "timestamp": "2025-05-22T15:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de digestión lenta. Se recomienda dieta rica en fibra y probióticos."
+  },
+  {
+    "id": "kw-110",
+    "timestamp": "2025-05-22T16:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con mareos y náuseas. Se descartan problemas graves. Se recomienda reposo y líquidos."
+  },
+  {
+    "id": "kw-111",
+    "timestamp": "2025-05-22T16:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dolor en la mandíbula al masticar. Se sospecha de disfunción de la articulación temporomandibular."
+  },
+  {
+    "id": "kw-112",
+    "timestamp": "2025-05-22T17:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con erupción cutánea en la cara. Se diagnostica impétigo. Se prescribe antibiótico tópico."
+  },
+  {
+    "id": "kw-113",
+    "timestamp": "2025-05-22T17:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor de cabeza tipo migraña. Se prescribe medicación específica para migrañas."
+  },
+  {
+    "id": "kw-114",
+    "timestamp": "2025-05-22T18:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de voz y ronquera. Se refiere a otorrino para estudio de las cuerdas vocales."
+  },
+  {
+    "id": "kw-115",
+    "timestamp": "2025-05-22T18:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor en el pecho que empeora al respirar. Se sospecha de pleuritis. Se realiza radiografía de tórax."
+  },
+  {
+    "id": "kw-116",
+    "timestamp": "2025-05-22T19:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con debilidad en las piernas. Se refiere a neurología para descartar problemas neuromusculares."
+  },
+  {
+    "id": "kw-117",
+    "timestamp": "2025-05-22T19:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con dificultad para concentrarse en la escuela. Se refiere a psicopedagogía para evaluación."
+  },
+  {
+    "id": "kw-118",
+    "timestamp": "2025-05-22T20:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor abdominal y cambios en el hábito intestinal. Se refiere a gastroenterología para colonoscopia."
+  },
+  {
+    "id": "kw-119",
+    "timestamp": "2025-05-22T20:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con insomnio crónico. Se recomienda terapia cognitivo-conductual para el insomnio."
+  },
+  {
+    "id": "kw-120",
+    "timestamp": "2025-05-22T21:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor de cabeza frontal. Se sospecha de sinusitis. Se prescribe descongestionantes."
+  },
+  {
+    "id": "kw-121",
+    "timestamp": "2025-05-22T21:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con picazón en el cuero cabelludo. Se diagnostica dermatitis seborreica. Se prescribe champú medicado."
+  },
+  {
+    "id": "kw-122",
+    "timestamp": "2025-05-22T22:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con tos de perro. Se diagnostica laringitis viral. Se recomienda humidificador y reposo."
+  },
+  {
+    "id": "kw-123",
+    "timestamp": "2025-05-22T22:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor en el pie al levantarse. Se diagnostica tendinitis de Aquiles. Se recomienda estiramientos."
+  },
+  {
+    "id": "kw-124",
+    "timestamp": "2025-05-22T23:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de visión lejana. Se receta gafas. Se recomienda revisión anual."
+  },
+  {
+    "id": "kw-125",
+    "timestamp": "2025-05-22T23:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor de pecho inespecífico. Se descarta origen cardíaco. Se evalúa por reflujo gastroesofágico."
+  },
+  {
+    "id": "kw-126",
+    "timestamp": "2025-05-23T09:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Seguimiento de paciente con esclerosis múltiple. Se evalúa progresión de la enfermedad y se ajusta medicación."
+  },
+  {
+    "id": "kw-127",
+    "timestamp": "2025-05-23T09:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con problemas de audición y zumbido en los oídos. Se refiere a otorrino para estudio de tinnitus."
+  },
+  {
+    "id": "kw-128",
+    "timestamp": "2025-05-23T10:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor de cabeza recurrente. Se recomienda diario de cefaleas para identificar desencadenantes."
+  },
+  {
+    "id": "kw-129",
+    "timestamp": "2025-05-23T10:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de equilibrio y mareos. Se refiere a neurología para descartar problemas vestibulares."
+  },
+  {
+    "id": "kw-130",
+    "timestamp": "2025-05-23T11:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con pérdida de peso no intencionada. Se solicitan análisis de sangre y se refiere a endocrinología."
+  },
+  {
+    "id": "kw-131",
+    "timestamp": "2025-05-23T11:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con tos seca persistente. Se descartan causas respiratorias. Se evalúa por reflujo gastroesofágico."
+  },
+  {
+    "id": "kw-132",
+    "timestamp": "2025-05-23T12:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con dificultad para caminar. Se refiere a traumatología infantil para evaluación de marcha."
+  },
+  {
+    "id": "kw-133",
+    "timestamp": "2025-05-23T12:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor en el cuello al mover la cabeza. Se recomienda fisioterapia y ejercicios de estiramiento."
+  },
+  {
+    "id": "kw-134",
+    "timestamp": "2025-05-23T13:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de visión cercana. Se receta gafas de lectura. Se recomienda revisión oftalmológica."
+  },
+  {
+    "id": "kw-135",
+    "timestamp": "2025-05-23T13:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor abdominal y diarrea. Se sospecha de síndrome de intestino irritable. Se recomienda dieta."
+  },
+  {
+    "id": "kw-136",
+    "timestamp": "2025-05-23T14:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con manchas en la piel. Se refiere a dermatología para biopsia y diagnóstico."
+  },
+  {
+    "id": "kw-137",
+    "timestamp": "2025-05-23T14:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con fiebre sin foco. Se realizan pruebas de laboratorio para identificar la causa."
+  },
+  {
+    "id": "kw-138",
+    "timestamp": "2025-05-23T15:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con problemas de tiroides e insomnio. Se ajusta medicación tiroidea y se recomienda higiene del sueño."
+  },
+  {
+    "id": "kw-139",
+    "timestamp": "2025-05-23T15:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con dolor en el brazo al levantar objetos. Se sospecha de tendinitis del manguito rotador."
+  },
+  {
+    "id": "kw-140",
+    "timestamp": "2025-05-23T16:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con acidez estomacal frecuente. Se prescribe antiácidos y se recomienda evitar comidas irritantes."
+  },
+  {
+    "id": "kw-141",
+    "timestamp": "2025-05-23T16:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dificultad para hablar. Se refiere a logopedia para evaluación y rehabilitación."
+  },
+  {
+    "id": "kw-142",
+    "timestamp": "2025-05-23T17:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con dificultad para respirar y sibilancias. Se diagnostica bronquiolitis recurrente."
+  },
+  {
+    "id": "kw-143",
+    "timestamp": "2025-05-23T17:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor en el pecho tipo punzante. Se descarta origen cardíaco. Se evalúa por ansiedad."
+  },
+  {
+    "id": "kw-144",
+    "timestamp": "2025-05-23T18:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de visión doble. Se refiere a neurología para estudio de la causa."
+  },
+  {
+    "id": "kw-145",
+    "timestamp": "2025-05-23T18:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con hinchazón en las piernas. Se solicitan análisis para descartar problemas renales o cardíacos."
+  },
+  {
+    "id": "kw-146",
+    "timestamp": "2025-05-23T19:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dificultad para recordar cosas. Se refiere a neurología para evaluación de deterioro cognitivo."
+  },
+  {
+    "id": "kw-147",
+    "timestamp": "2025-05-23T19:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con dolor de oído y fiebre. Se diagnostica otitis media. Se prescribe antibiótico."
+  },
+  {
+    "id": "kw-148",
+    "timestamp": "2025-05-23T20:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con sangrado nasal frecuente. Se recomienda aplicar frío y evitar sonarse la nariz con fuerza."
+  },
+  {
+    "id": "kw-149",
+    "timestamp": "2025-05-23T20:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con dolor de espalda al agacharse. Se recomienda ejercicios de fortalecimiento del core."
+  },
+  {
+    "id": "kw-150",
+    "timestamp": "2025-05-23T21:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con problemas de piel seca y descamación. Se diagnostica eccema. Se prescribe cremas emolientes."
+  },
+  {
+    "id": "kw-151",
+    "timestamp": "2025-05-23T21:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dificultad para dormir y pesadillas. Se recomienda terapia para el insomnio y manejo del estrés."
+  },
+  {
+    "id": "kw-152",
+    "timestamp": "2025-05-23T22:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con ronchas en la piel y picazón. Se diagnostica picaduras de insectos. Se recomienda repelente."
+  },
+  {
+    "id": "kw-153",
+    "timestamp": "2025-05-23T22:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor de garganta y tos. Se diagnostica resfriado común. Se recomienda reposo y líquidos."
+  },
+  {
+    "id": "kw-154",
+    "timestamp": "2025-05-23T23:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de visión borrosa por la noche. Se refiere a oftalmología para estudio de la retina."
+  },
+  {
+    "id": "kw-155",
+    "timestamp": "2025-05-23T23:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor de cabeza tensional recurrente. Se recomienda técnicas de relajación y manejo del estrés."
+  },
+  {
+    "id": "kw-156",
+    "timestamp": "2025-05-24T09:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Revisión dental anual. Limpieza y revisión de caries. Se recomienda cepillado y uso de hilo dental."
+  },
+  {
+    "id": "kw-157",
+    "timestamp": "2025-05-24T09:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor de cabeza frontal y presión. Se diagnostica sinusitis. Se prescribe antibiótico y descongestionante."
+  },
+  {
+    "id": "kw-158",
+    "timestamp": "2025-05-24T10:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con erupción cutánea pruriginosa en el cuerpo. Se diagnostica dermatitis atópica. Se prescribe cremas con corticoides."
+  },
+  {
+    "id": "kw-159",
+    "timestamp": "2025-05-24T10:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con dolor en el hombro al levantar el brazo. Se diagnostica bursitis. Se recomienda reposo y antiinflamatorios."
+  },
+  {
+    "id": "kw-160",
+    "timestamp": "2025-05-24T11:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con problemas de estómago y reflujo. Se recomienda dieta blanda y medicación antireflujo."
+  },
+  {
+    "id": "kw-161",
+    "timestamp": "2025-05-24T11:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dolor de espalda baja al sentarse. Se recomienda cojín lumbar y ejercicios de fortalecimiento."
+  },
+  {
+    "id": "kw-162",
+    "timestamp": "2025-05-24T12:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con dificultad para comer y vómitos. Se sospecha de intolerancia alimentaria. Se realizan pruebas."
+  },
+  {
+    "id": "kw-163",
+    "timestamp": "2025-05-24T12:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor en las manos y rigidez matutina. Se solicitan análisis para artritis reumatoide."
+  },
+  {
+    "id": "kw-164",
+    "timestamp": "2025-05-24T13:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de visión nocturna. Se refiere a oftalmología para estudio de la retina."
+  },
+  {
+    "id": "kw-165",
+    "timestamp": "2025-05-24T13:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con ansiedad y dificultad para respirar. Se descartan problemas cardíacos y respiratorios. Se refiere a psicología."
+  },
+  {
+    "id": "kw-166",
+    "timestamp": "2025-05-24T14:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dolor de garganta y ronquera. Se diagnostica laringitis. Se recomienda reposo de la voz."
+  },
+  {
+    "id": "kw-167",
+    "timestamp": "2025-05-24T14:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con dolor de estómago y diarrea. Se diagnostica gastroenteritis viral. Se recomienda hidratación."
+  },
+  {
+    "id": "kw-168",
+    "timestamp": "2025-05-24T15:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor en el pie al apoyar. Se diagnostica metatarsalgia. Se recomienda plantillas y calzado adecuado."
+  },
+  {
+    "id": "kw-169",
+    "timestamp": "2025-05-24T15:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de sueño y ronquidos. Se refiere a especialista del sueño para estudio de apnea."
+  },
+  {
+    "id": "kw-170",
+    "timestamp": "2025-05-24T16:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor de pecho inespecífico. Se descarta origen cardíaco. Se evalúa por estrés."
+  },
+  {
+    "id": "kw-171",
+    "timestamp": "2025-05-24T16:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con manchas en la piel y picazón. Se diagnostica tiña. Se prescribe crema antimicótica."
+  },
+  {
+    "id": "kw-172",
+    "timestamp": "2025-05-24T17:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con dificultad para hablar y retraso en el lenguaje. Se refiere a logopedia para intervención temprana."
+  },
+  {
+    "id": "kw-173",
+    "timestamp": "2025-05-24T17:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor de cabeza pulsátil. Se diagnostica migraña. Se prescribe medicación abortiva."
+  },
+  {
+    "id": "kw-174",
+    "timestamp": "2025-05-24T18:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de equilibrio y caídas frecuentes. Se refiere a neurología para estudio de la marcha."
+  },
+  {
+    "id": "kw-175",
+    "timestamp": "2025-05-24T18:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor abdominal y estreñimiento. Se recomienda dieta rica en fibra y probióticos."
+  },
+  {
+    "id": "kw-176",
+    "timestamp": "2025-05-24T19:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dificultad para recordar nombres. Se refiere a neurología para evaluación cognitiva."
+  },
+  {
+    "id": "kw-177",
+    "timestamp": "2025-05-24T19:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con tos persistente y sibilancias. Se diagnostica asma infantil. Se prescribe inhalador."
+  },
+  {
+    "id": "kw-178",
+    "timestamp": "2025-05-24T20:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor de garganta y placas. Se diagnostica faringoamigdalitis. Se prescribe antibiótico."
+  },
+  {
+    "id": "kw-179",
+    "timestamp": "2025-05-24T20:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con dolor de espalda al levantar peso. Se sospecha de hernia discal. Se refiere a traumatología."
+  },
+  {
+    "id": "kw-180",
+    "timestamp": "2025-05-24T21:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con problemas de piel seca y descamación. Se diagnostica psoriasis. Se prescribe tratamiento tópico."
+  },
+  {
+    "id": "kw-181",
+    "timestamp": "2025-05-24T21:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dificultad para dormir y despertares nocturnos. Se recomienda higiene del sueño y técnicas de relajación."
+  },
+  {
+    "id": "kw-182",
+    "timestamp": "2025-05-24T22:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con erupción cutánea en el cuerpo. Se diagnostica varicela. Se recomienda reposo y medicación para el picor."
+  },
+  {
+    "id": "kw-183",
+    "timestamp": "2025-05-24T22:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor de estómago y ardor. Se diagnostica dispepsia. Se prescribe protectores gástricos."
+  },
+  {
+    "id": "kw-184",
+    "timestamp": "2025-05-24T23:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de visión y dolor ocular. Se refiere a oftalmología para descartar glaucoma."
+  },
+  {
+    "id": "kw-185",
+    "timestamp": "2025-05-24T23:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor de cabeza detrás de los ojos. Se sospecha de cefalea tensional. Se recomienda analgésicos."
+  },
+  {
+    "id": "kw-186",
+    "timestamp": "2025-05-25T09:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Revisión general de salud. Análisis de sangre y orina. Se discuten resultados con el paciente."
+  },
+  {
+    "id": "kw-187",
+    "timestamp": "2025-05-25T09:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor de cuello y rigidez en el hombro. Se diagnostica tortícolis. Se recomienda calor y analgésicos."
+  },
+  {
+    "id": "kw-188",
+    "timestamp": "2025-05-25T10:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con fatiga y debilidad generalizada. Se solicitan análisis de tiroides y vitamina B12."
+  },
+  {
+    "id": "kw-189",
+    "timestamp": "2025-05-25T10:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con dificultad para respirar y tos con expectoración. Se diagnostica bronquitis crónica. Se prescribe broncodilatadores."
+  },
+  {
+    "id": "kw-190",
+    "timestamp": "2025-05-25T11:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con problemas de piel con manchas rojas. Se diagnostica rosácea. Se prescribe tratamiento tópico."
+  },
+  {
+    "id": "kw-191",
+    "timestamp": "2025-05-25T11:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dolor en la rodilla al subir escaleras. Se sospecha de condromalacia rotuliana. Se recomienda fisioterapia."
+  },
+  {
+    "id": "kw-192",
+    "timestamp": "2025-05-25T12:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con otitis media aguda. Se prescribe antibiótico oral. Se recomienda seguimiento en 48 horas."
+  },
+  {
+    "id": "kw-193",
+    "timestamp": "2025-05-25T12:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con sangrado nasal recurrente. Se cauterizan pequeños vasos. Se recomienda humedecer las fosas nasales."
+  },
+  {
+    "id": "kw-194",
+    "timestamp": "2025-05-25T13:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con dolor en el pie y dificultad para caminar. Se diagnostica juanete. Se considera cirugía."
+  },
+  {
+    "id": "kw-195",
+    "timestamp": "2025-05-25T13:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con ansiedad y dificultad para dormir. Se recomienda terapia de relajación y técnicas de mindfulness."
+  },
+  {
+    "id": "kw-196",
+    "timestamp": "2025-05-25T14:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dolor de garganta al tragar. Se diagnostica faringitis. Se prescribe antiinflamatorios."
+  },
+  {
+    "id": "kw-197",
+    "timestamp": "2025-05-25T14:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con dificultad para comer y pérdida de apetito. Se solicitan análisis de sangre para descartar deficiencias."
+  },
+  {
+    "id": "kw-198",
+    "timestamp": "2025-05-25T15:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor en el hombro al mover el brazo. Se sospecha de hombro congelado. Se recomienda fisioterapia."
+  },
+  {
+    "id": "kw-199",
+    "timestamp": "2025-05-25T15:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de digestión y gases. Se recomienda dieta baja en FODMAPs."
+  },
+  {
+    "id": "kw-200",
+    "timestamp": "2025-05-25T16:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con mareos y vértigo posicional. Se realizan maniobras de reposicionamiento. Se recomienda ejercicios."
+  },
+  {
+    "id": "kw-201",
+    "timestamp": "2025-05-25T16:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dolor en la mano y entumecimiento. Se diagnostica síndrome del túnel cubital. Se recomienda férula."
+  },
+  {
+    "id": "kw-202",
+    "timestamp": "2025-05-25T17:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con tos seca y irritante. Se diagnostica tos alérgica. Se prescribe antihistamínicos."
+  },
+  {
+    "id": "kw-203",
+    "timestamp": "2025-05-25T17:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor de cabeza frontal y congestión nasal. Se diagnostica rinosinusitis. Se prescribe corticoides nasales."
+  },
+  {
+    "id": "kw-204",
+    "timestamp": "2025-05-25T18:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de visión borrosa y flashes de luz. Se refiere a oftalmología para descartar desprendimiento de retina."
+  },
+  {
+    "id": "kw-205",
+    "timestamp": "2025-05-25T18:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con hinchazón y dolor en el tobillo. Se diagnostica esguince de tobillo. Se inmoviliza y se aplica hielo."
+  },
+  {
+    "id": "kw-206",
+    "timestamp": "2025-05-25T19:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dificultad para recordar eventos recientes. Se refiere a neurología para evaluación de memoria."
+  },
+  {
+    "id": "kw-207",
+    "timestamp": "2025-05-25T19:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con dolor de estómago y vómitos. Se diagnostica intoxicación alimentaria leve. Se recomienda hidratación."
+  },
+  {
+    "id": "kw-208",
+    "timestamp": "2025-05-25T20:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con sangrado de encías y mal aliento. Se recomienda visita al odontólogo para evaluar enfermedad periodontal."
+  },
+  {
+    "id": "kw-209",
+    "timestamp": "2025-05-25T20:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con dolor de espalda al estar de pie mucho tiempo. Se recomienda ejercicios de estiramiento y calzado cómodo."
+  },
+  {
+    "id": "kw-210",
+    "timestamp": "2025-05-25T21:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con problemas de piel seca y enrojecimiento. Se diagnostica dermatitis de contacto. Se identifica y evita el irritante."
+  },
+  {
+    "id": "kw-211",
+    "timestamp": "2025-05-25T21:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Persona con dificultad para conciliar el sueño. Se recomienda establecer una rutina de sueño regular."
+  },
+  {
+    "id": "kw-212",
+    "timestamp": "2025-05-25T22:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Niño con ronchas en la piel y fiebre. Se sospecha de reacción alérgica a medicamento. Se suspende medicación."
+  },
+  {
+    "id": "kw-213",
+    "timestamp": "2025-05-25T22:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Mujer con dolor de estómago y reflujo. Se prescribe inhibidores de la bomba de protones y se recomienda cambios dietéticos."
+  },
+  {
+    "id": "kw-214",
+    "timestamp": "2025-05-25T23:00:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Hombre con problemas de visión y puntos negros. Se refiere a oftalmología para descartar hemorragia vítrea."
+  },
+  {
+    "id": "kw-215",
+    "timestamp": "2025-05-25T23:30:00Z",
+    "source_endpoint": "keyword-extract",
+    "text": "Paciente con dolor de cabeza tipo racimo. Se refiere a neurología para tratamiento específico."
+  }
+]

@@ -1,0 +1,1262 @@
+[
+  {
+    "id": "caso-2025-05-19-001",
+    "timestamp": "2025-05-19T08:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con dolor abdominal agudo. Se sospecha apendicitis. Se remite a urgencias para evaluación quirúrgica."
+  },
+  {
+    "id": "caso-2025-05-19-002",
+    "timestamp": "2025-05-19T08:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de glucemia en paciente diabético. Valores estables. Se mantiene tratamiento actual."
+  },
+  {
+    "id": "caso-2025-05-19-003",
+    "timestamp": "2025-05-19T08:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por erupción cutánea. Diagnóstico: dermatitis de contacto. Se prescribe crema tópica."
+  },
+  {
+    "id": "caso-2025-05-19-004",
+    "timestamp": "2025-05-19T08:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Seguimiento de fractura de tobillo. Radiografía muestra buena consolidación. Se retira yeso."
+  },
+  {
+    "id": "caso-2025-05-19-005",
+    "timestamp": "2025-05-19T09:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con mareos y fatiga. Se realizan análisis de sangre. Pendiente de resultados para diagnóstico."
+  },
+  {
+    "id": "caso-2025-05-19-006",
+    "timestamp": "2025-05-19T09:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Vacunación antigripal administrada a paciente de 65 años."
+  },
+  {
+    "id": "caso-2025-05-19-007",
+    "timestamp": "2025-05-19T09:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta de control pediátrico. Desarrollo normal para la edad. Se informa a padres sobre alimentación complementaria."
+  },
+  {
+    "id": "caso-2025-05-19-008",
+    "timestamp": "2025-05-19T09:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con insomnio crónico. Se recomienda terapia cognitivo-conductual y se descartan causas orgánicas."
+  },
+  {
+    "id": "caso-2025-05-19-009",
+    "timestamp": "2025-05-19T10:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Extracción de punto de sutura de herida menor. Cicatrización adecuada."
+  },
+  {
+    "id": "caso-2025-05-19-010",
+    "timestamp": "2025-05-19T10:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión oftalmológica anual. Visión corregida. Se mantiene graduación de gafas."
+  },
+  {
+    "id": "caso-2025-05-19-011",
+    "timestamp": "2025-05-19T10:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con lumbalgia crónica. Se recomiendan ejercicios de fortalecimiento y se prescribe antiinflamatorio."
+  },
+  {
+    "id": "caso-2025-05-19-012",
+    "timestamp": "2025-05-19T10:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de presión arterial. Valores dentro de la normalidad. Se aconseja dieta baja en sal."
+  },
+  {
+    "id": "caso-2025-05-19-013",
+    "timestamp": "2025-05-19T11:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor de garganta y fiebre. Diagnóstico: faringitis viral. Se recomienda reposo y líquidos."
+  },
+  {
+    "id": "caso-2025-05-19-014",
+    "timestamp": "2025-05-19T11:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Se realiza test de alergia a pólenes. Resultados positivos a gramíneas. Se prescribe antihistamínico."
+  },
+  {
+    "id": "caso-2025-05-19-015",
+    "timestamp": "2025-05-19T11:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con acúfenos intermitentes. Se deriva a otorrinolaringología para estudio."
+  },
+  {
+    "id": "caso-2025-05-19-016",
+    "timestamp": "2025-05-19T13:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de embarazo: ecografía del segundo trimestre sin hallazgos relevantes. Feto en crecimiento normal."
+  },
+  {
+    "id": "caso-2025-05-19-017",
+    "timestamp": "2025-05-19T13:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con síntomas de resfriado común. Se aconseja tratamiento sintomático."
+  },
+  {
+    "id": "caso-2025-05-19-018",
+    "timestamp": "2025-05-19T13:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión dental: limpieza bucal y detección de pequeña caries. Se programa obturación."
+  },
+  {
+    "id": "caso-2025-05-19-019",
+    "timestamp": "2025-05-19T13:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con quemadura leve en mano. Se aplica apósito y se dan indicaciones de cuidado."
+  },
+  {
+    "id": "caso-2025-05-19-020",
+    "timestamp": "2025-05-19T14:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Seguimiento de úlcera gástrica. Endoscopia de control muestra mejoría. Se mantiene tratamiento."
+  },
+  {
+    "id": "caso-2025-05-19-021",
+    "timestamp": "2025-05-19T14:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor de cabeza recurrente. Se descartan patologías graves. Se aconsejan hábitos saludables."
+  },
+  {
+    "id": "caso-2025-05-19-022",
+    "timestamp": "2025-05-19T14:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con problemas de tiroides. Ajuste de dosis de medicación tras análisis de hormonas."
+  },
+  {
+    "id": "caso-2025-05-19-023",
+    "timestamp": "2025-05-19T14:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión ginecológica anual. Citología sin hallazgos atípicos."
+  },
+  {
+    "id": "caso-2025-05-19-024",
+    "timestamp": "2025-05-19T15:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por pie de atleta. Se prescribe antifúngico tópico."
+  },
+  {
+    "id": "caso-2025-05-19-025",
+    "timestamp": "2025-05-19T15:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con ansiedad. Se recomienda apoyo psicológico y técnicas de relajación."
+  },
+  {
+    "id": "caso-2025-05-19-026",
+    "timestamp": "2025-05-19T15:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de colesterol. Valores elevados. Se ajusta dieta y se valora inicio de medicación."
+  },
+  {
+    "id": "caso-2025-05-19-027",
+    "timestamp": "2025-05-19T15:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con picadura de insecto. Reacción local leve. Se aplica antihistamínico."
+  },
+  {
+    "id": "caso-2025-05-19-028",
+    "timestamp": "2025-05-19T16:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de próstata en paciente mayor de 50 años. PSA dentro de límites normales."
+  },
+  {
+    "id": "caso-2025-05-19-029",
+    "timestamp": "2025-05-19T16:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con infección de orina. Se prescribe antibiótico. Se recomienda beber abundante líquido."
+  },
+  {
+    "id": "caso-2025-05-19-030",
+    "timestamp": "2025-05-19T16:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor articular. Diagnóstico: artrosis leve. Se aconseja ejercicio moderado."
+  },
+  {
+    "id": "caso-2025-05-20-001",
+    "timestamp": "2025-05-20T08:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con gripe, presenta tos y fiebre. Se recomienda reposo y abundante hidratación."
+  },
+  {
+    "id": "caso-2025-05-20-002",
+    "timestamp": "2025-05-20T08:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de presión arterial en paciente hipertenso. Valores controlados con medicación."
+  },
+  {
+    "id": "caso-2025-05-20-003",
+    "timestamp": "2025-05-20T08:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por mareos y vértigo. Se deriva a neurología para estudio más profundo."
+  },
+  {
+    "id": "caso-2025-05-20-004",
+    "timestamp": "2025-05-20T08:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de herida post-quirúrgica. Buen aspecto, sin signos de infección."
+  },
+  {
+    "id": "caso-2025-05-20-005",
+    "timestamp": "2025-05-20T09:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con dolor de muelas. Se deriva a odontología para tratamiento."
+  },
+  {
+    "id": "caso-2025-05-20-006",
+    "timestamp": "2025-05-20T09:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Vacunación de tétanos administrada tras corte accidental."
+  },
+  {
+    "id": "caso-2025-05-20-007",
+    "timestamp": "2025-05-20T09:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de crecimiento en niño de 2 años. Peso y altura en percentiles normales."
+  },
+  {
+    "id": "caso-2025-05-20-008",
+    "timestamp": "2025-05-20T09:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con problemas de sueño. Se aconseja higiene del sueño y se descartan apneas."
+  },
+  {
+    "id": "caso-2025-05-20-009",
+    "timestamp": "2025-05-20T10:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Retirada de sutura de lesión en cuero cabelludo."
+  },
+  {
+    "id": "caso-2025-05-20-010",
+    "timestamp": "2025-05-20T10:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión auditiva anual. Audición normal para la edad."
+  },
+  {
+    "id": "caso-2025-05-20-011",
+    "timestamp": "2025-05-20T10:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con ciática. Se prescribe relajante muscular y se recomienda fisioterapia."
+  },
+  {
+    "id": "caso-2025-05-20-012",
+    "timestamp": "2025-05-20T10:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de niveles de azúcar en paciente prediabético. Se aconseja ejercicio y dieta."
+  },
+  {
+    "id": "caso-2025-05-20-013",
+    "timestamp": "2025-05-20T11:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por conjuntivitis. Se prescribe colirio antibiótico."
+  },
+  {
+    "id": "caso-2025-05-20-014",
+    "timestamp": "2025-05-20T11:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Test de intolerancia alimentaria. Resultados pendientes."
+  },
+  {
+    "id": "caso-2025-05-20-015",
+    "timestamp": "2025-05-20T11:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con tinnitus persistente. Se deriva a especialista."
+  },
+  {
+    "id": "caso-2025-05-20-016",
+    "timestamp": "2025-05-20T13:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de embarazo: resultados de analítica de sangre sin anomalías."
+  },
+  {
+    "id": "caso-2025-05-20-017",
+    "timestamp": "2025-05-20T13:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con síntomas de alergia estacional. Se prescribe antihistamínico oral."
+  },
+  {
+    "id": "caso-2025-05-20-018",
+    "timestamp": "2025-05-20T13:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de implantes dentales. Todo en orden."
+  },
+  {
+    "id": "caso-2025-05-20-019",
+    "timestamp": "2025-05-20T13:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con esguince de tobillo leve. Se recomienda reposo y aplicación de frío."
+  },
+  {
+    "id": "caso-2025-05-20-020",
+    "timestamp": "2025-05-20T14:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Seguimiento de paciente con enfermedad crónica pulmonar. Función respiratoria estable."
+  },
+  {
+    "id": "caso-2025-05-20-021",
+    "timestamp": "2025-05-20T14:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor de cuello. Se recomienda fisioterapia y ejercicios de estiramiento."
+  },
+  {
+    "id": "caso-2025-05-20-022",
+    "timestamp": "2025-05-20T14:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con hipotiroidismo. Ajuste de dosis de hormona tiroidea."
+  },
+  {
+    "id": "caso-2025-05-20-023",
+    "timestamp": "2025-05-20T14:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de salud en mujer de 40 años. Se aconseja mamografía de cribado."
+  },
+  {
+    "id": "caso-2025-05-20-024",
+    "timestamp": "2025-05-20T15:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por hongos en uñas. Se prescribe laca antifúngica."
+  },
+  {
+    "id": "caso-2025-05-20-025",
+    "timestamp": "2025-05-20T15:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con episodios de ansiedad. Se recomienda apoyo psicológico."
+  },
+  {
+    "id": "caso-2025-05-20-026",
+    "timestamp": "2025-05-20T15:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de triglicéridos. Valores ligeramente altos. Se recomienda dieta y ejercicio."
+  },
+  {
+    "id": "caso-2025-05-20-027",
+    "timestamp": "2025-05-20T15:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con irritación ocular. Se prescribe lágrima artificial."
+  },
+  {
+    "id": "caso-2025-05-20-028",
+    "timestamp": "2025-05-20T16:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de salud en hombre de 60 años. Se aconseja colonoscopia de cribado."
+  },
+  {
+    "id": "caso-2025-05-20-029",
+    "timestamp": "2025-05-20T16:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con otitis. Se prescribe gotas óticas antibióticas."
+  },
+  {
+    "id": "caso-2025-05-20-030",
+    "timestamp": "2025-05-20T16:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor en el hombro. Se recomienda reposo y hielo."
+  },
+  {
+    "id": "caso-2025-05-21-001",
+    "timestamp": "2025-05-21T08:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con náuseas y vómitos. Se prescribe antiemético y se recomienda dieta blanda."
+  },
+  {
+    "id": "caso-2025-05-21-002",
+    "timestamp": "2025-05-21T08:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de asma en paciente pediátrico. Uso correcto del inhalador. Sin crisis en el último mes."
+  },
+  {
+    "id": "caso-2025-05-21-003",
+    "timestamp": "2025-05-21T08:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por picor en la piel. Se descartan causas alérgicas. Se prescribe hidratante."
+  },
+  {
+    "id": "caso-2025-05-21-004",
+    "timestamp": "2025-05-21T08:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de fractura de muñeca. Se retira férula. Inicio de rehabilitación."
+  },
+  {
+    "id": "caso-2025-05-21-005",
+    "timestamp": "2025-05-21T09:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con fatiga crónica. Se solicitan análisis de sangre completos."
+  },
+  {
+    "id": "caso-2025-05-21-006",
+    "timestamp": "2025-05-21T09:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Vacunación de la tosferina en embarazada."
+  },
+  {
+    "id": "caso-2025-05-21-007",
+    "timestamp": "2025-05-21T09:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de peso en adolescente. Se dan pautas de alimentación saludable."
+  },
+  {
+    "id": "caso-2025-05-21-008",
+    "timestamp": "2025-05-21T09:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con dificultad para conciliar el sueño. Se recomienda rutina de relajación."
+  },
+  {
+    "id": "caso-2025-05-21-009",
+    "timestamp": "2025-05-21T10:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Curación de herida superficial en rodilla."
+  },
+  {
+    "id": "caso-2025-05-21-010",
+    "timestamp": "2025-05-21T10:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de visión en niño. Se detecta astigmatismo leve. Se deriva a optometrista."
+  },
+  {
+    "id": "caso-2025-05-21-011",
+    "timestamp": "2025-05-21T10:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con dolor de espalda. Se recomiendan ejercicios de fortalecimiento."
+  },
+  {
+    "id": "caso-2025-05-21-012",
+    "timestamp": "2025-05-21T10:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de niveles de ácido úrico. Valores altos. Se prescribe medicación."
+  },
+  {
+    "id": "caso-2025-05-21-013",
+    "timestamp": "2025-05-21T11:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor de oídos. Diagnóstico: otitis media. Se prescribe antibiótico."
+  },
+  {
+    "id": "caso-2025-05-21-014",
+    "timestamp": "2025-05-21T11:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Test de función hepática. Resultados normales."
+  },
+  {
+    "id": "caso-2025-05-21-015",
+    "timestamp": "2025-05-21T11:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con vértigo posicional paroxístico benigno. Se realizan maniobras de Epley."
+  },
+  {
+    "id": "caso-2025-05-21-016",
+    "timestamp": "2025-05-21T13:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de embarazo: medición de tensión arterial y peso. Sin complicaciones."
+  },
+  {
+    "id": "caso-2025-05-21-017",
+    "timestamp": "2025-05-21T13:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con picadura de abeja. Reacción local leve. Se aplica compresas frías."
+  },
+  {
+    "id": "caso-2025-05-21-018",
+    "timestamp": "2025-05-21T13:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de prótesis dental. Se ajusta para mayor comodidad."
+  },
+  {
+    "id": "caso-2025-05-21-019",
+    "timestamp": "2025-05-21T13:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con tendinitis en la muñeca. Se recomienda reposo y antiinflamatorios."
+  },
+  {
+    "id": "caso-2025-05-21-020",
+    "timestamp": "2025-05-21T14:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Seguimiento de paciente con enfermedad de Crohn. Control de brotes. Se ajusta medicación."
+  },
+  {
+    "id": "caso-2025-05-21-021",
+    "timestamp": "2025-05-21T14:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor en el codo. Diagnóstico: epicondilitis. Se recomienda fisioterapia."
+  },
+  {
+    "id": "caso-2025-05-21-022",
+    "timestamp": "2025-05-21T14:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con anemia. Se prescribe suplemento de hierro y se recomienda dieta rica en hierro."
+  },
+  {
+    "id": "caso-2025-05-21-023",
+    "timestamp": "2025-05-21T14:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de salud en mujer de 50 años. Se aconseja densitometría ósea."
+  },
+  {
+    "id": "caso-2025-05-21-024",
+    "timestamp": "2025-05-21T15:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por verrugas plantares. Se inicia tratamiento con crioterapia."
+  },
+  {
+    "id": "caso-2025-05-21-025",
+    "timestamp": "2025-05-21T15:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con ataques de pánico. Se deriva a psiquiatría para evaluación."
+  },
+  {
+    "id": "caso-2025-05-21-026",
+    "timestamp": "2025-05-21T15:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de glucosa en sangre. Valores ligeramente altos. Se recomienda intensificar ejercicio."
+  },
+  {
+    "id": "caso-2025-05-21-027",
+    "timestamp": "2025-05-21T15:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con ojo seco. Se prescriben lágrimas artificiales y se recomienda evitar ambientes secos."
+  },
+  {
+    "id": "caso-2025-05-21-028",
+    "timestamp": "2025-05-21T16:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de salud en hombre de 70 años. Se aconseja control de la presión arterial."
+  },
+  {
+    "id": "caso-2025-05-21-029",
+    "timestamp": "2025-05-21T16:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con faringitis bacteriana. Se prescribe antibiótico oral."
+  },
+  {
+    "id": "caso-2025-05-21-030",
+    "timestamp": "2025-05-21T16:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor en la rodilla. Diagnóstico: condromalacia rotuliana. Se recomienda reposo y fisioterapia."
+  },
+  {
+    "id": "caso-2025-05-22-001",
+    "timestamp": "2025-05-22T08:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con fiebre y escalofríos. Se sospecha infección de vías urinarias. Se solicitan análisis."
+  },
+  {
+    "id": "caso-2025-05-22-002",
+    "timestamp": "2025-05-22T08:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de diabetes tipo 2. Hemoglobina glicosilada en rango. Se mantiene dieta y ejercicio."
+  },
+  {
+    "id": "caso-2025-05-22-003",
+    "timestamp": "2025-05-22T08:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por acné severo. Se deriva a dermatología para tratamiento específico."
+  },
+  {
+    "id": "caso-2025-05-22-004",
+    "timestamp": "2025-05-22T08:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de quemadura solar. Buen progreso. Se recomienda hidratación y protección solar."
+  },
+  {
+    "id": "caso-2025-05-22-005",
+    "timestamp": "2025-05-22T09:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con debilidad muscular. Se solicitan pruebas neurológicas."
+  },
+  {
+    "id": "caso-2025-05-22-006",
+    "timestamp": "2025-05-22T09:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Vacunación de la varicela en niño de 12 meses."
+  },
+  {
+    "id": "caso-2025-05-22-007",
+    "timestamp": "2025-05-22T09:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta de control en adolescente con escoliosis. Se evalúa progresión."
+  },
+  {
+    "id": "caso-2025-05-22-008",
+    "timestamp": "2025-05-22T09:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con insomnio ocasional. Se aconsejan hábitos de sueño saludables."
+  },
+  {
+    "id": "caso-2025-05-22-009",
+    "timestamp": "2025-05-22T10:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Curación de úlcera en pierna. Lenta pero progresiva mejoría."
+  },
+  {
+    "id": "caso-2025-05-22-010",
+    "timestamp": "2025-05-22T10:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de lentes de contacto. Se ajusta la graduación."
+  },
+  {
+    "id": "caso-2025-05-22-011",
+    "timestamp": "2025-05-22T10:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con cervicalgia. Se prescribe relajante muscular y se recomienda calor local."
+  },
+  {
+    "id": "caso-2025-05-22-012",
+    "timestamp": "2025-05-22T10:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de colesterol y triglicéridos. Valores ligeramente elevados. Se ajusta dieta."
+  },
+  {
+    "id": "caso-2025-05-22-013",
+    "timestamp": "2025-05-22T11:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor abdominal inespecífico. Se solicita ecografía."
+  },
+  {
+    "id": "caso-2025-05-22-014",
+    "timestamp": "2025-05-22T11:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Test de función renal. Resultados normales."
+  },
+  {
+    "id": "caso-2025-05-22-015",
+    "timestamp": "2025-05-22T11:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con síndrome de piernas inquietas. Se prescribe medicación para aliviar síntomas."
+  },
+  {
+    "id": "caso-2025-05-22-016",
+    "timestamp": "2025-05-22T13:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de embarazo: auscultación fetal y palpación abdominal."
+  },
+  {
+    "id": "caso-2025-05-22-017",
+    "timestamp": "2025-05-22T13:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con erupción cutánea pruriginosa. Se sospecha urticaria. Se prescribe antihistamínico."
+  },
+  {
+    "id": "caso-2025-05-22-018",
+    "timestamp": "2025-05-22T13:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de implante coclear. Funcionamiento correcto."
+  },
+  {
+    "id": "caso-2025-05-22-019",
+    "timestamp": "2025-05-22T13:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con bursitis de hombro. Se recomienda reposo y fisioterapia."
+  },
+  {
+    "id": "caso-2025-05-22-020",
+    "timestamp": "2025-05-22T14:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Seguimiento de paciente con enfermedad celíaca. Dieta sin gluten mantenida. Sin síntomas."
+  },
+  {
+    "id": "caso-2025-05-22-021",
+    "timestamp": "2025-05-22T14:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor en la pantorrilla. Se descarta trombosis. Se recomienda reposo."
+  },
+  {
+    "id": "caso-2025-05-22-022",
+    "timestamp": "2025-05-22T14:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con osteopenia. Se recomienda suplemento de vitamina D y calcio."
+  },
+  {
+    "id": "caso-2025-05-22-023",
+    "timestamp": "2025-05-22T14:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de salud en mujer de 60 años. Se aconseja revisión cardiológica."
+  },
+  {
+    "id": "caso-2025-05-22-024",
+    "timestamp": "2025-05-22T15:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por papilomas cutáneos. Se inicia tratamiento con láser."
+  },
+  {
+    "id": "caso-2025-05-22-025",
+    "timestamp": "2025-05-22T15:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con depresión leve. Se recomienda terapia y ejercicio."
+  },
+  {
+    "id": "caso-2025-05-22-026",
+    "timestamp": "2025-05-22T15:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de colesterol. Valores dentro de la normalidad con medicación."
+  },
+  {
+    "id": "caso-2025-05-22-027",
+    "timestamp": "2025-05-22T15:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con conjuntivitis alérgica. Se prescriben colirios específicos."
+  },
+  {
+    "id": "caso-2025-05-22-028",
+    "timestamp": "2025-05-22T16:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de salud en hombre de 80 años. Se aconseja control de la medicación."
+  },
+  {
+    "id": "caso-2025-05-22-029",
+    "timestamp": "2025-05-22T16:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con bronquitis. Se prescribe mucolítico y se recomienda reposo."
+  },
+  {
+    "id": "caso-2025-05-22-030",
+    "timestamp": "2025-05-22T16:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor de cabeza tensional. Se recomienda relajación y analgésicos."
+  },
+  {
+    "id": "caso-2025-05-23-001",
+    "timestamp": "2025-05-23T08:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con síntomas de gastroenteritis. Se recomienda dieta blanda y rehidratación oral."
+  },
+  {
+    "id": "caso-2025-05-23-002",
+    "timestamp": "2025-05-23T08:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de hipotiroidismo. Ajuste de dosis de levotiroxina. Valores de TSH en rango."
+  },
+  {
+    "id": "caso-2025-05-23-003",
+    "timestamp": "2025-05-23T08:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por sarpullido en bebé. Diagnóstico: miliaria. Se recomienda ropa ligera."
+  },
+  {
+    "id": "caso-2025-05-23-004",
+    "timestamp": "2025-05-23T08:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de luxación de hombro. Se inicia fisioterapia para recuperar movilidad."
+  },
+  {
+    "id": "caso-2025-05-23-005",
+    "timestamp": "2025-05-23T09:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con problemas de memoria. Se deriva a neurología para evaluación."
+  },
+  {
+    "id": "caso-2025-05-23-006",
+    "timestamp": "2025-05-23T09:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Vacunación del VPH en adolescente."
+  },
+  {
+    "id": "caso-2025-05-23-007",
+    "timestamp": "2025-05-23T09:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de desarrollo en niño de 4 años. Lenguaje y motricidad adecuados."
+  },
+  {
+    "id": "caso-2025-05-23-008",
+    "timestamp": "2025-05-23T09:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con dificultad para mantener el sueño. Se recomienda ambiente relajante."
+  },
+  {
+    "id": "caso-2025-05-23-009",
+    "timestamp": "2025-05-23T10:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Curación de herida operatoria en abdomen. Sin complicaciones."
+  },
+  {
+    "id": "caso-2025-05-23-010",
+    "timestamp": "2025-05-23T10:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de fondo de ojo en paciente diabético. Sin retinopatía."
+  },
+  {
+    "id": "caso-2025-05-23-011",
+    "timestamp": "2025-05-23T10:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con dolor de espalda baja. Se recomienda ejercicio suave y fisioterapia."
+  },
+  {
+    "id": "caso-2025-05-23-012",
+    "timestamp": "2025-05-23T10:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de triglicéridos. Valores en descenso con dieta."
+  },
+  {
+    "id": "caso-2025-05-23-013",
+    "timestamp": "2025-05-23T11:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor de garganta y amigdalitis. Se prescribe antiinflamatorio."
+  },
+  {
+    "id": "caso-2025-05-23-014",
+    "timestamp": "2025-05-23T11:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Test de función pulmonar. Resultados normales."
+  },
+  {
+    "id": "caso-2025-05-23-015",
+    "timestamp": "2025-05-23T11:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con síndrome de Sjögren. Se prescribe tratamiento para sequedad ocular y bucal."
+  },
+  {
+    "id": "caso-2025-05-23-016",
+    "timestamp": "2025-05-23T13:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de embarazo: control de latido fetal."
+  },
+  {
+    "id": "caso-2025-05-23-017",
+    "timestamp": "2025-05-23T13:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con picadura de mosquito infectada. Se prescribe pomada antibiótica."
+  },
+  {
+    "id": "caso-2025-05-23-018",
+    "timestamp": "2025-05-23T13:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de ortodoncia. Ajuste de brackets."
+  },
+  {
+    "id": "caso-2025-05-23-019",
+    "timestamp": "2025-05-23T13:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con esguince de rodilla. Se recomienda reposo y uso de rodillera."
+  },
+  {
+    "id": "caso-2025-05-23-020",
+    "timestamp": "2025-05-23T14:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Seguimiento de paciente con enfermedad de Parkinson. Ajuste de medicación para control de síntomas."
+  },
+  {
+    "id": "caso-2025-05-23-021",
+    "timestamp": "2025-05-23T14:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor en la ingle. Se descarta hernia. Se recomienda reposo."
+  },
+  {
+    "id": "caso-2025-05-23-022",
+    "timestamp": "2025-05-23T14:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con osteoporosis. Se recomienda suplemento de calcio y ejercicio de carga."
+  },
+  {
+    "id": "caso-2025-05-23-023",
+    "timestamp": "2025-05-23T14:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de salud en mujer de 70 años. Se aconseja revisión oftalmológica."
+  },
+  {
+    "id": "caso-2025-05-23-024",
+    "timestamp": "2025-05-23T15:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por hemorroides. Se prescribe pomada y se recomienda dieta rica en fibra."
+  },
+  {
+    "id": "caso-2025-05-23-025",
+    "timestamp": "2025-05-23T15:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con estrés crónico. Se recomienda técnicas de relajación y deporte."
+  },
+  {
+    "id": "caso-2025-05-23-026",
+    "timestamp": "2025-05-23T15:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de la presión arterial. Valores controlados con cambios en el estilo de vida."
+  },
+  {
+    "id": "caso-2025-05-23-027",
+    "timestamp": "2025-05-23T15:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con blefaritis. Se recomienda higiene palpebral y compresas calientes."
+  },
+  {
+    "id": "caso-2025-05-23-028",
+    "timestamp": "2025-05-23T16:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de salud en hombre de 90 años. Se aconseja control de la movilidad."
+  },
+  {
+    "id": "caso-2025-05-23-029",
+    "timestamp": "2025-05-23T16:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con rinitis alérgica. Se prescribe espray nasal."
+  },
+  {
+    "id": "caso-2025-05-23-030",
+    "timestamp": "2025-05-23T16:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor en el pie. Diagnóstico: fascitis plantar. Se recomienda plantillas."
+  },
+  {
+    "id": "caso-2025-05-24-001",
+    "timestamp": "2025-05-24T08:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con síntomas de resfriado persistente. Se solicita radiografía de tórax."
+  },
+  {
+    "id": "caso-2025-05-24-002",
+    "timestamp": "2025-05-24T08:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de asma en adulto. Ajuste de dosis de corticoide inhalado."
+  },
+  {
+    "id": "caso-2025-05-24-003",
+    "timestamp": "2025-05-24T08:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por erupción en la cara. Diagnóstico: rosácea. Se prescribe tratamiento tópico."
+  },
+  {
+    "id": "caso-2025-05-24-004",
+    "timestamp": "2025-05-24T08:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de cicatriz de cirugía. Aspecto estético mejorado."
+  },
+  {
+    "id": "caso-2025-05-24-005",
+    "timestamp": "2025-05-24T09:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con dificultad para respirar. Se deriva a neumología para estudio."
+  },
+  {
+    "id": "caso-2025-05-24-006",
+    "timestamp": "2025-05-24T09:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Vacunación del sarampión, paperas y rubéola (triple vírica) en niño."
+  },
+  {
+    "id": "caso-2025-05-24-007",
+    "timestamp": "2025-05-24T09:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de crecimiento en bebé. Se introducen nuevos alimentos."
+  },
+  {
+    "id": "caso-2025-05-24-008",
+    "timestamp": "2025-05-24T09:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con jet lag severo. Se recomiendan medidas para regular el sueño."
+  },
+  {
+    "id": "caso-2025-05-24-009",
+    "timestamp": "2025-05-24T10:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Curación de herida por caída en niño. Sin complicaciones."
+  },
+  {
+    "id": "caso-2025-05-24-010",
+    "timestamp": "2025-05-24T10:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de audífonos. Limpieza y ajuste."
+  },
+  {
+    "id": "caso-2025-05-24-011",
+    "timestamp": "2025-05-24T10:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con lumbago agudo. Se prescribe analgésico y se recomienda reposo."
+  },
+  {
+    "id": "caso-2025-05-24-012",
+    "timestamp": "2025-05-24T10:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de colesterol. Valores ligeramente elevados. Se ajusta medicación."
+  },
+  {
+    "id": "caso-2025-05-24-013",
+    "timestamp": "2025-05-24T11:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor de cabeza y sinusitis. Se prescribe descongestionante."
+  },
+  {
+    "id": "caso-2025-05-24-014",
+    "timestamp": "2025-05-24T11:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Test de función tiroidea. Resultados normales."
+  },
+  {
+    "id": "caso-2025-05-24-015",
+    "timestamp": "2025-05-24T11:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con neuropatía periférica. Se prescribe medicación para el dolor."
+  },
+  {
+    "id": "caso-2025-05-24-016",
+    "timestamp": "2025-05-24T13:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de embarazo: ecografía del tercer trimestre. Feto en buena posición."
+  },
+  {
+    "id": "caso-2025-05-24-017",
+    "timestamp": "2025-05-24T13:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con irritación en la piel por roce. Se recomienda ropa de algodón."
+  },
+  {
+    "id": "caso-2025-05-24-018",
+    "timestamp": "2025-05-24T13:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de puente dental. Limpieza y evaluación de estabilidad."
+  },
+  {
+    "id": "caso-2025-05-24-019",
+    "timestamp": "2025-05-24T13:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con tendinitis en el talón de Aquiles. Se recomienda reposo y estiramientos."
+  },
+  {
+    "id": "caso-2025-05-24-020",
+    "timestamp": "2025-05-24T14:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Seguimiento de paciente con enfermedad de Alzheimer. Evaluación cognitiva. Se ajusta plan de cuidados."
+  },
+  {
+    "id": "caso-2025-05-24-021",
+    "timestamp": "2025-05-24T14:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor en la cadera. Se solicita radiografía para descartar artrosis."
+  },
+  {
+    "id": "caso-2025-05-24-022",
+    "timestamp": "2025-05-24T14:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con carencia de vitamina B12. Se prescribe suplemento."
+  },
+  {
+    "id": "caso-2025-05-24-023",
+    "timestamp": "2025-05-24T14:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de salud en mujer de 80 años. Se aconseja control de la medicación."
+  },
+  {
+    "id": "caso-2025-05-24-024",
+    "timestamp": "2025-05-24T15:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por juanetes. Se recomiendan zapatos cómodos. Se valora cirugía."
+  },
+  {
+    "id": "caso-2025-05-24-025",
+    "timestamp": "2025-05-24T15:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con trastornos del estado de ánimo. Se deriva a psicología."
+  },
+  {
+    "id": "caso-2025-05-24-026",
+    "timestamp": "2025-05-24T15:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de colesterol. Valores dentro del rango con dieta y ejercicio."
+  },
+  {
+    "id": "caso-2025-05-24-027",
+    "timestamp": "2025-05-24T15:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con orzuelo. Se recomienda compresas calientes."
+  },
+  {
+    "id": "caso-2025-05-24-028",
+    "timestamp": "2025-05-24T16:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de salud en hombre de 100 años. Buen estado general para la edad."
+  },
+  {
+    "id": "caso-2025-05-24-029",
+    "timestamp": "2025-05-24T16:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con laringitis. Se recomienda reposo de voz y líquidos calientes."
+  },
+  {
+    "id": "caso-2025-05-24-030",
+    "timestamp": "2025-05-24T16:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor en el cuello por mala postura. Se recomiendan ejercicios de estiramiento."
+  },
+  {
+    "id": "caso-2025-05-25-001",
+    "timestamp": "2025-05-25T08:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con dolor de cabeza y náuseas. Se descartan migrañas. Se recomienda reposo."
+  },
+  {
+    "id": "caso-2025-05-25-002",
+    "timestamp": "2025-05-25T08:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de hipertensión. Valores estables. Se mantiene medicación."
+  },
+  {
+    "id": "caso-2025-05-25-003",
+    "timestamp": "2025-05-25T08:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por urticaria. Se identifica alérgeno. Se prescribe antihistamínico."
+  },
+  {
+    "id": "caso-2025-05-25-004",
+    "timestamp": "2025-05-25T08:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de herida por caída. Cicatrización adecuada. Se retiran puntos."
+  },
+  {
+    "id": "caso-2025-05-25-005",
+    "timestamp": "2025-05-25T09:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con tos seca persistente. Se solicita radiografía de tórax."
+  },
+  {
+    "id": "caso-2025-05-25-006",
+    "timestamp": "2025-05-25T09:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Vacunación del neumococo en paciente de riesgo."
+  },
+  {
+    "id": "caso-2025-05-25-007",
+    "timestamp": "2025-05-25T09:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de peso en adulto. Se recomienda plan de alimentación y ejercicio."
+  },
+  {
+    "id": "caso-2025-05-25-008",
+    "timestamp": "2025-05-25T09:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con somnolencia diurna. Se descartan apneas del sueño."
+  },
+  {
+    "id": "caso-2025-05-25-009",
+    "timestamp": "2025-05-25T10:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Curación de quemadura de primer grado. Se aplica apósito y pomada."
+  },
+  {
+    "id": "caso-2025-05-25-010",
+    "timestamp": "2025-05-25T10:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión oftalmológica de control. Sin cambios en la visión."
+  },
+  {
+    "id": "caso-2025-05-25-011",
+    "timestamp": "2025-05-25T10:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con dolor de cuello y hombros. Se recomienda masajes y estiramientos."
+  },
+  {
+    "id": "caso-2025-05-25-012",
+    "timestamp": "2025-05-25T10:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de glucosa en sangre. Valores controlados. Se mantiene estilo de vida."
+  },
+  {
+    "id": "caso-2025-05-25-013",
+    "timestamp": "2025-05-25T11:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor de muelas persistente. Se deriva a endodoncia."
+  },
+  {
+    "id": "caso-2025-05-25-014",
+    "timestamp": "2025-05-25T11:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Test de función suprarrenal. Resultados normales."
+  },
+  {
+    "id": "caso-2025-05-25-015",
+    "timestamp": "2025-05-25T11:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con fibromialgia. Ajuste de medicación para el dolor y fatiga."
+  },
+  {
+    "id": "caso-2025-05-25-016",
+    "timestamp": "2025-05-25T13:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de embarazo: medición de altura uterina y movimientos fetales."
+  },
+  {
+    "id": "caso-2025-05-25-017",
+    "timestamp": "2025-05-25T13:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con reacción alérgica a medicamento. Se suspende medicación."
+  },
+  {
+    "id": "caso-2025-05-25-018",
+    "timestamp": "2025-05-25T13:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de implante dental. Integración ósea correcta."
+  },
+  {
+    "id": "caso-2025-05-25-019",
+    "timestamp": "2025-05-25T13:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con bursitis de codo. Se recomienda reposo y hielo."
+  },
+  {
+    "id": "caso-2025-05-25-020",
+    "timestamp": "2025-05-25T14:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Seguimiento de paciente con esclerosis múltiple. Evaluación de progresión. Ajuste de tratamiento."
+  },
+  {
+    "id": "caso-2025-05-25-021",
+    "timestamp": "2025-05-25T14:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor en la articulación temporomandibular. Se recomienda férula dental."
+  },
+  {
+    "id": "caso-2025-05-25-022",
+    "timestamp": "2025-05-25T14:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con deficiencia de vitamina D. Se prescribe suplemento."
+  },
+  {
+    "id": "caso-2025-05-25-023",
+    "timestamp": "2025-05-25T14:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de salud en mujer de 90 años. Evaluación de estado general."
+  },
+  {
+    "id": "caso-2025-05-25-024",
+    "timestamp": "2025-05-25T15:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por sabañones. Se recomienda mantener manos y pies calientes."
+  },
+  {
+    "id": "caso-2025-05-25-025",
+    "timestamp": "2025-05-25T15:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con ataques de ansiedad recurrentes. Se deriva a psiquiatría."
+  },
+  {
+    "id": "caso-2025-05-25-026",
+    "timestamp": "2025-05-25T15:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Control de triglicéridos. Valores en rango. Se mantienen hábitos saludables."
+  },
+  {
+    "id": "caso-2025-05-25-027",
+    "timestamp": "2025-05-25T15:45:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con ojo rojo. Diagnóstico: conjuntivitis vírica. Se recomienda medidas higiénicas."
+  },
+  {
+    "id": "caso-2025-05-25-028",
+    "timestamp": "2025-05-25T16:00:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Revisión de salud en centenario. Evaluación de la calidad de vida."
+  },
+  {
+    "id": "caso-2025-05-25-029",
+    "timestamp": "2025-05-25T16:15:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Paciente con afonía. Se recomienda reposo de voz."
+  },
+  {
+    "id": "caso-2025-05-25-030",
+    "timestamp": "2025-05-25T16:30:00Z",
+    "source_endpoint": "ai/summarize",
+    "description": "Consulta por dolor en la espalda alta. Se recomienda calor y estiramientos."
+  }
+]
