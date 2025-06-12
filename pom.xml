@@ -161,6 +161,12 @@
 					<target>17</target>
 				</configuration>
 			</plugin>
+			<!-- Plugin SonarQube para análisis estático de calidad del código -->
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.11.0.3922</version>
+			</plugin>
 		</plugins>
 	</build>
 </project>
