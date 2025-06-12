@@ -28,7 +28,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
-import java.nio.file.Files;
 import java.time.Instant;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -37,13 +36,31 @@ import java.util.stream.Collectors;
 @Service
 public class OpenSearchService {
 
+    // ================================
+    // Variables Globales y Dependencias
+    // ================================
+
+    //carpeta donde se alojan los ficheros subidos por el usuario.
     private static final String UPLOAD_DIR = "C:/uploaded_files/";
 
+    // pipeline para análisis de sentimiento con CoreNLP.
     private StanfordCoreNLP sentimentPipeline;
 
+    //cliente oficial de OpenSearch para operaciones CRUD.
     @Autowired
     private RestHighLevelClient restHighLevelClient;
 
+    @Autowired
+    private TextAnonymizerService textAnonymizerService;
+
+
+
+    // ================================
+    // Indexación de Documentos
+    // ================================
+
+    //Permite indexar un documento individual de forma controlada (nombre, descripción, timestamp).
+    //Usa XContentFactory para generar el JSON de forma programática.
     public String indexDocument(String indexName, String documentId, Map<String, Object> document) throws IOException {
         // Construir el documento usando XContentFactory.jsonBuilder()
         IndexRequest request = new IndexRequest(indexName)
@@ -66,6 +83,8 @@ public class OpenSearchService {
     /**
      * Leer archivo JSON.
      */
+    //Soporte para leer ficheros .json (simulado) y .csv.
+    //En el CSV se asume la primera fila como cabecera y se mapea cada fila a un documento.
     public Map<String, Object> readJsonFile(File file) throws IOException {
         // Simulación: En un caso real, deberías usar una biblioteca como Jackson para leer el archivo JSON
         Map<String, Object> document = new HashMap<>();
@@ -100,6 +119,9 @@ public class OpenSearchService {
     /**
      * Realiza análisis de sentimiento sobre el contenido del archivo.
      */
+    //Inicializa el pipeline de Stanford NLP al arrancar el servicio.
+    //Lee los textos y devuelve un análisis con:
+    //distribución de sentimientos, puntuación promedio, sentimiento general (summary_sentiment)
     @PostConstruct
     public void initSentimentPipeline() {
         Properties props = new Properties();
@@ -188,11 +210,9 @@ public class OpenSearchService {
         };
     }
 
-
-
-
-
-
+    //Extracción de Tripletas Semánticas
+    //Usa KBP de Stanford NLP para extraer tripletas sujeto–relación–objeto.
+    //Devuelve una lista ordenada por confianza, útil para crear grafos semánticos.
     public String extractTriplesFromFile(String fileName) {
         File file = new File(UPLOAD_DIR + fileName);
         if (!file.exists()) {
@@ -259,6 +279,8 @@ public class OpenSearchService {
     /**
      * Reconoce entidades nombradas como personas, lugares, instituciones, etc.
      */
+    //Reconoce entidades clínicas (personas, fechas, hospitales, etc.)
+    //Usa CoreEntityMention para detectar y clasificar entidades.
     public List<Map<String, Object>> recognizeEntitiesFromJsonFile(String fileName) throws IOException {
         File file = new File(UPLOAD_DIR + fileName);
         if (!file.exists()) throw new FileNotFoundException("Archivo no encontrado: " + fileName);
@@ -302,6 +324,10 @@ public class OpenSearchService {
     }
 
 
+    //Segmentación de Texto Clínico
+    //Divide el texto en bloques lógicos:
+    //síntomas, antecedentes, tratamiento, recomendaciones
+    //Basado en reglas heurísticas y presencia de palabras clave.
     public List<Map<String, Object>> segmentTextFromFile(String fileName) throws IOException {
         File file = new File(UPLOAD_DIR + fileName);
         if (!file.exists()) {
@@ -355,15 +381,9 @@ public class OpenSearchService {
         return results;
     }
 
-
-
-
-
-
-
-
-
-
+    //Creación de Índice con Mapeo
+    //Crea un índice con mapeo explícito de campos (timestamp, id, etc.).
+    //Evita que OpenSearch infiera automáticamente los tipos.
     public void ensureIndexWithDateMapping(String indexName) {
         try {
             boolean exists = restHighLevelClient.indices().exists(new GetIndexRequest(indexName), RequestOptions.DEFAULT);
@@ -387,12 +407,9 @@ public class OpenSearchService {
         }
     }
 
-
-
-
-
-
-
+    // Estadísticas de Dataset CSV
+    //Calcula métricas estadísticas (media, desviación, min/max).
+    //Aplica únicamente sobre campos numéricos detectados.
     public String summarizeBigDataFromFile(String fileName) throws IOException {
         File file = new File(UPLOAD_DIR + fileName);
         if (!file.exists()) {
@@ -441,6 +458,9 @@ public class OpenSearchService {
     }
 
 
+    //Resumen de Texto
+    //Extrae las primeras 3 frases de un texto.
+    //Método simplificado de resumen heurístico para casos clínicos.
     public Map<String, Object> summarizeText(String description) {
         if (description == null || description.isEmpty()) {
             return Map.of(
@@ -449,7 +469,7 @@ public class OpenSearchService {
             );
         }
 
-        // Dividir en frases básicas (simulado como MVP)
+
         String[] sentences = description.split("\\.\\s*");
         List<String> trimmed = Arrays.stream(sentences)
                 .map(String::trim)
@@ -465,9 +485,9 @@ public class OpenSearchService {
         );
     }
 
-
-
-
+    //Predicción de Tendencias
+    //Usa SimpleRegression para prever el siguiente valor en una serie temporal.
+    //Se apoya en Apache Commons Math.
     public Map<String, Object> predictNextValueFromFile(String fileName) throws IOException {
         File file = new File(UPLOAD_DIR + fileName);
         if (!file.exists()) throw new FileNotFoundException("Archivo no encontrado: " + fileName);
@@ -520,10 +540,9 @@ public class OpenSearchService {
         }
     }
 
-
-
-
-
+    //Operaciones sobre Índices
+    //Permiten listar índices y eliminar de forma segura.
+    //Operaciones comunes para administrar el backend de OpenSearch.
     public Map<String, Long> listIndicesWithDocumentCount() throws IOException {
         // Obtener el listado de índices
         String[] indices = restHighLevelClient.indices()
@@ -561,22 +580,12 @@ public class OpenSearchService {
     }
 
 
-    public String readTextFromFile(File file) throws IOException {
-        if (file.getName().endsWith(".json")) {
-            // Leer campo "description" o concatenar textos
-            String content = Files.readString(file.toPath());
-            return content.replaceAll("[^\\p{L}\\p{N}\\s]", " "); // limpiar símbolos
-        } else if (file.getName().endsWith(".txt")) {
-            return Files.readString(file.toPath());
-        } else {
-            throw new IOException("Unsupported file type for keyword extraction.");
-        }
-    }
-
 
     /**
      * Extrae palabras clave de un archivo de texto o JSON.
      */
+    //TF simple: frecuencia de palabras de longitud > 3.
+    //Filtrado básico de stopwords comunes en español.
     public List<String> extractKeywords(String text) {
         Map<String, Integer> tf = new HashMap<>();
         String[] tokens = text.toLowerCase().split("\\s+");
@@ -598,8 +607,10 @@ public class OpenSearchService {
     /**
      * Anonimiza texto médico o sensible en un archivo.
      */
-    @Service
-    public static class TextAnonymizerService {
+    //Remueve información sensible:
+        //nombres, doctores, fechas, hospitales
+    // Usa expresiones regulares específicas.
+    /*public static class TextAnonymizerService {
 
         public String anonymizeTextFromFileContent(String input) {
             String anonymized = input;
@@ -619,12 +630,14 @@ public class OpenSearchService {
 
             return anonymized;
         }
-    }
+    }*/
 
 
     /**
      * Agrupa entradas de texto en clústeres temáticos.
      */
+    //Tokeniza documentos, genera vectores TF y aplica K-means con K=2.
+    //Devuelve estructura {cluster_id → lista de documentos}.
     public Map<Integer, List<Map<String, Object>>> clusterDocumentsFromFile(String fileName) throws IOException {
         String path = "C:/uploaded_files/" + fileName;
 
@@ -714,6 +727,10 @@ public class OpenSearchService {
         }
     }
 
+
+    //Indexación Genérica
+    //Permite indexar cualquier documento sin estructura rígida.
+    //Usado internamente por todos los endpoints que procesan archivos.
     public String indexGeneric(String indexName, Map<String, Object> payload) throws IOException {
         IndexRequest request = new IndexRequest(indexName)
                 .id(UUID.randomUUID().toString())
@@ -721,31 +738,5 @@ public class OpenSearchService {
         IndexResponse response = restHighLevelClient.index(request, RequestOptions.DEFAULT);
         return response.getResult().name();
     }
-
-
-
-
-    private String readFile(String filePath) {
-        StringBuilder content = new StringBuilder();
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), "UTF-8"))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                content.append(line).append(" ");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-        return content.toString().trim();
-    }
-
-    private List<Map<String, Object>> readJsonArrayFromFile(File file) throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            Gson gson = new Gson();
-            return gson.fromJson(reader, List.class);
-        }
-    }
-
-
 
 }
