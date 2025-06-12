@@ -1,0 +1,1262 @@
+[
+  {
+    "id": "anon-006",
+    "timestamp": "2025-05-19T09:05:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. García examinó a Marta Rodríguez en el Centro Médico ABC el 18/05/2025."
+  },
+  {
+    "id": "anon-007",
+    "timestamp": "2025-05-19T10:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "María Pérez visitó al especialista Dr. Fernández en la Policlínica San Juan el 2025-05-17."
+  },
+  {
+    "id": "anon-008",
+    "timestamp": "2025-05-19T11:15:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Lucas Soto fue atendido por la Dra. Torres en el Hospital de la Paz el 16/05/2025."
+  },
+  {
+    "id": "anon-009",
+    "timestamp": "2025-05-19T12:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Ana Martín acudió a consulta con el Dr. Ruiz en la Clínica de Especialidades el 2025-05-15."
+  },
+  {
+    "id": "anon-010",
+    "timestamp": "2025-05-19T13:25:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Carlos Romero tuvo una cita con la Dra. López el 14/05/2025."
+  },
+  {
+    "id": "anon-011",
+    "timestamp": "2025-05-19T14:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Elena Castro fue diagnosticada por el Dr. Vargas en el Hospital Universitario el 13/05/2025."
+  },
+  {
+    "id": "anon-012",
+    "timestamp": "2025-05-19T15:35:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Javier Pérez recibió atención médica del Dr. Sánchez el 12/05/2025."
+  },
+  {
+    "id": "anon-013",
+    "timestamp": "2025-05-19T16:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Isabel Núñez visitó la Clínica del Carmen y fue atendida por la Dra. Gil el 11/05/2025."
+  },
+  {
+    "id": "anon-014",
+    "timestamp": "2025-05-19T17:45:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Miguel Ángel Torres tuvo una revisión con el Dr. Vidal en el Centro de Salud el 10/05/2025."
+  },
+  {
+    "id": "anon-015",
+    "timestamp": "2025-05-19T18:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Sofía Giménez acudió a urgencias en el Hospital Central el 09/05/2025."
+  },
+  {
+    "id": "anon-016",
+    "timestamp": "2025-05-19T08:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Álvarez atendió a David Blanco en la consulta el 08/05/2025."
+  },
+  {
+    "id": "anon-017",
+    "timestamp": "2025-05-19T09:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Laura Díaz tuvo una cita con la Dra. Flores el 07/05/2025."
+  },
+  {
+    "id": "anon-018",
+    "timestamp": "2025-05-19T10:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Fernando Ruiz fue atendido por el Dr. Castro en la Policlínica el 06/05/2025."
+  },
+  {
+    "id": "anon-019",
+    "timestamp": "2025-05-19T11:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Cristina Soto visitó al Dr. Herrera en el Hospital Regional el 05/05/2025."
+  },
+  {
+    "id": "anon-020",
+    "timestamp": "2025-05-19T12:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Morales examinó a Paula Vázquez el 04/05/2025."
+  },
+  {
+    "id": "anon-021",
+    "timestamp": "2025-05-19T13:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Roberto Prieto fue visto por la Dra. Serrano en la Clínica Privada el 03/05/2025."
+  },
+  {
+    "id": "anon-022",
+    "timestamp": "2025-05-19T15:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Silvia Gómez tuvo una consulta con el Dr. Navarro el 02/05/2025."
+  },
+  {
+    "id": "anon-023",
+    "timestamp": "2025-05-19T16:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Andrés Marín fue ingresado en el Hospital Virgen del Rocío el 01/05/2025."
+  },
+  {
+    "id": "anon-024",
+    "timestamp": "2025-05-19T17:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "La Dra. Delgado atendió a Juan Pérez en el Centro de Salud el 30/04/2025."
+  },
+  {
+    "id": "anon-025",
+    "timestamp": "2025-05-19T18:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Elena López visitó al Dr. Ramos el 29/04/2025."
+  },
+  {
+    "id": "anon-026",
+    "timestamp": "2025-05-19T19:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Daniel Castro tuvo una cita con la Dra. Ibáñez el 28/04/2025."
+  },
+  {
+    "id": "anon-027",
+    "timestamp": "2025-05-19T20:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Reyes examinó a Carmen Morales en la Clínica Universitaria el 27/04/2025."
+  },
+  {
+    "id": "anon-028",
+    "timestamp": "2025-05-19T21:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Miguel Sánchez fue atendido por la Dra. Pascual el 26/04/2025."
+  },
+  {
+    "id": "anon-029",
+    "timestamp": "2025-05-19T22:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Teresa Alonso tuvo una consulta con el Dr. Soler el 25/04/2025."
+  },
+  {
+    "id": "anon-030",
+    "timestamp": "2025-05-19T23:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Sofía Díaz visitó al Dr. Bravo en el Hospital Comarcal el 24/04/2025."
+  },
+  {
+    "id": "anon-031",
+    "timestamp": "2025-05-19T00:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Castro atendió a Javier Núñez en el Centro Médico el 23/04/2025."
+  },
+  {
+    "id": "anon-032",
+    "timestamp": "2025-05-19T01:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Laura García tuvo una cita con la Dra. Vidal el 22/04/2025."
+  },
+  {
+    "id": "anon-033",
+    "timestamp": "2025-05-19T02:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Pablo Soto fue atendido por el Dr. Gómez el 21/04/2025."
+  },
+  {
+    "id": "anon-034",
+    "timestamp": "2025-05-19T03:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "María Torres visitó al Dr. López en la Clínica del Pilar el 20/04/2025."
+  },
+  {
+    "id": "anon-035",
+    "timestamp": "2025-05-19T04:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Ruiz examinó a Ana Herrera el 19/04/2025."
+  },
+  {
+    "id": "anon-036",
+    "timestamp": "2025-05-20T09:05:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. García examinó a Marta Rodríguez en el Centro Médico ABC el 18/05/2025."
+  },
+  {
+    "id": "anon-037",
+    "timestamp": "2025-05-20T10:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "María Pérez visitó al especialista Dr. Fernández en la Policlínica San Juan el 2025-05-17."
+  },
+  {
+    "id": "anon-038",
+    "timestamp": "2025-05-20T11:15:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Lucas Soto fue atendido por la Dra. Torres en el Hospital de la Paz el 16/05/2025."
+  },
+  {
+    "id": "anon-039",
+    "timestamp": "2025-05-20T12:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Ana Martín acudió a consulta con el Dr. Ruiz en la Clínica de Especialidades el 2025-05-15."
+  },
+  {
+    "id": "anon-040",
+    "timestamp": "2025-05-20T13:25:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Carlos Romero tuvo una cita con la Dra. López el 14/05/2025."
+  },
+  {
+    "id": "anon-041",
+    "timestamp": "2025-05-20T14:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Elena Castro fue diagnosticada por el Dr. Vargas en el Hospital Universitario el 13/05/2025."
+  },
+  {
+    "id": "anon-042",
+    "timestamp": "2025-05-20T15:35:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Javier Pérez recibió atención médica del Dr. Sánchez el 12/05/2025."
+  },
+  {
+    "id": "anon-043",
+    "timestamp": "2025-05-20T16:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Isabel Núñez visitó la Clínica del Carmen y fue atendida por la Dra. Gil el 11/05/2025."
+  },
+  {
+    "id": "anon-044",
+    "timestamp": "2025-05-20T17:45:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Miguel Ángel Torres tuvo una revisión con el Dr. Vidal en el Centro de Salud el 10/05/2025."
+  },
+  {
+    "id": "anon-045",
+    "timestamp": "2025-05-20T18:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Sofía Giménez acudió a urgencias en el Hospital Central el 09/05/2025."
+  },
+  {
+    "id": "anon-046",
+    "timestamp": "2025-05-20T08:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Álvarez atendió a David Blanco en la consulta el 08/05/2025."
+  },
+  {
+    "id": "anon-047",
+    "timestamp": "2025-05-20T09:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Laura Díaz tuvo una cita con la Dra. Flores el 07/05/2025."
+  },
+  {
+    "id": "anon-048",
+    "timestamp": "2025-05-20T10:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Fernando Ruiz fue atendido por el Dr. Castro en la Policlínica el 06/05/2025."
+  },
+  {
+    "id": "anon-049",
+    "timestamp": "2025-05-20T11:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Cristina Soto visitó al Dr. Herrera en el Hospital Regional el 05/05/2025."
+  },
+  {
+    "id": "anon-050",
+    "timestamp": "2025-05-20T12:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Morales examinó a Paula Vázquez el 04/05/2025."
+  },
+  {
+    "id": "anon-051",
+    "timestamp": "2025-05-20T13:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Roberto Prieto fue visto por la Dra. Serrano en la Clínica Privada el 03/05/2025."
+  },
+  {
+    "id": "anon-052",
+    "timestamp": "2025-05-20T15:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Silvia Gómez tuvo una consulta con el Dr. Navarro el 02/05/2025."
+  },
+  {
+    "id": "anon-053",
+    "timestamp": "2025-05-20T16:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Andrés Marín fue ingresado en el Hospital Virgen del Rocío el 01/05/2025."
+  },
+  {
+    "id": "anon-054",
+    "timestamp": "2025-05-20T17:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "La Dra. Delgado atendió a Juan Pérez en el Centro de Salud el 30/04/2025."
+  },
+  {
+    "id": "anon-055",
+    "timestamp": "2025-05-20T18:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Elena López visitó al Dr. Ramos el 29/04/2025."
+  },
+  {
+    "id": "anon-056",
+    "timestamp": "2025-05-20T19:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Daniel Castro tuvo una cita con la Dra. Ibáñez el 28/04/2025."
+  },
+  {
+    "id": "anon-057",
+    "timestamp": "2025-05-20T20:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Reyes examinó a Carmen Morales en la Clínica Universitaria el 27/04/2025."
+  },
+  {
+    "id": "anon-058",
+    "timestamp": "2025-05-20T21:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Miguel Sánchez fue atendido por la Dra. Pascual el 26/04/2025."
+  },
+  {
+    "id": "anon-059",
+    "timestamp": "2025-05-20T22:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Teresa Alonso tuvo una consulta con el Dr. Soler el 25/04/2025."
+  },
+  {
+    "id": "anon-060",
+    "timestamp": "2025-05-20T23:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Sofía Díaz visitó al Dr. Bravo en el Hospital Comarcal el 24/04/2025."
+  },
+  {
+    "id": "anon-061",
+    "timestamp": "2025-05-20T00:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Castro atendió a Javier Núñez en el Centro Médico el 23/04/2025."
+  },
+  {
+    "id": "anon-062",
+    "timestamp": "2025-05-20T01:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Laura García tuvo una cita con la Dra. Vidal el 22/04/2025."
+  },
+  {
+    "id": "anon-063",
+    "timestamp": "2025-05-20T02:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Pablo Soto fue atendido por el Dr. Gómez el 21/04/2025."
+  },
+  {
+    "id": "anon-064",
+    "timestamp": "2025-05-20T03:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "María Torres visitó al Dr. López en la Clínica del Pilar el 20/04/2025."
+  },
+  {
+    "id": "anon-065",
+    "timestamp": "2025-05-20T04:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Ruiz examinó a Ana Herrera el 19/04/2025."
+  },
+  {
+    "id": "anon-066",
+    "timestamp": "2025-05-21T09:05:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. García examinó a Marta Rodríguez en el Centro Médico ABC el 18/05/2025."
+  },
+  {
+    "id": "anon-067",
+    "timestamp": "2025-05-21T10:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "María Pérez visitó al especialista Dr. Fernández en la Policlínica San Juan el 2025-05-17."
+  },
+  {
+    "id": "anon-068",
+    "timestamp": "2025-05-21T11:15:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Lucas Soto fue atendido por la Dra. Torres en el Hospital de la Paz el 16/05/2025."
+  },
+  {
+    "id": "anon-069",
+    "timestamp": "2025-05-21T12:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Ana Martín acudió a consulta con el Dr. Ruiz en la Clínica de Especialidades el 2025-05-15."
+  },
+  {
+    "id": "anon-070",
+    "timestamp": "2025-05-21T13:25:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Carlos Romero tuvo una cita con la Dra. López el 14/05/2025."
+  },
+  {
+    "id": "anon-071",
+    "timestamp": "2025-05-21T14:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Elena Castro fue diagnosticada por el Dr. Vargas en el Hospital Universitario el 13/05/2025."
+  },
+  {
+    "id": "anon-072",
+    "timestamp": "2025-05-21T15:35:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Javier Pérez recibió atención médica del Dr. Sánchez el 12/05/2025."
+  },
+  {
+    "id": "anon-073",
+    "timestamp": "2025-05-21T16:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Isabel Núñez visitó la Clínica del Carmen y fue atendida por la Dra. Gil el 11/05/2025."
+  },
+  {
+    "id": "anon-074",
+    "timestamp": "2025-05-21T17:45:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Miguel Ángel Torres tuvo una revisión con el Dr. Vidal en el Centro de Salud el 10/05/2025."
+  },
+  {
+    "id": "anon-075",
+    "timestamp": "2025-05-21T18:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Sofía Giménez acudió a urgencias en el Hospital Central el 09/05/2025."
+  },
+  {
+    "id": "anon-076",
+    "timestamp": "2025-05-21T08:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Álvarez atendió a David Blanco en la consulta el 08/05/2025."
+  },
+  {
+    "id": "anon-077",
+    "timestamp": "2025-05-21T09:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Laura Díaz tuvo una cita con la Dra. Flores el 07/05/2025."
+  },
+  {
+    "id": "anon-078",
+    "timestamp": "2025-05-21T10:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Fernando Ruiz fue atendido por el Dr. Castro en la Policlínica el 06/05/2025."
+  },
+  {
+    "id": "anon-079",
+    "timestamp": "2025-05-21T11:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Cristina Soto visitó al Dr. Herrera en el Hospital Regional el 05/05/2025."
+  },
+  {
+    "id": "anon-080",
+    "timestamp": "2025-05-21T12:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Morales examinó a Paula Vázquez el 04/05/2025."
+  },
+  {
+    "id": "anon-081",
+    "timestamp": "2025-05-21T13:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Roberto Prieto fue visto por la Dra. Serrano en la Clínica Privada el 03/05/2025."
+  },
+  {
+    "id": "anon-082",
+    "timestamp": "2025-05-21T15:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Silvia Gómez tuvo una consulta con el Dr. Navarro el 02/05/2025."
+  },
+  {
+    "id": "anon-083",
+    "timestamp": "2025-05-21T16:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Andrés Marín fue ingresado en el Hospital Virgen del Rocío el 01/05/2025."
+  },
+  {
+    "id": "anon-084",
+    "timestamp": "2025-05-21T17:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "La Dra. Delgado atendió a Juan Pérez en el Centro de Salud el 30/04/2025."
+  },
+  {
+    "id": "anon-085",
+    "timestamp": "2025-05-21T18:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Elena López visitó al Dr. Ramos el 29/04/2025."
+  },
+  {
+    "id": "anon-086",
+    "timestamp": "2025-05-21T19:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Daniel Castro tuvo una cita con la Dra. Ibáñez el 28/04/2025."
+  },
+  {
+    "id": "anon-087",
+    "timestamp": "2025-05-21T20:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Reyes examinó a Carmen Morales en la Clínica Universitaria el 27/04/2025."
+  },
+  {
+    "id": "anon-088",
+    "timestamp": "2025-05-21T21:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Miguel Sánchez fue atendido por la Dra. Pascual el 26/04/2025."
+  },
+  {
+    "id": "anon-089",
+    "timestamp": "2025-05-21T22:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Teresa Alonso tuvo una consulta con el Dr. Soler el 25/04/2025."
+  },
+  {
+    "id": "anon-090",
+    "timestamp": "2025-05-21T23:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Sofía Díaz visitó al Dr. Bravo en el Hospital Comarcal el 24/04/2025."
+  },
+  {
+    "id": "anon-091",
+    "timestamp": "2025-05-21T00:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Castro atendió a Javier Núñez en el Centro Médico el 23/04/2025."
+  },
+  {
+    "id": "anon-092",
+    "timestamp": "2025-05-21T01:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Laura García tuvo una cita con la Dra. Vidal el 22/04/2025."
+  },
+  {
+    "id": "anon-093",
+    "timestamp": "2025-05-21T02:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Pablo Soto fue atendido por el Dr. Gómez el 21/04/2025."
+  },
+  {
+    "id": "anon-094",
+    "timestamp": "2025-05-21T03:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "María Torres visitó al Dr. López en la Clínica del Pilar el 20/04/2025."
+  },
+  {
+    "id": "anon-095",
+    "timestamp": "2025-05-21T04:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Ruiz examinó a Ana Herrera el 19/04/2025."
+  },
+  {
+    "id": "anon-096",
+    "timestamp": "2025-05-22T09:05:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. García examinó a Marta Rodríguez en el Centro Médico ABC el 18/05/2025."
+  },
+  {
+    "id": "anon-097",
+    "timestamp": "2025-05-22T10:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "María Pérez visitó al especialista Dr. Fernández en la Policlínica San Juan el 2025-05-17."
+  },
+  {
+    "id": "anon-098",
+    "timestamp": "2025-05-22T11:15:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Lucas Soto fue atendido por la Dra. Torres en el Hospital de la Paz el 16/05/2025."
+  },
+  {
+    "id": "anon-099",
+    "timestamp": "2025-05-22T12:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Ana Martín acudió a consulta con el Dr. Ruiz en la Clínica de Especialidades el 2025-05-15."
+  },
+  {
+    "id": "anon-100",
+    "timestamp": "2025-05-22T13:25:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Carlos Romero tuvo una cita con la Dra. López el 14/05/2025."
+  },
+  {
+    "id": "anon-101",
+    "timestamp": "2025-05-22T14:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Elena Castro fue diagnosticada por el Dr. Vargas en el Hospital Universitario el 13/05/2025."
+  },
+  {
+    "id": "anon-102",
+    "timestamp": "2025-05-22T15:35:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Javier Pérez recibió atención médica del Dr. Sánchez el 12/05/2025."
+  },
+  {
+    "id": "anon-103",
+    "timestamp": "2025-05-22T16:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Isabel Núñez visitó la Clínica del Carmen y fue atendida por la Dra. Gil el 11/05/2025."
+  },
+  {
+    "id": "anon-104",
+    "timestamp": "2025-05-22T17:45:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Miguel Ángel Torres tuvo una revisión con el Dr. Vidal en el Centro de Salud el 10/05/2025."
+  },
+  {
+    "id": "anon-105",
+    "timestamp": "2025-05-22T18:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Sofía Giménez acudió a urgencias en el Hospital Central el 09/05/2025."
+  },
+  {
+    "id": "anon-106",
+    "timestamp": "2025-05-22T08:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Álvarez atendió a David Blanco en la consulta el 08/05/2025."
+  },
+  {
+    "id": "anon-107",
+    "timestamp": "2025-05-22T09:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Laura Díaz tuvo una cita con la Dra. Flores el 07/05/2025."
+  },
+  {
+    "id": "anon-108",
+    "timestamp": "2025-05-22T10:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Fernando Ruiz fue atendido por el Dr. Castro en la Policlínica el 06/05/2025."
+  },
+  {
+    "id": "anon-109",
+    "timestamp": "2025-05-22T11:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Cristina Soto visitó al Dr. Herrera en el Hospital Regional el 05/05/2025."
+  },
+  {
+    "id": "anon-110",
+    "timestamp": "2025-05-22T12:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Morales examinó a Paula Vázquez el 04/05/2025."
+  },
+  {
+    "id": "anon-111",
+    "timestamp": "2025-05-22T13:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Roberto Prieto fue visto por la Dra. Serrano en la Clínica Privada el 03/05/2025."
+  },
+  {
+    "id": "anon-112",
+    "timestamp": "2025-05-22T15:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Silvia Gómez tuvo una consulta con el Dr. Navarro el 02/05/2025."
+  },
+  {
+    "id": "anon-113",
+    "timestamp": "2025-05-22T16:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Andrés Marín fue ingresado en el Hospital Virgen del Rocío el 01/05/2025."
+  },
+  {
+    "id": "anon-114",
+    "timestamp": "2025-05-22T17:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "La Dra. Delgado atendió a Juan Pérez en el Centro de Salud el 30/04/2025."
+  },
+  {
+    "id": "anon-115",
+    "timestamp": "2025-05-22T18:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Elena López visitó al Dr. Ramos el 29/04/2025."
+  },
+  {
+    "id": "anon-116",
+    "timestamp": "2025-05-22T19:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Daniel Castro tuvo una cita con la Dra. Ibáñez el 28/04/2025."
+  },
+  {
+    "id": "anon-117",
+    "timestamp": "2025-05-22T20:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Reyes examinó a Carmen Morales en la Clínica Universitaria el 27/04/2025."
+  },
+  {
+    "id": "anon-118",
+    "timestamp": "2025-05-22T21:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Miguel Sánchez fue atendido por la Dra. Pascual el 26/04/2025."
+  },
+  {
+    "id": "anon-119",
+    "timestamp": "2025-05-22T22:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Teresa Alonso tuvo una consulta con el Dr. Soler el 25/04/2025."
+  },
+  {
+    "id": "anon-120",
+    "timestamp": "2025-05-22T23:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Sofía Díaz visitó al Dr. Bravo en el Hospital Comarcal el 24/04/2025."
+  },
+  {
+    "id": "anon-121",
+    "timestamp": "2025-05-22T00:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Castro atendió a Javier Núñez en el Centro Médico el 23/04/2025."
+  },
+  {
+    "id": "anon-122",
+    "timestamp": "2025-05-22T01:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Laura García tuvo una cita con la Dra. Vidal el 22/04/2025."
+  },
+  {
+    "id": "anon-123",
+    "timestamp": "2025-05-22T02:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Pablo Soto fue atendido por el Dr. Gómez el 21/04/2025."
+  },
+  {
+    "id": "anon-124",
+    "timestamp": "2025-05-22T03:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "María Torres visitó al Dr. López en la Clínica del Pilar el 20/04/2025."
+  },
+  {
+    "id": "anon-125",
+    "timestamp": "2025-05-22T04:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Ruiz examinó a Ana Herrera el 19/04/2025."
+  },
+  {
+    "id": "anon-126",
+    "timestamp": "2025-05-23T09:05:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. García examinó a Marta Rodríguez en el Centro Médico ABC el 18/05/2025."
+  },
+  {
+    "id": "anon-127",
+    "timestamp": "2025-05-23T10:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "María Pérez visitó al especialista Dr. Fernández en la Policlínica San Juan el 2025-05-17."
+  },
+  {
+    "id": "anon-128",
+    "timestamp": "2025-05-23T11:15:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Lucas Soto fue atendido por la Dra. Torres en el Hospital de la Paz el 16/05/2025."
+  },
+  {
+    "id": "anon-129",
+    "timestamp": "2025-05-23T12:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Ana Martín acudió a consulta con el Dr. Ruiz en la Clínica de Especialidades el 2025-05-15."
+  },
+  {
+    "id": "anon-130",
+    "timestamp": "2025-05-23T13:25:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Carlos Romero tuvo una cita con la Dra. López el 14/05/2025."
+  },
+  {
+    "id": "anon-131",
+    "timestamp": "2025-05-23T14:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Elena Castro fue diagnosticada por el Dr. Vargas en el Hospital Universitario el 13/05/2025."
+  },
+  {
+    "id": "anon-132",
+    "timestamp": "2025-05-23T15:35:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Javier Pérez recibió atención médica del Dr. Sánchez el 12/05/2025."
+  },
+  {
+    "id": "anon-133",
+    "timestamp": "2025-05-23T16:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Isabel Núñez visitó la Clínica del Carmen y fue atendida por la Dra. Gil el 11/05/2025."
+  },
+  {
+    "id": "anon-134",
+    "timestamp": "2025-05-23T17:45:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Miguel Ángel Torres tuvo una revisión con el Dr. Vidal en el Centro de Salud el 10/05/2025."
+  },
+  {
+    "id": "anon-135",
+    "timestamp": "2025-05-23T18:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Sofía Giménez acudió a urgencias en el Hospital Central el 09/05/2025."
+  },
+  {
+    "id": "anon-136",
+    "timestamp": "2025-05-23T08:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Álvarez atendió a David Blanco en la consulta el 08/05/2025."
+  },
+  {
+    "id": "anon-137",
+    "timestamp": "2025-05-23T09:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Laura Díaz tuvo una cita con la Dra. Flores el 07/05/2025."
+  },
+  {
+    "id": "anon-138",
+    "timestamp": "2025-05-23T10:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Fernando Ruiz fue atendido por el Dr. Castro en la Policlínica el 06/05/2025."
+  },
+  {
+    "id": "anon-139",
+    "timestamp": "2025-05-23T11:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Cristina Soto visitó al Dr. Herrera en el Hospital Regional el 05/05/2025."
+  },
+  {
+    "id": "anon-140",
+    "timestamp": "2025-05-23T12:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Morales examinó a Paula Vázquez el 04/05/2025."
+  },
+  {
+    "id": "anon-141",
+    "timestamp": "2025-05-23T13:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Roberto Prieto fue visto por la Dra. Serrano en la Clínica Privada el 03/05/2025."
+  },
+  {
+    "id": "anon-142",
+    "timestamp": "2025-05-23T15:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Silvia Gómez tuvo una consulta con el Dr. Navarro el 02/05/2025."
+  },
+  {
+    "id": "anon-143",
+    "timestamp": "2025-05-23T16:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Andrés Marín fue ingresado en el Hospital Virgen del Rocío el 01/05/2025."
+  },
+  {
+    "id": "anon-144",
+    "timestamp": "2025-05-23T17:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "La Dra. Delgado atendió a Juan Pérez en el Centro de Salud el 30/04/2025."
+  },
+  {
+    "id": "anon-145",
+    "timestamp": "2025-05-23T18:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Elena López visitó al Dr. Ramos el 29/04/2025."
+  },
+  {
+    "id": "anon-146",
+    "timestamp": "2025-05-23T19:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Daniel Castro tuvo una cita con la Dra. Ibáñez el 28/04/2025."
+  },
+  {
+    "id": "anon-147",
+    "timestamp": "2025-05-23T20:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Reyes examinó a Carmen Morales en la Clínica Universitaria el 27/04/2025."
+  },
+  {
+    "id": "anon-148",
+    "timestamp": "2025-05-23T21:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Miguel Sánchez fue atendido por la Dra. Pascual el 26/04/2025."
+  },
+  {
+    "id": "anon-149",
+    "timestamp": "2025-05-23T22:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Teresa Alonso tuvo una consulta con el Dr. Soler el 25/04/2025."
+  },
+  {
+    "id": "anon-150",
+    "timestamp": "2025-05-23T23:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Sofía Díaz visitó al Dr. Bravo en el Hospital Comarcal el 24/04/2025."
+  },
+  {
+    "id": "anon-151",
+    "timestamp": "2025-05-23T00:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Castro atendió a Javier Núñez en el Centro Médico el 23/04/2025."
+  },
+  {
+    "id": "anon-152",
+    "timestamp": "2025-05-23T01:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Laura García tuvo una cita con la Dra. Vidal el 22/04/2025."
+  },
+  {
+    "id": "anon-153",
+    "timestamp": "2025-05-23T02:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Pablo Soto fue atendido por el Dr. Gómez el 21/04/2025."
+  },
+  {
+    "id": "anon-154",
+    "timestamp": "2025-05-23T03:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "María Torres visitó al Dr. López en la Clínica del Pilar el 20/04/2025."
+  },
+  {
+    "id": "anon-155",
+    "timestamp": "2025-05-23T04:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Ruiz examinó a Ana Herrera el 19/04/2025."
+  },
+  {
+    "id": "anon-156",
+    "timestamp": "2025-05-24T09:05:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. García examinó a Marta Rodríguez en el Centro Médico ABC el 18/05/2025."
+  },
+  {
+    "id": "anon-157",
+    "timestamp": "2025-05-24T10:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "María Pérez visitó al especialista Dr. Fernández en la Policlínica San Juan el 2025-05-17."
+  },
+  {
+    "id": "anon-158",
+    "timestamp": "2025-05-24T11:15:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Lucas Soto fue atendido por la Dra. Torres en el Hospital de la Paz el 16/05/2025."
+  },
+  {
+    "id": "anon-159",
+    "timestamp": "2025-05-24T12:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Ana Martín acudió a consulta con el Dr. Ruiz en la Clínica de Especialidades el 2025-05-15."
+  },
+  {
+    "id": "anon-160",
+    "timestamp": "2025-05-24T13:25:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Carlos Romero tuvo una cita con la Dra. López el 14/05/2025."
+  },
+  {
+    "id": "anon-161",
+    "timestamp": "2025-05-24T14:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Elena Castro fue diagnosticada por el Dr. Vargas en el Hospital Universitario el 13/05/2025."
+  },
+  {
+    "id": "anon-162",
+    "timestamp": "2025-05-24T15:35:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Javier Pérez recibió atención médica del Dr. Sánchez el 12/05/2025."
+  },
+  {
+    "id": "anon-163",
+    "timestamp": "2025-05-24T16:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Isabel Núñez visitó la Clínica del Carmen y fue atendida por la Dra. Gil el 11/05/2025."
+  },
+  {
+    "id": "anon-164",
+    "timestamp": "2025-05-24T17:45:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Miguel Ángel Torres tuvo una revisión con el Dr. Vidal en el Centro de Salud el 10/05/2025."
+  },
+  {
+    "id": "anon-165",
+    "timestamp": "2025-05-24T18:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Sofía Giménez acudió a urgencias en el Hospital Central el 09/05/2025."
+  },
+  {
+    "id": "anon-166",
+    "timestamp": "2025-05-24T08:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Álvarez atendió a David Blanco en la consulta el 08/05/2025."
+  },
+  {
+    "id": "anon-167",
+    "timestamp": "2025-05-24T09:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Laura Díaz tuvo una cita con la Dra. Flores el 07/05/2025."
+  },
+  {
+    "id": "anon-168",
+    "timestamp": "2025-05-24T10:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Fernando Ruiz fue atendido por el Dr. Castro en la Policlínica el 06/05/2025."
+  },
+  {
+    "id": "anon-169",
+    "timestamp": "2025-05-24T11:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Cristina Soto visitó al Dr. Herrera en el Hospital Regional el 05/05/2025."
+  },
+  {
+    "id": "anon-170",
+    "timestamp": "2025-05-24T12:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Morales examinó a Paula Vázquez el 04/05/2025."
+  },
+  {
+    "id": "anon-171",
+    "timestamp": "2025-05-24T13:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Roberto Prieto fue visto por la Dra. Serrano en la Clínica Privada el 03/05/2025."
+  },
+  {
+    "id": "anon-172",
+    "timestamp": "2025-05-24T15:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Silvia Gómez tuvo una consulta con el Dr. Navarro el 02/05/2025."
+  },
+  {
+    "id": "anon-173",
+    "timestamp": "2025-05-24T16:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Andrés Marín fue ingresado en el Hospital Virgen del Rocío el 01/05/2025."
+  },
+  {
+    "id": "anon-174",
+    "timestamp": "2025-05-24T17:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "La Dra. Delgado atendió a Juan Pérez en el Centro de Salud el 30/04/2025."
+  },
+  {
+    "id": "anon-175",
+    "timestamp": "2025-05-24T18:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Elena López visitó al Dr. Ramos el 29/04/2025."
+  },
+  {
+    "id": "anon-176",
+    "timestamp": "2025-05-24T19:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Daniel Castro tuvo una cita con la Dra. Ibáñez el 28/04/2025."
+  },
+  {
+    "id": "anon-177",
+    "timestamp": "2025-05-24T20:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Reyes examinó a Carmen Morales en la Clínica Universitaria el 27/04/2025."
+  },
+  {
+    "id": "anon-178",
+    "timestamp": "2025-05-24T21:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Miguel Sánchez fue atendido por la Dra. Pascual el 26/04/2025."
+  },
+  {
+    "id": "anon-179",
+    "timestamp": "2025-05-24T22:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Teresa Alonso tuvo una consulta con el Dr. Soler el 25/04/2025."
+  },
+  {
+    "id": "anon-180",
+    "timestamp": "2025-05-24T23:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Sofía Díaz visitó al Dr. Bravo en el Hospital Comarcal el 24/04/2025."
+  },
+  {
+    "id": "anon-181",
+    "timestamp": "2025-05-24T00:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Castro atendió a Javier Núñez en el Centro Médico el 23/04/2025."
+  },
+  {
+    "id": "anon-182",
+    "timestamp": "2025-05-24T01:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Laura García tuvo una cita con la Dra. Vidal el 22/04/2025."
+  },
+  {
+    "id": "anon-183",
+    "timestamp": "2025-05-24T02:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Pablo Soto fue atendido por el Dr. Gómez el 21/04/2025."
+  },
+  {
+    "id": "anon-184",
+    "timestamp": "2025-05-24T03:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "María Torres visitó al Dr. López en la Clínica del Pilar el 20/04/2025."
+  },
+  {
+    "id": "anon-185",
+    "timestamp": "2025-05-24T04:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Ruiz examinó a Ana Herrera el 19/04/2025."
+  },
+  {
+    "id": "anon-186",
+    "timestamp": "2025-05-25T09:05:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. García examinó a Marta Rodríguez en el Centro Médico ABC el 18/05/2025."
+  },
+  {
+    "id": "anon-187",
+    "timestamp": "2025-05-25T10:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "María Pérez visitó al especialista Dr. Fernández en la Policlínica San Juan el 2025-05-17."
+  },
+  {
+    "id": "anon-188",
+    "timestamp": "2025-05-25T11:15:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Lucas Soto fue atendido por la Dra. Torres en el Hospital de la Paz el 16/05/2025."
+  },
+  {
+    "id": "anon-189",
+    "timestamp": "2025-05-25T12:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Ana Martín acudió a consulta con el Dr. Ruiz en la Clínica de Especialidades el 2025-05-15."
+  },
+  {
+    "id": "anon-190",
+    "timestamp": "2025-05-25T13:25:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Carlos Romero tuvo una cita con la Dra. López el 14/05/2025."
+  },
+  {
+    "id": "anon-191",
+    "timestamp": "2025-05-25T14:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Elena Castro fue diagnosticada por el Dr. Vargas en el Hospital Universitario el 13/05/2025."
+  },
+  {
+    "id": "anon-192",
+    "timestamp": "2025-05-25T15:35:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Javier Pérez recibió atención médica del Dr. Sánchez el 12/05/2025."
+  },
+  {
+    "id": "anon-193",
+    "timestamp": "2025-05-25T16:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Isabel Núñez visitó la Clínica del Carmen y fue atendida por la Dra. Gil el 11/05/2025."
+  },
+  {
+    "id": "anon-194",
+    "timestamp": "2025-05-25T17:45:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Miguel Ángel Torres tuvo una revisión con el Dr. Vidal en el Centro de Salud el 10/05/2025."
+  },
+  {
+    "id": "anon-195",
+    "timestamp": "2025-05-25T18:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Sofía Giménez acudió a urgencias en el Hospital Central el 09/05/2025."
+  },
+  {
+    "id": "anon-196",
+    "timestamp": "2025-05-25T08:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Álvarez atendió a David Blanco en la consulta el 08/05/2025."
+  },
+  {
+    "id": "anon-197",
+    "timestamp": "2025-05-25T09:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Laura Díaz tuvo una cita con la Dra. Flores el 07/05/2025."
+  },
+  {
+    "id": "anon-198",
+    "timestamp": "2025-05-25T10:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Fernando Ruiz fue atendido por el Dr. Castro en la Policlínica el 06/05/2025."
+  },
+  {
+    "id": "anon-199",
+    "timestamp": "2025-05-25T11:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Cristina Soto visitó al Dr. Herrera en el Hospital Regional el 05/05/2025."
+  },
+  {
+    "id": "anon-200",
+    "timestamp": "2025-05-25T12:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Morales examinó a Paula Vázquez el 04/05/2025."
+  },
+  {
+    "id": "anon-201",
+    "timestamp": "2025-05-25T13:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Roberto Prieto fue visto por la Dra. Serrano en la Clínica Privada el 03/05/2025."
+  },
+  {
+    "id": "anon-202",
+    "timestamp": "2025-05-25T15:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Silvia Gómez tuvo una consulta con el Dr. Navarro el 02/05/2025."
+  },
+  {
+    "id": "anon-203",
+    "timestamp": "2025-05-25T16:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Andrés Marín fue ingresado en el Hospital Virgen del Rocío el 01/05/2025."
+  },
+  {
+    "id": "anon-204",
+    "timestamp": "2025-05-25T17:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "La Dra. Delgado atendió a Juan Pérez en el Centro de Salud el 30/04/2025."
+  },
+  {
+    "id": "anon-205",
+    "timestamp": "2025-05-25T18:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Elena López visitó al Dr. Ramos el 29/04/2025."
+  },
+  {
+    "id": "anon-206",
+    "timestamp": "2025-05-25T19:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Daniel Castro tuvo una cita con la Dra. Ibáñez el 28/04/2025."
+  },
+  {
+    "id": "anon-207",
+    "timestamp": "2025-05-25T20:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Reyes examinó a Carmen Morales en la Clínica Universitaria el 27/04/2025."
+  },
+  {
+    "id": "anon-208",
+    "timestamp": "2025-05-25T21:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Miguel Sánchez fue atendido por la Dra. Pascual el 26/04/2025."
+  },
+  {
+    "id": "anon-209",
+    "timestamp": "2025-05-25T22:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Teresa Alonso tuvo una consulta con el Dr. Soler el 25/04/2025."
+  },
+  {
+    "id": "anon-210",
+    "timestamp": "2025-05-25T23:20:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Sofía Díaz visitó al Dr. Bravo en el Hospital Comarcal el 24/04/2025."
+  },
+  {
+    "id": "anon-211",
+    "timestamp": "2025-05-25T00:30:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Castro atendió a Javier Núñez en el Centro Médico el 23/04/2025."
+  },
+  {
+    "id": "anon-212",
+    "timestamp": "2025-05-25T01:40:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "Laura García tuvo una cita con la Dra. Vidal el 22/04/2025."
+  },
+  {
+    "id": "anon-213",
+    "timestamp": "2025-05-25T02:50:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El paciente Pablo Soto fue atendido por el Dr. Gómez el 21/04/2025."
+  },
+  {
+    "id": "anon-214",
+    "timestamp": "2025-05-25T03:00:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "María Torres visitó al Dr. López en la Clínica del Pilar el 20/04/2025."
+  },
+  {
+    "id": "anon-215",
+    "timestamp": "2025-05-25T04:10:00Z",
+    "source_endpoint": "anonymize-text",
+    "text": "El Dr. Ruiz examinó a Ana Herrera el 19/04/2025."
+  }
+]

@@ -1,0 +1,1262 @@
+[
+  {
+    "id": "seg-001",
+    "timestamp": "2025-05-19T08:17:15Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-002",
+    "timestamp": "2025-05-19T07:20:34Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-003",
+    "timestamp": "2025-05-19T08:39:16Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-004",
+    "timestamp": "2025-05-19T08:20:44Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-005",
+    "timestamp": "2025-05-19T13:32:54Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-006",
+    "timestamp": "2025-05-19T07:50:49Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-007",
+    "timestamp": "2025-05-19T08:07:01Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-008",
+    "timestamp": "2025-05-19T19:09:31Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-009",
+    "timestamp": "2025-05-19T10:36:40Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El tratamiento con amoxicilina fue iniciado por sospecha de infección respiratoria."
+  },
+  {
+    "id": "seg-010",
+    "timestamp": "2025-05-19T17:48:52Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-011",
+    "timestamp": "2025-05-19T09:11:11Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-012",
+    "timestamp": "2025-05-19T12:04:46Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-013",
+    "timestamp": "2025-05-19T09:05:25Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-014",
+    "timestamp": "2025-05-19T13:38:29Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-015",
+    "timestamp": "2025-05-19T15:13:19Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-016",
+    "timestamp": "2025-05-19T15:08:49Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-017",
+    "timestamp": "2025-05-19T15:49:02Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-018",
+    "timestamp": "2025-05-19T19:50:42Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-019",
+    "timestamp": "2025-05-19T09:56:23Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-020",
+    "timestamp": "2025-05-19T07:57:31Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-021",
+    "timestamp": "2025-05-19T10:13:31Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-022",
+    "timestamp": "2025-05-19T07:46:27Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-023",
+    "timestamp": "2025-05-19T10:59:27Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-024",
+    "timestamp": "2025-05-19T08:43:18Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-025",
+    "timestamp": "2025-05-19T17:11:27Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-026",
+    "timestamp": "2025-05-19T12:29:53Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El tratamiento con amoxicilina fue iniciado por sospecha de infección respiratoria."
+  },
+  {
+    "id": "seg-027",
+    "timestamp": "2025-05-19T09:04:43Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-028",
+    "timestamp": "2025-05-19T19:47:31Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-029",
+    "timestamp": "2025-05-19T11:51:54Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-030",
+    "timestamp": "2025-05-19T11:46:25Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-031",
+    "timestamp": "2025-05-20T17:58:48Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-032",
+    "timestamp": "2025-05-20T07:21:17Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-033",
+    "timestamp": "2025-05-20T16:19:05Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-034",
+    "timestamp": "2025-05-20T14:37:03Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-035",
+    "timestamp": "2025-05-20T16:09:14Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-036",
+    "timestamp": "2025-05-20T10:35:12Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-037",
+    "timestamp": "2025-05-20T20:47:02Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-038",
+    "timestamp": "2025-05-20T09:51:48Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-039",
+    "timestamp": "2025-05-20T16:42:28Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-040",
+    "timestamp": "2025-05-20T12:52:42Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-041",
+    "timestamp": "2025-05-20T07:58:02Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-042",
+    "timestamp": "2025-05-20T16:55:09Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-043",
+    "timestamp": "2025-05-20T18:06:39Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-044",
+    "timestamp": "2025-05-20T19:22:42Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-045",
+    "timestamp": "2025-05-20T12:20:41Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-046",
+    "timestamp": "2025-05-20T13:14:42Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-047",
+    "timestamp": "2025-05-20T14:00:59Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-048",
+    "timestamp": "2025-05-20T14:27:37Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-049",
+    "timestamp": "2025-05-20T10:29:16Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-050",
+    "timestamp": "2025-05-20T10:28:12Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-051",
+    "timestamp": "2025-05-20T09:45:38Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-052",
+    "timestamp": "2025-05-20T08:45:18Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-053",
+    "timestamp": "2025-05-20T13:33:48Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-054",
+    "timestamp": "2025-05-20T07:01:52Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-055",
+    "timestamp": "2025-05-20T14:29:24Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-056",
+    "timestamp": "2025-05-20T20:17:55Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-057",
+    "timestamp": "2025-05-20T08:25:18Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-058",
+    "timestamp": "2025-05-20T10:59:07Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-059",
+    "timestamp": "2025-05-20T12:58:56Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-060",
+    "timestamp": "2025-05-20T17:58:27Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-061",
+    "timestamp": "2025-05-21T16:41:54Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-062",
+    "timestamp": "2025-05-21T07:09:01Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-063",
+    "timestamp": "2025-05-21T16:40:25Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-064",
+    "timestamp": "2025-05-21T19:55:27Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-065",
+    "timestamp": "2025-05-21T07:53:00Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-066",
+    "timestamp": "2025-05-21T10:33:13Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-067",
+    "timestamp": "2025-05-21T14:34:09Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-068",
+    "timestamp": "2025-05-21T12:17:50Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-069",
+    "timestamp": "2025-05-21T18:25:41Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-070",
+    "timestamp": "2025-05-21T10:18:10Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-071",
+    "timestamp": "2025-05-21T14:11:15Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-072",
+    "timestamp": "2025-05-21T12:27:30Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-073",
+    "timestamp": "2025-05-21T14:13:07Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-074",
+    "timestamp": "2025-05-21T16:19:52Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-075",
+    "timestamp": "2025-05-21T17:21:07Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-076",
+    "timestamp": "2025-05-21T16:42:39Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-077",
+    "timestamp": "2025-05-21T10:27:47Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-078",
+    "timestamp": "2025-05-21T07:00:01Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-079",
+    "timestamp": "2025-05-21T18:27:20Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-080",
+    "timestamp": "2025-05-21T07:45:48Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-081",
+    "timestamp": "2025-05-21T18:31:12Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-082",
+    "timestamp": "2025-05-21T12:17:26Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-083",
+    "timestamp": "2025-05-21T16:33:57Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-084",
+    "timestamp": "2025-05-21T11:50:56Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-085",
+    "timestamp": "2025-05-21T14:26:52Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-086",
+    "timestamp": "2025-05-21T13:20:01Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-087",
+    "timestamp": "2025-05-21T12:45:45Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El tratamiento con amoxicilina fue iniciado por sospecha de infección respiratoria."
+  },
+  {
+    "id": "seg-088",
+    "timestamp": "2025-05-21T10:41:13Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-089",
+    "timestamp": "2025-05-21T19:40:15Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-090",
+    "timestamp": "2025-05-21T16:28:46Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El tratamiento con amoxicilina fue iniciado por sospecha de infección respiratoria."
+  },
+  {
+    "id": "seg-091",
+    "timestamp": "2025-05-22T07:09:58Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-092",
+    "timestamp": "2025-05-22T12:01:53Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-093",
+    "timestamp": "2025-05-22T14:44:04Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El tratamiento con amoxicilina fue iniciado por sospecha de infección respiratoria."
+  },
+  {
+    "id": "seg-094",
+    "timestamp": "2025-05-22T09:18:05Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-095",
+    "timestamp": "2025-05-22T09:46:45Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-096",
+    "timestamp": "2025-05-22T16:28:21Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-097",
+    "timestamp": "2025-05-22T19:49:28Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-098",
+    "timestamp": "2025-05-22T14:26:53Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-099",
+    "timestamp": "2025-05-22T16:29:16Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-100",
+    "timestamp": "2025-05-22T15:00:00Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-101",
+    "timestamp": "2025-05-22T12:21:22Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-102",
+    "timestamp": "2025-05-22T15:03:01Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-103",
+    "timestamp": "2025-05-22T19:28:02Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-104",
+    "timestamp": "2025-05-22T13:51:53Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-105",
+    "timestamp": "2025-05-22T08:49:41Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-106",
+    "timestamp": "2025-05-22T11:40:55Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-107",
+    "timestamp": "2025-05-22T12:53:51Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-108",
+    "timestamp": "2025-05-22T19:28:40Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-109",
+    "timestamp": "2025-05-22T15:44:53Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-110",
+    "timestamp": "2025-05-22T18:06:10Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-111",
+    "timestamp": "2025-05-22T14:27:28Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-112",
+    "timestamp": "2025-05-22T07:44:14Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-113",
+    "timestamp": "2025-05-22T11:32:43Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-114",
+    "timestamp": "2025-05-22T10:17:08Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-115",
+    "timestamp": "2025-05-22T18:30:02Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-116",
+    "timestamp": "2025-05-22T16:13:50Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-117",
+    "timestamp": "2025-05-22T13:42:09Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-118",
+    "timestamp": "2025-05-22T15:12:56Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El tratamiento con amoxicilina fue iniciado por sospecha de infección respiratoria."
+  },
+  {
+    "id": "seg-119",
+    "timestamp": "2025-05-22T11:10:55Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El tratamiento con amoxicilina fue iniciado por sospecha de infección respiratoria."
+  },
+  {
+    "id": "seg-120",
+    "timestamp": "2025-05-22T10:13:29Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-121",
+    "timestamp": "2025-05-23T17:21:37Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-122",
+    "timestamp": "2025-05-23T20:00:50Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-123",
+    "timestamp": "2025-05-23T14:52:00Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-124",
+    "timestamp": "2025-05-23T11:48:53Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El tratamiento con amoxicilina fue iniciado por sospecha de infección respiratoria."
+  },
+  {
+    "id": "seg-125",
+    "timestamp": "2025-05-23T18:21:06Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-126",
+    "timestamp": "2025-05-23T08:54:21Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-127",
+    "timestamp": "2025-05-23T17:42:35Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-128",
+    "timestamp": "2025-05-23T14:11:02Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-129",
+    "timestamp": "2025-05-23T08:56:09Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-130",
+    "timestamp": "2025-05-23T19:42:00Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-131",
+    "timestamp": "2025-05-23T20:59:51Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-132",
+    "timestamp": "2025-05-23T08:26:00Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-133",
+    "timestamp": "2025-05-23T20:44:09Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-134",
+    "timestamp": "2025-05-23T19:00:52Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-135",
+    "timestamp": "2025-05-23T18:24:18Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El tratamiento con amoxicilina fue iniciado por sospecha de infección respiratoria."
+  },
+  {
+    "id": "seg-136",
+    "timestamp": "2025-05-23T19:41:35Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-137",
+    "timestamp": "2025-05-23T20:34:48Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El tratamiento con amoxicilina fue iniciado por sospecha de infección respiratoria."
+  },
+  {
+    "id": "seg-138",
+    "timestamp": "2025-05-23T09:49:57Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-139",
+    "timestamp": "2025-05-23T20:13:43Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-140",
+    "timestamp": "2025-05-23T07:09:21Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El tratamiento con amoxicilina fue iniciado por sospecha de infección respiratoria."
+  },
+  {
+    "id": "seg-141",
+    "timestamp": "2025-05-23T13:57:28Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El tratamiento con amoxicilina fue iniciado por sospecha de infección respiratoria."
+  },
+  {
+    "id": "seg-142",
+    "timestamp": "2025-05-23T11:57:14Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-143",
+    "timestamp": "2025-05-23T11:06:24Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-144",
+    "timestamp": "2025-05-23T11:49:20Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-145",
+    "timestamp": "2025-05-23T10:00:56Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-146",
+    "timestamp": "2025-05-23T11:43:56Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-147",
+    "timestamp": "2025-05-23T15:24:30Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-148",
+    "timestamp": "2025-05-23T14:56:34Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-149",
+    "timestamp": "2025-05-23T14:45:49Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-150",
+    "timestamp": "2025-05-23T09:28:45Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-151",
+    "timestamp": "2025-05-24T20:54:50Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-152",
+    "timestamp": "2025-05-24T09:46:55Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-153",
+    "timestamp": "2025-05-24T07:57:52Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-154",
+    "timestamp": "2025-05-24T09:58:10Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-155",
+    "timestamp": "2025-05-24T11:39:26Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-156",
+    "timestamp": "2025-05-24T13:16:20Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-157",
+    "timestamp": "2025-05-24T13:36:05Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-158",
+    "timestamp": "2025-05-24T14:44:56Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-159",
+    "timestamp": "2025-05-24T18:37:46Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-160",
+    "timestamp": "2025-05-24T14:32:25Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-161",
+    "timestamp": "2025-05-24T19:14:20Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-162",
+    "timestamp": "2025-05-24T16:36:57Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-163",
+    "timestamp": "2025-05-24T20:10:50Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-164",
+    "timestamp": "2025-05-24T08:40:47Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-165",
+    "timestamp": "2025-05-24T13:51:41Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El tratamiento con amoxicilina fue iniciado por sospecha de infección respiratoria."
+  },
+  {
+    "id": "seg-166",
+    "timestamp": "2025-05-24T13:21:03Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-167",
+    "timestamp": "2025-05-24T19:20:03Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-168",
+    "timestamp": "2025-05-24T08:13:17Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-169",
+    "timestamp": "2025-05-24T14:32:18Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-170",
+    "timestamp": "2025-05-24T20:30:01Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-171",
+    "timestamp": "2025-05-24T11:04:34Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-172",
+    "timestamp": "2025-05-24T08:06:50Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-173",
+    "timestamp": "2025-05-24T07:10:07Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-174",
+    "timestamp": "2025-05-24T09:20:14Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El tratamiento con amoxicilina fue iniciado por sospecha de infección respiratoria."
+  },
+  {
+    "id": "seg-175",
+    "timestamp": "2025-05-24T12:51:38Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-176",
+    "timestamp": "2025-05-24T07:25:25Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-177",
+    "timestamp": "2025-05-24T15:51:37Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-178",
+    "timestamp": "2025-05-24T16:27:25Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El tratamiento con amoxicilina fue iniciado por sospecha de infección respiratoria."
+  },
+  {
+    "id": "seg-179",
+    "timestamp": "2025-05-24T16:13:37Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-180",
+    "timestamp": "2025-05-24T20:49:46Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-181",
+    "timestamp": "2025-05-25T13:26:45Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-182",
+    "timestamp": "2025-05-25T07:27:57Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-183",
+    "timestamp": "2025-05-25T10:44:16Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-184",
+    "timestamp": "2025-05-25T07:05:09Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-185",
+    "timestamp": "2025-05-25T14:20:08Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-186",
+    "timestamp": "2025-05-25T11:44:43Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-187",
+    "timestamp": "2025-05-25T14:43:46Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-188",
+    "timestamp": "2025-05-25T10:41:08Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-189",
+    "timestamp": "2025-05-25T08:27:21Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-190",
+    "timestamp": "2025-05-25T18:44:34Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El tratamiento con amoxicilina fue iniciado por sospecha de infección respiratoria."
+  },
+  {
+    "id": "seg-191",
+    "timestamp": "2025-05-25T08:00:49Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-192",
+    "timestamp": "2025-05-25T11:17:04Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-193",
+    "timestamp": "2025-05-25T12:09:33Z",
+    "source_endpoint": "text-segmentation",
+    "text": "El paciente presenta mejoría tras la administración de corticoides."
+  },
+  {
+    "id": "seg-194",
+    "timestamp": "2025-05-25T08:04:06Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se reporta dolor abdominal intermitente, se programó ecografía abdominal."
+  },
+  {
+    "id": "seg-195",
+    "timestamp": "2025-05-25T16:07:26Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-196",
+    "timestamp": "2025-05-25T08:44:12Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-197",
+    "timestamp": "2025-05-25T19:44:56Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se recomienda continuar con dieta baja en sodio y control de presión arterial."
+  },
+  {
+    "id": "seg-198",
+    "timestamp": "2025-05-25T07:02:16Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-199",
+    "timestamp": "2025-05-25T17:43:09Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-200",
+    "timestamp": "2025-05-25T18:25:54Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-201",
+    "timestamp": "2025-05-25T15:24:56Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-202",
+    "timestamp": "2025-05-25T10:11:07Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  },
+  {
+    "id": "seg-203",
+    "timestamp": "2025-05-25T07:38:32Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-204",
+    "timestamp": "2025-05-25T12:03:46Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-205",
+    "timestamp": "2025-05-25T07:54:24Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se realizó análisis de sangre que mostró niveles elevados de glucosa."
+  },
+  {
+    "id": "seg-206",
+    "timestamp": "2025-05-25T18:30:09Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Paciente con antecedentes de hipertensión arterial. Refiere mareos y visión borrosa desde hace dos días."
+  },
+  {
+    "id": "seg-207",
+    "timestamp": "2025-05-25T18:54:50Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Control de rutina sin hallazgos significativos. Presión arterial en rango normal."
+  },
+  {
+    "id": "seg-208",
+    "timestamp": "2025-05-25T15:11:18Z",
+    "source_endpoint": "text-segmentation",
+    "text": "La paciente fue derivada al servicio de neurología para evaluación."
+  },
+  {
+    "id": "seg-209",
+    "timestamp": "2025-05-25T20:54:09Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Se inicia tratamiento para la migraña con topiramato, seguimiento en un mes."
+  },
+  {
+    "id": "seg-210",
+    "timestamp": "2025-05-25T09:38:44Z",
+    "source_endpoint": "text-segmentation",
+    "text": "Inicio de fisioterapia tras operación de rodilla izquierda."
+  }
+]

@@ -1,0 +1,1262 @@
+[
+    {
+        "id": "tl001",
+        "timestamp": "2025-05-19T07:06:10Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para controlar un episodio de asma."
+    },
+    {
+        "id": "tl002",
+        "timestamp": "2025-05-19T08:00:35Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó diabetes tipo 2 y se recomendó un cambio en la dieta."
+    },
+    {
+        "id": "tl003",
+        "timestamp": "2025-05-19T01:02:51Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó hipertensión arterial y se inició tratamiento farmacológico."
+    },
+    {
+        "id": "tl004",
+        "timestamp": "2025-05-19T21:39:34Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una biopsia de tejido para análisis histopatológico."
+    },
+    {
+        "id": "tl005",
+        "timestamp": "2025-05-19T14:58:34Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado en la UCI por complicaciones postquirúrgicas."
+    },
+    {
+        "id": "tl006",
+        "timestamp": "2025-05-19T02:03:55Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una ecografía abdominal que mostró cálculos renales."
+    },
+    {
+        "id": "tl007",
+        "timestamp": "2025-05-19T07:56:27Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue dado de alta con recomendaciones para seguimiento ambulatorio."
+    },
+    {
+        "id": "tl008",
+        "timestamp": "2025-05-19T16:21:05Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por deshidratación y se inició fluidoterapia."
+    },
+    {
+        "id": "tl009",
+        "timestamp": "2025-05-19T20:56:01Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado en la UCI por complicaciones postquirúrgicas."
+    },
+    {
+        "id": "tl010",
+        "timestamp": "2025-05-19T13:25:17Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado en la UCI por complicaciones postquirúrgicas."
+    },
+    {
+        "id": "tl011",
+        "timestamp": "2025-05-19T10:09:50Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue trasladado a otra unidad para continuar con el tratamiento."
+    },
+    {
+        "id": "tl012",
+        "timestamp": "2025-05-19T19:34:12Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó hipertensión arterial y se inició tratamiento farmacológico."
+    },
+    {
+        "id": "tl013",
+        "timestamp": "2025-05-19T23:01:23Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección respiratoria."
+    },
+    {
+        "id": "tl014",
+        "timestamp": "2025-05-19T19:14:42Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue dado de alta tras una recuperación satisfactoria."
+    },
+    {
+        "id": "tl015",
+        "timestamp": "2025-05-19T05:07:01Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por un cuadro de neumonía."
+    },
+    {
+        "id": "tl016",
+        "timestamp": "2025-05-19T04:01:13Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se programó una resonancia magnética para evaluar la lesión en la rodilla."
+    },
+    {
+        "id": "tl017",
+        "timestamp": "2025-05-19T03:34:02Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por dolor abdominal agudo."
+    },
+    {
+        "id": "tl018",
+        "timestamp": "2025-05-19T09:56:47Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección respiratoria."
+    },
+    {
+        "id": "tl019",
+        "timestamp": "2025-05-19T23:38:03Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por deshidratación y se inició fluidoterapia."
+    },
+    {
+        "id": "tl020",
+        "timestamp": "2025-05-19T12:02:01Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se programó una cirugía para la extracción de un tumor benigno."
+    },
+    {
+        "id": "tl021",
+        "timestamp": "2025-05-19T13:49:06Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una evaluación psicológica debido a síntomas de depresión."
+    },
+    {
+        "id": "tl022",
+        "timestamp": "2025-05-19T19:06:41Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue dado de alta con recomendaciones para seguimiento ambulatorio."
+    },
+    {
+        "id": "tl023",
+        "timestamp": "2025-05-19T22:45:26Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se programó una resonancia magnética para evaluar la lesión en la rodilla."
+    },
+    {
+        "id": "tl024",
+        "timestamp": "2025-05-19T23:33:55Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado para tratamiento de una crisis hipertensiva."
+    },
+    {
+        "id": "tl025",
+        "timestamp": "2025-05-19T13:44:46Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente mostró signos de mejoría y se redujo la medicación."
+    },
+    {
+        "id": "tl026",
+        "timestamp": "2025-05-19T15:02:49Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue dado de alta tras una recuperación satisfactoria."
+    },
+    {
+        "id": "tl027",
+        "timestamp": "2025-05-19T16:04:03Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una endoscopia que reveló la presencia de una úlcera gástrica."
+    },
+    {
+        "id": "tl028",
+        "timestamp": "2025-05-19T11:59:52Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue trasladado a otra unidad para continuar con el tratamiento."
+    },
+    {
+        "id": "tl029",
+        "timestamp": "2025-05-19T12:15:43Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue dado de alta tras una recuperación satisfactoria."
+    },
+    {
+        "id": "tl030",
+        "timestamp": "2025-05-19T09:15:17Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó hipertensión arterial y se inició tratamiento farmacológico."
+    },
+    {
+        "id": "tl031",
+        "timestamp": "2025-05-20T16:33:29Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue trasladado a otra unidad para continuar con el tratamiento."
+    },
+    {
+        "id": "tl032",
+        "timestamp": "2025-05-20T15:49:40Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección respiratoria."
+    },
+    {
+        "id": "tl033",
+        "timestamp": "2025-05-20T07:02:50Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado para monitorización por arritmia cardíaca."
+    },
+    {
+        "id": "tl034",
+        "timestamp": "2025-05-20T09:42:30Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado para monitorización por arritmia cardíaca."
+    },
+    {
+        "id": "tl035",
+        "timestamp": "2025-05-20T17:08:43Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado para tratamiento de una crisis hipertensiva."
+    },
+    {
+        "id": "tl036",
+        "timestamp": "2025-05-20T18:45:20Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó hipertensión arterial y se inició tratamiento farmacológico."
+    },
+    {
+        "id": "tl037",
+        "timestamp": "2025-05-20T18:53:03Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente mostró signos de mejoría y se redujo la medicación."
+    },
+    {
+        "id": "tl038",
+        "timestamp": "2025-05-20T22:25:55Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por dolor abdominal agudo."
+    },
+    {
+        "id": "tl039",
+        "timestamp": "2025-05-20T18:25:27Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado para monitorización por arritmia cardíaca."
+    },
+    {
+        "id": "tl040",
+        "timestamp": "2025-05-20T02:06:24Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una ecografía abdominal que mostró cálculos renales."
+    },
+    {
+        "id": "tl041",
+        "timestamp": "2025-05-20T06:58:33Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección respiratoria."
+    },
+    {
+        "id": "tl042",
+        "timestamp": "2025-05-20T03:35:47Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección de la herida quirúrgica."
+    },
+    {
+        "id": "tl043",
+        "timestamp": "2025-05-20T10:23:01Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se programó una resonancia magnética para evaluar la lesión en la rodilla."
+    },
+    {
+        "id": "tl044",
+        "timestamp": "2025-05-20T04:17:24Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se programó una cirugía para la extracción de un tumor benigno."
+    },
+    {
+        "id": "tl045",
+        "timestamp": "2025-05-20T08:03:13Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se programó una resonancia magnética para evaluar la lesión en la rodilla."
+    },
+    {
+        "id": "tl046",
+        "timestamp": "2025-05-20T03:08:09Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección respiratoria."
+    },
+    {
+        "id": "tl047",
+        "timestamp": "2025-05-20T20:33:16Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una biopsia de tejido para análisis histopatológico."
+    },
+    {
+        "id": "tl048",
+        "timestamp": "2025-05-20T00:43:42Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se programó una cirugía para la extracción de un tumor benigno."
+    },
+    {
+        "id": "tl049",
+        "timestamp": "2025-05-20T21:51:34Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para controlar un episodio de asma."
+    },
+    {
+        "id": "tl050",
+        "timestamp": "2025-05-20T05:21:03Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente mostró signos de mejoría y se redujo la medicación."
+    },
+    {
+        "id": "tl051",
+        "timestamp": "2025-05-20T02:19:24Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó hipertensión arterial y se inició tratamiento farmacológico."
+    },
+    {
+        "id": "tl052",
+        "timestamp": "2025-05-20T15:14:56Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una ecografía abdominal que mostró cálculos renales."
+    },
+    {
+        "id": "tl053",
+        "timestamp": "2025-05-20T21:00:32Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue dado de alta con recomendaciones para seguimiento ambulatorio."
+    },
+    {
+        "id": "tl054",
+        "timestamp": "2025-05-20T13:10:40Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue trasladado a otra unidad para continuar con el tratamiento."
+    },
+    {
+        "id": "tl055",
+        "timestamp": "2025-05-20T00:14:13Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó diabetes tipo 2 y se recomendó un cambio en la dieta."
+    },
+    {
+        "id": "tl056",
+        "timestamp": "2025-05-20T11:07:32Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue dado de alta con recomendaciones para seguimiento ambulatorio."
+    },
+    {
+        "id": "tl057",
+        "timestamp": "2025-05-20T15:32:59Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó una fractura de cadera y se programó cirugía."
+    },
+    {
+        "id": "tl058",
+        "timestamp": "2025-05-20T05:04:19Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una endoscopia que reveló la presencia de una úlcera gástrica."
+    },
+    {
+        "id": "tl059",
+        "timestamp": "2025-05-20T05:17:15Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se administró quimioterapia como parte del tratamiento contra el cáncer."
+    },
+    {
+        "id": "tl060",
+        "timestamp": "2025-05-20T20:50:18Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó una fractura de cadera y se programó cirugía."
+    },
+    {
+        "id": "tl061",
+        "timestamp": "2025-05-21T15:12:16Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente mostró signos de mejoría y se redujo la medicación."
+    },
+    {
+        "id": "tl062",
+        "timestamp": "2025-05-21T11:24:14Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección respiratoria."
+    },
+    {
+        "id": "tl063",
+        "timestamp": "2025-05-21T13:30:00Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una radiografía de tórax que mostró signos de congestión pulmonar."
+    },
+    {
+        "id": "tl064",
+        "timestamp": "2025-05-21T05:47:28Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una radiografía de tórax que mostró signos de congestión pulmonar."
+    },
+    {
+        "id": "tl065",
+        "timestamp": "2025-05-21T15:49:16Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado para monitorización por arritmia cardíaca."
+    },
+    {
+        "id": "tl066",
+        "timestamp": "2025-05-21T13:03:04Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó diabetes tipo 2 y se recomendó un cambio en la dieta."
+    },
+    {
+        "id": "tl067",
+        "timestamp": "2025-05-21T15:09:13Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por deshidratación y se inició fluidoterapia."
+    },
+    {
+        "id": "tl068",
+        "timestamp": "2025-05-21T19:19:06Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una evaluación psicológica debido a síntomas de depresión."
+    },
+    {
+        "id": "tl069",
+        "timestamp": "2025-05-21T09:31:05Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó diabetes tipo 2 y se recomendó un cambio en la dieta."
+    },
+    {
+        "id": "tl070",
+        "timestamp": "2025-05-21T20:09:52Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por deshidratación y se inició fluidoterapia."
+    },
+    {
+        "id": "tl071",
+        "timestamp": "2025-05-21T07:24:50Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por un cuadro de neumonía."
+    },
+    {
+        "id": "tl072",
+        "timestamp": "2025-05-21T14:15:15Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado para tratamiento de una crisis hipertensiva."
+    },
+    {
+        "id": "tl073",
+        "timestamp": "2025-05-21T16:24:35Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una prueba de esfuerzo para evaluar la capacidad cardiovascular."
+    },
+    {
+        "id": "tl074",
+        "timestamp": "2025-05-21T22:36:56Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por dolor abdominal agudo."
+    },
+    {
+        "id": "tl075",
+        "timestamp": "2025-05-21T21:58:34Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente comenzó un tratamiento con antibióticos para una infección urinaria."
+    },
+    {
+        "id": "tl076",
+        "timestamp": "2025-05-21T10:16:30Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado para tratamiento de una crisis hipertensiva."
+    },
+    {
+        "id": "tl077",
+        "timestamp": "2025-05-21T02:45:37Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una tomografía computarizada para evaluar el estado de los pulmones."
+    },
+    {
+        "id": "tl078",
+        "timestamp": "2025-05-21T03:25:09Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue dado de alta tras una recuperación satisfactoria."
+    },
+    {
+        "id": "tl079",
+        "timestamp": "2025-05-21T15:57:53Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por dolor abdominal agudo."
+    },
+    {
+        "id": "tl080",
+        "timestamp": "2025-05-21T06:28:49Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por un cuadro de neumonía."
+    },
+    {
+        "id": "tl081",
+        "timestamp": "2025-05-21T09:44:20Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado para monitorización por arritmia cardíaca."
+    },
+    {
+        "id": "tl082",
+        "timestamp": "2025-05-21T16:05:29Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue dado de alta tras una recuperación satisfactoria."
+    },
+    {
+        "id": "tl083",
+        "timestamp": "2025-05-21T11:37:10Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una cirugía de apendicectomía con éxito."
+    },
+    {
+        "id": "tl084",
+        "timestamp": "2025-05-21T20:32:45Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente comenzó un tratamiento con antibióticos para una infección urinaria."
+    },
+    {
+        "id": "tl085",
+        "timestamp": "2025-05-21T02:14:33Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una ecografía abdominal que mostró cálculos renales."
+    },
+    {
+        "id": "tl086",
+        "timestamp": "2025-05-21T07:28:28Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió terapia física para rehabilitación postoperatoria."
+    },
+    {
+        "id": "tl087",
+        "timestamp": "2025-05-21T11:01:36Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por deshidratación y se inició fluidoterapia."
+    },
+    {
+        "id": "tl088",
+        "timestamp": "2025-05-21T04:36:05Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una ecografía abdominal que mostró cálculos renales."
+    },
+    {
+        "id": "tl089",
+        "timestamp": "2025-05-21T15:26:49Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente comenzó un tratamiento con antibióticos para una infección urinaria."
+    },
+    {
+        "id": "tl090",
+        "timestamp": "2025-05-21T21:02:29Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se administró quimioterapia como parte del tratamiento contra el cáncer."
+    },
+    {
+        "id": "tl091",
+        "timestamp": "2025-05-22T00:49:32Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por deshidratación y se inició fluidoterapia."
+    },
+    {
+        "id": "tl092",
+        "timestamp": "2025-05-22T12:44:22Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó una fractura de cadera y se programó cirugía."
+    },
+    {
+        "id": "tl093",
+        "timestamp": "2025-05-22T17:35:50Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó diabetes tipo 2 y se recomendó un cambio en la dieta."
+    },
+    {
+        "id": "tl094",
+        "timestamp": "2025-05-22T23:22:37Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue trasladado a otra unidad para continuar con el tratamiento."
+    },
+    {
+        "id": "tl095",
+        "timestamp": "2025-05-22T02:55:24Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para controlar un episodio de asma."
+    },
+    {
+        "id": "tl096",
+        "timestamp": "2025-05-22T01:08:47Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una endoscopia que reveló la presencia de una úlcera gástrica."
+    },
+    {
+        "id": "tl097",
+        "timestamp": "2025-05-22T01:01:37Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se programó una cirugía para la extracción de un tumor benigno."
+    },
+    {
+        "id": "tl098",
+        "timestamp": "2025-05-22T13:54:18Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado en la UCI por complicaciones postquirúrgicas."
+    },
+    {
+        "id": "tl099",
+        "timestamp": "2025-05-22T10:16:01Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una endoscopia que reveló la presencia de una úlcera gástrica."
+    },
+    {
+        "id": "tl100",
+        "timestamp": "2025-05-22T03:58:45Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó diabetes tipo 2 y se recomendó un cambio en la dieta."
+    },
+    {
+        "id": "tl101",
+        "timestamp": "2025-05-22T21:15:29Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una ecografía abdominal que mostró cálculos renales."
+    },
+    {
+        "id": "tl102",
+        "timestamp": "2025-05-22T16:40:17Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue trasladado a otra unidad para continuar con el tratamiento."
+    },
+    {
+        "id": "tl103",
+        "timestamp": "2025-05-22T02:05:00Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una ecografía abdominal que mostró cálculos renales."
+    },
+    {
+        "id": "tl104",
+        "timestamp": "2025-05-22T11:54:33Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó diabetes tipo 2 y se recomendó un cambio en la dieta."
+    },
+    {
+        "id": "tl105",
+        "timestamp": "2025-05-22T11:18:46Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una cirugía de apendicectomía con éxito."
+    },
+    {
+        "id": "tl106",
+        "timestamp": "2025-05-22T04:28:32Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió terapia física para rehabilitación postoperatoria."
+    },
+    {
+        "id": "tl107",
+        "timestamp": "2025-05-22T13:37:59Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una ecografía abdominal que mostró cálculos renales."
+    },
+    {
+        "id": "tl108",
+        "timestamp": "2025-05-22T07:05:58Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado para tratamiento de una crisis hipertensiva."
+    },
+    {
+        "id": "tl109",
+        "timestamp": "2025-05-22T04:25:04Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se programó una cirugía para la extracción de un tumor benigno."
+    },
+    {
+        "id": "tl110",
+        "timestamp": "2025-05-22T02:00:23Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por un cuadro de neumonía."
+    },
+    {
+        "id": "tl111",
+        "timestamp": "2025-05-22T15:14:37Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado para tratamiento de una crisis hipertensiva."
+    },
+    {
+        "id": "tl112",
+        "timestamp": "2025-05-22T20:48:24Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección respiratoria."
+    },
+    {
+        "id": "tl113",
+        "timestamp": "2025-05-22T01:01:08Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó una fractura de cadera y se programó cirugía."
+    },
+    {
+        "id": "tl114",
+        "timestamp": "2025-05-22T02:44:01Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una radiografía de tórax que mostró signos de congestión pulmonar."
+    },
+    {
+        "id": "tl115",
+        "timestamp": "2025-05-22T12:54:27Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección del tracto urinario recurrente."
+    },
+    {
+        "id": "tl116",
+        "timestamp": "2025-05-22T14:58:57Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una evaluación psicológica debido a síntomas de depresión."
+    },
+    {
+        "id": "tl117",
+        "timestamp": "2025-05-22T20:14:49Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para controlar un episodio de asma."
+    },
+    {
+        "id": "tl118",
+        "timestamp": "2025-05-22T02:19:20Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se programó una cirugía para la extracción de un tumor benigno."
+    },
+    {
+        "id": "tl119",
+        "timestamp": "2025-05-22T05:38:11Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado para tratamiento de una crisis hipertensiva."
+    },
+    {
+        "id": "tl120",
+        "timestamp": "2025-05-22T19:26:46Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una biopsia de tejido para análisis histopatológico."
+    },
+    {
+        "id": "tl121",
+        "timestamp": "2025-05-23T06:55:56Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por dolor abdominal agudo."
+    },
+    {
+        "id": "tl122",
+        "timestamp": "2025-05-23T13:10:58Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección de la herida quirúrgica."
+    },
+    {
+        "id": "tl123",
+        "timestamp": "2025-05-23T12:27:40Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado para monitorización por arritmia cardíaca."
+    },
+    {
+        "id": "tl124",
+        "timestamp": "2025-05-23T04:03:20Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó una fractura de cadera y se programó cirugía."
+    },
+    {
+        "id": "tl125",
+        "timestamp": "2025-05-23T07:17:51Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una evaluación psicológica debido a síntomas de depresión."
+    },
+    {
+        "id": "tl126",
+        "timestamp": "2025-05-23T18:25:06Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección del tracto urinario recurrente."
+    },
+    {
+        "id": "tl127",
+        "timestamp": "2025-05-23T23:37:36Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado para monitorización por arritmia cardíaca."
+    },
+    {
+        "id": "tl128",
+        "timestamp": "2025-05-23T02:29:59Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se programó una resonancia magnética para evaluar la lesión en la rodilla."
+    },
+    {
+        "id": "tl129",
+        "timestamp": "2025-05-23T19:50:56Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una prueba de esfuerzo para evaluar la capacidad cardiovascular."
+    },
+    {
+        "id": "tl130",
+        "timestamp": "2025-05-23T10:26:55Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una ecografía abdominal que mostró cálculos renales."
+    },
+    {
+        "id": "tl131",
+        "timestamp": "2025-05-23T10:08:38Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue dado de alta con recomendaciones para seguimiento ambulatorio."
+    },
+    {
+        "id": "tl132",
+        "timestamp": "2025-05-23T04:43:01Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una ecografía abdominal que mostró cálculos renales."
+    },
+    {
+        "id": "tl133",
+        "timestamp": "2025-05-23T07:49:49Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una ecografía abdominal que mostró cálculos renales."
+    },
+    {
+        "id": "tl134",
+        "timestamp": "2025-05-23T10:58:55Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por dolor abdominal agudo."
+    },
+    {
+        "id": "tl135",
+        "timestamp": "2025-05-23T13:12:09Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado en la UCI por complicaciones postquirúrgicas."
+    },
+    {
+        "id": "tl136",
+        "timestamp": "2025-05-23T22:54:32Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una ecografía abdominal que mostró cálculos renales."
+    },
+    {
+        "id": "tl137",
+        "timestamp": "2025-05-23T05:16:15Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una prueba de esfuerzo para evaluar la capacidad cardiovascular."
+    },
+    {
+        "id": "tl138",
+        "timestamp": "2025-05-23T16:42:41Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una biopsia de tejido para análisis histopatológico."
+    },
+    {
+        "id": "tl139",
+        "timestamp": "2025-05-23T20:57:17Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección de la herida quirúrgica."
+    },
+    {
+        "id": "tl140",
+        "timestamp": "2025-05-23T20:44:18Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una cirugía de apendicectomía con éxito."
+    },
+    {
+        "id": "tl141",
+        "timestamp": "2025-05-23T16:11:11Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una endoscopia que reveló la presencia de una úlcera gástrica."
+    },
+    {
+        "id": "tl142",
+        "timestamp": "2025-05-23T09:42:17Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente mostró signos de mejoría y se redujo la medicación."
+    },
+    {
+        "id": "tl143",
+        "timestamp": "2025-05-23T12:33:39Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por dolor abdominal agudo."
+    },
+    {
+        "id": "tl144",
+        "timestamp": "2025-05-23T17:42:04Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por deshidratación y se inició fluidoterapia."
+    },
+    {
+        "id": "tl145",
+        "timestamp": "2025-05-23T16:19:24Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una radiografía de tórax que mostró signos de congestión pulmonar."
+    },
+    {
+        "id": "tl146",
+        "timestamp": "2025-05-23T03:23:41Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una prueba de esfuerzo para evaluar la capacidad cardiovascular."
+    },
+    {
+        "id": "tl147",
+        "timestamp": "2025-05-23T21:38:11Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una tomografía computarizada para evaluar el estado de los pulmones."
+    },
+    {
+        "id": "tl148",
+        "timestamp": "2025-05-23T10:03:05Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para controlar un episodio de asma."
+    },
+    {
+        "id": "tl149",
+        "timestamp": "2025-05-23T12:32:48Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una radiografía de tórax que mostró signos de congestión pulmonar."
+    },
+    {
+        "id": "tl150",
+        "timestamp": "2025-05-23T21:44:56Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado en la UCI por complicaciones postquirúrgicas."
+    },
+    {
+        "id": "tl151",
+        "timestamp": "2025-05-24T20:38:15Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió terapia física para rehabilitación postoperatoria."
+    },
+    {
+        "id": "tl152",
+        "timestamp": "2025-05-24T08:58:10Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por deshidratación y se inició fluidoterapia."
+    },
+    {
+        "id": "tl153",
+        "timestamp": "2025-05-24T15:39:29Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente mostró signos de mejoría y se redujo la medicación."
+    },
+    {
+        "id": "tl154",
+        "timestamp": "2025-05-24T11:20:33Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una radiografía de tórax que mostró signos de congestión pulmonar."
+    },
+    {
+        "id": "tl155",
+        "timestamp": "2025-05-24T15:53:03Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente comenzó un tratamiento con antibióticos para una infección urinaria."
+    },
+    {
+        "id": "tl156",
+        "timestamp": "2025-05-24T10:29:27Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección respiratoria."
+    },
+    {
+        "id": "tl157",
+        "timestamp": "2025-05-24T16:31:22Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió terapia física para rehabilitación postoperatoria."
+    },
+    {
+        "id": "tl158",
+        "timestamp": "2025-05-24T09:54:58Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente mostró signos de mejoría y se redujo la medicación."
+    },
+    {
+        "id": "tl159",
+        "timestamp": "2025-05-24T11:40:14Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección del tracto urinario recurrente."
+    },
+    {
+        "id": "tl160",
+        "timestamp": "2025-05-24T01:14:43Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente mostró signos de mejoría y se redujo la medicación."
+    },
+    {
+        "id": "tl161",
+        "timestamp": "2025-05-24T05:46:44Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por un cuadro de neumonía."
+    },
+    {
+        "id": "tl162",
+        "timestamp": "2025-05-24T17:48:06Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se administró quimioterapia como parte del tratamiento contra el cáncer."
+    },
+    {
+        "id": "tl163",
+        "timestamp": "2025-05-24T11:18:36Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se administró quimioterapia como parte del tratamiento contra el cáncer."
+    },
+    {
+        "id": "tl164",
+        "timestamp": "2025-05-24T03:53:38Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió terapia física para rehabilitación postoperatoria."
+    },
+    {
+        "id": "tl165",
+        "timestamp": "2025-05-24T21:09:21Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección del tracto urinario recurrente."
+    },
+    {
+        "id": "tl166",
+        "timestamp": "2025-05-24T05:21:32Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se programó una resonancia magnética para evaluar la lesión en la rodilla."
+    },
+    {
+        "id": "tl167",
+        "timestamp": "2025-05-24T00:16:46Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizaron análisis de sangre que mostraron niveles elevados de glucosa."
+    },
+    {
+        "id": "tl168",
+        "timestamp": "2025-05-24T14:50:46Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue dado de alta con recomendaciones para seguimiento ambulatorio."
+    },
+    {
+        "id": "tl169",
+        "timestamp": "2025-05-24T00:40:02Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado para monitorización por arritmia cardíaca."
+    },
+    {
+        "id": "tl170",
+        "timestamp": "2025-05-24T20:37:32Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección de la herida quirúrgica."
+    },
+    {
+        "id": "tl171",
+        "timestamp": "2025-05-24T07:52:03Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se programó una cirugía para la extracción de un tumor benigno."
+    },
+    {
+        "id": "tl172",
+        "timestamp": "2025-05-24T17:15:40Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una biopsia de tejido para análisis histopatológico."
+    },
+    {
+        "id": "tl173",
+        "timestamp": "2025-05-24T13:48:44Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una endoscopia que reveló la presencia de una úlcera gástrica."
+    },
+    {
+        "id": "tl174",
+        "timestamp": "2025-05-24T22:54:26Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección de la herida quirúrgica."
+    },
+    {
+        "id": "tl175",
+        "timestamp": "2025-05-24T03:37:45Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una evaluación psicológica debido a síntomas de depresión."
+    },
+    {
+        "id": "tl176",
+        "timestamp": "2025-05-24T17:58:54Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue trasladado a otra unidad para continuar con el tratamiento."
+    },
+    {
+        "id": "tl177",
+        "timestamp": "2025-05-24T14:14:08Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por dolor abdominal agudo."
+    },
+    {
+        "id": "tl178",
+        "timestamp": "2025-05-24T22:52:58Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una radiografía de tórax que mostró signos de congestión pulmonar."
+    },
+    {
+        "id": "tl179",
+        "timestamp": "2025-05-24T06:27:58Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se diagnosticó hipertensión arterial y se inició tratamiento farmacológico."
+    },
+    {
+        "id": "tl180",
+        "timestamp": "2025-05-24T09:12:21Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se administró quimioterapia como parte del tratamiento contra el cáncer."
+    },
+    {
+        "id": "tl181",
+        "timestamp": "2025-05-25T20:08:54Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se administró quimioterapia como parte del tratamiento contra el cáncer."
+    },
+    {
+        "id": "tl182",
+        "timestamp": "2025-05-25T09:39:13Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una evaluación psicológica debido a síntomas de depresión."
+    },
+    {
+        "id": "tl183",
+        "timestamp": "2025-05-25T17:25:56Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una biopsia de tejido para análisis histopatológico."
+    },
+    {
+        "id": "tl184",
+        "timestamp": "2025-05-25T07:19:56Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para controlar un episodio de asma."
+    },
+    {
+        "id": "tl185",
+        "timestamp": "2025-05-25T22:56:16Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizaron análisis de sangre que mostraron niveles elevados de glucosa."
+    },
+    {
+        "id": "tl186",
+        "timestamp": "2025-05-25T14:59:51Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió terapia física para rehabilitación postoperatoria."
+    },
+    {
+        "id": "tl187",
+        "timestamp": "2025-05-25T23:53:53Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una ecografía abdominal que mostró cálculos renales."
+    },
+    {
+        "id": "tl188",
+        "timestamp": "2025-05-25T13:54:07Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una tomografía computarizada para evaluar el estado de los pulmones."
+    },
+    {
+        "id": "tl189",
+        "timestamp": "2025-05-25T12:51:44Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue trasladado a otra unidad para continuar con el tratamiento."
+    },
+    {
+        "id": "tl190",
+        "timestamp": "2025-05-25T18:08:46Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por dolor abdominal agudo."
+    },
+    {
+        "id": "tl191",
+        "timestamp": "2025-05-25T19:52:35Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue dado de alta con recomendaciones para seguimiento ambulatorio."
+    },
+    {
+        "id": "tl192",
+        "timestamp": "2025-05-25T11:51:39Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió terapia física para rehabilitación postoperatoria."
+    },
+    {
+        "id": "tl193",
+        "timestamp": "2025-05-25T14:48:17Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado en la UCI por complicaciones postquirúrgicas."
+    },
+    {
+        "id": "tl194",
+        "timestamp": "2025-05-25T00:11:43Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado en la UCI por complicaciones postquirúrgicas."
+    },
+    {
+        "id": "tl195",
+        "timestamp": "2025-05-25T21:30:13Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una ecografía abdominal que mostró cálculos renales."
+    },
+    {
+        "id": "tl196",
+        "timestamp": "2025-05-25T13:06:50Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente comenzó un tratamiento con antibióticos para una infección urinaria."
+    },
+    {
+        "id": "tl197",
+        "timestamp": "2025-05-25T03:18:31Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por un cuadro de neumonía."
+    },
+    {
+        "id": "tl198",
+        "timestamp": "2025-05-25T14:20:13Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por deshidratación y se inició fluidoterapia."
+    },
+    {
+        "id": "tl199",
+        "timestamp": "2025-05-25T03:15:55Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizó una radiografía de tórax que mostró signos de congestión pulmonar."
+    },
+    {
+        "id": "tl200",
+        "timestamp": "2025-05-25T04:50:01Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue trasladado a otra unidad para continuar con el tratamiento."
+    },
+    {
+        "id": "tl201",
+        "timestamp": "2025-05-25T00:45:40Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se realizaron análisis de sangre que mostraron niveles elevados de glucosa."
+    },
+    {
+        "id": "tl202",
+        "timestamp": "2025-05-25T14:52:02Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente comenzó un tratamiento con antibióticos para una infección urinaria."
+    },
+    {
+        "id": "tl203",
+        "timestamp": "2025-05-25T02:15:29Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente recibió tratamiento para una infección respiratoria."
+    },
+    {
+        "id": "tl204",
+        "timestamp": "2025-05-25T04:25:38Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se programó una cirugía para la extracción de un tumor benigno."
+    },
+    {
+        "id": "tl205",
+        "timestamp": "2025-05-25T02:48:03Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una evaluación psicológica debido a síntomas de depresión."
+    },
+    {
+        "id": "tl206",
+        "timestamp": "2025-05-25T09:39:24Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una evaluación psicológica debido a síntomas de depresión."
+    },
+    {
+        "id": "tl207",
+        "timestamp": "2025-05-25T01:45:38Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por deshidratación y se inició fluidoterapia."
+    },
+    {
+        "id": "tl208",
+        "timestamp": "2025-05-25T19:12:25Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado en la UCI por complicaciones postquirúrgicas."
+    },
+    {
+        "id": "tl209",
+        "timestamp": "2025-05-25T07:44:27Z",
+        "source_endpoint": "timeline-builder",
+        "description": "El paciente fue ingresado por dolor abdominal agudo."
+    },
+    {
+        "id": "tl210",
+        "timestamp": "2025-05-25T15:28:42Z",
+        "source_endpoint": "timeline-builder",
+        "description": "Se llevó a cabo una cirugía de apendicectomía con éxito."
+    }
+]
