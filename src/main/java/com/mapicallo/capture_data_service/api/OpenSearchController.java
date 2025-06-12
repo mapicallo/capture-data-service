@@ -2,6 +2,7 @@ package com.mapicallo.capture_data_service.api;
 
 import com.google.gson.Gson;
 import com.mapicallo.capture_data_service.application.OpenSearchService;
+import com.mapicallo.capture_data_service.application.TextAnonymizerService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,18 +25,18 @@ public class OpenSearchController {
     private OpenSearchService openSearchService;
 
     @Autowired
-    private OpenSearchService.TextAnonymizerService textAnonymizerService;
-
-    /*@Autowired
-    private OpenSearchService.SentimentAnalysisService sentimentAnalysisService;*/
-
-
-    /*@Autowired
-    private OpenSearchService.TimelineBuilderService timelineBuilderService;*/
+    private TextAnonymizerService textAnonymizerService;
 
     private static final String UPLOAD_DIR = "C:/uploaded_files/";
 
-    // ----------- INDEX OPERATIONS ------------------
+    // ================================
+    // INDEX OPERATIONS
+    // ================================
+
+    /**
+     * Endpoint para indexar manualmente un documento JSON en un índice de OpenSearch.
+     * Es útil para testeo individual o subida puntual.
+     */
     @Tag(name = "Index Operations", description = "Endpoints to interact with Index")
     @Operation(summary = "Index a document in OpenSearch", description = "Indexes a JSON document in a specified OpenSearch index.")
     @PostMapping("/index")
@@ -51,6 +52,11 @@ public class OpenSearchController {
         }
     }
 
+
+    /**
+     * Devuelve una lista con todos los índices existentes en OpenSearch y el número de documentos de cada uno.
+     * Muy útil para tener una visión global del sistema.
+     */
     @Tag(name = "Index Operations")
     @Operation(summary = "List all indices with document counts", description = "Lists all indices in OpenSearch along with the number of documents in each index.")
     @GetMapping("/list-indices")
@@ -63,6 +69,11 @@ public class OpenSearchController {
         }
     }
 
+
+    /**
+     * Permite eliminar un índice concreto de OpenSearch.
+     * Ideal para limpieza o pruebas durante el desarrollo del TFM.
+     */
     @Tag(name = "Index Operations")
     @Operation(summary = "Delete an index", description = "Deletes a specific index from OpenSearch.")
     @DeleteMapping("/delete-index")
@@ -79,7 +90,15 @@ public class OpenSearchController {
         }
     }
 
-    // ----------- DATA PROCESSING ------------------
+    // ================================
+    // DATA PROCESSING ENDPOINTS
+    // ================================
+
+
+    /**
+     * Procesamiento genérico de ficheros JSON o CSV subidos previamente.
+     * Detecta tipo de archivo y realiza la indexación básica en OpenSearch.
+     */
     @Tag(name = "Data Processing", description = "Possible processing with the file")
     @Operation(summary = "Generic file processing service", description = "Performs default processing on the uploaded file (placeholder endpoint for extensibility).")
     @PostMapping("/process-file")
@@ -95,13 +114,13 @@ public class OpenSearchController {
                 try {
                     openSearchService.indexDocument(indexName, null, jsonDocument);
                 } catch (Exception e) {
-                    System.err.println("⚠️ [OpenSearch] Indexing failed (JSON): " + e.getMessage());
+                    System.err.println("[OpenSearch] Indexing failed (JSON): " + e.getMessage());
                 }
             } else if (file.getName().endsWith(".csv")) {
                 try {
                     openSearchService.processCsvFile(file, indexName);
                 } catch (Exception e) {
-                    System.err.println("⚠️ [OpenSearch] Indexing failed (CSV): " + e.getMessage());
+                    System.err.println("[OpenSearch] Indexing failed (CSV): " + e.getMessage());
                 }
             } else {
                 return ResponseEntity.status(400).body("Unsupported file format. Only JSON and CSV are allowed.");
@@ -115,8 +134,10 @@ public class OpenSearchController {
     }
 
 
-
-
+    /**
+     * Extracción de tripletas semánticas (sujeto-relación-objeto) a partir de texto libre.
+     * Utiliza técnicas de NLP (Stanford CoreNLP).
+     */
     @Tag(name = "Data Processing")
     @PostMapping("/extract-triples")
     @Operation(summary = "ESemantic triple extraction service (subject–relation–object)", description = "Extracts structured knowledge in the form of triples (subject, relation, object) from natural language text.")
@@ -124,7 +145,7 @@ public class OpenSearchController {
         try {
             String json = openSearchService.extractTriplesFromFile(fileName);
 
-            // Intentamos indexar, pero sin afectar al resultado del Swagger
+
             try {
                 Gson gson = new Gson();
                 Type type = new TypeToken<List<Map<String, Object>>>() {}.getType();
@@ -135,8 +156,8 @@ public class OpenSearchController {
                     openSearchService.indexGeneric(indexName, triple);
                 }
             } catch (Exception indexException) {
-                System.err.println("❌ [OpenSearch] No se pudo indexar: " + indexException.getMessage());
-                // Aquí también podrías loguear con SLF4J o guardar en un log interno
+                System.err.println("[OpenSearch] No se pudo indexar: " + indexException.getMessage());
+
             }
 
             return ResponseEntity.ok(json);
@@ -146,6 +167,10 @@ public class OpenSearchController {
     }
 
 
+    /**
+     * Generación de resúmenes estadísticos sobre datasets grandes (CSV).
+     * Aplica media, desviación típica, etc. por campo.
+     */
     @Tag(name = "Data Processing")
     @Operation(
             summary = "Big data statistical summary service",
@@ -156,7 +181,7 @@ public class OpenSearchController {
         try {
             String summaryJson = openSearchService.summarizeBigDataFromFile(fileName);
 
-            // Indexación resiliente
+
             try {
                 Gson gson = new Gson();
                 Type mapType = new TypeToken<Map<String, Map<String, Double>>>() {}.getType();
@@ -174,7 +199,7 @@ public class OpenSearchController {
                     openSearchService.indexGeneric(indexName, doc);
                 }
             } catch (Exception ex) {
-                System.err.println("❌ [OpenSearch] No se pudo indexar el resumen de Big Data: " + ex.getMessage());
+                System.err.println(" [OpenSearch] No se pudo indexar el resumen de Big Data: " + ex.getMessage());
             }
 
             return ResponseEntity.ok(summaryJson);
@@ -184,7 +209,10 @@ public class OpenSearchController {
     }
 
 
-
+    /**
+     * Resumen de texto clínico o narrativo usando NLP generativo.
+     * Emplea modelos preentrenados tipo BART o T5.
+     */
     @Tag(name = "Data Processing")
     @Operation(summary = "Text summarization service", description = "Generates a concise summary from a JSON file containing medical or clinical descriptions.")
     @PostMapping("/ai/summarize")
@@ -214,13 +242,12 @@ public class OpenSearchController {
                 indexedResults.add(enriched);
             }
 
-            // 🔒 Intentar indexar todo (resiliente)
             try {
                 for (Map<String, Object> doc : indexedResults) {
                     openSearchService.indexGeneric(indexName, doc);
                 }
             } catch (Exception e) {
-                System.err.println("❌ [OpenSearch] No se pudo realizar la indexación masiva: " + e.getMessage());
+                System.err.println(" [OpenSearch] No se pudo realizar la indexación masiva: " + e.getMessage());
             }
 
             return ResponseEntity.ok(Map.of(
@@ -235,7 +262,10 @@ public class OpenSearchController {
     }
 
 
-
+    /**
+     * Predicción de tendencia numérica a partir de una serie temporal.
+     * Usa regresión lineal sencilla.
+     */
     @Tag(name = "Data Processing")
     @Operation(summary = "Numerical trend prediction service", description = "Predicts the next value of a numerical series using linear regression from CSV files.")
     @PostMapping("/predict-trend")
@@ -247,7 +277,7 @@ public class OpenSearchController {
                 String indexName = "result-predict-trend-" + fileName.replaceAll("\\W+", "-").toLowerCase();
                 openSearchService.indexGeneric(indexName, prediction);
             } catch (Exception e) {
-                System.err.println("⚠️ [OpenSearch] Error indexando predicción: " + e.getMessage());
+                System.err.println("[OpenSearch] Error indexando predicción: " + e.getMessage());
             }
 
             return ResponseEntity.ok(prediction);
@@ -259,6 +289,10 @@ public class OpenSearchController {
     }
 
 
+    /**
+     * Extracción de palabras clave a partir de texto.
+     * Usa técnicas como TF-IDF, RAKE o YAKE.
+     */
     @Tag(name = "Data Processing")
     @PostMapping("/keyword-extract")
     @Operation(summary = "Keyword extraction service from text", description = "Extracts the most relevant keywords from input text based on term frequency filtering.")
@@ -294,11 +328,11 @@ public class OpenSearchController {
                 resultDoc.put("source_endpoint", "keyword-extract");
                 resultDoc.put("keywords", keywords);
 
-                // ✅ Resiliencia al fallo de OpenSearch
+
                 try {
                     openSearchService.indexGeneric(indexName, resultDoc);
                 } catch (Exception ex) {
-                    System.err.println("⚠️ [OpenSearch] Error indexando doc '" + doc.get("id") + "': " + ex.getMessage());
+                    System.err.println("[OpenSearch] Error indexando doc '" + doc.get("id") + "': " + ex.getMessage());
                 }
 
                 indexedDocs.add(resultDoc);
@@ -312,7 +346,10 @@ public class OpenSearchController {
     }
 
 
-
+    /**
+     * Anonimiza textos clínicos para proteger datos sensibles (nombres, hospitales...).
+     * Utiliza NER + heurísticas propias.
+     */
     @Tag(name = "Data Processing")
     @Operation(summary = "Text anonymization service", description = "Automatically removes or masks personal, clinical, or institutional identifiers from free-text documents.")
     @PostMapping("/anonymize-text")
@@ -334,7 +371,7 @@ public class OpenSearchController {
             }
 
             List<Map<String, Object>> results = new ArrayList<>();
-            OpenSearchService.TextAnonymizerService anonymizer = new OpenSearchService.TextAnonymizerService();
+            TextAnonymizerService anonymizer = new TextAnonymizerService();
             String indexName = "result-anonymize-text-" + fileName.replaceAll("\\W+", "-").toLowerCase();
 
             for (Map<String, Object> doc : documents) {
@@ -352,7 +389,7 @@ public class OpenSearchController {
                 try {
                     openSearchService.indexGeneric(indexName, resultDoc);
                 } catch (Exception ex) {
-                    System.err.println("⚠️ [OpenSearch] Fallo al indexar doc: " + doc.get("id") + " - " + ex.getMessage());
+                    System.err.println("[OpenSearch] Fallo al indexar doc: " + doc.get("id") + " - " + ex.getMessage());
                 }
 
                 results.add(resultDoc);
@@ -370,7 +407,10 @@ public class OpenSearchController {
     }
 
 
-
+    /**
+     * Agrupa documentos en clusters temáticos basados en contenido textual.
+     * Aplica KMeans o clustering jerárquico.
+     */
     @Tag(name = "Data Processing")
     @Operation(summary = "Thematic text clustering service", description = "Groups similar text entries into clusters based on shared vocabulary and term frequency (TF).")
     @PostMapping("/clustering")
@@ -391,7 +431,7 @@ public class OpenSearchController {
                     try {
                         openSearchService.indexGeneric(indexName, doc);
                     } catch (Exception ex) {
-                        System.err.println("⚠️ [OpenSearch] Fallo indexando documento cluster=" + clusterId + ": " + ex.getMessage());
+                        System.err.println("[OpenSearch] Fallo indexando documento cluster=" + clusterId + ": " + ex.getMessage());
                     }
 
                     indexedDocs.add(doc);
@@ -411,8 +451,10 @@ public class OpenSearchController {
     }
 
 
-
-
+    /**
+     * Analiza el sentimiento general de textos clínicos: positivo, negativo o neutro.
+     * Útil para ver evolución emocional en informes.
+     */
     @Tag(name = "Data Processing")
     @Operation(summary = "Sentiment analysis service for clinical text",description = "Evaluates the sentiment of each sentence in a clinical report and computes an overall emotional tone.")
     @PostMapping("/sentiment-analysis")
@@ -428,7 +470,7 @@ public class OpenSearchController {
                     openSearchService.indexGeneric(indexName, doc);
                     count++;
                 } catch (Exception ex) {
-                    System.err.println("⚠️ [OpenSearch] No se pudo indexar doc: " + doc.get("id") + " → " + ex.getMessage());
+                    System.err.println(" [OpenSearch] No se pudo indexar doc: " + doc.get("id") + " → " + ex.getMessage());
                 }
             }
 
@@ -443,7 +485,10 @@ public class OpenSearchController {
     }
 
 
-
+    /**
+     * Reconocimiento de entidades clínicas como medicamentos, enfermedades, nombres, etc.
+     * Usa modelos tipo spaCy o Med7.
+     */
     @Tag(name = "Data Processing")
     @Operation(summary = "Named entity recognition (NER) service",description = "Identifies and classifies named entities such as people, organizations, dates, or places in clinical text.")
     @PostMapping("/entity-recognition")
@@ -458,7 +503,7 @@ public class OpenSearchController {
                     openSearchService.indexGeneric(indexName, doc);
                     count++;
                 } catch (Exception e) {
-                    System.err.println("⚠️ [OpenSearch] Error indexando doc ID " + doc.get("id") + ": " + e.getMessage());
+                    System.err.println("[OpenSearch] Error indexando doc ID " + doc.get("id") + ": " + e.getMessage());
                 }
             }
 
@@ -473,7 +518,10 @@ public class OpenSearchController {
     }
 
 
-
+    /**
+     * Divide un texto clínico en segmentos temáticos: síntomas, antecedentes, tratamiento, etc.
+     * Útil para análisis estructurado de informes médicos.
+     */
     @Tag(name = "Data Processing")
     @RestController
     @RequestMapping("/api/v1/opensearch")
@@ -494,7 +542,7 @@ public class OpenSearchController {
                 String indexName = "result-text-segmentation-" + fileName.replaceAll("\\W+", "-").toLowerCase();
                 int indexedCount = 0;
 
-                // Intentamos indexar sin que Swagger falle si hay error
+
                 try {
                     openSearchService.ensureIndexWithDateMapping(indexName);
                     for (Map<String, Object> doc : results) {
@@ -502,7 +550,7 @@ public class OpenSearchController {
                         indexedCount++;
                     }
                 } catch (Exception e) {
-                    System.err.println("⚠️ [OpenSearch] Indexación omitida: " + e.getMessage());
+                    System.err.println("[OpenSearch] Indexación omitida: " + e.getMessage());
                 }
 
                 return ResponseEntity.ok(Map.of(
@@ -518,9 +566,6 @@ public class OpenSearchController {
             }
         }
 
-
     }
-
-
 
 }

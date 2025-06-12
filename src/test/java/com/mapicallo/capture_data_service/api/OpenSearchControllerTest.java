@@ -1,13 +1,13 @@
 package com.mapicallo.capture_data_service.api;
 
 import com.mapicallo.capture_data_service.application.OpenSearchService;
+import com.mapicallo.capture_data_service.application.TextAnonymizerService;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.web.servlet.MockMvc;
@@ -15,7 +15,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.io.File;
 import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -37,6 +36,9 @@ class OpenSearchControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
+    @Autowired
+    private TextAnonymizerService textAnonymizerService;
+
     private final String uploadDir = "C:/uploaded_files/";
     private final String testFileName1 = "test_extract_triples.txt";
     private final String testFileName2 = "neumologia_datos_pacientes.csv";
@@ -50,7 +52,7 @@ class OpenSearchControllerTest {
 
     private final String testFileName7 = "trend_test.csv";
 
-    @MockBean
+
     private OpenSearchService openSearchService;
 
 
@@ -118,17 +120,6 @@ class OpenSearchControllerTest {
 
     }
 
-   /* @Test
-    void shouldBuildTimelineFromTextFile() throws Exception {
-        mockMvc.perform(post("/api/v1/opensearch/timeline-builder")
-                        .param("fileName", testFileName6))
-                .andExpect(status().isOk())
-                .andExpect(content().string(containsString("2023")))
-                .andExpect(content().string(containsString("2024")))
-                .andExpect(content().string(containsString("ingresado")))
-                .andExpect(content().string(containsString("urgencias")));
-    }*/
-
     @Test
     public void testTextSegmentationEndpoint() throws Exception {
         // Crear archivo de prueba con contenido mínimo válido
@@ -154,8 +145,6 @@ class OpenSearchControllerTest {
                 .andExpect(jsonPath("$.segments").isArray())
                 .andExpect(jsonPath("$.segments[0].event").exists());
     }
-
-
 
     @Test
     void shouldRecognizeEntitiesInTextFile() throws Exception {
@@ -228,7 +217,7 @@ class OpenSearchControllerTest {
 
     @Test
     public void testAnonymizeTextFromFileContent() {
-        OpenSearchService.TextAnonymizerService service = new OpenSearchService.TextAnonymizerService();
+        TextAnonymizerService service = new TextAnonymizerService();
 
         String original = "El paciente Juan Pérez fue atendido por la Dra. Gómez en el Hospital Central el 2024-05-01.";
         String anonymized = service.anonymizeTextFromFileContent(original);
@@ -276,9 +265,6 @@ class OpenSearchControllerTest {
     }
 
 
-
-
-
     @Test
     void shouldExtractTriplesAndReturnJson() throws Exception {
         // Primero subimos el archivo de prueba
@@ -304,7 +290,6 @@ class OpenSearchControllerTest {
     }
 
 
-
     @Test
     public void testSummarizeBigData() throws Exception {
         MockMultipartFile mockFile = new MockMultipartFile(
@@ -325,7 +310,6 @@ class OpenSearchControllerTest {
                 .andExpect(jsonPath("$.height.mean").isNumber())
                 .andExpect(jsonPath("$.weight.max").isNumber());
     }
-
 
 
     @Test
@@ -371,50 +355,6 @@ class OpenSearchControllerTest {
                 .andExpect(jsonPath("$.PERSON[0]").value("Juan Pérez"))
                 .andExpect(jsonPath("$.DATE[0]").value("2025-05-19"));
     }
-
-
-
-
-
-
-
-
-
-    /*@Test
-    void shouldSummarizeAiFromJsonFile() throws Exception {
-        String fileName = "casos_clinicos.json";
-        String jsonContent = """
-        [
-          {
-            "name": "Caso1",
-            "description": "El paciente presenta disnea progresiva desde hace dos semanas. Se ha iniciado tratamiento con broncodilatadores. La evolución ha sido favorable tras la intervención médica.",
-            "timestamp": "2025-05-01T10:00:00Z"
-          },
-          {
-            "name": "Caso2",
-            "description": "Paciente diagnosticado con EPOC moderada. Se recomienda seguimiento con pruebas espirométricas. No se evidencian complicaciones agudas.",
-            "timestamp": "2025-05-02T11:30:00Z"
-          },
-          {
-            "name": "Caso3",
-            "description": "El paciente ingresa con tos seca persistente y fiebre. Se descarta neumonía tras análisis radiológicos. Se prescribe antibiótico de amplio espectro como medida preventiva.",
-            "timestamp": "2025-05-03T09:45:00Z"
-          }
-        ]
-        """;
-
-        // Crear archivo de prueba en el directorio UPLOAD_DIR
-        File dir = new File("C:/uploaded_files/");
-        if (!dir.exists()) dir.mkdirs();
-        Files.writeString(Path.of("C:/uploaded_files/" + fileName), jsonContent);
-
-        mockMvc.perform(post("/api/v1/opensearch/ai/summarize")
-                        .param("fileName", fileName))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.summary").isArray())
-                .andExpect(jsonPath("$.summary[0]").value(org.hamcrest.Matchers.containsString("El paciente presenta disnea")))
-                .andExpect(jsonPath("$.original_length").isNumber());
-    }*/
 
 
     @Test
@@ -510,8 +450,6 @@ class OpenSearchControllerTest {
                     .andExpect(content().string(containsString("2025")));
         }
     }
-
-
 
 
 }

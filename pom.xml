@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- Versión del modelo POM de Maven -->
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>jar</packaging>
+	<!-- Hereda configuración base de Spring Boot -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.4.0</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/> <!-- busca en el repositorio Maven central -->
 	</parent>
+
+	<!-- Identidad del proyecto -->
 	<groupId>com.mapicallo</groupId>
 	<artifactId>capture-data-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
+	<!-- Nombre y descripción visible, por ejemplo, en documentación -->
 	<name>capture-data-service</name>
 	<description>This application captures data, provides services to interact with it,
 		and prepares it to be sent to a system for ingesting, transforming and visualizing
 		the intelligent information obtained from it.</description>
+	<!-- Configuración de control de versiones (puede omitirse en proyectos personales) -->
 	<url/>
 	<licenses>
 		<license/>
@@ -29,6 +37,7 @@
 		<tag/>
 		<url/>
 	</scm>
+	<!-- Especificamos que usamos Java 17 -->
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -39,19 +48,19 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- Springdoc OpenAPI for Swagger UI -->
+		<!-- Swagger/OpenAPI UI para documentación automática -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>2.7.0</version>
 		</dependency>
-		<!-- Spring Boot Actuator -->
+		<!-- Monitoreo y métricas: /actuator -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
-		<!-- CoreNLP -->
+		<!-- Procesamiento del lenguaje natural (Stanford CoreNLP) -->
 		<dependency>
 			<groupId>edu.stanford.nlp</groupId>
 			<artifactId>stanford-corenlp</artifactId>
@@ -64,7 +73,7 @@
 			<version>4.5.7</version>
 		</dependency>
 
-		<!-- Gson para exportar resultados -->
+		<!-- JSON parser ligero -->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
@@ -72,45 +81,51 @@
 		</dependency>
 
 		<!-- Protobuf por compatibilidad con CoreNLP -->
+		<!-- Requisito para Stanford NLP (CoreNLP usa Protobuf internamente) -->
 		<dependency>
 			<groupId>com.google.protobuf</groupId>
 			<artifactId>protobuf-java</artifactId>
 			<version>4.29.3</version>
 		</dependency>
 
-		<!-- Testing dependencies -->
+		<!-- Dependencias de test unitarios -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- Logging configurable (alternativa a Logback) -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
 			<version>2.24.3</version>
 		</dependency>
+		<!-- Anotaciones automáticas como @Getter/@Setter -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.36</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- Cliente de alto nivel para OpenSearch -->
 		<dependency>
 			<groupId>org.opensearch.client</groupId>
 			<artifactId>opensearch-rest-high-level-client</artifactId>
 			<version>2.18.0</version>
 		</dependency>
+		<!-- Procesamiento de CSV (lectura desde ficheros) -->
 		<dependency>
 			<groupId>com.opencsv</groupId>
 			<artifactId>opencsv</artifactId>
 			<version>5.7.1</version>
 		</dependency>
+		<!-- Estadística y clustering (K-means, regresión) -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-math3</artifactId>
 			<version>3.6.1</version>
 		</dependency>
-		<!-- JAXB: Necesario para CoreNLP y Jollyday en Java 11+ -->
+		<!-- Librerías JAXB (necesarias en Java 11+ para ciertos módulos XML usados por CoreNLP) -->
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
@@ -127,16 +142,16 @@
 			<version>2.3.0.1</version>
 		</dependency>
 
-
-
 	</dependencies>
 	<build>
 		<plugins>
+			<!-- Plugin principal para empaquetar una app Spring Boot -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>3.4.0</version>
 			</plugin>
+			<!-- Plugin del compilador, Java 17 obligatorio -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
