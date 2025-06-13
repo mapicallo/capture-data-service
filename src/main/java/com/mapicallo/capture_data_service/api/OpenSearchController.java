@@ -250,10 +250,11 @@ public class OpenSearchController {
                 System.err.println(" [OpenSearch] No se pudo realizar la indexación masiva: " + e.getMessage());
             }
 
+            // ✅ Respuesta completa, sin truncar
             return ResponseEntity.ok(Map.of(
                     "fileName", fileName,
                     "indexedCount", indexedResults.size(),
-                    "sample", indexedResults.subList(0, Math.min(3, indexedResults.size()))
+                    "results", indexedResults
             ));
 
         } catch (Exception e) {
