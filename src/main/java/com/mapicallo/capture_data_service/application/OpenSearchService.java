@@ -469,18 +469,44 @@ public class OpenSearchService {
             );
         }
 
-
-        String[] sentences = description.split("\\.\\s*");
-        List<String> trimmed = Arrays.stream(sentences)
+        // 1. Dividir en frases
+        String[] sentences = description.split("(?<=[.!?])\\s+");
+        List<String> trimmedSentences = Arrays.stream(sentences)
                 .map(String::trim)
                 .filter(s -> !s.isEmpty())
                 .toList();
 
-        int maxSentences = Math.min(3, trimmed.size());
-        List<String> summary = trimmed.subList(0, maxSentences);
+        // 2. Tokenizar palabras y calcular frecuencia (TF)
+        Map<String, Integer> wordFreq = new HashMap<>();
+        for (String sentence : trimmedSentences) {
+            String[] words = sentence.toLowerCase().split("\\W+");
+            for (String word : words) {
+                if (word.length() > 2) { // omitir palabras muy cortas o stopwords simples
+                    wordFreq.put(word, wordFreq.getOrDefault(word, 0) + 1);
+                }
+            }
+        }
+
+        // 3. Asignar puntuación a cada frase
+        Map<String, Integer> sentenceScores = new HashMap<>();
+        for (String sentence : trimmedSentences) {
+            int score = 0;
+            String[] words = sentence.toLowerCase().split("\\W+");
+            for (String word : words) {
+                score += wordFreq.getOrDefault(word, 0);
+            }
+            sentenceScores.put(sentence, score);
+        }
+
+        // 4. Seleccionar las 3 frases con mayor puntuación
+        List<String> summary = sentenceScores.entrySet().stream()
+                .sorted((a, b) -> b.getValue() - a.getValue())
+                .limit(3)
+                .map(Map.Entry::getKey)
+                .toList();
 
         return Map.of(
-                "original_length", trimmed.size(),
+                "original_length", trimmedSentences.size(),
                 "summary", summary
         );
     }
