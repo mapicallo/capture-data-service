@@ -687,10 +687,20 @@ public class OpenSearchService {
 
 
     /**
-     * Agrupa entradas de texto en clústeres temáticos.
+     * Agrupa documentos textuales en dos clústeres temáticos usando K-Means.
+     * <p>
+     * Este método lee un archivo JSON con una lista de documentos (cada uno con un campo "text"),
+     * tokeniza el contenido, construye vectores de frecuencia de términos (TF) y aplica el algoritmo
+     * K-Means (K=2) para agrupar los documentos según su similitud textual.
+     * <p>
+     * El resultado es un mapa donde cada clave es un ID de clúster (0 o 1) y su valor asociado es
+     * la lista de documentos asignados a ese clúster, incluyendo el campo adicional "cluster_id".
+     *
+     * @param fileName nombre del archivo JSON previamente subido (ruta fija en el servidor).
+     * @return un mapa con dos claves (0 y 1) representando los clústeres y los documentos agrupados.
+     * @throws IOException si el archivo no existe o hay un error de lectura.
+     * @throws IllegalArgumentException si el archivo contiene menos de dos documentos.
      */
-    //Tokeniza documentos, genera vectores TF y aplica K-means con K=2.
-    //Devuelve estructura {cluster_id → lista de documentos}.
     public Map<Integer, List<Map<String, Object>>> clusterDocumentsFromFile(String fileName) throws IOException {
         String path = "C:/uploaded_files/" + fileName;
 
