@@ -8,6 +8,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
+import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.*;
 import edu.stanford.nlp.util.CoreMap;
 import jakarta.annotation.PostConstruct;
@@ -652,29 +653,55 @@ public class OpenSearchService {
 
 
     /**
-     * Extrae las 10 palabras clave más frecuentes de un texto.
+     * Extrae las 10 palabras clave más representativas de un texto utilizando Stanford CoreNLP.
      *
-     * Este método realiza una tokenización básica del texto de entrada, filtra las palabras
-     * poco representativas (por longitud y presencia en una lista de stopwords en español)
-     * y calcula la frecuencia de aparición de cada término relevante.
+     * Este método tokeniza, lematiza y analiza morfosintácticamente el texto de entrada.
+     * Se filtran stopwords comunes en español y se consideran únicamente sustantivos, verbos
+     * y adjetivos con longitud superior a 3 caracteres.
      *
-     * La salida es una lista con las 10 palabras más frecuentes, ordenadas por frecuencia
-     * descendente. No utiliza técnicas avanzadas como lematización o TF-IDF.
+     * Es una versión mejorada del enfoque de frecuencia simple, que mejora la calidad semántica
+     * de las palabras clave extraídas.
      *
-     * @param text Texto en bruto del que se extraerán las palabras clave.
-     * @return Lista de hasta 10 términos más frecuentes tras el filtrado.
+     * @param text Texto libre en español del cual se extraerán las palabras clave.
+     * @return Lista de hasta 10 lemas más frecuentes, ordenados por frecuencia descendente.
      */
     public List<String> extractKeywords(String text) {
-        Map<String, Integer> tf = new HashMap<>();
-        String[] tokens = text.toLowerCase().split("\\s+");
+        if (text == null || text.isBlank()) return List.of();
 
-        for (String token : tokens) {
-            if (token.length() > 3 && !List.of("para", "como", "este", "esta", "con", "los", "las").contains(token)) {
-                tf.put(token, tf.getOrDefault(token, 0) + 1);
+        // Inicializar pipeline si no existe (puede extraerse como singleton si se reutiliza mucho)
+        Properties props = new Properties();
+        props.setProperty("annotators", "tokenize,ssplit,pos,lemma");
+        props.setProperty("tokenize.language", "es");
+        StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+
+        // Lista de stopwords en español (puedes ampliar o externalizar)
+        Set<String> stopwords = Set.of(
+                "para", "como", "este", "esta", "con", "los", "las", "del", "que", "una", "por",
+                "entre", "sobre", "pero", "tiene", "han", "ser", "más", "menos", "muy", "sin", "a",
+                "en", "de", "y", "o", "al", "es", "se", "el", "la", "un", "lo", "su"
+        );
+
+        // Procesar texto con CoreNLP
+        Annotation document = new Annotation(text.toLowerCase());
+        pipeline.annotate(document);
+
+        Map<String, Integer> lemmaFrequency = new HashMap<>();
+
+        for (CoreMap sentence : document.get(CoreAnnotations.SentencesAnnotation.class)) {
+            for (CoreLabel token : sentence.get(CoreAnnotations.TokensAnnotation.class)) {
+                String lemma = token.get(CoreAnnotations.LemmaAnnotation.class);
+                String pos = token.get(CoreAnnotations.PartOfSpeechAnnotation.class);
+
+                // Filtrar por stopwords, longitud mínima y tipo POS (sustantivos, verbos, adjetivos, etc.)
+                if (lemma.length() > 3 && !stopwords.contains(lemma) &&
+                        (pos.startsWith("N") || pos.startsWith("V") || pos.startsWith("J"))) {
+                    lemmaFrequency.put(lemma, lemmaFrequency.getOrDefault(lemma, 0) + 1);
+                }
             }
         }
 
-        return tf.entrySet().stream()
+        // Devolver top 10 términos más frecuentes
+        return lemmaFrequency.entrySet().stream()
                 .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
                 .limit(10)
                 .map(Map.Entry::getKey)
