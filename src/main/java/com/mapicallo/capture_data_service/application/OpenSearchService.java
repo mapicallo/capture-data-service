@@ -209,10 +209,20 @@ public class OpenSearchService {
             default -> "Neutral";
         };
     }
+    
 
-    //Extracción de Tripletas Semánticas
-    //Usa KBP de Stanford NLP para extraer tripletas sujeto–relación–objeto.
-    //Devuelve una lista ordenada por confianza, útil para crear grafos semánticos.
+    /**
+     * Extrae tripletas semánticas del tipo sujeto–relación–objeto a partir de textos en un archivo JSON.
+     * <p>
+     * Utiliza el componente KBP (Knowledge Base Population) de Stanford CoreNLP para identificar relaciones explícitas
+     * en el texto (por ejemplo, "el paciente toma ibuprofeno").
+     * <p>
+     * El archivo debe contener una lista de objetos JSON con al menos el campo "text". Si están presentes,
+     * también se añaden los campos "id", "timestamp" y "source_endpoint" como metadatos.
+     *
+     * @param fileName nombre del archivo JSON con los documentos a procesar.
+     * @return una cadena JSON con la lista de tripletas extraídas, ordenadas por confianza.
+     */
     public String extractTriplesFromFile(String fileName) {
         File file = new File(UPLOAD_DIR + fileName);
         if (!file.exists()) {
