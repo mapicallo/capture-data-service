@@ -458,9 +458,19 @@ public class OpenSearchService {
     }
 
 
-    //Resumen de Texto
-    //Extrae las primeras 3 frases de un texto.
-    //Método simplificado de resumen heurístico para casos clínicos.
+    /**
+     * Resume un texto clínico seleccionando las frases más representativas
+     * según una heurística basada en la frecuencia de palabras (TF).
+     *
+     * El método realiza los siguientes pasos:
+     * 1. Divide el texto en frases.
+     * 2. Calcula la frecuencia (TF) de cada palabra ignorando palabras muy cortas.
+     * 3. Asigna una puntuación a cada frase según la suma de las frecuencias de sus palabras.
+     * 4. Devuelve las 3 frases con mayor puntuación como resumen.
+     *
+     * @param description Texto de entrada (por ejemplo, informe clínico).
+     * @return Mapa con la longitud original (en frases) y la lista de frases resumen.
+     */
     public Map<String, Object> summarizeText(String description) {
         if (description == null || description.isEmpty()) {
             return Map.of(
