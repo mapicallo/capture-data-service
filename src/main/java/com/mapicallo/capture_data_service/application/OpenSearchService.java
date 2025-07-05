@@ -117,7 +117,7 @@ public class OpenSearchService {
         }
     }
 
-    
+
 
 
     /**
@@ -347,15 +347,26 @@ public class OpenSearchService {
     }
 
 
-    //Segmentación de Texto Clínico
-    //Divide el texto en bloques lógicos:
-    //síntomas, antecedentes, tratamiento, recomendaciones
-    //Basado en reglas heurísticas y presencia de palabras clave.
+    /**
+     * Segmenta el texto clínico de cada documento en bloques semánticos clave, tales como
+     * "síntomas", "antecedentes", "tratamiento" y "recomendaciones".
+     *
+     * <p>El método lee un archivo JSON que contiene documentos con campos como "id", "timestamp",
+     * "source_endpoint" y "text". Para cada documento, se aplica una heurística basada en reglas
+     * lingüísticas simples y palabras clave clínicas para dividir el texto en frases o bloques
+     * informativos, asignándolos a una categoría médica relevante si es posible.</p>
+     *
+     * <p>Este tipo de segmentación es útil como paso previo a tareas más avanzadas de PLN,
+     * como reconocimiento de entidades, análisis de sentimientos o extracción de relaciones.</p>
+     *
+     * @param fileName Nombre del archivo JSON previamente cargado en el servidor.
+     * @return Lista de mapas que representan documentos segmentados por bloques semánticos,
+     *         con campos adicionales como el texto original y el origen del endpoint.
+     * @throws IOException Si el archivo no existe o no puede ser leído correctamente.
+     */
     public List<Map<String, Object>> segmentTextFromFile(String fileName) throws IOException {
         File file = new File(UPLOAD_DIR + fileName);
-        if (!file.exists()) {
-            throw new FileNotFoundException("Archivo no encontrado: " + fileName);
-        }
+        if (!file.exists()) throw new FileNotFoundException("Archivo no encontrado");
 
         Gson gson = new Gson();
         List<Map<String, Object>> documents;
@@ -363,38 +374,41 @@ public class OpenSearchService {
             documents = gson.fromJson(reader, new TypeToken<List<Map<String, Object>>>() {}.getType());
         }
 
+        // Inicializar pipeline NLP una vez
+        Properties props = new Properties();
+        props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
+        props.setProperty("tokenize.language", "es");
+        StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+
         List<Map<String, Object>> results = new ArrayList<>();
 
         for (Map<String, Object> doc : documents) {
             String text = (String) doc.get("text");
-            String timestamp = (String) doc.get("timestamp");
-            String id = (String) doc.get("id");
-            String source = (String) doc.get("source_endpoint");
-
             if (text == null || text.isBlank()) continue;
 
-            // Heurística para segmentar
-            String[] sentences = text.split("(?<=[.!?])\\s+");
+            Annotation document = new Annotation(text);
+            pipeline.annotate(document);
+            List<CoreMap> sentences = document.get(CoreAnnotations.SentencesAnnotation.class);
+
             Map<String, String> segments = new LinkedHashMap<>();
+            for (CoreMap sentence : sentences) {
+                String sentenceText = sentence.toString().toLowerCase();
 
-            for (String sentence : sentences) {
-                String s = sentence.trim().toLowerCase();
-
-                if (s.contains("síntoma") || s.contains("refiere") || s.contains("dolor") || s.contains("fiebre")) {
-                    segments.put("síntomas", sentence.trim());
-                } else if (s.contains("antecedente") || s.contains("historia clínica")) {
-                    segments.put("antecedentes", sentence.trim());
-                } else if (s.contains("recomienda") || s.contains("sugiere") || s.contains("aconseja")) {
-                    segments.put("recomendaciones", sentence.trim());
-                } else if (s.contains("prescribe") || s.contains("administra") || s.contains("tratamiento")) {
-                    segments.put("tratamiento", sentence.trim());
+                if (sentenceText.contains("síntoma") || sentenceText.contains("fiebre") || sentenceText.contains("dolor")) {
+                    segments.put("síntomas", sentence.toString());
+                } else if (sentenceText.contains("antecedente") || sentenceText.contains("historia clínica")) {
+                    segments.put("antecedentes", sentence.toString());
+                } else if (sentenceText.contains("prescribe") || sentenceText.contains("tratamiento")) {
+                    segments.put("tratamiento", sentence.toString());
+                } else if (sentenceText.contains("recomienda") || sentenceText.contains("aconseja")) {
+                    segments.put("recomendaciones", sentence.toString());
                 }
             }
 
             Map<String, Object> enriched = new LinkedHashMap<>();
-            enriched.put("id", id);
-            enriched.put("timestamp", timestamp);
-            enriched.put("source_endpoint", source);
+            enriched.put("id", doc.get("id"));
+            enriched.put("timestamp", doc.get("timestamp"));
+            enriched.put("source_endpoint", doc.get("source_endpoint"));
             enriched.put("original_text", text);
             enriched.put("segments", segments);
 
@@ -403,6 +417,7 @@ public class OpenSearchService {
 
         return results;
     }
+
 
     //Creación de Índice con Mapeo
     //Crea un índice con mapeo explícito de campos (timestamp, id, etc.).
