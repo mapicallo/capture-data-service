@@ -407,9 +407,26 @@ public class OpenSearchService {
         }
     }
 
-    // Estadísticas de Dataset CSV
-    //Calcula métricas estadísticas (media, desviación, min/max).
-    //Aplica únicamente sobre campos numéricos detectados.
+    /**
+     * Analiza un archivo CSV local y calcula estadísticas descriptivas
+     * (media, desviación estándar, mínimo, máximo, cantidad de elementos)
+     * sobre los campos numéricos detectados.
+     *
+     * @param fileName Nombre del archivo CSV previamente cargado (ubicado en UPLOAD_DIR)
+     * @return JSON con estadísticas por campo numérico o mensaje de error si el archivo no existe o está vacío.
+     * @throws IOException Si ocurre un error al leer el archivo.
+     *
+     * Ejemplo de salida:
+     * {
+     *   "edad": {
+     *     "count": 100,
+     *     "mean": 73.2,
+     *     "std_dev": 4.5,
+     *     "min": 65,
+     *     "max": 81
+     *   }
+     * }
+     */
     public String summarizeBigDataFromFile(String fileName) throws IOException {
         File file = new File(UPLOAD_DIR + fileName);
         if (!file.exists()) {
