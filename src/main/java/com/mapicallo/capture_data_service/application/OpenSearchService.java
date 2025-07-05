@@ -8,6 +8,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
+import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.*;
 import edu.stanford.nlp.util.CoreMap;
 import jakarta.annotation.PostConstruct;
@@ -116,19 +117,24 @@ public class OpenSearchService {
         }
     }
 
-    /**
-     * Realiza análisis de sentimiento sobre el contenido del archivo.
-     */
-    //Inicializa el pipeline de Stanford NLP al arrancar el servicio.
-    //Lee los textos y devuelve un análisis con:
-    //distribución de sentimientos, puntuación promedio, sentimiento general (summary_sentiment)
-    @PostConstruct
-    public void initSentimentPipeline() {
-        Properties props = new Properties();
-        props.setProperty("annotators", "tokenize,ssplit,parse,sentiment");
-        this.sentimentPipeline = new StanfordCoreNLP(props);
-    }
 
+
+
+    /**
+     * Analiza el sentimiento de cada entrada textual contenida en un archivo JSON.
+     *
+     * <p>Lee el archivo especificado, interpreta su contenido como una lista de documentos
+     * con campo "text", y aplica el modelo de análisis de sentimientos de Stanford CoreNLP.
+     * Para cada texto, clasifica el sentimiento como Very Negative, Negative, Neutral, Positive o Very Positive,
+     * y asigna una puntuación cuantitativa. El resultado incluye además los metadatos originales del documento.
+     *
+     * <p>Es útil para detectar la orientación emocional general de textos clínicos, comentarios de pacientes
+     * o informes médicos en español.
+     *
+     * @param fileName nombre del archivo JSON previamente cargado, con una lista de documentos con campo "text".
+     * @return una lista de mapas, uno por documento, que contienen el sentimiento, puntuación, texto original y metadatos.
+     * @throws IOException si el archivo no se encuentra o no puede leerse correctamente.
+     */
     public List<Map<String, Object>> analyzeSentimentFromFile(String fileName) throws IOException {
         File file = new File(UPLOAD_DIR + fileName);
         if (!file.exists()) throw new FileNotFoundException("Archivo no encontrado: " + fileName);
@@ -210,9 +216,19 @@ public class OpenSearchService {
         };
     }
 
-    //Extracción de Tripletas Semánticas
-    //Usa KBP de Stanford NLP para extraer tripletas sujeto–relación–objeto.
-    //Devuelve una lista ordenada por confianza, útil para crear grafos semánticos.
+
+    /**
+     * Extrae tripletas semánticas del tipo sujeto–relación–objeto a partir de textos en un archivo JSON.
+     * <p>
+     * Utiliza el componente KBP (Knowledge Base Population) de Stanford CoreNLP para identificar relaciones explícitas
+     * en el texto (por ejemplo, "el paciente toma ibuprofeno").
+     * <p>
+     * El archivo debe contener una lista de objetos JSON con al menos el campo "text". Si están presentes,
+     * también se añaden los campos "id", "timestamp" y "source_endpoint" como metadatos.
+     *
+     * @param fileName nombre del archivo JSON con los documentos a procesar.
+     * @return una cadena JSON con la lista de tripletas extraídas, ordenadas por confianza.
+     */
     public String extractTriplesFromFile(String fileName) {
         File file = new File(UPLOAD_DIR + fileName);
         if (!file.exists()) {
@@ -277,10 +293,17 @@ public class OpenSearchService {
 
 
     /**
-     * Reconoce entidades nombradas como personas, lugares, instituciones, etc.
+     * Aplica reconocimiento de entidades nombradas (NER) a los textos de un archivo JSON.
+     * <p>
+     * Procesa cada documento del archivo usando Stanford CoreNLP para detectar entidades
+     * como PERSON, ORGANIZATION, LOCATION, DATE, etc., y devuelve una lista de objetos
+     * enriquecidos con las entidades encontradas.
+     *
+     * @param fileName Nombre del archivo JSON ubicado en el directorio de subida.
+     *                 El archivo debe contener una lista de documentos con al menos un campo "text".
+     * @return Lista de mapas con la información original y las entidades reconocidas por documento.
+     * @throws IOException Si el archivo no existe o no puede leerse.
      */
-    //Reconoce entidades clínicas (personas, fechas, hospitales, etc.)
-    //Usa CoreEntityMention para detectar y clasificar entidades.
     public List<Map<String, Object>> recognizeEntitiesFromJsonFile(String fileName) throws IOException {
         File file = new File(UPLOAD_DIR + fileName);
         if (!file.exists()) throw new FileNotFoundException("Archivo no encontrado: " + fileName);
@@ -324,15 +347,26 @@ public class OpenSearchService {
     }
 
 
-    //Segmentación de Texto Clínico
-    //Divide el texto en bloques lógicos:
-    //síntomas, antecedentes, tratamiento, recomendaciones
-    //Basado en reglas heurísticas y presencia de palabras clave.
+    /**
+     * Segmenta el texto clínico de cada documento en bloques semánticos clave, tales como
+     * "síntomas", "antecedentes", "tratamiento" y "recomendaciones".
+     *
+     * <p>El método lee un archivo JSON que contiene documentos con campos como "id", "timestamp",
+     * "source_endpoint" y "text". Para cada documento, se aplica una heurística basada en reglas
+     * lingüísticas simples y palabras clave clínicas para dividir el texto en frases o bloques
+     * informativos, asignándolos a una categoría médica relevante si es posible.</p>
+     *
+     * <p>Este tipo de segmentación es útil como paso previo a tareas más avanzadas de PLN,
+     * como reconocimiento de entidades, análisis de sentimientos o extracción de relaciones.</p>
+     *
+     * @param fileName Nombre del archivo JSON previamente cargado en el servidor.
+     * @return Lista de mapas que representan documentos segmentados por bloques semánticos,
+     *         con campos adicionales como el texto original y el origen del endpoint.
+     * @throws IOException Si el archivo no existe o no puede ser leído correctamente.
+     */
     public List<Map<String, Object>> segmentTextFromFile(String fileName) throws IOException {
         File file = new File(UPLOAD_DIR + fileName);
-        if (!file.exists()) {
-            throw new FileNotFoundException("Archivo no encontrado: " + fileName);
-        }
+        if (!file.exists()) throw new FileNotFoundException("Archivo no encontrado");
 
         Gson gson = new Gson();
         List<Map<String, Object>> documents;
@@ -340,38 +374,41 @@ public class OpenSearchService {
             documents = gson.fromJson(reader, new TypeToken<List<Map<String, Object>>>() {}.getType());
         }
 
+        // Inicializar pipeline NLP una vez
+        Properties props = new Properties();
+        props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
+        props.setProperty("tokenize.language", "es");
+        StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+
         List<Map<String, Object>> results = new ArrayList<>();
 
         for (Map<String, Object> doc : documents) {
             String text = (String) doc.get("text");
-            String timestamp = (String) doc.get("timestamp");
-            String id = (String) doc.get("id");
-            String source = (String) doc.get("source_endpoint");
-
             if (text == null || text.isBlank()) continue;
 
-            // Heurística para segmentar
-            String[] sentences = text.split("(?<=[.!?])\\s+");
+            Annotation document = new Annotation(text);
+            pipeline.annotate(document);
+            List<CoreMap> sentences = document.get(CoreAnnotations.SentencesAnnotation.class);
+
             Map<String, String> segments = new LinkedHashMap<>();
+            for (CoreMap sentence : sentences) {
+                String sentenceText = sentence.toString().toLowerCase();
 
-            for (String sentence : sentences) {
-                String s = sentence.trim().toLowerCase();
-
-                if (s.contains("síntoma") || s.contains("refiere") || s.contains("dolor") || s.contains("fiebre")) {
-                    segments.put("síntomas", sentence.trim());
-                } else if (s.contains("antecedente") || s.contains("historia clínica")) {
-                    segments.put("antecedentes", sentence.trim());
-                } else if (s.contains("recomienda") || s.contains("sugiere") || s.contains("aconseja")) {
-                    segments.put("recomendaciones", sentence.trim());
-                } else if (s.contains("prescribe") || s.contains("administra") || s.contains("tratamiento")) {
-                    segments.put("tratamiento", sentence.trim());
+                if (sentenceText.contains("síntoma") || sentenceText.contains("fiebre") || sentenceText.contains("dolor")) {
+                    segments.put("síntomas", sentence.toString());
+                } else if (sentenceText.contains("antecedente") || sentenceText.contains("historia clínica")) {
+                    segments.put("antecedentes", sentence.toString());
+                } else if (sentenceText.contains("prescribe") || sentenceText.contains("tratamiento")) {
+                    segments.put("tratamiento", sentence.toString());
+                } else if (sentenceText.contains("recomienda") || sentenceText.contains("aconseja")) {
+                    segments.put("recomendaciones", sentence.toString());
                 }
             }
 
             Map<String, Object> enriched = new LinkedHashMap<>();
-            enriched.put("id", id);
-            enriched.put("timestamp", timestamp);
-            enriched.put("source_endpoint", source);
+            enriched.put("id", doc.get("id"));
+            enriched.put("timestamp", doc.get("timestamp"));
+            enriched.put("source_endpoint", doc.get("source_endpoint"));
             enriched.put("original_text", text);
             enriched.put("segments", segments);
 
@@ -380,6 +417,7 @@ public class OpenSearchService {
 
         return results;
     }
+
 
     //Creación de Índice con Mapeo
     //Crea un índice con mapeo explícito de campos (timestamp, id, etc.).
@@ -407,9 +445,26 @@ public class OpenSearchService {
         }
     }
 
-    // Estadísticas de Dataset CSV
-    //Calcula métricas estadísticas (media, desviación, min/max).
-    //Aplica únicamente sobre campos numéricos detectados.
+    /**
+     * Analiza un archivo CSV local y calcula estadísticas descriptivas
+     * (media, desviación estándar, mínimo, máximo, cantidad de elementos)
+     * sobre los campos numéricos detectados.
+     *
+     * @param fileName Nombre del archivo CSV previamente cargado (ubicado en UPLOAD_DIR)
+     * @return JSON con estadísticas por campo numérico o mensaje de error si el archivo no existe o está vacío.
+     * @throws IOException Si ocurre un error al leer el archivo.
+     *
+     * Ejemplo de salida:
+     * {
+     *   "edad": {
+     *     "count": 100,
+     *     "mean": 73.2,
+     *     "std_dev": 4.5,
+     *     "min": 65,
+     *     "max": 81
+     *   }
+     * }
+     */
     public String summarizeBigDataFromFile(String fileName) throws IOException {
         File file = new File(UPLOAD_DIR + fileName);
         if (!file.exists()) {
@@ -458,9 +513,19 @@ public class OpenSearchService {
     }
 
 
-    //Resumen de Texto
-    //Extrae las primeras 3 frases de un texto.
-    //Método simplificado de resumen heurístico para casos clínicos.
+    /**
+     * Resume un texto clínico seleccionando las frases más representativas
+     * según una heurística basada en la frecuencia de palabras (TF).
+     *
+     * El método realiza los siguientes pasos:
+     * 1. Divide el texto en frases.
+     * 2. Calcula la frecuencia (TF) de cada palabra ignorando palabras muy cortas.
+     * 3. Asigna una puntuación a cada frase según la suma de las frecuencias de sus palabras.
+     * 4. Devuelve las 3 frases con mayor puntuación como resumen.
+     *
+     * @param description Texto de entrada (por ejemplo, informe clínico).
+     * @return Mapa con la longitud original (en frases) y la lista de frases resumen.
+     */
     public Map<String, Object> summarizeText(String description) {
         if (description == null || description.isEmpty()) {
             return Map.of(
@@ -469,25 +534,65 @@ public class OpenSearchService {
             );
         }
 
-
-        String[] sentences = description.split("\\.\\s*");
-        List<String> trimmed = Arrays.stream(sentences)
+        // 1. Dividir en frases
+        String[] sentences = description.split("(?<=[.!?])\\s+");
+        List<String> trimmedSentences = Arrays.stream(sentences)
                 .map(String::trim)
                 .filter(s -> !s.isEmpty())
                 .toList();
 
-        int maxSentences = Math.min(3, trimmed.size());
-        List<String> summary = trimmed.subList(0, maxSentences);
+        // 2. Tokenizar palabras y calcular frecuencia (TF)
+        Map<String, Integer> wordFreq = new HashMap<>();
+        for (String sentence : trimmedSentences) {
+            String[] words = sentence.toLowerCase().split("\\W+");
+            for (String word : words) {
+                if (word.length() > 2) { // omitir palabras muy cortas o stopwords simples
+                    wordFreq.put(word, wordFreq.getOrDefault(word, 0) + 1);
+                }
+            }
+        }
+
+        // 3. Asignar puntuación a cada frase
+        Map<String, Integer> sentenceScores = new HashMap<>();
+        for (String sentence : trimmedSentences) {
+            int score = 0;
+            String[] words = sentence.toLowerCase().split("\\W+");
+            for (String word : words) {
+                score += wordFreq.getOrDefault(word, 0);
+            }
+            sentenceScores.put(sentence, score);
+        }
+
+        // 4. Seleccionar las 3 frases con mayor puntuación
+        List<String> summary = sentenceScores.entrySet().stream()
+                .sorted((a, b) -> b.getValue() - a.getValue())
+                .limit(3)
+                .map(Map.Entry::getKey)
+                .toList();
 
         return Map.of(
-                "original_length", trimmed.size(),
+                "original_length", trimmedSentences.size(),
                 "summary", summary
         );
     }
 
-    //Predicción de Tendencias
-    //Usa SimpleRegression para prever el siguiente valor en una serie temporal.
-    //Se apoya en Apache Commons Math.
+
+
+    /**
+     * Predice el siguiente valor de una serie temporal numérica contenida en un archivo CSV.
+     *
+     * <p>Lee el archivo especificado y busca la primera columna con datos numéricos válidos.
+     * Aplica regresión lineal simple (usando Apache Commons Math) sobre los valores encontrados
+     * y estima el siguiente valor en la secuencia. Devuelve información como el valor predicho,
+     * el último valor real observado, el nombre de la serie y metadatos adicionales.
+     *
+     * <p>Este método es útil para analizar tendencias simples en datos cuantitativos extraídos
+     * de documentos (como frecuencias de términos clínicos o métricas temporales).
+     *
+     * @param fileName nombre del archivo CSV previamente subido (con encabezado y datos numéricos).
+     * @return mapa con la predicción, último valor, nombre de serie, timestamp y origen.
+     * @throws IOException si el archivo no se encuentra o no puede leerse correctamente.
+     */
     public Map<String, Object> predictNextValueFromFile(String fileName) throws IOException {
         File file = new File(UPLOAD_DIR + fileName);
         if (!file.exists()) throw new FileNotFoundException("Archivo no encontrado: " + fileName);
@@ -582,21 +687,55 @@ public class OpenSearchService {
 
 
     /**
-     * Extrae palabras clave de un archivo de texto o JSON.
+     * Extrae las 10 palabras clave más representativas de un texto utilizando Stanford CoreNLP.
+     *
+     * Este método tokeniza, lematiza y analiza morfosintácticamente el texto de entrada.
+     * Se filtran stopwords comunes en español y se consideran únicamente sustantivos, verbos
+     * y adjetivos con longitud superior a 3 caracteres.
+     *
+     * Es una versión mejorada del enfoque de frecuencia simple, que mejora la calidad semántica
+     * de las palabras clave extraídas.
+     *
+     * @param text Texto libre en español del cual se extraerán las palabras clave.
+     * @return Lista de hasta 10 lemas más frecuentes, ordenados por frecuencia descendente.
      */
-    //TF simple: frecuencia de palabras de longitud > 3.
-    //Filtrado básico de stopwords comunes en español.
     public List<String> extractKeywords(String text) {
-        Map<String, Integer> tf = new HashMap<>();
-        String[] tokens = text.toLowerCase().split("\\s+");
+        if (text == null || text.isBlank()) return List.of();
 
-        for (String token : tokens) {
-            if (token.length() > 3 && !List.of("para", "como", "este", "esta", "con", "los", "las").contains(token)) {
-                tf.put(token, tf.getOrDefault(token, 0) + 1);
+        // Inicializar pipeline si no existe (puede extraerse como singleton si se reutiliza mucho)
+        Properties props = new Properties();
+        props.setProperty("annotators", "tokenize,ssplit,pos,lemma");
+        props.setProperty("tokenize.language", "es");
+        StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+
+        // Lista de stopwords en español (puedes ampliar o externalizar)
+        Set<String> stopwords = Set.of(
+                "para", "como", "este", "esta", "con", "los", "las", "del", "que", "una", "por",
+                "entre", "sobre", "pero", "tiene", "han", "ser", "más", "menos", "muy", "sin", "a",
+                "en", "de", "y", "o", "al", "es", "se", "el", "la", "un", "lo", "su"
+        );
+
+        // Procesar texto con CoreNLP
+        Annotation document = new Annotation(text.toLowerCase());
+        pipeline.annotate(document);
+
+        Map<String, Integer> lemmaFrequency = new HashMap<>();
+
+        for (CoreMap sentence : document.get(CoreAnnotations.SentencesAnnotation.class)) {
+            for (CoreLabel token : sentence.get(CoreAnnotations.TokensAnnotation.class)) {
+                String lemma = token.get(CoreAnnotations.LemmaAnnotation.class);
+                String pos = token.get(CoreAnnotations.PartOfSpeechAnnotation.class);
+
+                // Filtrar por stopwords, longitud mínima y tipo POS (sustantivos, verbos, adjetivos, etc.)
+                if (lemma.length() > 3 && !stopwords.contains(lemma) &&
+                        (pos.startsWith("N") || pos.startsWith("V") || pos.startsWith("J"))) {
+                    lemmaFrequency.put(lemma, lemmaFrequency.getOrDefault(lemma, 0) + 1);
+                }
             }
         }
 
-        return tf.entrySet().stream()
+        // Devolver top 10 términos más frecuentes
+        return lemmaFrequency.entrySet().stream()
                 .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
                 .limit(10)
                 .map(Map.Entry::getKey)
@@ -634,10 +773,20 @@ public class OpenSearchService {
 
 
     /**
-     * Agrupa entradas de texto en clústeres temáticos.
+     * Agrupa documentos textuales en dos clústeres temáticos usando K-Means.
+     * <p>
+     * Este método lee un archivo JSON con una lista de documentos (cada uno con un campo "text"),
+     * tokeniza el contenido, construye vectores de frecuencia de términos (TF) y aplica el algoritmo
+     * K-Means (K=2) para agrupar los documentos según su similitud textual.
+     * <p>
+     * El resultado es un mapa donde cada clave es un ID de clúster (0 o 1) y su valor asociado es
+     * la lista de documentos asignados a ese clúster, incluyendo el campo adicional "cluster_id".
+     *
+     * @param fileName nombre del archivo JSON previamente subido (ruta fija en el servidor).
+     * @return un mapa con dos claves (0 y 1) representando los clústeres y los documentos agrupados.
+     * @throws IOException si el archivo no existe o hay un error de lectura.
+     * @throws IllegalArgumentException si el archivo contiene menos de dos documentos.
      */
-    //Tokeniza documentos, genera vectores TF y aplica K-means con K=2.
-    //Devuelve estructura {cluster_id → lista de documentos}.
     public Map<Integer, List<Map<String, Object>>> clusterDocumentsFromFile(String fileName) throws IOException {
         String path = "C:/uploaded_files/" + fileName;
 

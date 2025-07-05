@@ -1,0 +1,38 @@
+id: rel-001
+timestamp: 2025-05-10T10:00:00Z
+source_endpoint: extract-triples
+
+El Dr. Luis Martínez atendió a la paciente Ana López en el Hospital Central el 2 de abril de 2025. 
+Se diagnosticó una neumonía bacteriana y se prescribió tratamiento con amoxicilina. 
+Posteriormente, Ana López fue derivada al área de infecciosas. 
+La recuperación fue favorable según informes de la unidad médica.
+
+id: rel-002
+timestamp: 2025-05-11T12:15:00Z
+source_endpoint: extract-triples
+
+Clara Ramírez visitó la Clínica Santa María por dolores torácicos persistentes. 
+El cardiólogo Dr. Sergio Ruiz solicitó una prueba de esfuerzo. 
+Los resultados indicaron un posible caso de angina leve, y se recomendó iniciar tratamiento preventivo.
+
+id: rel-003
+timestamp: 2025-05-12T09:40:00Z
+source_endpoint: extract-triples
+
+Durante el mes de marzo, el Hospital San Juan trató a 54 pacientes con síntomas respiratorios similares. 
+El equipo médico liderado por la Dra. Elena Torres propuso implementar un protocolo común de actuación.
+
+id: rel-004
+timestamp: 2025-05-13T17:20:00Z
+source_endpoint: extract-triples
+
+Carlos Méndez fue ingresado el 10 de marzo de 2025 con fiebre y dificultad respiratoria. 
+Tras la evaluación, se descartó COVID-19 y se confirmó un cuadro de bronquitis aguda.
+
+id: rel-005
+timestamp: 2025-05-14T08:55:00Z
+source_endpoint: extract-triples
+
+La paciente Luisa Ortega fue trasladada en ambulancia desde el centro de salud de Alcalá al Hospital General. 
+Fue estabilizada en urgencias y hospitalizada durante tres días. 
+Los informes destacan una rápida evolución positiva.
