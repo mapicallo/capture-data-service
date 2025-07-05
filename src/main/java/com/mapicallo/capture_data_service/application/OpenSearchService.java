@@ -277,10 +277,17 @@ public class OpenSearchService {
 
 
     /**
-     * Reconoce entidades nombradas como personas, lugares, instituciones, etc.
+     * Aplica reconocimiento de entidades nombradas (NER) a los textos de un archivo JSON.
+     * <p>
+     * Procesa cada documento del archivo usando Stanford CoreNLP para detectar entidades
+     * como PERSON, ORGANIZATION, LOCATION, DATE, etc., y devuelve una lista de objetos
+     * enriquecidos con las entidades encontradas.
+     *
+     * @param fileName Nombre del archivo JSON ubicado en el directorio de subida.
+     *                 El archivo debe contener una lista de documentos con al menos un campo "text".
+     * @return Lista de mapas con la información original y las entidades reconocidas por documento.
+     * @throws IOException Si el archivo no existe o no puede leerse.
      */
-    //Reconoce entidades clínicas (personas, fechas, hospitales, etc.)
-    //Usa CoreEntityMention para detectar y clasificar entidades.
     public List<Map<String, Object>> recognizeEntitiesFromJsonFile(String fileName) throws IOException {
         File file = new File(UPLOAD_DIR + fileName);
         if (!file.exists()) throw new FileNotFoundException("Archivo no encontrado: " + fileName);
