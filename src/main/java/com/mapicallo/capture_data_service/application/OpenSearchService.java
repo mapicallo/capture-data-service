@@ -117,19 +117,24 @@ public class OpenSearchService {
         }
     }
 
-    /**
-     * Realiza análisis de sentimiento sobre el contenido del archivo.
-     */
-    //Inicializa el pipeline de Stanford NLP al arrancar el servicio.
-    //Lee los textos y devuelve un análisis con:
-    //distribución de sentimientos, puntuación promedio, sentimiento general (summary_sentiment)
-    @PostConstruct
-    public void initSentimentPipeline() {
-        Properties props = new Properties();
-        props.setProperty("annotators", "tokenize,ssplit,parse,sentiment");
-        this.sentimentPipeline = new StanfordCoreNLP(props);
-    }
+    
 
+
+    /**
+     * Analiza el sentimiento de cada entrada textual contenida en un archivo JSON.
+     *
+     * <p>Lee el archivo especificado, interpreta su contenido como una lista de documentos
+     * con campo "text", y aplica el modelo de análisis de sentimientos de Stanford CoreNLP.
+     * Para cada texto, clasifica el sentimiento como Very Negative, Negative, Neutral, Positive o Very Positive,
+     * y asigna una puntuación cuantitativa. El resultado incluye además los metadatos originales del documento.
+     *
+     * <p>Es útil para detectar la orientación emocional general de textos clínicos, comentarios de pacientes
+     * o informes médicos en español.
+     *
+     * @param fileName nombre del archivo JSON previamente cargado, con una lista de documentos con campo "text".
+     * @return una lista de mapas, uno por documento, que contienen el sentimiento, puntuación, texto original y metadatos.
+     * @throws IOException si el archivo no se encuentra o no puede leerse correctamente.
+     */
     public List<Map<String, Object>> analyzeSentimentFromFile(String fileName) throws IOException {
         File file = new File(UPLOAD_DIR + fileName);
         if (!file.exists()) throw new FileNotFoundException("Archivo no encontrado: " + fileName);
@@ -556,9 +561,23 @@ public class OpenSearchService {
         );
     }
 
-    //Predicción de Tendencias
-    //Usa SimpleRegression para prever el siguiente valor en una serie temporal.
-    //Se apoya en Apache Commons Math.
+
+
+    /**
+     * Predice el siguiente valor de una serie temporal numérica contenida en un archivo CSV.
+     *
+     * <p>Lee el archivo especificado y busca la primera columna con datos numéricos válidos.
+     * Aplica regresión lineal simple (usando Apache Commons Math) sobre los valores encontrados
+     * y estima el siguiente valor en la secuencia. Devuelve información como el valor predicho,
+     * el último valor real observado, el nombre de la serie y metadatos adicionales.
+     *
+     * <p>Este método es útil para analizar tendencias simples en datos cuantitativos extraídos
+     * de documentos (como frecuencias de términos clínicos o métricas temporales).
+     *
+     * @param fileName nombre del archivo CSV previamente subido (con encabezado y datos numéricos).
+     * @return mapa con la predicción, último valor, nombre de serie, timestamp y origen.
+     * @throws IOException si el archivo no se encuentra o no puede leerse correctamente.
+     */
     public Map<String, Object> predictNextValueFromFile(String fileName) throws IOException {
         File file = new File(UPLOAD_DIR + fileName);
         if (!file.exists()) throw new FileNotFoundException("Archivo no encontrado: " + fileName);
