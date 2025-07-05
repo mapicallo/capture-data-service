@@ -209,7 +209,7 @@ public class OpenSearchService {
             default -> "Neutral";
         };
     }
-    
+
 
     /**
      * Extrae tripletas semánticas del tipo sujeto–relación–objeto a partir de textos en un archivo JSON.
@@ -652,10 +652,18 @@ public class OpenSearchService {
 
 
     /**
-     * Extrae palabras clave de un archivo de texto o JSON.
+     * Extrae las 10 palabras clave más frecuentes de un texto.
+     *
+     * Este método realiza una tokenización básica del texto de entrada, filtra las palabras
+     * poco representativas (por longitud y presencia en una lista de stopwords en español)
+     * y calcula la frecuencia de aparición de cada término relevante.
+     *
+     * La salida es una lista con las 10 palabras más frecuentes, ordenadas por frecuencia
+     * descendente. No utiliza técnicas avanzadas como lematización o TF-IDF.
+     *
+     * @param text Texto en bruto del que se extraerán las palabras clave.
+     * @return Lista de hasta 10 términos más frecuentes tras el filtrado.
      */
-    //TF simple: frecuencia de palabras de longitud > 3.
-    //Filtrado básico de stopwords comunes en español.
     public List<String> extractKeywords(String text) {
         Map<String, Integer> tf = new HashMap<>();
         String[] tokens = text.toLowerCase().split("\\s+");
