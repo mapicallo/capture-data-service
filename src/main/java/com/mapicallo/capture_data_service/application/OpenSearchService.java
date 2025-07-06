@@ -163,6 +163,14 @@ public class OpenSearchService {
     }
 
     private Map<String, Object> analyzeTextSentiment(String text) {
+        // Inicialización lazy del pipeline si no está hecho
+        if (sentimentPipeline == null) {
+            Properties props = new Properties();
+            props.setProperty("annotators", "tokenize,ssplit,parse,sentiment");
+            props.setProperty("tokenize.language", "es");
+            sentimentPipeline = new StanfordCoreNLP(props);
+        }
+
         Map<String, Object> result = new HashMap<>();
         Map<String, Integer> sentimentCount = new HashMap<>(Map.of(
                 "Very Negative", 0,
