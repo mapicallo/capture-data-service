@@ -478,7 +478,7 @@ public class OpenSearchController {
             return ResponseEntity.ok(Map.of(
                     "file", fileName,
                     "documents_indexed", count,
-                    "sample", results.subList(0, Math.min(3, results.size()))
+                    "results", results  // <--- todos los resultados
             ));
         } catch (Exception e) {
             return ResponseEntity.status(500).body(Map.of("error", e.getMessage()));
@@ -511,7 +511,7 @@ public class OpenSearchController {
             return ResponseEntity.ok(Map.of(
                     "file", fileName,
                     "documents_indexed", count,
-                    "sample", results.subList(0, Math.min(3, results.size()))
+                    "sample", results  // <--- todos los resultados
             ));
         } catch (Exception e) {
             return ResponseEntity.status(500).body(Map.of("error", "Error procesando archivo: " + e.getMessage()));
